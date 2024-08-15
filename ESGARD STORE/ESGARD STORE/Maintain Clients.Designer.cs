@@ -50,13 +50,17 @@ namespace ESGARD_STORE
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(315, 363);
+            this.button1.Location = new System.Drawing.Point(315, 414);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -65,7 +69,7 @@ namespace ESGARD_STORE
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(748, 363);
+            this.button2.Location = new System.Drawing.Point(748, 414);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
@@ -86,7 +90,7 @@ namespace ESGARD_STORE
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.textBox2);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 37);
+            this.groupBox1.Location = new System.Drawing.Point(12, 88);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(378, 303);
             this.groupBox1.TabIndex = 2;
@@ -193,7 +197,7 @@ namespace ESGARD_STORE
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(417, 123);
+            this.dataGridView1.Location = new System.Drawing.Point(417, 174);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(406, 217);
             this.dataGridView1.TabIndex = 3;
@@ -201,7 +205,7 @@ namespace ESGARD_STORE
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(424, 74);
+            this.label7.Location = new System.Drawing.Point(424, 125);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 13);
             this.label7.TabIndex = 7;
@@ -209,14 +213,14 @@ namespace ESGARD_STORE
             // 
             // textBox7
             // 
-            this.textBox7.Location = new System.Drawing.Point(562, 68);
+            this.textBox7.Location = new System.Drawing.Point(562, 119);
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(147, 20);
             this.textBox7.TabIndex = 6;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(748, 65);
+            this.button3.Location = new System.Drawing.Point(748, 116);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 8;
@@ -225,7 +229,7 @@ namespace ESGARD_STORE
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(417, 363);
+            this.button4.Location = new System.Drawing.Point(417, 414);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 9;
@@ -234,7 +238,7 @@ namespace ESGARD_STORE
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(12, 456);
+            this.button5.Location = new System.Drawing.Point(53, 462);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(111, 23);
             this.button5.TabIndex = 22;
@@ -242,11 +246,46 @@ namespace ESGARD_STORE
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label8.Location = new System.Drawing.Point(398, 507);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(265, 16);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "Tel. 0726168472 email. whatisit@gmail.com";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label9.Location = new System.Drawing.Point(135, 507);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(233, 16);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "@2024 Esgard, inc, All rights reserved";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ESGARD_STORE.Properties.Resources.ESGARD_LOGO;
+            this.pictureBox1.Location = new System.Drawing.Point(28, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(83, 68);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 25;
+            this.pictureBox1.TabStop = false;
+            // 
             // Maintain_Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(845, 491);
+            this.ClientSize = new System.Drawing.Size(845, 534);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
@@ -258,10 +297,12 @@ namespace ESGARD_STORE
             this.Controls.Add(this.button1);
             this.Name = "Maintain_Clients";
             this.Text = "Maintain Clients";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Maintain_Clients_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,5 +331,8 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

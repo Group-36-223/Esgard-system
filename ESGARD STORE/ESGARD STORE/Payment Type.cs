@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace ESGARD_STORE
 {
-    public partial class Maintain_Clients : Form
+    public partial class Payment_Type : Form
     {
-        public Maintain_Clients()
+        public Payment_Type()
         {
             InitializeComponent();
         }
 
-        private void Maintain_Clients_Load(object sender, EventArgs e)
+        private void btnAccept_Click(object sender, EventArgs e)
         {
-
+            Purchase_Form pf = new Purchase_Form();
+            pf.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnReject_Click(object sender, EventArgs e)
         {
-            this.Close();
-
+            MessageBox.Show("Your payment Type is unsupported!");
         }
     }
 }

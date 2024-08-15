@@ -10,22 +10,22 @@ using System.Windows.Forms;
 
 namespace ESGARD_STORE
 {
-    public partial class Maintain_Clients : Form
+    public partial class Manager_Dashboard : Form
     {
-        public Maintain_Clients()
+        public Manager_Dashboard()
         {
             InitializeComponent();
         }
 
-        private void Maintain_Clients_Load(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-
+            Maintain_Employees me = new Maintain_Employees();
+            me.ShowDialog();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
             this.Close();
-
         }
     }
 }

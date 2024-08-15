@@ -10,17 +10,28 @@ using System.Windows.Forms;
 
 namespace ESGARD_STORE
 {
-    public partial class Maintain_Employees : Form
+    public partial class Maintain_Inventory : Form
     {
-        public Maintain_Employees()
+        public Maintain_Inventory()
         {
             InitializeComponent();
         }
 
+        private void Maintain_Inventory_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
-            Login l = new Login();
-            l.ShowDialog();
+            Dashboard ds = new Dashboard();
+            ds.ShowDialog();
+            this.Hide(); 
         }
     }
 }

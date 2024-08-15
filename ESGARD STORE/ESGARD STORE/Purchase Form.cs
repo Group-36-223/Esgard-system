@@ -19,7 +19,8 @@ namespace ESGARD_STORE
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Dashboard ds = new Dashboard();
+            ds.ShowDialog();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -27,9 +28,10 @@ namespace ESGARD_STORE
 
         }
 
-        /*private void button4_Click(object sender, EventArgs e)
+        private void button4_Click_1(object sender, EventArgs e)
         {
-            listBox1.Items.Add("Description\]\tQuantity\\tPrice");
-        }*/
+            this.Close();
+            //listBox1.Items.Add("Description\]\tQuantity\\tPrice");
+        }
     }
 }

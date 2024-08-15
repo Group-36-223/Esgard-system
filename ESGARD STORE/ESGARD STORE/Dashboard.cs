@@ -16,22 +16,36 @@ namespace ESGARD_STORE
         {
             InitializeComponent();
         }
-
-        private void button7_Click(object sender, EventArgs e)
-        {
-            Purchase_Form pf = new Purchase_Form();
-            pf.ShowDialog();
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Maintain_Clients mc = new Maintain_Clients();
             mc.ShowDialog();
         }
-
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Payment_Type pt = new Payment_Type();
+            pt.ShowDialog();
+        }
         private void button6_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+      private void button7_Click(object sender, EventArgs e)
+        {
+            Purchase_Form pf = new Purchase_Form();
+            pf.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Maintain_Inventory mi = new Maintain_Inventory();
+            mi.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Returns r = new Returns();
+            r.ShowDialog();
         }
     }
 }

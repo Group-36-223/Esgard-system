@@ -26,3 +26,21 @@ C:\Users\39069656\Downloads\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.csp
 C:\Users\39069656\Downloads\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.csproj.CoreCompileInputs.cache
 C:\Users\39069656\Downloads\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.exe
 C:\Users\39069656\Downloads\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.pdb
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\bin\Debug\ESGARD STORE.exe.config
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\bin\Debug\ESGARD STORE.exe
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\bin\Debug\ESGARD STORE.pdb
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.csproj.AssemblyReference.cache
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Dashboard.resources
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Login.resources
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Maintain_Clients.resources
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Maintain_Employees.resources
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Properties.Resources.resources
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Purchase_Form.resources
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.csproj.GenerateResource.cache
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.csproj.CoreCompileInputs.cache
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.exe
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.pdb
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Payment_Type.resources
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Returns.resources
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Maintain_Inventory.resources
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Manager_Dashboard.resources

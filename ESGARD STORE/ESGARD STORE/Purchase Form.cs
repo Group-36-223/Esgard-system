@@ -33,5 +33,11 @@ namespace ESGARD_STORE
             this.Close();
             //listBox1.Items.Add("Description\]\tQuantity\\tPrice");
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Dashboard ds = new Dashboard();
+            ds.ShowDialog();
+        }
     }
 }

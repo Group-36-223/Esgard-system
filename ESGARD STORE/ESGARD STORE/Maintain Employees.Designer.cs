@@ -32,18 +32,18 @@ namespace ESGARD_STORE
             this.btnAddME = new System.Windows.Forms.Button();
             this.btnDeleteME = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtPasswordME = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtENumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtINumberMe = new System.Windows.Forms.TextBox();
+            this.txtEmailME = new System.Windows.Forms.TextBox();
+            this.txtCellphoneME = new System.Windows.Forms.TextBox();
             this.txtLNameME = new System.Windows.Forms.TextBox();
             this.txtFNameME = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -80,18 +80,18 @@ namespace ESGARD_STORE
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox8);
+            this.groupBox1.Controls.Add(this.txtPasswordME);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox6);
+            this.groupBox1.Controls.Add(this.txtENumber);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtINumberMe);
+            this.groupBox1.Controls.Add(this.txtEmailME);
+            this.groupBox1.Controls.Add(this.txtCellphoneME);
             this.groupBox1.Controls.Add(this.txtLNameME);
             this.groupBox1.Controls.Add(this.txtFNameME);
             this.groupBox1.Location = new System.Drawing.Point(12, 75);
@@ -101,13 +101,13 @@ namespace ESGARD_STORE
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Details";
             // 
-            // textBox8
+            // txtPasswordME
             // 
-            this.textBox8.Location = new System.Drawing.Point(223, 298);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 13;
+            this.txtPasswordME.Location = new System.Drawing.Point(223, 298);
+            this.txtPasswordME.Name = "txtPasswordME";
+            this.txtPasswordME.ReadOnly = true;
+            this.txtPasswordME.Size = new System.Drawing.Size(100, 20);
+            this.txtPasswordME.TabIndex = 13;
             // 
             // label8
             // 
@@ -118,13 +118,13 @@ namespace ESGARD_STORE
             this.label8.TabIndex = 12;
             this.label8.Text = "Password:";
             // 
-            // textBox6
+            // txtENumber
             // 
-            this.textBox6.Location = new System.Drawing.Point(223, 262);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 11;
+            this.txtENumber.Location = new System.Drawing.Point(223, 262);
+            this.txtENumber.Name = "txtENumber";
+            this.txtENumber.ReadOnly = true;
+            this.txtENumber.Size = new System.Drawing.Size(100, 20);
+            this.txtENumber.TabIndex = 11;
             // 
             // label6
             // 
@@ -180,26 +180,26 @@ namespace ESGARD_STORE
             this.label1.TabIndex = 5;
             this.label1.Text = "First Name:";
             // 
-            // textBox5
+            // txtINumberMe
             // 
-            this.textBox5.Location = new System.Drawing.Point(223, 127);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 4;
+            this.txtINumberMe.Location = new System.Drawing.Point(223, 127);
+            this.txtINumberMe.Name = "txtINumberMe";
+            this.txtINumberMe.Size = new System.Drawing.Size(100, 20);
+            this.txtINumberMe.TabIndex = 4;
             // 
-            // textBox4
+            // txtEmailME
             // 
-            this.textBox4.Location = new System.Drawing.Point(223, 176);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 3;
+            this.txtEmailME.Location = new System.Drawing.Point(223, 176);
+            this.txtEmailME.Name = "txtEmailME";
+            this.txtEmailME.Size = new System.Drawing.Size(100, 20);
+            this.txtEmailME.TabIndex = 3;
             // 
-            // textBox3
+            // txtCellphoneME
             // 
-            this.textBox3.Location = new System.Drawing.Point(223, 214);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 2;
+            this.txtCellphoneME.Location = new System.Drawing.Point(223, 214);
+            this.txtCellphoneME.Name = "txtCellphoneME";
+            this.txtCellphoneME.Size = new System.Drawing.Size(100, 20);
+            this.txtCellphoneME.TabIndex = 2;
             // 
             // txtLNameME
             // 
@@ -298,6 +298,7 @@ namespace ESGARD_STORE
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 25;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Maintain_Employees
             // 
@@ -338,19 +339,19 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtINumberMe;
+        private System.Windows.Forms.TextBox txtEmailME;
+        private System.Windows.Forms.TextBox txtCellphoneME;
         private System.Windows.Forms.TextBox txtLNameME;
         private System.Windows.Forms.TextBox txtFNameME;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtENumber;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtENumberMe;
         private System.Windows.Forms.Button btnSearchME;
         private System.Windows.Forms.Button btnUpdateME;
         private System.Windows.Forms.Button btnSignUpME;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtPasswordME;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;

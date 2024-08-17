@@ -22,5 +22,11 @@ namespace ESGARD_STORE
             Login l = new Login();
             l.ShowDialog();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Dashboard ds = new Dashboard();
+            ds.ShowDialog();
+        }
     }
 }

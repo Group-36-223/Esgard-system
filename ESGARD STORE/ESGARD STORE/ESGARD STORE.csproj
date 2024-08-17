@@ -64,6 +64,12 @@
     <Compile Include="Maintain Inventory.Designer.cs">
       <DependentUpon>Maintain Inventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="MaintainPType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintainPType.Designer.cs">
+      <DependentUpon>MaintainPType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Maintain Inventory.resx">
       <DependentUpon>Maintain Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintainPType.resx">
+      <DependentUpon>MaintainPType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Manager Dashboard.resx">
       <DependentUpon>Manager Dashboard.cs</DependentUpon>

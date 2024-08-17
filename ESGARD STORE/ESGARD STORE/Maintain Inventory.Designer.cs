@@ -49,6 +49,9 @@ namespace ESGARD_STORE
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnSearchME = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtENumberMe = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +76,7 @@ namespace ESGARD_STORE
             this.panel1.Controls.Add(this.txtBarMInventory);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.btnUpdateMI);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
@@ -180,7 +184,7 @@ namespace ESGARD_STORE
             // 
             // btnUpdateMI
             // 
-            this.btnUpdateMI.Location = new System.Drawing.Point(266, 382);
+            this.btnUpdateMI.Location = new System.Drawing.Point(141, 220);
             this.btnUpdateMI.Name = "btnUpdateMI";
             this.btnUpdateMI.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateMI.TabIndex = 28;
@@ -199,7 +203,7 @@ namespace ESGARD_STORE
             // 
             // btnDeleteMI
             // 
-            this.btnDeleteMI.Location = new System.Drawing.Point(347, 383);
+            this.btnDeleteMI.Location = new System.Drawing.Point(347, 421);
             this.btnDeleteMI.Name = "btnDeleteMI";
             this.btnDeleteMI.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteMI.TabIndex = 26;
@@ -209,7 +213,7 @@ namespace ESGARD_STORE
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 113);
+            this.listBox1.Location = new System.Drawing.Point(12, 151);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(410, 264);
             this.listBox1.TabIndex = 25;
@@ -245,18 +249,46 @@ namespace ESGARD_STORE
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 32;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // btnSearchME
+            // 
+            this.btnSearchME.Location = new System.Drawing.Point(295, 110);
+            this.btnSearchME.Name = "btnSearchME";
+            this.btnSearchME.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchME.TabIndex = 37;
+            this.btnSearchME.Text = "Search";
+            this.btnSearchME.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 119);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.TabIndex = 36;
+            this.label7.Text = "Inventory No.";
+            // 
+            // txtENumberMe
+            // 
+            this.txtENumberMe.Location = new System.Drawing.Point(109, 113);
+            this.txtENumberMe.Name = "txtENumberMe";
+            this.txtENumberMe.Size = new System.Drawing.Size(147, 20);
+            this.txtENumberMe.TabIndex = 35;
             // 
             // Maintain_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 515);
+            this.Controls.Add(this.btnSearchME);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.txtENumberMe);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnBTDMI);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnUpdateMI);
             this.Controls.Add(this.btnProceedMI);
             this.Controls.Add(this.btnDeleteMI);
             this.Controls.Add(this.listBox1);
@@ -293,5 +325,8 @@ namespace ESGARD_STORE
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnSearchME;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtENumberMe;
     }
 }

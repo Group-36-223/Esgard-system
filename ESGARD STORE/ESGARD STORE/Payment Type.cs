@@ -27,5 +27,11 @@ namespace ESGARD_STORE
         {
             MessageBox.Show("Your payment Type is unsupported!");
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Dashboard ds = new Dashboard();
+            ds.ShowDialog();
+        }
     }
 }

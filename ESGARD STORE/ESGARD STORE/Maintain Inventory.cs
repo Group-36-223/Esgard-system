@@ -33,5 +33,11 @@ namespace ESGARD_STORE
             ds.ShowDialog();
             this.Hide(); 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Dashboard ds = new Dashboard();
+            ds.ShowDialog();
+        }
     }
 }

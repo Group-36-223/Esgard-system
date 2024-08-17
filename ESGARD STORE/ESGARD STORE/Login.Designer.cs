@@ -33,14 +33,14 @@ namespace ESGARD_STORE
             this.label3 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLogin = new System.Windows.Forms.Button();
             this.lblNo_Profile = new System.Windows.Forms.Label();
-            this.lLbl = new System.Windows.Forms.LinkLabel();
+            this.ILblSignUp = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.lblPassword = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,15 +77,15 @@ namespace ESGARD_STORE
             this.txtPass.Size = new System.Drawing.Size(240, 20);
             this.txtPass.TabIndex = 5;
             // 
-            // button1
+            // btnLogin
             // 
-            this.button1.Location = new System.Drawing.Point(310, 345);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(240, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Login";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnLogin.Location = new System.Drawing.Point(310, 345);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(240, 23);
+            this.btnLogin.TabIndex = 7;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblNo_Profile
             // 
@@ -97,17 +97,17 @@ namespace ESGARD_STORE
             this.lblNo_Profile.TabIndex = 8;
             this.lblNo_Profile.Text = "No profile?";
             // 
-            // lLbl
+            // ILblSignUp
             // 
-            this.lLbl.AutoSize = true;
-            this.lLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lLbl.Location = new System.Drawing.Point(442, 396);
-            this.lLbl.Name = "lLbl";
-            this.lLbl.Size = new System.Drawing.Size(66, 20);
-            this.lLbl.TabIndex = 9;
-            this.lLbl.TabStop = true;
-            this.lLbl.Text = "Sign Up";
-            this.lLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lLbl_LinkClicked);
+            this.ILblSignUp.AutoSize = true;
+            this.ILblSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ILblSignUp.Location = new System.Drawing.Point(442, 396);
+            this.ILblSignUp.Name = "ILblSignUp";
+            this.ILblSignUp.Size = new System.Drawing.Size(66, 20);
+            this.ILblSignUp.TabIndex = 9;
+            this.ILblSignUp.TabStop = true;
+            this.ILblSignUp.Text = "Sign Up";
+            this.ILblSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lLbl_LinkClicked);
             // 
             // label1
             // 
@@ -131,16 +131,6 @@ namespace ESGARD_STORE
             this.label4.TabIndex = 13;
             this.label4.Text = "Tel. 0726168472 email. whatisit@gmail.com";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ESGARD_STORE.Properties.Resources.ESGARD_LOGO;
-            this.pictureBox1.Location = new System.Drawing.Point(343, 28);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 125);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // lblName
             // 
             this.lblName.AutoSize = true;
@@ -163,6 +153,16 @@ namespace ESGARD_STORE
             this.lblPassword.Text = "Enter password";
             this.lblPassword.Visible = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ESGARD_STORE.Properties.Resources.ESGARD_LOGO;
+            this.pictureBox1.Location = new System.Drawing.Point(343, 28);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(165, 125);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -172,9 +172,9 @@ namespace ESGARD_STORE
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lLbl);
+            this.Controls.Add(this.ILblSignUp);
             this.Controls.Add(this.lblNo_Profile);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUser);
             this.Controls.Add(this.label3);
@@ -197,9 +197,9 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Label lblNo_Profile;
-        private System.Windows.Forms.LinkLabel lLbl;
+        private System.Windows.Forms.LinkLabel ILblSignUp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblName;

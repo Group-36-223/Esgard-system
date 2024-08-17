@@ -30,13 +30,15 @@ namespace ESGARD_STORE
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnReports = new System.Windows.Forms.Button();
+            this.btnMaintainEmployee = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -45,7 +47,9 @@ namespace ESGARD_STORE
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel1.Controls.Add(this.button6);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -54,15 +58,15 @@ namespace ESGARD_STORE
             this.panel1.Size = new System.Drawing.Size(755, 73);
             this.panel1.TabIndex = 11;
             // 
-            // button6
+            // btnLogout
             // 
-            this.button6.Location = new System.Drawing.Point(689, 44);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(52, 24);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Logout";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnLogout.Location = new System.Drawing.Point(689, 44);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(52, 24);
+            this.btnLogout.TabIndex = 8;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.button6_Click);
             // 
             // label1
             // 
@@ -82,24 +86,24 @@ namespace ESGARD_STORE
             this.label2.TabIndex = 7;
             this.label2.Text = "Role";
             // 
-            // button5
+            // btnReports
             // 
-            this.button5.Location = new System.Drawing.Point(23, 242);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(292, 43);
-            this.button5.TabIndex = 15;
-            this.button5.Text = "Reports";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnReports.Location = new System.Drawing.Point(23, 242);
+            this.btnReports.Name = "btnReports";
+            this.btnReports.Size = new System.Drawing.Size(292, 43);
+            this.btnReports.TabIndex = 15;
+            this.btnReports.Text = "Reports";
+            this.btnReports.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnMaintainEmployee
             // 
-            this.button4.Location = new System.Drawing.Point(23, 160);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(292, 44);
-            this.button4.TabIndex = 14;
-            this.button4.Text = "Maintain Employees";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnMaintainEmployee.Location = new System.Drawing.Point(23, 160);
+            this.btnMaintainEmployee.Name = "btnMaintainEmployee";
+            this.btnMaintainEmployee.Size = new System.Drawing.Size(292, 44);
+            this.btnMaintainEmployee.TabIndex = 14;
+            this.btnMaintainEmployee.Text = "Maintain Employees";
+            this.btnMaintainEmployee.UseVisualStyleBackColor = true;
+            this.btnMaintainEmployee.Click += new System.EventHandler(this.button4_Click);
             // 
             // pictureBox1
             // 
@@ -121,6 +125,25 @@ namespace ESGARD_STORE
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(228, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "lblNameD";
+            this.label3.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(228, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "lblRoleD";
+            // 
             // Manager_Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -128,11 +151,10 @@ namespace ESGARD_STORE
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnReports);
+            this.Controls.Add(this.btnMaintainEmployee);
             this.Name = "Manager_Dashboard";
             this.Text = "Manager_Dashboard";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -144,12 +166,14 @@ namespace ESGARD_STORE
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnReports;
+        private System.Windows.Forms.Button btnMaintainEmployee;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -29,8 +29,8 @@ namespace ESGARD_STORE
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnAddME = new System.Windows.Forms.Button();
+            this.btnDeleteME = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -44,14 +44,14 @@ namespace ESGARD_STORE
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtLNameME = new System.Windows.Forms.TextBox();
+            this.txtFNameME = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.txtENumberMe = new System.Windows.Forms.TextBox();
+            this.btnSearchME = new System.Windows.Forms.Button();
+            this.btnUpdateME = new System.Windows.Forms.Button();
+            this.btnSignUpME = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -60,23 +60,23 @@ namespace ESGARD_STORE
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnAddME
             // 
-            this.button1.Location = new System.Drawing.Point(315, 423);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Add";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAddME.Location = new System.Drawing.Point(315, 423);
+            this.btnAddME.Name = "btnAddME";
+            this.btnAddME.Size = new System.Drawing.Size(75, 23);
+            this.btnAddME.TabIndex = 0;
+            this.btnAddME.Text = "Add";
+            this.btnAddME.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnDeleteME
             // 
-            this.button2.Location = new System.Drawing.Point(748, 423);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDeleteME.Location = new System.Drawing.Point(748, 423);
+            this.btnDeleteME.Name = "btnDeleteME";
+            this.btnDeleteME.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteME.TabIndex = 1;
+            this.btnDeleteME.Text = "Delete";
+            this.btnDeleteME.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -92,8 +92,8 @@ namespace ESGARD_STORE
             this.groupBox1.Controls.Add(this.textBox5);
             this.groupBox1.Controls.Add(this.textBox4);
             this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtLNameME);
+            this.groupBox1.Controls.Add(this.txtFNameME);
             this.groupBox1.Location = new System.Drawing.Point(12, 75);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(378, 331);
@@ -201,19 +201,19 @@ namespace ESGARD_STORE
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 2;
             // 
-            // textBox2
+            // txtLNameME
             // 
-            this.textBox2.Location = new System.Drawing.Point(223, 86);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.txtLNameME.Location = new System.Drawing.Point(223, 86);
+            this.txtLNameME.Name = "txtLNameME";
+            this.txtLNameME.Size = new System.Drawing.Size(100, 20);
+            this.txtLNameME.TabIndex = 1;
             // 
-            // textBox1
+            // txtFNameME
             // 
-            this.textBox1.Location = new System.Drawing.Point(223, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtFNameME.Location = new System.Drawing.Point(223, 42);
+            this.txtFNameME.Name = "txtFNameME";
+            this.txtFNameME.Size = new System.Drawing.Size(100, 20);
+            this.txtFNameME.TabIndex = 0;
             // 
             // dataGridView1
             // 
@@ -232,40 +232,40 @@ namespace ESGARD_STORE
             this.label7.TabIndex = 7;
             this.label7.Text = "Employee Number:";
             // 
-            // textBox7
+            // txtENumberMe
             // 
-            this.textBox7.Location = new System.Drawing.Point(562, 106);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(147, 20);
-            this.textBox7.TabIndex = 6;
+            this.txtENumberMe.Location = new System.Drawing.Point(562, 106);
+            this.txtENumberMe.Name = "txtENumberMe";
+            this.txtENumberMe.Size = new System.Drawing.Size(147, 20);
+            this.txtENumberMe.TabIndex = 6;
             // 
-            // button3
+            // btnSearchME
             // 
-            this.button3.Location = new System.Drawing.Point(748, 103);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Search";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSearchME.Location = new System.Drawing.Point(748, 103);
+            this.btnSearchME.Name = "btnSearchME";
+            this.btnSearchME.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchME.TabIndex = 8;
+            this.btnSearchME.Text = "Search";
+            this.btnSearchME.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnUpdateME
             // 
-            this.button4.Location = new System.Drawing.Point(417, 423);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Update";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnUpdateME.Location = new System.Drawing.Point(417, 423);
+            this.btnUpdateME.Name = "btnUpdateME";
+            this.btnUpdateME.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateME.TabIndex = 9;
+            this.btnUpdateME.Text = "Update";
+            this.btnUpdateME.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnSignUpME
             // 
-            this.button5.Location = new System.Drawing.Point(12, 474);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(111, 23);
-            this.button5.TabIndex = 22;
-            this.button5.Text = "Sign up";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnSignUpME.Location = new System.Drawing.Point(12, 474);
+            this.btnSignUpME.Name = "btnSignUpME";
+            this.btnSignUpME.Size = new System.Drawing.Size(111, 23);
+            this.btnSignUpME.TabIndex = 22;
+            this.btnSignUpME.Text = "Sign up";
+            this.btnSignUpME.UseVisualStyleBackColor = true;
+            this.btnSignUpME.Click += new System.EventHandler(this.button5_Click);
             // 
             // label9
             // 
@@ -307,18 +307,17 @@ namespace ESGARD_STORE
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnSignUpME);
+            this.Controls.Add(this.btnUpdateME);
+            this.Controls.Add(this.btnSearchME);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtENumberMe);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnDeleteME);
+            this.Controls.Add(this.btnAddME);
             this.Name = "Maintain_Employees";
             this.Text = "Maintain_Employees";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -330,8 +329,8 @@ namespace ESGARD_STORE
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnAddME;
+        private System.Windows.Forms.Button btnDeleteME;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -342,15 +341,15 @@ namespace ESGARD_STORE
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtLNameME;
+        private System.Windows.Forms.TextBox txtFNameME;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox txtENumberMe;
+        private System.Windows.Forms.Button btnSearchME;
+        private System.Windows.Forms.Button btnUpdateME;
+        private System.Windows.Forms.Button btnSignUpME;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;

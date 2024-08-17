@@ -297,7 +297,6 @@ namespace ESGARD_STORE
             this.Controls.Add(this.button1);
             this.Name = "Maintain_Clients";
             this.Text = "Maintain Clients";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Maintain_Clients_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

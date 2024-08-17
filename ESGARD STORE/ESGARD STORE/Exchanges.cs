@@ -10,17 +10,16 @@ using System.Windows.Forms;
 
 namespace ESGARD_STORE
 {
-    public partial class Returns : Form
+    public partial class Exchanges : Form
     {
-        public Returns()
+        public Exchanges()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Exchanges_Load(object sender, EventArgs e)
         {
-            Exchanges ex = new Exchanges();
-            ex.ShowDialog();
+
         }
     }
 }

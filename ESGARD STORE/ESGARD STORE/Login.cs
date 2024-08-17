@@ -22,18 +22,45 @@ namespace ESGARD_STORE
             string name = txtUser.Text;
             string Password = txtPass.Text;
 
+            
+
             if (Password == "12345" && name == "thato")
             {
 
                 Manager_Dashboard mds = new Manager_Dashboard();
                 mds.ShowDialog();
             }
-            else
+            else if(Password == "123456" && name == "tshepo") 
             {
                 Dashboard ds = new Dashboard();
                 ds.ShowDialog();
             }
             
+            else
+            {
+                lblName.Text = "Does not exist!!!!!";
+            }
+
+
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                lblName.Text = "Please fill in a name!!";
+                lblName.Show();
+            }
+            /*
+             * else if(!validNames.contains(name))
+             * {
+             *      lblName.text = "Person doesn't exist!!";
+             * }
+             * 
+             */
+
+            if (string.IsNullOrWhiteSpace(Password))
+            {
+                lblPassword.Text = "Invalid password!!";
+                lblPassword.Show();
+            }
+
         }
 
         private void lLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

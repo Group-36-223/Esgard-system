@@ -29,22 +29,22 @@ namespace ESGARD_STORE
         /// </summary>
         private void InitializeComponent()
         {
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnBTDMI = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDesrMInventory = new System.Windows.Forms.TextBox();
+            this.txtColorMI = new System.Windows.Forms.TextBox();
+            this.txtSizeMI = new System.Windows.Forms.TextBox();
+            this.txtPriceMI = new System.Windows.Forms.TextBox();
+            this.btnAddMI = new System.Windows.Forms.Button();
+            this.txtBarMInventory = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnUpdateMI = new System.Windows.Forms.Button();
+            this.btnProceedMI = new System.Windows.Forms.Button();
+            this.btnDeleteMI = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,24 +53,24 @@ namespace ESGARD_STORE
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button5
+            // btnBTDMI
             // 
-            this.button5.Location = new System.Drawing.Point(12, 432);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(111, 23);
-            this.button5.TabIndex = 31;
-            this.button5.Text = "Back To Dashboard";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnBTDMI.Location = new System.Drawing.Point(12, 432);
+            this.btnBTDMI.Name = "btnBTDMI";
+            this.btnBTDMI.Size = new System.Drawing.Size(111, 23);
+            this.btnBTDMI.TabIndex = 31;
+            this.btnBTDMI.Text = "Back To Dashboard";
+            this.btnBTDMI.UseVisualStyleBackColor = true;
+            this.btnBTDMI.Click += new System.EventHandler(this.button5_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtDesrMInventory);
+            this.panel1.Controls.Add(this.txtColorMI);
+            this.panel1.Controls.Add(this.txtSizeMI);
+            this.panel1.Controls.Add(this.txtPriceMI);
+            this.panel1.Controls.Add(this.btnAddMI);
+            this.panel1.Controls.Add(this.txtBarMInventory);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -81,57 +81,57 @@ namespace ESGARD_STORE
             this.panel1.Size = new System.Drawing.Size(345, 264);
             this.panel1.TabIndex = 30;
             // 
-            // textBox7
+            // txtDesrMInventory
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox7.Location = new System.Drawing.Point(141, 81);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(179, 20);
-            this.textBox7.TabIndex = 23;
+            this.txtDesrMInventory.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDesrMInventory.Location = new System.Drawing.Point(141, 81);
+            this.txtDesrMInventory.Name = "txtDesrMInventory";
+            this.txtDesrMInventory.ReadOnly = true;
+            this.txtDesrMInventory.Size = new System.Drawing.Size(179, 20);
+            this.txtDesrMInventory.TabIndex = 23;
             // 
-            // textBox6
+            // txtColorMI
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox6.Location = new System.Drawing.Point(141, 119);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(179, 20);
-            this.textBox6.TabIndex = 22;
+            this.txtColorMI.BackColor = System.Drawing.SystemColors.Window;
+            this.txtColorMI.Location = new System.Drawing.Point(141, 119);
+            this.txtColorMI.Name = "txtColorMI";
+            this.txtColorMI.ReadOnly = true;
+            this.txtColorMI.Size = new System.Drawing.Size(179, 20);
+            this.txtColorMI.TabIndex = 22;
             // 
-            // textBox5
+            // txtSizeMI
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox5.Location = new System.Drawing.Point(141, 160);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(179, 20);
-            this.textBox5.TabIndex = 21;
+            this.txtSizeMI.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSizeMI.Location = new System.Drawing.Point(141, 160);
+            this.txtSizeMI.Name = "txtSizeMI";
+            this.txtSizeMI.ReadOnly = true;
+            this.txtSizeMI.Size = new System.Drawing.Size(179, 20);
+            this.txtSizeMI.TabIndex = 21;
             // 
-            // textBox4
+            // txtPriceMI
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox4.Location = new System.Drawing.Point(141, 194);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(179, 20);
-            this.textBox4.TabIndex = 20;
+            this.txtPriceMI.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPriceMI.Location = new System.Drawing.Point(141, 194);
+            this.txtPriceMI.Name = "txtPriceMI";
+            this.txtPriceMI.ReadOnly = true;
+            this.txtPriceMI.Size = new System.Drawing.Size(179, 20);
+            this.txtPriceMI.TabIndex = 20;
             // 
-            // button3
+            // btnAddMI
             // 
-            this.button3.Location = new System.Drawing.Point(245, 220);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Add ";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnAddMI.Location = new System.Drawing.Point(245, 220);
+            this.btnAddMI.Name = "btnAddMI";
+            this.btnAddMI.Size = new System.Drawing.Size(75, 23);
+            this.btnAddMI.TabIndex = 16;
+            this.btnAddMI.Text = "Add ";
+            this.btnAddMI.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtBarMInventory
             // 
-            this.textBox1.Location = new System.Drawing.Point(141, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 20);
-            this.textBox1.TabIndex = 19;
+            this.txtBarMInventory.Location = new System.Drawing.Point(141, 38);
+            this.txtBarMInventory.Name = "txtBarMInventory";
+            this.txtBarMInventory.Size = new System.Drawing.Size(179, 20);
+            this.txtBarMInventory.TabIndex = 19;
             // 
             // label6
             // 
@@ -178,33 +178,33 @@ namespace ESGARD_STORE
             this.label2.TabIndex = 14;
             this.label2.Text = "Bar Code";
             // 
-            // button1
+            // btnUpdateMI
             // 
-            this.button1.Location = new System.Drawing.Point(266, 382);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 28;
-            this.button1.Text = "Update";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUpdateMI.Location = new System.Drawing.Point(266, 382);
+            this.btnUpdateMI.Name = "btnUpdateMI";
+            this.btnUpdateMI.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateMI.TabIndex = 28;
+            this.btnUpdateMI.Text = "Update";
+            this.btnUpdateMI.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnProceedMI
             // 
-            this.button4.Location = new System.Drawing.Point(650, 415);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(138, 36);
-            this.button4.TabIndex = 27;
-            this.button4.Text = "PROCEED";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnProceedMI.Location = new System.Drawing.Point(650, 415);
+            this.btnProceedMI.Name = "btnProceedMI";
+            this.btnProceedMI.Size = new System.Drawing.Size(138, 36);
+            this.btnProceedMI.TabIndex = 27;
+            this.btnProceedMI.Text = "PROCEED";
+            this.btnProceedMI.UseVisualStyleBackColor = true;
+            this.btnProceedMI.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button2
+            // btnDeleteMI
             // 
-            this.button2.Location = new System.Drawing.Point(347, 383);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 26;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDeleteMI.Location = new System.Drawing.Point(347, 383);
+            this.btnDeleteMI.Name = "btnDeleteMI";
+            this.btnDeleteMI.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteMI.TabIndex = 26;
+            this.btnDeleteMI.Text = "Delete";
+            this.btnDeleteMI.UseVisualStyleBackColor = true;
             // 
             // listBox1
             // 
@@ -254,15 +254,14 @@ namespace ESGARD_STORE
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnBTDMI);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnUpdateMI);
+            this.Controls.Add(this.btnProceedMI);
+            this.Controls.Add(this.btnDeleteMI);
             this.Controls.Add(this.listBox1);
             this.Name = "Maintain_Inventory";
             this.Text = "Maintain_Inventory";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Maintain_Inventory_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -275,22 +274,22 @@ namespace ESGARD_STORE
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnBTDMI;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDesrMInventory;
+        private System.Windows.Forms.TextBox txtColorMI;
+        private System.Windows.Forms.TextBox txtSizeMI;
+        private System.Windows.Forms.TextBox txtPriceMI;
+        private System.Windows.Forms.Button btnAddMI;
+        private System.Windows.Forms.TextBox txtBarMInventory;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUpdateMI;
+        private System.Windows.Forms.Button btnProceedMI;
+        private System.Windows.Forms.Button btnDeleteMI;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

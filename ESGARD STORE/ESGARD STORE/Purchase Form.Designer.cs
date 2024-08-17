@@ -30,23 +30,23 @@ namespace ESGARD_STORE
         private void InitializeComponent()
         {
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnATCartP = new System.Windows.Forms.Button();
+            this.btnProceed = new System.Windows.Forms.Button();
+            this.btnClear = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDescrP = new System.Windows.Forms.TextBox();
+            this.txtColorP = new System.Windows.Forms.TextBox();
+            this.txtSizeP = new System.Windows.Forms.TextBox();
+            this.txtPriceP = new System.Windows.Forms.TextBox();
+            this.txtBarP = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnBTD = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -62,42 +62,42 @@ namespace ESGARD_STORE
             this.listBox1.Size = new System.Drawing.Size(410, 264);
             this.listBox1.TabIndex = 0;
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.Location = new System.Drawing.Point(347, 387);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(347, 387);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 15;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnATCartP
             // 
-            this.button3.Location = new System.Drawing.Point(245, 220);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Add To Cart";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnATCartP.Location = new System.Drawing.Point(245, 220);
+            this.btnATCartP.Name = "btnATCartP";
+            this.btnATCartP.Size = new System.Drawing.Size(75, 23);
+            this.btnATCartP.TabIndex = 16;
+            this.btnATCartP.Text = "Add To Cart";
+            this.btnATCartP.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnProceed
             // 
-            this.button4.Location = new System.Drawing.Point(650, 436);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(138, 36);
-            this.button4.TabIndex = 17;
-            this.button4.Text = "PROCEED";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            this.btnProceed.Location = new System.Drawing.Point(650, 436);
+            this.btnProceed.Name = "btnProceed";
+            this.btnProceed.Size = new System.Drawing.Size(138, 36);
+            this.btnProceed.TabIndex = 17;
+            this.btnProceed.Text = "PROCEED";
+            this.btnProceed.UseVisualStyleBackColor = true;
+            this.btnProceed.Click += new System.EventHandler(this.button4_Click_1);
             // 
-            // button1
+            // btnClear
             // 
-            this.button1.Location = new System.Drawing.Point(266, 387);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Clear";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnClear.Location = new System.Drawing.Point(266, 387);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(75, 23);
+            this.btnClear.TabIndex = 18;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -112,12 +112,12 @@ namespace ESGARD_STORE
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtDescrP);
+            this.panel1.Controls.Add(this.txtColorP);
+            this.panel1.Controls.Add(this.txtSizeP);
+            this.panel1.Controls.Add(this.txtPriceP);
+            this.panel1.Controls.Add(this.btnATCartP);
+            this.panel1.Controls.Add(this.txtBarP);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -128,44 +128,44 @@ namespace ESGARD_STORE
             this.panel1.Size = new System.Drawing.Size(345, 264);
             this.panel1.TabIndex = 20;
             // 
-            // textBox7
+            // txtDescrP
             // 
-            this.textBox7.Location = new System.Drawing.Point(141, 81);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.ReadOnly = true;
-            this.textBox7.Size = new System.Drawing.Size(179, 20);
-            this.textBox7.TabIndex = 23;
+            this.txtDescrP.Location = new System.Drawing.Point(141, 81);
+            this.txtDescrP.Name = "txtDescrP";
+            this.txtDescrP.ReadOnly = true;
+            this.txtDescrP.Size = new System.Drawing.Size(179, 20);
+            this.txtDescrP.TabIndex = 23;
             // 
-            // textBox6
+            // txtColorP
             // 
-            this.textBox6.Location = new System.Drawing.Point(141, 119);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(179, 20);
-            this.textBox6.TabIndex = 22;
+            this.txtColorP.Location = new System.Drawing.Point(141, 119);
+            this.txtColorP.Name = "txtColorP";
+            this.txtColorP.ReadOnly = true;
+            this.txtColorP.Size = new System.Drawing.Size(179, 20);
+            this.txtColorP.TabIndex = 22;
             // 
-            // textBox5
+            // txtSizeP
             // 
-            this.textBox5.Location = new System.Drawing.Point(141, 160);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(179, 20);
-            this.textBox5.TabIndex = 21;
+            this.txtSizeP.Location = new System.Drawing.Point(141, 160);
+            this.txtSizeP.Name = "txtSizeP";
+            this.txtSizeP.ReadOnly = true;
+            this.txtSizeP.Size = new System.Drawing.Size(179, 20);
+            this.txtSizeP.TabIndex = 21;
             // 
-            // textBox4
+            // txtPriceP
             // 
-            this.textBox4.Location = new System.Drawing.Point(141, 194);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(179, 20);
-            this.textBox4.TabIndex = 20;
+            this.txtPriceP.Location = new System.Drawing.Point(141, 194);
+            this.txtPriceP.Name = "txtPriceP";
+            this.txtPriceP.ReadOnly = true;
+            this.txtPriceP.Size = new System.Drawing.Size(179, 20);
+            this.txtPriceP.TabIndex = 20;
             // 
-            // textBox1
+            // txtBarP
             // 
-            this.textBox1.Location = new System.Drawing.Point(141, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 20);
-            this.textBox1.TabIndex = 19;
+            this.txtBarP.Location = new System.Drawing.Point(141, 38);
+            this.txtBarP.Name = "txtBarP";
+            this.txtBarP.Size = new System.Drawing.Size(179, 20);
+            this.txtBarP.TabIndex = 19;
             // 
             // label6
             // 
@@ -212,15 +212,15 @@ namespace ESGARD_STORE
             this.label2.TabIndex = 14;
             this.label2.Text = "Bar Code";
             // 
-            // button5
+            // btnBTD
             // 
-            this.button5.Location = new System.Drawing.Point(12, 436);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(111, 23);
-            this.button5.TabIndex = 21;
-            this.button5.Text = "Back To Dashboard";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnBTD.Location = new System.Drawing.Point(12, 436);
+            this.btnBTD.Name = "btnBTD";
+            this.btnBTD.Size = new System.Drawing.Size(111, 23);
+            this.btnBTD.TabIndex = 21;
+            this.btnBTD.Text = "Back To Dashboard";
+            this.btnBTD.UseVisualStyleBackColor = true;
+            this.btnBTD.Click += new System.EventHandler(this.button5_Click);
             // 
             // label8
             // 
@@ -262,16 +262,15 @@ namespace ESGARD_STORE
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.btnBTD);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.btnProceed);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.listBox1);
             this.Name = "Purchase_Form";
             this.Text = "Purchase_Form";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -283,23 +282,23 @@ namespace ESGARD_STORE
         #endregion
 
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnATCartP;
+        private System.Windows.Forms.Button btnProceed;
+        private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDescrP;
+        private System.Windows.Forms.TextBox txtColorP;
+        private System.Windows.Forms.TextBox txtSizeP;
+        private System.Windows.Forms.TextBox txtPriceP;
+        private System.Windows.Forms.TextBox txtBarP;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnBTD;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;

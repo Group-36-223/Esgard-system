@@ -52,6 +52,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Exchanges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exchanges.Designer.cs">
+      <DependentUpon>Exchanges.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maintain Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exchanges.resx">
+      <DependentUpon>Exchanges.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maintain Inventory.resx">
       <DependentUpon>Maintain Inventory.cs</DependentUpon>

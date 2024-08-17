@@ -30,9 +30,9 @@ namespace ESGARD_STORE
         private void InitializeComponent()
         {
             this.lblPayment_Type = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cBSPayType = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtANPayType = new System.Windows.Forms.TextBox();
             this.btnAccept = new System.Windows.Forms.Button();
             this.btnReject = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,13 +51,13 @@ namespace ESGARD_STORE
             this.lblPayment_Type.TabIndex = 0;
             this.lblPayment_Type.Text = "SELECT PAYMENT TYPE:";
             // 
-            // comboBox1
+            // cBSPayType
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(124, 172);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(194, 21);
-            this.comboBox1.TabIndex = 1;
+            this.cBSPayType.FormattingEnabled = true;
+            this.cBSPayType.Location = new System.Drawing.Point(124, 172);
+            this.cBSPayType.Name = "cBSPayType";
+            this.cBSPayType.Size = new System.Drawing.Size(194, 21);
+            this.cBSPayType.TabIndex = 1;
             // 
             // label1
             // 
@@ -69,17 +69,17 @@ namespace ESGARD_STORE
             this.label1.TabIndex = 2;
             this.label1.Text = "ADD NEW PAYMENT TYPE";
             // 
-            // textBox1
+            // txtANPayType
             // 
-            this.textBox1.Location = new System.Drawing.Point(124, 269);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtANPayType.Location = new System.Drawing.Point(124, 269);
+            this.txtANPayType.Name = "txtANPayType";
+            this.txtANPayType.Size = new System.Drawing.Size(194, 20);
+            this.txtANPayType.TabIndex = 3;
             // 
             // btnAccept
             // 
             this.btnAccept.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAccept.Location = new System.Drawing.Point(254, 306);
+            this.btnAccept.Location = new System.Drawing.Point(254, 307);
             this.btnAccept.Name = "btnAccept";
             this.btnAccept.Size = new System.Drawing.Size(98, 33);
             this.btnAccept.TabIndex = 4;
@@ -140,13 +140,12 @@ namespace ESGARD_STORE
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnReject);
             this.Controls.Add(this.btnAccept);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtANPayType);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cBSPayType);
             this.Controls.Add(this.lblPayment_Type);
             this.Name = "Payment_Type";
             this.Text = "Payment Type ";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -156,9 +155,9 @@ namespace ESGARD_STORE
         #endregion
 
         private System.Windows.Forms.Label lblPayment_Type;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cBSPayType;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtANPayType;
         private System.Windows.Forms.Button btnAccept;
         private System.Windows.Forms.Button btnReject;
         private System.Windows.Forms.Label label4;

@@ -29,16 +29,16 @@ namespace ESGARD_STORE
         /// </summary>
         private void InitializeComponent()
         {
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtSClientN = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDescrR = new System.Windows.Forms.TextBox();
+            this.txtColorR = new System.Windows.Forms.TextBox();
+            this.txtSizeR = new System.Windows.Forms.TextBox();
+            this.txtPriceR = new System.Windows.Forms.TextBox();
+            this.btnATCart = new System.Windows.Forms.Button();
+            this.txtBarcode = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,19 +46,19 @@ namespace ESGARD_STORE
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtClient = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.txtINumber = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtCNumber = new System.Windows.Forms.TextBox();
+            this.txtLName = new System.Windows.Forms.TextBox();
+            this.txtFName = new System.Windows.Forms.TextBox();
+            this.btnMReturn = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -67,14 +67,14 @@ namespace ESGARD_STORE
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button3
+            // btnSearch
             // 
-            this.button3.Location = new System.Drawing.Point(697, 58);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Search";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnSearch.Location = new System.Drawing.Point(697, 58);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 11;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -85,21 +85,21 @@ namespace ESGARD_STORE
             this.label7.TabIndex = 10;
             this.label7.Text = "Client Number:";
             // 
-            // textBox7
+            // txtSClientN
             // 
-            this.textBox7.Location = new System.Drawing.Point(511, 61);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(147, 20);
-            this.textBox7.TabIndex = 9;
+            this.txtSClientN.Location = new System.Drawing.Point(511, 61);
+            this.txtSClientN.Name = "txtSClientN";
+            this.txtSClientN.Size = new System.Drawing.Size(147, 20);
+            this.txtSClientN.TabIndex = 9;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.textBox6);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtDescrR);
+            this.panel1.Controls.Add(this.txtColorR);
+            this.panel1.Controls.Add(this.txtSizeR);
+            this.panel1.Controls.Add(this.txtPriceR);
+            this.panel1.Controls.Add(this.btnATCart);
+            this.panel1.Controls.Add(this.txtBarcode);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -110,53 +110,53 @@ namespace ESGARD_STORE
             this.panel1.Size = new System.Drawing.Size(345, 250);
             this.panel1.TabIndex = 22;
             // 
-            // textBox1
+            // txtDescrR
             // 
-            this.textBox1.Location = new System.Drawing.Point(141, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(179, 20);
-            this.textBox1.TabIndex = 23;
+            this.txtDescrR.Location = new System.Drawing.Point(141, 81);
+            this.txtDescrR.Name = "txtDescrR";
+            this.txtDescrR.ReadOnly = true;
+            this.txtDescrR.Size = new System.Drawing.Size(179, 20);
+            this.txtDescrR.TabIndex = 23;
             // 
-            // textBox6
+            // txtColorR
             // 
-            this.textBox6.Location = new System.Drawing.Point(141, 119);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(179, 20);
-            this.textBox6.TabIndex = 22;
+            this.txtColorR.Location = new System.Drawing.Point(141, 119);
+            this.txtColorR.Name = "txtColorR";
+            this.txtColorR.ReadOnly = true;
+            this.txtColorR.Size = new System.Drawing.Size(179, 20);
+            this.txtColorR.TabIndex = 22;
             // 
-            // textBox5
+            // txtSizeR
             // 
-            this.textBox5.Location = new System.Drawing.Point(141, 160);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(179, 20);
-            this.textBox5.TabIndex = 21;
+            this.txtSizeR.Location = new System.Drawing.Point(141, 160);
+            this.txtSizeR.Name = "txtSizeR";
+            this.txtSizeR.ReadOnly = true;
+            this.txtSizeR.Size = new System.Drawing.Size(179, 20);
+            this.txtSizeR.TabIndex = 21;
             // 
-            // textBox4
+            // txtPriceR
             // 
-            this.textBox4.Location = new System.Drawing.Point(141, 194);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(179, 20);
-            this.textBox4.TabIndex = 20;
+            this.txtPriceR.Location = new System.Drawing.Point(141, 194);
+            this.txtPriceR.Name = "txtPriceR";
+            this.txtPriceR.ReadOnly = true;
+            this.txtPriceR.Size = new System.Drawing.Size(179, 20);
+            this.txtPriceR.TabIndex = 20;
             // 
-            // button1
+            // btnATCart
             // 
-            this.button1.Location = new System.Drawing.Point(245, 220);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Add To Cart";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnATCart.Location = new System.Drawing.Point(245, 220);
+            this.btnATCart.Name = "btnATCart";
+            this.btnATCart.Size = new System.Drawing.Size(75, 23);
+            this.btnATCart.TabIndex = 16;
+            this.btnATCart.Text = "Add To Cart";
+            this.btnATCart.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // txtBarcode
             // 
-            this.textBox2.Location = new System.Drawing.Point(141, 38);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 20);
-            this.textBox2.TabIndex = 19;
+            this.txtBarcode.Location = new System.Drawing.Point(141, 38);
+            this.txtBarcode.Name = "txtBarcode";
+            this.txtBarcode.Size = new System.Drawing.Size(179, 20);
+            this.txtBarcode.TabIndex = 19;
             // 
             // label6
             // 
@@ -216,18 +216,18 @@ namespace ESGARD_STORE
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtClient);
             this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label12);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox9);
-            this.groupBox1.Controls.Add(this.textBox10);
-            this.groupBox1.Controls.Add(this.textBox11);
-            this.groupBox1.Controls.Add(this.textBox12);
+            this.groupBox1.Controls.Add(this.txtINumber);
+            this.groupBox1.Controls.Add(this.txtEmail);
+            this.groupBox1.Controls.Add(this.txtCNumber);
+            this.groupBox1.Controls.Add(this.txtLName);
+            this.groupBox1.Controls.Add(this.txtFName);
             this.groupBox1.Location = new System.Drawing.Point(18, 109);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(342, 282);
@@ -235,13 +235,13 @@ namespace ESGARD_STORE
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Clients Details";
             // 
-            // textBox3
+            // txtClient
             // 
-            this.textBox3.Location = new System.Drawing.Point(223, 201);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtClient.Location = new System.Drawing.Point(223, 201);
+            this.txtClient.Name = "txtClient";
+            this.txtClient.ReadOnly = true;
+            this.txtClient.Size = new System.Drawing.Size(100, 20);
+            this.txtClient.TabIndex = 11;
             // 
             // label8
             // 
@@ -297,50 +297,51 @@ namespace ESGARD_STORE
             this.label13.TabIndex = 5;
             this.label13.Text = "First Name:";
             // 
-            // textBox8
+            // txtINumber
             // 
-            this.textBox8.Location = new System.Drawing.Point(223, 112);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 4;
+            this.txtINumber.Location = new System.Drawing.Point(223, 112);
+            this.txtINumber.Name = "txtINumber";
+            this.txtINumber.Size = new System.Drawing.Size(100, 20);
+            this.txtINumber.TabIndex = 4;
             // 
-            // textBox9
+            // txtEmail
             // 
-            this.textBox9.Location = new System.Drawing.Point(223, 141);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 3;
+            this.txtEmail.Location = new System.Drawing.Point(223, 141);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.TabIndex = 3;
             // 
-            // textBox10
+            // txtCNumber
             // 
-            this.textBox10.Location = new System.Drawing.Point(223, 171);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 2;
+            this.txtCNumber.Location = new System.Drawing.Point(223, 171);
+            this.txtCNumber.Name = "txtCNumber";
+            this.txtCNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtCNumber.TabIndex = 2;
             // 
-            // textBox11
+            // txtLName
             // 
-            this.textBox11.Location = new System.Drawing.Point(223, 79);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 1;
+            this.txtLName.Location = new System.Drawing.Point(223, 79);
+            this.txtLName.Name = "txtLName";
+            this.txtLName.Size = new System.Drawing.Size(100, 20);
+            this.txtLName.TabIndex = 1;
             // 
-            // textBox12
+            // txtFName
             // 
-            this.textBox12.Location = new System.Drawing.Point(223, 42);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 0;
+            this.txtFName.Location = new System.Drawing.Point(223, 42);
+            this.txtFName.Name = "txtFName";
+            this.txtFName.Size = new System.Drawing.Size(100, 20);
+            this.txtFName.TabIndex = 0;
             // 
-            // button2
+            // btnMReturn
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(634, 458);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 23);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Make Return";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnMReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMReturn.Location = new System.Drawing.Point(634, 458);
+            this.btnMReturn.Name = "btnMReturn";
+            this.btnMReturn.Size = new System.Drawing.Size(114, 23);
+            this.btnMReturn.TabIndex = 24;
+            this.btnMReturn.Text = "Make Return";
+            this.btnMReturn.UseVisualStyleBackColor = true;
+            this.btnMReturn.Click += new System.EventHandler(this.button2_Click);
             // 
             // label14
             // 
@@ -382,16 +383,15 @@ namespace ESGARD_STORE
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnMReturn);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.txtSClientN);
             this.Name = "Returns";
             this.Text = "Returns";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -404,16 +404,16 @@ namespace ESGARD_STORE
 
         #endregion
 
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtSClientN;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDescrR;
+        private System.Windows.Forms.TextBox txtColorR;
+        private System.Windows.Forms.TextBox txtSizeR;
+        private System.Windows.Forms.TextBox txtPriceR;
+        private System.Windows.Forms.Button btnATCart;
+        private System.Windows.Forms.TextBox txtBarcode;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -421,19 +421,19 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtClient;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtINumber;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtCNumber;
+        private System.Windows.Forms.TextBox txtLName;
+        private System.Windows.Forms.TextBox txtFName;
+        private System.Windows.Forms.Button btnMReturn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;

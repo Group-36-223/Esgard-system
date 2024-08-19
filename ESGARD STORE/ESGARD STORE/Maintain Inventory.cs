@@ -24,14 +24,20 @@ namespace ESGARD_STORE
 
         private void button4_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            //Dashboard ds = new Dashboard();
+            //ds.ShowDialog();
+            this.Close(); 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
             Dashboard ds = new Dashboard();
             ds.ShowDialog();
-            this.Hide(); 
         }
     }
 }

@@ -143,6 +143,7 @@ namespace ESGARD_STORE
             this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 10;
             this.label4.Text = "lblRoleD";
+            this.label4.Visible = false;
             // 
             // Manager_Dashboard
             // 

@@ -22,54 +22,44 @@ namespace ESGARD_STORE
             string name = txtUser.Text;
             string Password = txtPass.Text;
 
-            
+              if (Password == "12345" && name == "thato")
+              {
 
-            if (Password == "12345" && name == "thato")
-            {
+                  Manager_Dashboard mds = new Manager_Dashboard();
+                  mds.ShowDialog();
+              }
+              else if(Password == "123456" && name == "tshepo") 
+              {
+                   Dashboard ds = new Dashboard();
+                   ds.ShowDialog();    
+               }
 
-                Manager_Dashboard mds = new Manager_Dashboard();
-                mds.ShowDialog();
-            }
-            else if(Password == "123456" && name == "tshepo") 
-            {
-                Dashboard ds = new Dashboard();
-                ds.ShowDialog();
-            }
-            
-            else
-            {
+              else
+              {
                 lblName.Text = "Does not exist!!!!!";
-            }
+                lblPassword.Text = "does not exist";
+              }
 
+              if (string.IsNullOrWhiteSpace(name))
+              {
+                   lblName.Text = "Please fill in a name!!";
+                   lblName.Show();
+              }               
 
-            if (string.IsNullOrWhiteSpace(name))
-            {
-                lblName.Text = "Please fill in a name!!";
-                lblName.Show();
-            }
-            /*
-             * else if(!validNames.contains(name))
-             * {
-             *      lblName.text = "Person doesn't exist!!";
-             * }
-             * 
-             */
+              if (string.IsNullOrWhiteSpace(Password))
+              {
+                  lblPassword.Text = "Invalid password!!";
+                  lblPassword.Show();
+              }
 
-            if (string.IsNullOrWhiteSpace(Password))
-            {
-                lblPassword.Text = "Invalid password!!";
-                lblPassword.Show();
-            }
-
-        }
-
-        private void lLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Maintain_Employees ms = new Maintain_Employees();
-            ms.ShowDialog();
         }
 
         private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUser_TextChanged(object sender, EventArgs e)
         {
 
         }

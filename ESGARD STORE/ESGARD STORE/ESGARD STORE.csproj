@@ -64,17 +64,17 @@
     <Compile Include="Maintain Inventory.Designer.cs">
       <DependentUpon>Maintain Inventory.cs</DependentUpon>
     </Compile>
+    <Compile Include="MaintainPType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintainPType.Designer.cs">
+      <DependentUpon>MaintainPType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Manager Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Manager Dashboard.Designer.cs">
       <DependentUpon>Manager Dashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Payment Type.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Payment Type.Designer.cs">
-      <DependentUpon>Payment Type.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -117,11 +117,11 @@
     <EmbeddedResource Include="Maintain Inventory.resx">
       <DependentUpon>Maintain Inventory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MaintainPType.resx">
+      <DependentUpon>MaintainPType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Manager Dashboard.resx">
       <DependentUpon>Manager Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Payment Type.resx">
-      <DependentUpon>Payment Type.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

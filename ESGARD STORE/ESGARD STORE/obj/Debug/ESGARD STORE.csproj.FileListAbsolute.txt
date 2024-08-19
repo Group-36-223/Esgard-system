@@ -40,8 +40,8 @@ C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STO
 C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.csproj.CoreCompileInputs.cache
 C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.exe
 C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.pdb
-C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Payment_Type.resources
 C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Returns.resources
 C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Maintain_Inventory.resources
 C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Manager_Dashboard.resources
 C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Exchanges.resources
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.MaintainPType.resources

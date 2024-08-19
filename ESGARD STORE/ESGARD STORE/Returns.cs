@@ -21,6 +21,18 @@ namespace ESGARD_STORE
         {
             Exchanges ex = new Exchanges();
             ex.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+             Dashboard ds = new Dashboard();
+            ds.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

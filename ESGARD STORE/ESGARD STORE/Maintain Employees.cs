@@ -19,8 +19,15 @@ namespace ESGARD_STORE
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Login l = new Login();
-            l.ShowDialog();
+            Manager_Dashboard mds = new Manager_Dashboard();
+            mds.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Dashboard ds = new Dashboard();
+            ds.ShowDialog();
         }
     }
 }

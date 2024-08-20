@@ -27,5 +27,11 @@ namespace ESGARD_STORE
         {
             this.Close();
         }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            Reports r = new Reports();
+            r.ShowDialog();
+        }
     }
 }

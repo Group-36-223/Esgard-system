@@ -45,3 +45,4 @@ C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STO
 C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Manager_Dashboard.resources
 C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Exchanges.resources
 C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.MaintainPType.resources
+C:\Users\Grade12teacher\Desktop\32395620 - S.Satekge 223\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Reports.resources

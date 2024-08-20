@@ -34,8 +34,6 @@ namespace ESGARD_STORE
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            this.lblNo_Profile = new System.Windows.Forms.Label();
-            this.ILblSignUp = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
@@ -68,6 +66,7 @@ namespace ESGARD_STORE
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(240, 20);
             this.txtUser.TabIndex = 4;
+            this.txtUser.TextChanged += new System.EventHandler(this.txtUser_TextChanged);
             // 
             // txtPass
             // 
@@ -86,28 +85,6 @@ namespace ESGARD_STORE
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // lblNo_Profile
-            // 
-            this.lblNo_Profile.AutoSize = true;
-            this.lblNo_Profile.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNo_Profile.Location = new System.Drawing.Point(339, 396);
-            this.lblNo_Profile.Name = "lblNo_Profile";
-            this.lblNo_Profile.Size = new System.Drawing.Size(85, 20);
-            this.lblNo_Profile.TabIndex = 8;
-            this.lblNo_Profile.Text = "No profile?";
-            // 
-            // ILblSignUp
-            // 
-            this.ILblSignUp.AutoSize = true;
-            this.ILblSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ILblSignUp.Location = new System.Drawing.Point(442, 396);
-            this.ILblSignUp.Name = "ILblSignUp";
-            this.ILblSignUp.Size = new System.Drawing.Size(66, 20);
-            this.ILblSignUp.TabIndex = 9;
-            this.ILblSignUp.TabStop = true;
-            this.ILblSignUp.Text = "Sign Up";
-            this.ILblSignUp.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lLbl_LinkClicked);
             // 
             // label1
             // 
@@ -172,8 +149,6 @@ namespace ESGARD_STORE
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ILblSignUp);
-            this.Controls.Add(this.lblNo_Profile);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.txtUser);
@@ -198,8 +173,6 @@ namespace ESGARD_STORE
         private System.Windows.Forms.TextBox txtUser;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Label lblNo_Profile;
-        private System.Windows.Forms.LinkLabel ILblSignUp;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblName;

@@ -39,10 +39,10 @@ namespace ESGARD_STORE
             this.txtBarMInventory = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnUpdateMI = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnUpdateMI = new System.Windows.Forms.Button();
             this.btnProceedMI = new System.Windows.Forms.Button();
             this.btnDeleteMI = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
@@ -58,7 +58,7 @@ namespace ESGARD_STORE
             // 
             // btnBTDMI
             // 
-            this.btnBTDMI.Location = new System.Drawing.Point(12, 432);
+            this.btnBTDMI.Location = new System.Drawing.Point(12, 421);
             this.btnBTDMI.Name = "btnBTDMI";
             this.btnBTDMI.Size = new System.Drawing.Size(111, 23);
             this.btnBTDMI.TabIndex = 31;
@@ -80,7 +80,7 @@ namespace ESGARD_STORE
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(443, 113);
+            this.panel1.Location = new System.Drawing.Point(12, 134);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(345, 264);
             this.panel1.TabIndex = 30;
@@ -155,6 +155,15 @@ namespace ESGARD_STORE
             this.label5.TabIndex = 17;
             this.label5.Text = "Color";
             // 
+            // btnUpdateMI
+            // 
+            this.btnUpdateMI.Location = new System.Drawing.Point(141, 220);
+            this.btnUpdateMI.Name = "btnUpdateMI";
+            this.btnUpdateMI.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateMI.TabIndex = 28;
+            this.btnUpdateMI.Text = "Update";
+            this.btnUpdateMI.UseVisualStyleBackColor = true;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -182,20 +191,11 @@ namespace ESGARD_STORE
             this.label2.TabIndex = 14;
             this.label2.Text = "Bar Code";
             // 
-            // btnUpdateMI
-            // 
-            this.btnUpdateMI.Location = new System.Drawing.Point(141, 220);
-            this.btnUpdateMI.Name = "btnUpdateMI";
-            this.btnUpdateMI.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdateMI.TabIndex = 28;
-            this.btnUpdateMI.Text = "Update";
-            this.btnUpdateMI.UseVisualStyleBackColor = true;
-            // 
             // btnProceedMI
             // 
-            this.btnProceedMI.Location = new System.Drawing.Point(650, 415);
+            this.btnProceedMI.Location = new System.Drawing.Point(662, 421);
             this.btnProceedMI.Name = "btnProceedMI";
-            this.btnProceedMI.Size = new System.Drawing.Size(138, 36);
+            this.btnProceedMI.Size = new System.Drawing.Size(113, 23);
             this.btnProceedMI.TabIndex = 27;
             this.btnProceedMI.Text = "PROCEED";
             this.btnProceedMI.UseVisualStyleBackColor = true;
@@ -203,7 +203,7 @@ namespace ESGARD_STORE
             // 
             // btnDeleteMI
             // 
-            this.btnDeleteMI.Location = new System.Drawing.Point(347, 421);
+            this.btnDeleteMI.Location = new System.Drawing.Point(378, 421);
             this.btnDeleteMI.Name = "btnDeleteMI";
             this.btnDeleteMI.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteMI.TabIndex = 26;
@@ -212,8 +212,9 @@ namespace ESGARD_STORE
             // 
             // listBox1
             // 
+            this.listBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 151);
+            this.listBox1.Location = new System.Drawing.Point(378, 134);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(410, 264);
             this.listBox1.TabIndex = 25;
@@ -253,7 +254,7 @@ namespace ESGARD_STORE
             // 
             // btnSearchME
             // 
-            this.btnSearchME.Location = new System.Drawing.Point(295, 110);
+            this.btnSearchME.Location = new System.Drawing.Point(316, 87);
             this.btnSearchME.Name = "btnSearchME";
             this.btnSearchME.Size = new System.Drawing.Size(75, 23);
             this.btnSearchME.TabIndex = 37;
@@ -263,7 +264,7 @@ namespace ESGARD_STORE
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 119);
+            this.label7.Location = new System.Drawing.Point(34, 96);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 13);
             this.label7.TabIndex = 36;
@@ -271,7 +272,7 @@ namespace ESGARD_STORE
             // 
             // txtENumberMe
             // 
-            this.txtENumberMe.Location = new System.Drawing.Point(109, 113);
+            this.txtENumberMe.Location = new System.Drawing.Point(130, 90);
             this.txtENumberMe.Name = "txtENumberMe";
             this.txtENumberMe.Size = new System.Drawing.Size(147, 20);
             this.txtENumberMe.TabIndex = 35;

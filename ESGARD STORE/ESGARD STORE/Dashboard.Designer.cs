@@ -31,19 +31,18 @@ namespace ESGARD_STORE
         {
             this.btnMClient = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
-            this.btnMPayment = new System.Windows.Forms.Button();
+            this.btnPurchaseD = new System.Windows.Forms.Button();
             this.btnMReturns = new System.Windows.Forms.Button();
-            this.btnReport = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblRole = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
-            this.lblRole = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -70,15 +69,15 @@ namespace ESGARD_STORE
             this.btnInventory.UseVisualStyleBackColor = true;
             this.btnInventory.Click += new System.EventHandler(this.button2_Click);
             // 
-            // btnMPayment
+            // btnPurchaseD
             // 
-            this.btnMPayment.Location = new System.Drawing.Point(54, 125);
-            this.btnMPayment.Name = "btnMPayment";
-            this.btnMPayment.Size = new System.Drawing.Size(292, 43);
-            this.btnMPayment.TabIndex = 2;
-            this.btnMPayment.Text = "Payment Type";
-            this.btnMPayment.UseVisualStyleBackColor = true;
-            this.btnMPayment.Click += new System.EventHandler(this.button3_Click);
+            this.btnPurchaseD.Location = new System.Drawing.Point(54, 125);
+            this.btnPurchaseD.Name = "btnPurchaseD";
+            this.btnPurchaseD.Size = new System.Drawing.Size(292, 43);
+            this.btnPurchaseD.TabIndex = 2;
+            this.btnPurchaseD.Text = "Purchase";
+            this.btnPurchaseD.UseVisualStyleBackColor = true;
+            this.btnPurchaseD.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnMReturns
             // 
@@ -89,15 +88,6 @@ namespace ESGARD_STORE
             this.btnMReturns.Text = "Make Returns";
             this.btnMReturns.UseVisualStyleBackColor = true;
             this.btnMReturns.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // btnReport
-            // 
-            this.btnReport.Location = new System.Drawing.Point(54, 374);
-            this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(292, 43);
-            this.btnReport.TabIndex = 4;
-            this.btnReport.Text = "Reports";
-            this.btnReport.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -151,6 +141,36 @@ namespace ESGARD_STORE
             this.panel1.Size = new System.Drawing.Size(755, 73);
             this.panel1.TabIndex = 0;
             // 
+            // lblRole
+            // 
+            this.lblRole.AutoSize = true;
+            this.lblRole.Location = new System.Drawing.Point(249, 49);
+            this.lblRole.Name = "lblRole";
+            this.lblRole.Size = new System.Drawing.Size(29, 13);
+            this.lblRole.TabIndex = 10;
+            this.lblRole.Text = "Role";
+            this.lblRole.Visible = false;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(246, 17);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(35, 13);
+            this.lblName.TabIndex = 9;
+            this.lblName.Text = "Name";
+            this.lblName.Visible = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ESGARD_STORE.Properties.Resources.ESGARD_LOGO;
+            this.pictureBox1.Location = new System.Drawing.Point(29, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -173,36 +193,6 @@ namespace ESGARD_STORE
             this.label4.TabIndex = 12;
             this.label4.Text = "Tel. 0726168472 email. whatisit@gmail.com";
             // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(246, 17);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(35, 13);
-            this.lblName.TabIndex = 9;
-            this.lblName.Text = "Name";
-            this.lblName.Visible = false;
-            // 
-            // lblRole
-            // 
-            this.lblRole.AutoSize = true;
-            this.lblRole.Location = new System.Drawing.Point(249, 49);
-            this.lblRole.Name = "lblRole";
-            this.lblRole.Size = new System.Drawing.Size(29, 13);
-            this.lblRole.TabIndex = 10;
-            this.lblRole.Text = "Role";
-            this.lblRole.Visible = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ESGARD_STORE.Properties.Resources.ESGARD_LOGO;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ESGARD_STORE.Properties.Resources.this_is_Esgard__1_;
@@ -223,9 +213,8 @@ namespace ESGARD_STORE
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnMReturns);
-            this.Controls.Add(this.btnMPayment);
+            this.Controls.Add(this.btnPurchaseD);
             this.Controls.Add(this.btnInventory);
             this.Controls.Add(this.btnMClient);
             this.Name = "Dashboard";
@@ -243,9 +232,8 @@ namespace ESGARD_STORE
 
         private System.Windows.Forms.Button btnMClient;
         private System.Windows.Forms.Button btnInventory;
-        private System.Windows.Forms.Button btnMPayment;
+        private System.Windows.Forms.Button btnPurchaseD;
         private System.Windows.Forms.Button btnMReturns;
-        private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

@@ -44,7 +44,6 @@ namespace ESGARD_STORE
             this.txtCellphoneMC = new System.Windows.Forms.TextBox();
             this.txtLNameMC = new System.Windows.Forms.TextBox();
             this.txtFNameMC = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.txtClientMC = new System.Windows.Forms.TextBox();
             this.btnSearchMC = new System.Windows.Forms.Button();
@@ -53,8 +52,8 @@ namespace ESGARD_STORE
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,18 +193,10 @@ namespace ESGARD_STORE
             this.txtFNameMC.Size = new System.Drawing.Size(100, 20);
             this.txtFNameMC.TabIndex = 0;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(417, 174);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(406, 217);
-            this.dataGridView1.TabIndex = 3;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(424, 125);
+            this.label7.Location = new System.Drawing.Point(424, 92);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(76, 13);
             this.label7.TabIndex = 7;
@@ -213,14 +204,14 @@ namespace ESGARD_STORE
             // 
             // txtClientMC
             // 
-            this.txtClientMC.Location = new System.Drawing.Point(562, 119);
+            this.txtClientMC.Location = new System.Drawing.Point(562, 86);
             this.txtClientMC.Name = "txtClientMC";
             this.txtClientMC.Size = new System.Drawing.Size(147, 20);
             this.txtClientMC.TabIndex = 6;
             // 
             // btnSearchMC
             // 
-            this.btnSearchMC.Location = new System.Drawing.Point(748, 116);
+            this.btnSearchMC.Location = new System.Drawing.Point(748, 83);
             this.btnSearchMC.Name = "btnSearchMC";
             this.btnSearchMC.Size = new System.Drawing.Size(75, 23);
             this.btnSearchMC.TabIndex = 8;
@@ -238,7 +229,7 @@ namespace ESGARD_STORE
             // 
             // btnBTDMC
             // 
-            this.btnBTDMC.Location = new System.Drawing.Point(53, 462);
+            this.btnBTDMC.Location = new System.Drawing.Point(15, 458);
             this.btnBTDMC.Name = "btnBTDMC";
             this.btnBTDMC.Size = new System.Drawing.Size(111, 23);
             this.btnBTDMC.TabIndex = 22;
@@ -279,11 +270,21 @@ namespace ESGARD_STORE
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // listBox1
+            // 
+            this.listBox1.BackColor = System.Drawing.SystemColors.Menu;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(427, 130);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(396, 251);
+            this.listBox1.TabIndex = 26;
+            // 
             // Maintain_Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 534);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -292,7 +293,6 @@ namespace ESGARD_STORE
             this.Controls.Add(this.btnSearchMC);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtClientMC);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDeleteMC);
             this.Controls.Add(this.btnAddMC);
@@ -301,7 +301,6 @@ namespace ESGARD_STORE
             this.Load += new System.EventHandler(this.Maintain_Clients_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -325,7 +324,6 @@ namespace ESGARD_STORE
         private System.Windows.Forms.TextBox txtLNameMC;
         private System.Windows.Forms.TextBox txtFNameMC;
         private System.Windows.Forms.TextBox txtClientNumber;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtClientMC;
         private System.Windows.Forms.Button btnSearchMC;
@@ -334,5 +332,6 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }

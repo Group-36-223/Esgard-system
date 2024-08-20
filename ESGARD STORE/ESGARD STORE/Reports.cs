@@ -10,22 +10,16 @@ using System.Windows.Forms;
 
 namespace ESGARD_STORE
 {
-    public partial class MaintainPType : Form
+    public partial class Reports : Form
     {
-        public MaintainPType()
+        public Reports()
         {
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Dashboard ds = new Dashboard();
-            ds.ShowDialog();
-        }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

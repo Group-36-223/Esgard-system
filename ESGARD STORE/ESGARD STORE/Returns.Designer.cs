@@ -37,7 +37,12 @@ namespace ESGARD_STORE
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSearch
@@ -68,11 +73,11 @@ namespace ESGARD_STORE
             // btnMReturn
             // 
             this.btnMReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMReturn.Location = new System.Drawing.Point(634, 458);
+            this.btnMReturn.Location = new System.Drawing.Point(658, 421);
             this.btnMReturn.Name = "btnMReturn";
             this.btnMReturn.Size = new System.Drawing.Size(114, 23);
             this.btnMReturn.TabIndex = 24;
-            this.btnMReturn.Text = "Make Return";
+            this.btnMReturn.Text = "Return";
             this.btnMReturn.UseVisualStyleBackColor = true;
             this.btnMReturn.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -81,7 +86,7 @@ namespace ESGARD_STORE
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label14.Location = new System.Drawing.Point(364, 503);
+            this.label14.Location = new System.Drawing.Point(373, 465);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(265, 16);
             this.label14.TabIndex = 26;
@@ -92,7 +97,7 @@ namespace ESGARD_STORE
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label15.Location = new System.Drawing.Point(108, 503);
+            this.label15.Location = new System.Drawing.Point(117, 465);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(233, 16);
             this.label15.TabIndex = 27;
@@ -111,18 +116,61 @@ namespace ESGARD_STORE
             // 
             // listBox1
             // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 121);
+            this.listBox1.Location = new System.Drawing.Point(40, 135);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(760, 329);
+            this.listBox1.Size = new System.Drawing.Size(732, 186);
             this.listBox1.TabIndex = 28;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(40, 336);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(732, 61);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(32, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Total Amount:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(181, 16);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(51, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "label2";
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.Info;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(40, 420);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 23);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Back to Dashboard";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Returns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 528);
+            this.ClientSize = new System.Drawing.Size(800, 495);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
@@ -134,6 +182,8 @@ namespace ESGARD_STORE
             this.Name = "Returns";
             this.Text = "Returns";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -149,5 +199,9 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -39,6 +39,7 @@ namespace ESGARD_STORE
             this.lblPayment_Type = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnUPDATE = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +48,7 @@ namespace ESGARD_STORE
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label3.Location = new System.Drawing.Point(7, 392);
+            this.label3.Location = new System.Drawing.Point(17, 413);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(233, 16);
             this.label3.TabIndex = 23;
@@ -58,7 +59,7 @@ namespace ESGARD_STORE
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label4.Location = new System.Drawing.Point(258, 392);
+            this.label4.Location = new System.Drawing.Point(268, 413);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(265, 16);
             this.label4.TabIndex = 22;
@@ -67,7 +68,7 @@ namespace ESGARD_STORE
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(388, 316);
+            this.btnDelete.Location = new System.Drawing.Point(400, 276);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(92, 33);
             this.btnDelete.TabIndex = 21;
@@ -77,7 +78,7 @@ namespace ESGARD_STORE
             // btnAdd
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(29, 316);
+            this.btnAdd.Location = new System.Drawing.Point(20, 276);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(98, 33);
             this.btnAdd.TabIndex = 20;
@@ -86,7 +87,7 @@ namespace ESGARD_STORE
             // 
             // txtANPayType
             // 
-            this.txtANPayType.Location = new System.Drawing.Point(127, 266);
+            this.txtANPayType.Location = new System.Drawing.Point(134, 226);
             this.txtANPayType.Name = "txtANPayType";
             this.txtANPayType.Size = new System.Drawing.Size(194, 20);
             this.txtANPayType.TabIndex = 19;
@@ -95,7 +96,7 @@ namespace ESGARD_STORE
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(122, 218);
+            this.label1.Location = new System.Drawing.Point(129, 178);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(248, 25);
             this.label1.TabIndex = 18;
@@ -104,7 +105,7 @@ namespace ESGARD_STORE
             // cBSPayType
             // 
             this.cBSPayType.FormattingEnabled = true;
-            this.cBSPayType.Location = new System.Drawing.Point(127, 169);
+            this.cBSPayType.Location = new System.Drawing.Point(134, 129);
             this.cBSPayType.Name = "cBSPayType";
             this.cBSPayType.Size = new System.Drawing.Size(194, 21);
             this.cBSPayType.TabIndex = 17;
@@ -113,7 +114,7 @@ namespace ESGARD_STORE
             // 
             this.lblPayment_Type.AutoSize = true;
             this.lblPayment_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPayment_Type.Location = new System.Drawing.Point(123, 118);
+            this.lblPayment_Type.Location = new System.Drawing.Point(130, 78);
             this.lblPayment_Type.Name = "lblPayment_Type";
             this.lblPayment_Type.Size = new System.Drawing.Size(259, 24);
             this.lblPayment_Type.TabIndex = 16;
@@ -133,18 +134,30 @@ namespace ESGARD_STORE
             // btnUPDATE
             // 
             this.btnUPDATE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUPDATE.Location = new System.Drawing.Point(205, 316);
+            this.btnUPDATE.Location = new System.Drawing.Point(236, 276);
             this.btnUPDATE.Name = "btnUPDATE";
             this.btnUPDATE.Size = new System.Drawing.Size(92, 33);
             this.btnUPDATE.TabIndex = 25;
             this.btnUPDATE.Text = "UPDATE";
             this.btnUPDATE.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(385, 355);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 44);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "Proceed";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MaintainPType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(531, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnUPDATE);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label3);
@@ -175,5 +188,6 @@ namespace ESGARD_STORE
         private System.Windows.Forms.ComboBox cBSPayType;
         private System.Windows.Forms.Label lblPayment_Type;
         private System.Windows.Forms.Button btnUPDATE;
+        private System.Windows.Forms.Button button1;
     }
 }

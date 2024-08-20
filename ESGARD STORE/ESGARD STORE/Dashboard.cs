@@ -23,8 +23,8 @@ namespace ESGARD_STORE
         }
         private void button3_Click(object sender, EventArgs e)
         {
-            Payment_Type pt = new Payment_Type();
-            pt.ShowDialog();
+            Purchase_Form pf = new Purchase_Form();
+            pf.ShowDialog();
         }
         private void button6_Click(object sender, EventArgs e)
         {

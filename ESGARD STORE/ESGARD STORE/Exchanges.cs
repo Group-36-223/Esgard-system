@@ -27,5 +27,11 @@ namespace ESGARD_STORE
             Dashboard ds = new Dashboard();
             ds.ShowDialog();
         }
+
+        private void btnExchange_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Exchanged!");
+            this.Close();
+        }
     }
 }

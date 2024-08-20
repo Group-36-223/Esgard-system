@@ -19,8 +19,9 @@ namespace ESGARD_STORE
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Dashboard ds = new Dashboard();
-            ds.ShowDialog();
+            //Dashboard ds = new Dashboard();
+           //ds.ShowDialog();
+            this.Close();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -30,7 +31,9 @@ namespace ESGARD_STORE
 
         private void button4_Click_1(object sender, EventArgs e)
         {
+            MessageBox.Show("Payment Recieved!");
             this.Close();
+            
             //listBox1.Items.Add("Description\]\tQuantity\\tPrice");
         }
 

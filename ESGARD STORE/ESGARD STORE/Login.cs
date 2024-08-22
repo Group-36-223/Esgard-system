@@ -19,7 +19,7 @@ namespace ESGARD_STORE
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = txtUser.Text;
+            /*string name = txtUser.Text;
             string Password = txtPass.Text;
 
               if (Password == "12345" && name == "thato")
@@ -29,10 +29,10 @@ namespace ESGARD_STORE
                   mds.ShowDialog();
               }
               else if(Password == "123456" && name == "tshepo") 
-              {
+              {*/
                    Dashboard ds = new Dashboard();
                    ds.ShowDialog();    
-               }
+               /*}
 
               else
               {
@@ -50,7 +50,7 @@ namespace ESGARD_STORE
               {
                   lblPassword.Text = "Invalid password!!";
                   lblPassword.Show();
-              }
+              }*/
 
         }
 

@@ -129,6 +129,7 @@ namespace ESGARD_STORE
             this.btnAddMI.TabIndex = 16;
             this.btnAddMI.Text = "Add ";
             this.btnAddMI.UseVisualStyleBackColor = true;
+            this.btnAddMI.Click += new System.EventHandler(this.btnAddMI_Click);
             // 
             // txtBarMInventory
             // 

@@ -92,7 +92,7 @@ namespace ESGARD_STORE
                         {
                             if (decimal.TryParse(txtPriceMI.Text, out price))
                             {
-
+                                //code here
                             }
                             else
                             {

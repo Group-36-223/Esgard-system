@@ -28,6 +28,21 @@ namespace ESGARD_STORE
         }
         private void button6_Click(object sender, EventArgs e)
         {
+            //this.Close();
+            Login login = Application.OpenForms["Login"] as Login;
+
+
+            if (login == null)
+            {
+                login = new Login();
+                login.Show();
+            }
+            else
+            {
+                login.BringToFront();
+            }
+
+
             this.Close();
         }
       private void button7_Click(object sender, EventArgs e)

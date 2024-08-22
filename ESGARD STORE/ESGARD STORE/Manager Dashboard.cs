@@ -33,5 +33,24 @@ namespace ESGARD_STORE
             Reports r = new Reports();
             r.ShowDialog();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Dashboard ds = Application.OpenForms["Dashboard"] as Dashboard;
+
+
+            if (ds == null)
+            {
+                ds = new Dashboard();
+                ds.Show();
+            }
+            else
+            {
+                ds.BringToFront();
+            }
+
+
+            this.Close();
+        }
     }
 }

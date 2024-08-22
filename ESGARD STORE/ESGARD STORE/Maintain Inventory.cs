@@ -120,5 +120,10 @@ namespace ESGARD_STORE
                 MessageBox.Show("Please enter valid barcode!");
             }
         }
+
+        private void btnUpdateMI_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

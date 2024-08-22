@@ -19,6 +19,8 @@ namespace ESGARD_STORE
 
         private void button5_Click(object sender, EventArgs e)
         {
+            //Dashboard ds = new Dashboard();
+           //ds.ShowDialog();
             this.Close();
         }
 
@@ -27,9 +29,35 @@ namespace ESGARD_STORE
 
         }
 
-        /*private void button4_Click(object sender, EventArgs e)
+        private void button4_Click_1(object sender, EventArgs e)
         {
-            listBox1.Items.Add("Description\]\tQuantity\\tPrice");
-        }*/
+            MessageBox.Show("Payment Recieved!");
+            this.Close();
+            
+            //listBox1.Items.Add("Description\]\tQuantity\\tPrice");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //Dashboard ds = new Dashboard();
+            //ds.ShowDialog();
+
+
+            Dashboard ds = Application.OpenForms["Dashboard"] as Dashboard;
+
+
+            if (ds == null)
+            {
+                ds = new Dashboard();
+                ds.Show();
+            }
+            else
+            {
+                ds.BringToFront();
+            }
+
+
+            this.Close();
+        }
     }
 }

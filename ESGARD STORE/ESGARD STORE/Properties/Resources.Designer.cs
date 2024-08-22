@@ -69,5 +69,25 @@ namespace ESGARD_STORE.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap this_is_Esgard {
+            get {
+                object obj = ResourceManager.GetObject("this is Esgard", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap this_is_Esgard__1_ {
+            get {
+                object obj = ResourceManager.GetObject("this is Esgard (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

@@ -10,18 +10,11 @@ using System.Windows.Forms;
 
 namespace ESGARD_STORE
 {
-    public partial class Maintain_Employees : Form
+    public partial class MaintainPType : Form
     {
-        public Maintain_Employees()
+        public MaintainPType()
         {
             InitializeComponent();
-        }
-
-        private void button5_Click(object sender, EventArgs e)
-        {
-            Manager_Dashboard mds = new Manager_Dashboard();
-            mds.ShowDialog();
-            this.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -41,6 +34,15 @@ namespace ESGARD_STORE
             {
                 ds.BringToFront();
             }
+
+
+            this.Close();
+        }
+    
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

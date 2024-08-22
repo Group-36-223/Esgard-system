@@ -10,24 +10,28 @@ using System.Windows.Forms;
 
 namespace ESGARD_STORE
 {
-    public partial class Maintain_Employees : Form
+    public partial class Maintain_Inventory : Form
     {
-        public Maintain_Employees()
+        public Maintain_Inventory()
         {
             InitializeComponent();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void Maintain_Inventory_Load(object sender, EventArgs e)
         {
-            Manager_Dashboard mds = new Manager_Dashboard();
-            mds.ShowDialog();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
             //Dashboard ds = new Dashboard();
             //ds.ShowDialog();
+
 
             Dashboard ds = Application.OpenForms["Dashboard"] as Dashboard;
 
@@ -41,6 +45,32 @@ namespace ESGARD_STORE
             {
                 ds.BringToFront();
             }
+
+
+            this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //Dashboard ds = new Dashboard();
+            //ds.ShowDialog();
+
+
+            Dashboard ds = Application.OpenForms["Dashboard"] as Dashboard;
+
+
+            if (ds == null)
+            {
+                ds = new Dashboard();
+                ds.Show();
+            }
+            else
+            {
+                ds.BringToFront();
+            }
+
+
+            this.Close();
         }
     }
 }

@@ -52,6 +52,30 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="Exchanges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Exchanges.Designer.cs">
+      <DependentUpon>Exchanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Maintain Inventory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Maintain Inventory.Designer.cs">
+      <DependentUpon>Maintain Inventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MaintainPType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MaintainPType.Designer.cs">
+      <DependentUpon>MaintainPType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Manager Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Manager Dashboard.Designer.cs">
+      <DependentUpon>Manager Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,8 +102,32 @@
     <Compile Include="Purchase Form.Designer.cs">
       <DependentUpon>Purchase Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Returns.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Returns.Designer.cs">
+      <DependentUpon>Returns.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Exchanges.resx">
+      <DependentUpon>Exchanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Maintain Inventory.resx">
+      <DependentUpon>Maintain Inventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MaintainPType.resx">
+      <DependentUpon>MaintainPType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Manager Dashboard.resx">
+      <DependentUpon>Manager Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -103,6 +151,12 @@
     <EmbeddedResource Include="Purchase Form.resx">
       <DependentUpon>Purchase Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Returns.resx">
+      <DependentUpon>Returns.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -118,6 +172,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ESGARD_LOGO.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\this is Esgard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\this is Esgard %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

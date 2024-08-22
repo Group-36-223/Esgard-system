@@ -10,17 +10,17 @@ using System.Windows.Forms;
 
 namespace ESGARD_STORE
 {
-    public partial class Maintain_Employees : Form
+    public partial class Returns : Form
     {
-        public Maintain_Employees()
+        public Returns()
         {
             InitializeComponent();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Manager_Dashboard mds = new Manager_Dashboard();
-            mds.ShowDialog();
+            Exchanges ex = new Exchanges();
+            ex.ShowDialog();
             this.Close();
         }
 
@@ -41,6 +41,14 @@ namespace ESGARD_STORE
             {
                 ds.BringToFront();
             }
+
+
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

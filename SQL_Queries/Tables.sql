@@ -14,7 +14,8 @@ Create Table Employee
 	L_Name varchar(20),
 	User_ID_No char(10),
 	cell_No char(10),
-	Email_Address varchar(30)
+	Email_Address varchar(30),
+	ID_Number char(13)
 );
 Create Table Inventory 
 (
@@ -43,7 +44,8 @@ Create Table Purchases
 	Payment_Type_ID INT FOREIGN KEY REFERENCES Payment_Type(Payment_Type_ID),
 	Purchase_Date_Time datetime,
 	total_cost money,
-	Is_paid bit 
+	Is_paid bit,
+	Purchase_number char(10)
 );
 
 Create Table Purchase_Details

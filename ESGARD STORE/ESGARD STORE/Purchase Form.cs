@@ -20,7 +20,22 @@ namespace ESGARD_STORE
         private void button5_Click(object sender, EventArgs e)
         {
             //Dashboard ds = new Dashboard();
-           //ds.ShowDialog();
+            //ds.ShowDialog();
+
+            Dashboard ds = Application.OpenForms["Dashboard"] as Dashboard;
+
+
+            if (ds == null)
+            {
+                ds = new Dashboard();
+                ds.Show();
+            }
+            else
+            {
+                ds.BringToFront();
+            }
+
+
             this.Close();
         }
 
@@ -39,8 +54,25 @@ namespace ESGARD_STORE
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            Dashboard ds = new Dashboard();
-            ds.ShowDialog();
+            //Dashboard ds = new Dashboard();
+            //ds.ShowDialog();
+
+
+            Dashboard ds = Application.OpenForms["Dashboard"] as Dashboard;
+
+
+            if (ds == null)
+            {
+                ds = new Dashboard();
+                ds.Show();
+            }
+            else
+            {
+                ds.BringToFront();
+            }
+
+
+            this.Close();
         }
     }
 }

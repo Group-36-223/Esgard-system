@@ -90,7 +90,6 @@ namespace ESGARD_STORE
             this.txtDesrMInventory.BackColor = System.Drawing.SystemColors.Window;
             this.txtDesrMInventory.Location = new System.Drawing.Point(141, 81);
             this.txtDesrMInventory.Name = "txtDesrMInventory";
-            this.txtDesrMInventory.ReadOnly = true;
             this.txtDesrMInventory.Size = new System.Drawing.Size(179, 20);
             this.txtDesrMInventory.TabIndex = 23;
             // 
@@ -99,7 +98,6 @@ namespace ESGARD_STORE
             this.txtColorMI.BackColor = System.Drawing.SystemColors.Window;
             this.txtColorMI.Location = new System.Drawing.Point(141, 119);
             this.txtColorMI.Name = "txtColorMI";
-            this.txtColorMI.ReadOnly = true;
             this.txtColorMI.Size = new System.Drawing.Size(179, 20);
             this.txtColorMI.TabIndex = 22;
             // 
@@ -108,7 +106,6 @@ namespace ESGARD_STORE
             this.txtSizeMI.BackColor = System.Drawing.SystemColors.Window;
             this.txtSizeMI.Location = new System.Drawing.Point(141, 160);
             this.txtSizeMI.Name = "txtSizeMI";
-            this.txtSizeMI.ReadOnly = true;
             this.txtSizeMI.Size = new System.Drawing.Size(179, 20);
             this.txtSizeMI.TabIndex = 21;
             // 
@@ -117,7 +114,6 @@ namespace ESGARD_STORE
             this.txtPriceMI.BackColor = System.Drawing.SystemColors.Window;
             this.txtPriceMI.Location = new System.Drawing.Point(141, 194);
             this.txtPriceMI.Name = "txtPriceMI";
-            this.txtPriceMI.ReadOnly = true;
             this.txtPriceMI.Size = new System.Drawing.Size(179, 20);
             this.txtPriceMI.TabIndex = 20;
             // 

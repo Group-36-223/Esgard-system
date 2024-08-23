@@ -67,6 +67,7 @@ namespace ESGARD_STORE
             this.btnAddME.TabIndex = 0;
             this.btnAddME.Text = "Add";
             this.btnAddME.UseVisualStyleBackColor = true;
+            this.btnAddME.Click += new System.EventHandler(this.btnAddME_Click);
             // 
             // btnDeleteME
             // 

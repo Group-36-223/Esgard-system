@@ -136,5 +136,11 @@ namespace ESGARD_STORE
 
 
         }
+
+        private void Maintain_Employees_Load(object sender, EventArgs e)
+        {
+           // InitializeComponent();
+            //this.StartPosition = FormStartPosition.CenterScreen;
+        }
     }
 }

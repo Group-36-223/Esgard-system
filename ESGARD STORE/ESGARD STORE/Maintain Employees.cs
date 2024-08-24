@@ -13,7 +13,7 @@ namespace ESGARD_STORE
 {
     public partial class Maintain_Employees : Form
     {
-        String ConnectionString = @"Data Source=KAASKRULLE;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        String ConnectionString = @"Data Source=LAPTOP-EM1DCRUG;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         SqlConnection Conn;
         SqlCommand Cmd;
         SqlDataAdapter Adap;
@@ -55,32 +55,32 @@ namespace ESGARD_STORE
             if("a" =="a")
             {
                 
-           try
-           {
-               Conn = new SqlConnection(ConnectionString);
-               Conn.Open();
+               try
+               {
+                   Conn = new SqlConnection(ConnectionString);
+                   Conn.Open();
 
-               Adap = new SqlDataAdapter();
+                   Adap = new SqlDataAdapter();
 
-               string sql = "SELECT * FROM Employee WHERE User_ID_No = employeeNumberSearch";
-               Cmd = new SqlCommand(sql, Conn);
+                   string sql = "SELECT * FROM Employee WHERE User_ID_No = employeeNumberSearch";
+                   Cmd = new SqlCommand(sql, Conn);
 
 
-              // Ds = new DataSet();
+                   Ds = new DataSet();
 
-               Adap.SelectCommand = Cmd;
-               Adap.Fill(Ds, "Employee");
+                   Adap.SelectCommand = Cmd;
+                   Adap.Fill(Ds, "Employee");
 
-               dgv_Employee.DataSource = Ds;
-               dgv_Employee.DataMember = "Employee";
+                   dgv_Employee.DataSource = Ds;
+                   dgv_Employee.DataMember = "Employee";
 
-               Cmd.Dispose();
-               Conn.Close();
-           }
-           catch(Exception Ex)
-           {
-               MessageBox.Show(Ex.Message);
-           }
+                   Cmd.Dispose();
+                   Conn.Close();
+               }
+               catch(Exception Ex)
+               {
+                   MessageBox.Show(Ex.Message);
+               }
                 return true;
             }
             else
@@ -91,7 +91,26 @@ namespace ESGARD_STORE
         }
         private void btnSearchME_Click(object sender, EventArgs e)
         {
-            long employeeNumberSearch;
+            Conn = new SqlConnection(ConnectionString);
+            Conn.Open();
+
+            Adap = new SqlDataAdapter();
+
+            string sql = "SELECT * FROM Employee";
+            Cmd = new SqlCommand(sql, Conn);
+
+
+            Ds = new DataSet();
+
+            Adap.SelectCommand = Cmd;
+            Adap.Fill(Ds, "Employee");
+
+            dgv_Employee.DataSource = Ds;
+            dgv_Employee.DataMember = "Employee";
+
+            Cmd.Dispose();
+            Conn.Close();
+            /*long employeeNumberSearch;
             if (long.TryParse(txtENumberMe.Text, out employeeNumberSearch))
             {
                 if(employeeNumberFound(employeeNumberSearch))
@@ -108,9 +127,9 @@ namespace ESGARD_STORE
             {
                 MessageBox.Show("Invalid input!");
             }
-            
-            
-           
+            */
+
+
         }
     }
 }

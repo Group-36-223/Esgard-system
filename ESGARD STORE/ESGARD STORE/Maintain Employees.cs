@@ -27,8 +27,7 @@ namespace ESGARD_STORE
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Manager_Dashboard mds = new Manager_Dashboard();
-            mds.ShowDialog();
+            
             this.Close();
         }
 
@@ -139,8 +138,7 @@ namespace ESGARD_STORE
 
         private void Maintain_Employees_Load(object sender, EventArgs e)
         {
-           // InitializeComponent();
-            //this.StartPosition = FormStartPosition.CenterScreen;
+           
         }
     }
 }

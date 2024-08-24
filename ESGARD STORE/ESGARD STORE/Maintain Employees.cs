@@ -50,10 +50,19 @@ namespace ESGARD_STORE
                 db.BringToFront();
             }
         }
-        private Boolean employeeNumberFound(long employeeNumberSearch)
+        private Boolean employeeNumberFound(int employeeNumberSearch)
         {
-            if("a" =="a")
-            {
+            txtFNameME.Text = "";
+            txtLNameME.Text = "";
+            txtCellphoneME.Text = "";
+            txtEmailME.Text = "";
+            txtENumber.Text = "";
+            txtPasswordME.Text = "";
+            txtINumberMe.Text = "";
+            Boolean didItThrewAnException = false;
+
+            
+            
                 
                try
                {
@@ -62,25 +71,39 @@ namespace ESGARD_STORE
 
                    Adap = new SqlDataAdapter();
 
-                   string sql = "SELECT * FROM Employee WHERE User_ID_No = employeeNumberSearch";
+                   string sql = @"SELECT F_Name, L_Name FROM Employee WHERE User_ID_No = "+ employeeNumberSearch;
                    Cmd = new SqlCommand(sql, Conn);
 
+                    Cmd.Parameters.AddWithValue("User_ID_No", employeeNumberSearch);
 
-                   Ds = new DataSet();
+                    SqlDataReader reader = Cmd.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        txtFNameME.Text = reader["F_Name"].ToString();
+                        txtLNameME.Text = reader["L_Name"].ToString();
+                    }
+                    reader.Close();
+                    /* Ds = new DataSet();
 
-                   Adap.SelectCommand = Cmd;
-                   Adap.Fill(Ds, "Employee");
+                     Adap.SelectCommand = Cmd;
+                     Adap.Fill(Ds, "Employee");
 
-                   dgv_Employee.DataSource = Ds;
-                   dgv_Employee.DataMember = "Employee";
+                     dgv_Employee.DataSource = Ds;
+                     dgv_Employee.DataMember = "Employee";*/
 
-                   Cmd.Dispose();
+                    Cmd.Dispose();
                    Conn.Close();
-               }
+                    
+                }
                catch(Exception Ex)
                {
                    MessageBox.Show(Ex.Message);
+                    didItThrewAnException = true;
+                    
                }
+                
+            if (!didItThrewAnException && !(txtFNameME.Text == "") )
+            {
                 return true;
             }
             else
@@ -91,35 +114,17 @@ namespace ESGARD_STORE
         }
         private void btnSearchME_Click(object sender, EventArgs e)
         {
-            Conn = new SqlConnection(ConnectionString);
-            Conn.Open();
 
-            Adap = new SqlDataAdapter();
-
-            string sql = "SELECT * FROM Employee";
-            Cmd = new SqlCommand(sql, Conn);
-
-
-            Ds = new DataSet();
-
-            Adap.SelectCommand = Cmd;
-            Adap.Fill(Ds, "Employee");
-
-            dgv_Employee.DataSource = Ds;
-            dgv_Employee.DataMember = "Employee";
-
-            Cmd.Dispose();
-            Conn.Close();
-            /*long employeeNumberSearch;
-            if (long.TryParse(txtENumberMe.Text, out employeeNumberSearch))
+            int employeeNumberSearch;
+            if (int.TryParse(txtENumberMe.Text, out employeeNumberSearch))
             {
                 if(employeeNumberFound(employeeNumberSearch))
-                { 
-
+                {
+                    MessageBox.Show("Employee successfully found!");
                 }
                 else
                 {
-                    MessageBox.Show("Employee number not found!");
+                    MessageBox.Show("Employee does not exist!");
                 }
 
             }
@@ -127,7 +132,7 @@ namespace ESGARD_STORE
             {
                 MessageBox.Show("Invalid input!");
             }
-            */
+            
 
 
         }

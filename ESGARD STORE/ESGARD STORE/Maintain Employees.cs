@@ -7,11 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ESGARD_STORE
 {
     public partial class Maintain_Employees : Form
     {
+        String ConnectionString = @"Data Source=KAASKRULLE;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        SqlConnection Conn;
+        SqlCommand Cmd;
+        SqlDataAdapter Adap;
+        SqlDataReader reader;
+        DataSet Ds;
+
         public Maintain_Employees()
         {
             InitializeComponent();
@@ -29,18 +37,80 @@ namespace ESGARD_STORE
             //Dashboard ds = new Dashboard();
             //ds.ShowDialog();
 
-            Dashboard ds = Application.OpenForms["Dashboard"] as Dashboard;
+            Dashboard db = Application.OpenForms["Dashboard"] as Dashboard;
 
 
-            if (ds == null)
+            if (db == null)
             {
-                ds = new Dashboard();
-                ds.Show();
+                db = new Dashboard();
+                db.Show();
             }
             else
             {
-                ds.BringToFront();
+                db.BringToFront();
             }
+        }
+        private Boolean employeeNumberFound(long employeeNumberSearch)
+        {
+            if("a" =="a")
+            {
+                
+           try
+           {
+               Conn = new SqlConnection(ConnectionString);
+               Conn.Open();
+
+               Adap = new SqlDataAdapter();
+
+               string sql = "SELECT * FROM Employee WHERE User_ID_No = employeeNumberSearch";
+               Cmd = new SqlCommand(sql, Conn);
+
+
+              // Ds = new DataSet();
+
+               Adap.SelectCommand = Cmd;
+               Adap.Fill(Ds, "Employee");
+
+               dgv_Employee.DataSource = Ds;
+               dgv_Employee.DataMember = "Employee";
+
+               Cmd.Dispose();
+               Conn.Close();
+           }
+           catch(Exception Ex)
+           {
+               MessageBox.Show(Ex.Message);
+           }
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+                        
+        }
+        private void btnSearchME_Click(object sender, EventArgs e)
+        {
+            long employeeNumberSearch;
+            if (long.TryParse(txtENumberMe.Text, out employeeNumberSearch))
+            {
+                if(employeeNumberFound(employeeNumberSearch))
+                { 
+
+                }
+                else
+                {
+                    MessageBox.Show("Employee number not found!");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Invalid input!");
+            }
+            
+            
+           
         }
     }
 }

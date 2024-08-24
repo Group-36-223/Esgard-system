@@ -72,58 +72,5 @@ namespace ESGARD_STORE
 
             this.Close();
         }
-
-        private void btnAddMI_Click(object sender, EventArgs e)
-        {
-
-            string description = txtDesrMInventory.Text;
-            string color = txtColorMI.Text;
-            long barcode;
-            int size;
-            decimal price;
-
-            if (long.TryParse(txtBarMInventory.Text, out barcode))
-            {
-                if (description == "")
-                {
-                    if (color == "")
-                    {
-                        if (int.TryParse(txtSizeMI.Text, out size))
-                        {
-                            if (decimal.TryParse(txtPriceMI.Text, out price))
-                            {
-                                //code here
-                            }
-                            else
-                            {
-                                MessageBox.Show("Please enter valid price!");
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please enter valid size!");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Please enter valid color!");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Please enter valid description!");
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Please enter valid barcode!");
-            }
-        }
-
-        private void btnUpdateMI_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

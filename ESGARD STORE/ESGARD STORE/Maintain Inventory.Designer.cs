@@ -52,10 +52,8 @@ namespace ESGARD_STORE
             this.btnSearchME = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtENumberMe = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnBTDMI
@@ -131,7 +129,6 @@ namespace ESGARD_STORE
             this.btnAddMI.TabIndex = 16;
             this.btnAddMI.Text = "Add ";
             this.btnAddMI.UseVisualStyleBackColor = true;
-            this.btnAddMI.Click += new System.EventHandler(this.btnAddMI_Click);
             // 
             // txtBarMInventory
             // 
@@ -166,7 +163,6 @@ namespace ESGARD_STORE
             this.btnUpdateMI.TabIndex = 28;
             this.btnUpdateMI.Text = "Update";
             this.btnUpdateMI.UseVisualStyleBackColor = true;
-            this.btnUpdateMI.Click += new System.EventHandler(this.btnUpdateMI_Click);
             // 
             // label4
             // 
@@ -281,20 +277,11 @@ namespace ESGARD_STORE
             this.txtENumberMe.Size = new System.Drawing.Size(147, 20);
             this.txtENumberMe.TabIndex = 35;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(445, 38);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 38;
-            // 
             // Maintain_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 515);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnSearchME);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtENumberMe);
@@ -312,7 +299,6 @@ namespace ESGARD_STORE
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,6 +329,5 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Button btnSearchME;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtENumberMe;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

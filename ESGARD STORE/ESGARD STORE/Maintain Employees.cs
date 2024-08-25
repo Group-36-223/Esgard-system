@@ -70,7 +70,7 @@ namespace ESGARD_STORE
 
                    Adap = new SqlDataAdapter();
 
-                   string sql = @"SELECT F_Name, L_Name FROM Employee WHERE User_ID_No = "+ employeeNumberSearch;
+                   string sql = @"SELECT F_Name, L_Name, cell_No, Email_Address, ID_Number FROM Employee WHERE User_ID_No = " + employeeNumberSearch;
                    Cmd = new SqlCommand(sql, Conn);
 
                     Cmd.Parameters.AddWithValue("User_ID_No", employeeNumberSearch);
@@ -80,7 +80,10 @@ namespace ESGARD_STORE
                     {
                         txtFNameME.Text = reader["F_Name"].ToString();
                         txtLNameME.Text = reader["L_Name"].ToString();
-                    }
+                        txtINumberMe.Text = reader["ID_Number"].ToString();
+                        txtEmailME.Text = reader["Email_Address"].ToString();
+                        txtCellphoneME.Text = reader["cell_No"].ToString();
+                }
                     reader.Close();
                     /* Ds = new DataSet();
 

@@ -54,7 +54,6 @@ namespace ESGARD_STORE
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.dgv_Employee = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,6 +68,7 @@ namespace ESGARD_STORE
             this.btnAddME.TabIndex = 0;
             this.btnAddME.Text = "Add";
             this.btnAddME.UseVisualStyleBackColor = true;
+            this.btnAddME.Click += new System.EventHandler(this.btnAddME_Click);
             // 
             // btnDeleteME
             // 
@@ -104,10 +104,10 @@ namespace ESGARD_STORE
             // 
             // txtPasswordME
             // 
-            this.txtPasswordME.Location = new System.Drawing.Point(223, 298);
+            this.txtPasswordME.Location = new System.Drawing.Point(201, 298);
             this.txtPasswordME.Name = "txtPasswordME";
             this.txtPasswordME.ReadOnly = true;
-            this.txtPasswordME.Size = new System.Drawing.Size(100, 20);
+            this.txtPasswordME.Size = new System.Drawing.Size(122, 20);
             this.txtPasswordME.TabIndex = 13;
             // 
             // label8
@@ -121,10 +121,10 @@ namespace ESGARD_STORE
             // 
             // txtENumber
             // 
-            this.txtENumber.Location = new System.Drawing.Point(223, 262);
+            this.txtENumber.Location = new System.Drawing.Point(201, 262);
             this.txtENumber.Name = "txtENumber";
             this.txtENumber.ReadOnly = true;
-            this.txtENumber.Size = new System.Drawing.Size(100, 20);
+            this.txtENumber.Size = new System.Drawing.Size(122, 20);
             this.txtENumber.TabIndex = 11;
             // 
             // label6
@@ -183,37 +183,37 @@ namespace ESGARD_STORE
             // 
             // txtINumberMe
             // 
-            this.txtINumberMe.Location = new System.Drawing.Point(223, 127);
+            this.txtINumberMe.Location = new System.Drawing.Point(201, 127);
             this.txtINumberMe.Name = "txtINumberMe";
-            this.txtINumberMe.Size = new System.Drawing.Size(100, 20);
+            this.txtINumberMe.Size = new System.Drawing.Size(122, 20);
             this.txtINumberMe.TabIndex = 4;
             // 
             // txtEmailME
             // 
-            this.txtEmailME.Location = new System.Drawing.Point(223, 168);
+            this.txtEmailME.Location = new System.Drawing.Point(201, 168);
             this.txtEmailME.Name = "txtEmailME";
-            this.txtEmailME.Size = new System.Drawing.Size(100, 20);
+            this.txtEmailME.Size = new System.Drawing.Size(122, 20);
             this.txtEmailME.TabIndex = 3;
             // 
             // txtCellphoneME
             // 
-            this.txtCellphoneME.Location = new System.Drawing.Point(223, 214);
+            this.txtCellphoneME.Location = new System.Drawing.Point(201, 214);
             this.txtCellphoneME.Name = "txtCellphoneME";
-            this.txtCellphoneME.Size = new System.Drawing.Size(100, 20);
+            this.txtCellphoneME.Size = new System.Drawing.Size(122, 20);
             this.txtCellphoneME.TabIndex = 2;
             // 
             // txtLNameME
             // 
-            this.txtLNameME.Location = new System.Drawing.Point(223, 86);
+            this.txtLNameME.Location = new System.Drawing.Point(201, 86);
             this.txtLNameME.Name = "txtLNameME";
-            this.txtLNameME.Size = new System.Drawing.Size(100, 20);
+            this.txtLNameME.Size = new System.Drawing.Size(122, 20);
             this.txtLNameME.TabIndex = 1;
             // 
             // txtFNameME
             // 
-            this.txtFNameME.Location = new System.Drawing.Point(223, 42);
+            this.txtFNameME.Location = new System.Drawing.Point(201, 42);
             this.txtFNameME.Name = "txtFNameME";
-            this.txtFNameME.Size = new System.Drawing.Size(100, 20);
+            this.txtFNameME.Size = new System.Drawing.Size(122, 20);
             this.txtFNameME.TabIndex = 0;
             // 
             // label7
@@ -294,20 +294,11 @@ namespace ESGARD_STORE
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(156, 12);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(218, 30);
-            this.listBox1.TabIndex = 26;
-            // 
             // dgv_Employee
             // 
             this.dgv_Employee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Employee.Location = new System.Drawing.Point(12, 108);
-            this.dgv_Employee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_Employee.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_Employee.Name = "dgv_Employee";
             this.dgv_Employee.RowHeadersWidth = 51;
             this.dgv_Employee.RowTemplate.Height = 24;
@@ -320,7 +311,6 @@ namespace ESGARD_STORE
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 540);
             this.Controls.Add(this.dgv_Employee);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -372,7 +362,6 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.DataGridView dgv_Employee;
     }
 }

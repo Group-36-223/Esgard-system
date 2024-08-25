@@ -68,7 +68,7 @@ namespace ESGARD_STORE
                    Conn = new SqlConnection(ConnectionString);
                    Conn.Open();
 
-                   Adap = new SqlDataAdapter();
+                   //Adap = new SqlDataAdapter();
 
                    string sql = @"SELECT F_Name, L_Name, cell_No, Email_Address, ID_Number FROM Employee WHERE User_ID_No = " + employeeNumberSearch;
                    Cmd = new SqlCommand(sql, Conn);
@@ -142,6 +142,91 @@ namespace ESGARD_STORE
         private void Maintain_Employees_Load(object sender, EventArgs e)
         {
            
+        }
+
+        private Boolean addEmployee(String firstName, string lastName, int idNumber, int cellphoneNumber, string email)
+        {
+            try
+            {
+                Conn = new SqlConnection(ConnectionString);
+                Conn.Open();
+
+                Adap = new SqlDataAdapter();
+
+                string sql = @"INSERT INTO Employee (F_Name, L_Name,ID_Number, cell_No, Email_Address) VALUES ('"+firstName+ "','" + lastName + "'+'" + idNumber + "'+'" + cellphoneNumber + "'+'" + email + "')";
+                Cmd = new SqlCommand(sql, Conn);
+
+               
+
+                 Adap.InsertCommand = Cmd;
+                Adap.InsertCommand.ExecuteNonQuery();
+
+
+                Cmd.Dispose();
+                Conn.Close();
+
+                return true;
+            }
+
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+                return false;
+
+            }
+        }
+        private void btnAddME_Click(object sender, EventArgs e)
+        {
+            string firstName = txtFNameME.Text;
+            string lastName = txtLNameME.Text;
+            int idNumber;
+            int cellphoneNumber;
+            string email = txtEmailME.Text;
+
+            if (!(firstName == ""))
+            {
+                if (!(lastName == ""))
+                {
+                    if (int.TryParse(txtINumberMe.Text, out idNumber))
+                    {
+                        if (!(email ==""))
+                        {
+                            if (int.TryParse(txtCellphoneME.Text, out cellphoneNumber))
+                            {
+                               if(addEmployee(firstName,lastName,idNumber,cellphoneNumber,email))
+                                {
+                                    MessageBox.Show("Employee successfully added!");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error while adding new employee details!\nPlease try again!");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please enter valid cellphone number!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter valid email!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter valid ID number!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter valid last name!");
+                }
+
+            }
+            else 
+            {
+                MessageBox.Show("Please enter valid first name!");
+            }
         }
     }
 }

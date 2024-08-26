@@ -51,7 +51,7 @@ namespace ESGARD_STORE
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnSearchME = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtENumberMe = new System.Windows.Forms.TextBox();
+            this.txtSNumberMe = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -188,9 +188,9 @@ namespace ESGARD_STORE
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(22, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(51, 13);
+            this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Bar Code";
+            this.label2.Text = "Serial Number";
             // 
             // btnProceedMI
             // 
@@ -261,22 +261,24 @@ namespace ESGARD_STORE
             this.btnSearchME.TabIndex = 37;
             this.btnSearchME.Text = "Search";
             this.btnSearchME.UseVisualStyleBackColor = true;
+            this.btnSearchME.Click += new System.EventHandler(this.btnSearchME_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(34, 96);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.Size = new System.Drawing.Size(73, 13);
             this.label7.TabIndex = 36;
-            this.label7.Text = "Inventory No.";
+            this.label7.Text = "Serial Number";
             // 
-            // txtENumberMe
+            // txtSNumberMe
             // 
-            this.txtENumberMe.Location = new System.Drawing.Point(130, 90);
-            this.txtENumberMe.Name = "txtENumberMe";
-            this.txtENumberMe.Size = new System.Drawing.Size(147, 20);
-            this.txtENumberMe.TabIndex = 35;
+            this.txtSNumberMe.Location = new System.Drawing.Point(130, 90);
+            this.txtSNumberMe.Name = "txtSNumberMe";
+            this.txtSNumberMe.Size = new System.Drawing.Size(147, 20);
+            this.txtSNumberMe.TabIndex = 35;
+            this.txtSNumberMe.TextChanged += new System.EventHandler(this.txtENumberMe_TextChanged);
             // 
             // Maintain_Inventory
             // 
@@ -285,7 +287,7 @@ namespace ESGARD_STORE
             this.ClientSize = new System.Drawing.Size(800, 515);
             this.Controls.Add(this.btnSearchME);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtENumberMe);
+            this.Controls.Add(this.txtSNumberMe);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox1);
@@ -330,6 +332,6 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnSearchME;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtENumberMe;
+        private System.Windows.Forms.TextBox txtSNumberMe;
     }
 }

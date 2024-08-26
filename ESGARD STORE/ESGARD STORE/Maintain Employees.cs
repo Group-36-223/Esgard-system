@@ -27,7 +27,7 @@ namespace ESGARD_STORE
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
+
             this.Close();
         }
 
@@ -55,48 +55,48 @@ namespace ESGARD_STORE
             clearTextBoxes();
             Boolean didItThrewAnException = false;
 
-               try
-               {
-                   Conn = new SqlConnection(ConnectionString);
-                   Conn.Open();
+            try
+            {
+                Conn = new SqlConnection(ConnectionString);
+                Conn.Open();
 
-                   //Adap = new SqlDataAdapter();
+                //Adap = new SqlDataAdapter();
 
-                   string sql = @"SELECT F_Name, L_Name, cell_No, Email_Address, ID_Number FROM Employee WHERE User_ID_No = " + employeeNumberSearch;
-                   Cmd = new SqlCommand(sql, Conn);
+                string sql = @"SELECT F_Name, L_Name, cell_No, Email_Address, ID_Number FROM Employee WHERE User_ID_No = " + employeeNumberSearch;
+                Cmd = new SqlCommand(sql, Conn);
 
-                    Cmd.Parameters.AddWithValue("User_ID_No", employeeNumberSearch);
+                Cmd.Parameters.AddWithValue("User_ID_No", employeeNumberSearch);
 
-                    SqlDataReader reader = Cmd.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        txtFNameME.Text = reader["F_Name"].ToString();
-                        txtLNameME.Text = reader["L_Name"].ToString();
-                        txtINumberMe.Text = reader["ID_Number"].ToString();
-                        txtEmailME.Text = reader["Email_Address"].ToString();
-                        txtCellphoneME.Text = reader["cell_No"].ToString();
+                SqlDataReader reader = Cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    txtFNameME.Text = reader["F_Name"].ToString();
+                    txtLNameME.Text = reader["L_Name"].ToString();
+                    txtINumberMe.Text = reader["ID_Number"].ToString();
+                    txtEmailME.Text = reader["Email_Address"].ToString();
+                    txtCellphoneME.Text = reader["cell_No"].ToString();
                 }
-                    reader.Close();
-                    /* Ds = new DataSet();
+                reader.Close();
+                /* Ds = new DataSet();
 
-                     Adap.SelectCommand = Cmd;
-                     Adap.Fill(Ds, "Employee");
+                 Adap.SelectCommand = Cmd;
+                 Adap.Fill(Ds, "Employee");
 
-                     dgv_Employee.DataSource = Ds;
-                     dgv_Employee.DataMember = "Employee";*/
+                 dgv_Employee.DataSource = Ds;
+                 dgv_Employee.DataMember = "Employee";*/
 
-                    Cmd.Dispose();
-                   Conn.Close();
-                    
-                }
-               catch(Exception Ex)
-               {
-                   MessageBox.Show(Ex.Message);
-                    didItThrewAnException = true;
-                    
-               }
-                
-            if (!didItThrewAnException && !(txtFNameME.Text == "") )
+                Cmd.Dispose();
+                Conn.Close();
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+                didItThrewAnException = true;
+
+            }
+
+            if (!didItThrewAnException && !(txtFNameME.Text == ""))
             {
                 return true;
             }
@@ -104,7 +104,7 @@ namespace ESGARD_STORE
             {
                 return false;
             }
-                        
+
         }
         private void btnSearchME_Click(object sender, EventArgs e)
         {
@@ -112,7 +112,7 @@ namespace ESGARD_STORE
             long employeeNumberSearch;
             if (long.TryParse(txtENumberMe.Text, out employeeNumberSearch))
             {
-                if(employeeNumberFound(employeeNumberSearch))
+                if (employeeNumberFound(employeeNumberSearch))
                 {
                     MessageBox.Show("Employee successfully found!");
                 }
@@ -126,14 +126,14 @@ namespace ESGARD_STORE
             {
                 MessageBox.Show("Invalid input!");
             }
-            
+
 
 
         }
 
         private void Maintain_Employees_Load(object sender, EventArgs e)
         {
-           
+
         }
 
         private Boolean addEmployee(String firstName, string lastName, long idNumber, int cellphoneNumber, string email)
@@ -145,10 +145,10 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"INSERT INTO Employee (F_Name, L_Name,ID_Number, cell_No, Email_Address) VALUES ('"+firstName+ "','" + lastName + "','" + idNumber + "','" + cellphoneNumber + "','" + email +"')";
+                string sql = @"INSERT INTO Employee (F_Name, L_Name,ID_Number, cell_No, Email_Address) VALUES ('" + firstName + "','" + lastName + "','" + idNumber + "','" + cellphoneNumber + "','" + email + "')";
                 Cmd = new SqlCommand(sql, Conn);
 
-               
+
 
                 Adap.InsertCommand = Cmd;
                 Adap.InsertCommand.ExecuteNonQuery();
@@ -157,7 +157,7 @@ namespace ESGARD_STORE
                 Cmd.Dispose();
                 Conn.Close();
 
-                
+
             }
 
             catch (Exception Ex)
@@ -179,6 +179,7 @@ namespace ESGARD_STORE
             txtENumber.Text = "";
             txtPasswordME.Text = "";
             txtINumberMe.Text = "";
+            txtENumberMe.Text = "";
         }
         private void btnAddME_Click(object sender, EventArgs e)
         {
@@ -188,17 +189,27 @@ namespace ESGARD_STORE
             int cellphoneNumber;
             string email = txtEmailME.Text;
 
+            Random rnd = new Random();
+            int rndPassword = rnd.Next(10000000, 99999999);
+
+            txtPasswordME.Text = rndPassword.ToString();
+
+            //Random rnd = new Random();
+            int rndEmployeeNum = rnd.Next(10000, 99999);
+
+            txtENumber.Text = rndEmployeeNum.ToString();
+
             if (!(firstName == ""))
             {
                 if (!(lastName == ""))
                 {
-                    if (long.TryParse(txtINumberMe.Text, out idNumber))
+                    if (long.TryParse(txtINumberMe.Text, out idNumber) && txtINumberMe.Text.Length == 13)
                     {
-                        if (!(email ==""))
+                        if (!(email == ""))
                         {
-                            if (int.TryParse(txtCellphoneME.Text, out cellphoneNumber))
+                            if (int.TryParse(txtCellphoneME.Text, out cellphoneNumber) && txtINumberMe.Text.Length == 10)
                             {
-                               if(addEmployee(firstName,lastName,idNumber,cellphoneNumber,email))
+                                if (addEmployee(firstName, lastName, idNumber, cellphoneNumber, email))
                                 {
                                     MessageBox.Show("Employee successfully added!");
                                 }
@@ -219,7 +230,7 @@ namespace ESGARD_STORE
                     }
                     else
                     {
-                        MessageBox.Show("Please enter valid ID number!");
+                        MessageBox.Show("Please enter valid ID number with 13 digits!");
                     }
                 }
                 else
@@ -228,10 +239,12 @@ namespace ESGARD_STORE
                 }
 
             }
-            else 
+            else
             {
                 MessageBox.Show("Please enter valid first name!");
             }
+
+            loadAll();
 
             clearTextBoxes();
         }
@@ -242,7 +255,7 @@ namespace ESGARD_STORE
         }
         private Boolean DeleteEmployee(long Employee_number)
         {
-            
+
             try
             {
                 //String delete_sql 
@@ -255,7 +268,7 @@ namespace ESGARD_STORE
                 Cmd.ExecuteNonQuery();
                 Adap.DeleteCommand = Cmd;
                 Adap.DeleteCommand.ExecuteNonQuery();
-                
+
                 Cmd.Dispose();
                 Conn.Close();
 
@@ -269,7 +282,7 @@ namespace ESGARD_STORE
             }
 
             return true;
-            
+
         }
         private void btnDeleteME_Click(object sender, EventArgs e)
         {
@@ -290,6 +303,164 @@ namespace ESGARD_STORE
             else
             {
                 MessageBox.Show("Invalid input!");
+            }
+        }
+
+        private Boolean UpdateEmployee(long Employee_Number, String firstName, string lastName, long idNumber, int cellphoneNumber, string email)
+        {
+            try
+            {
+                Conn = new SqlConnection(ConnectionString);
+                Conn.Open();
+
+                Adap = new SqlDataAdapter();
+
+                string sql = @"UPDATE Employee SET F_Name= '" + firstName + "',L_Name= '" + lastName + "', ID_Number= '" + idNumber + "', cell_No= '" + cellphoneNumber + "', Email_Address= '" + email + "' WHERE User_ID_No= '" + Employee_Number + "'";
+                Cmd = new SqlCommand(sql, Conn);
+
+
+
+                Adap.UpdateCommand = Cmd;
+                Adap.UpdateCommand.ExecuteNonQuery();
+
+
+                Cmd.Dispose();
+                Conn.Close();
+            }
+
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+                return false;
+
+            }
+
+            return true;
+        }
+        private void btnUpdateME_Click(object sender, EventArgs e)
+        {
+            string firstName = txtFNameME.Text;
+            string lastName = txtLNameME.Text;
+            long idNumber;
+            int cellphoneNumber;
+            string email = txtEmailME.Text;
+
+            if (!(firstName == ""))
+            {
+                if (!(lastName == ""))
+                {
+                    if (long.TryParse(txtINumberMe.Text, out idNumber) && txtINumberMe.Text.Length == 13)
+                    {
+                        if (!(email == ""))
+                        {
+                            if (int.TryParse(txtCellphoneME.Text, out cellphoneNumber) && txtINumberMe.Text.Length == 10)
+                            {
+                                if (UpdateEmployee(long.Parse(txtENumberMe.Text), firstName, lastName, idNumber, cellphoneNumber, email))
+                                {
+                                    MessageBox.Show("Employee successfully updated!");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error while updating new employee details!\nPlease try again!");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please enter valid cellphone number!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter valid email!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter valid ID number with 13 digits!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter valid last name!");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please enter valid first name!");
+            }
+
+            clearTextBoxes();
+
+
+        }
+        private void loadAll()
+        {
+            try
+            {
+                Conn = new SqlConnection(ConnectionString);
+                Conn.Open();
+                string sql = "SELECT * FROM Employee";
+                Cmd = new SqlCommand(sql, Conn);
+                Adap = new SqlDataAdapter();
+                Ds = new DataSet();
+
+                Adap.SelectCommand = Cmd;
+                Adap.Fill(Ds, "Employee");
+
+                dgv_Employee.DataSource = Ds;
+                dgv_Employee.DataMember = "Employee";
+
+                Conn.Close();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+        private void btnDisplayME_Click(object sender, EventArgs e)
+        {
+            loadAll();
+        }
+
+        private void txtFNameME_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtINumberMe_TextChanged(object sender, EventArgs e)
+        {
+            if (txtINumberMe.Text.Length == 13)
+            {
+                btnAddME.Enabled = true;
+                btnUpdateME.Enabled = true;
+            }
+            else
+            {
+                btnAddME.Enabled = false;
+                btnUpdateME.Enabled = false;
+            }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+            txtINumberMe.TextChanged += txtINumberMe_TextChanged;
+            txtCellphoneME.TextChanged += txtCellphoneME_TextChanged;
+            btnAddME.Enabled = false;
+            btnUpdateME.Enabled = false;
+        }
+
+        private void txtCellphoneME_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCellphoneME.Text.Length == 10)
+            {
+                btnAddME.Enabled = true;
+                btnUpdateME.Enabled = true;
+            }
+            else
+            {
+                btnAddME.Enabled = false;
+                btnUpdateME.Enabled = false;
             }
         }
     }

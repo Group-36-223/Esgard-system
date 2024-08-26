@@ -54,9 +54,10 @@ namespace ESGARD_STORE
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.dgv_Employee = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Employee)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddME
@@ -67,6 +68,7 @@ namespace ESGARD_STORE
             this.btnAddME.TabIndex = 0;
             this.btnAddME.Text = "Add";
             this.btnAddME.UseVisualStyleBackColor = true;
+            this.btnAddME.Click += new System.EventHandler(this.btnAddME_Click);
             // 
             // btnDeleteME
             // 
@@ -102,10 +104,10 @@ namespace ESGARD_STORE
             // 
             // txtPasswordME
             // 
-            this.txtPasswordME.Location = new System.Drawing.Point(223, 298);
+            this.txtPasswordME.Location = new System.Drawing.Point(201, 298);
             this.txtPasswordME.Name = "txtPasswordME";
             this.txtPasswordME.ReadOnly = true;
-            this.txtPasswordME.Size = new System.Drawing.Size(100, 20);
+            this.txtPasswordME.Size = new System.Drawing.Size(122, 20);
             this.txtPasswordME.TabIndex = 13;
             // 
             // label8
@@ -119,16 +121,16 @@ namespace ESGARD_STORE
             // 
             // txtENumber
             // 
-            this.txtENumber.Location = new System.Drawing.Point(223, 262);
+            this.txtENumber.Location = new System.Drawing.Point(201, 262);
             this.txtENumber.Name = "txtENumber";
             this.txtENumber.ReadOnly = true;
-            this.txtENumber.Size = new System.Drawing.Size(100, 20);
+            this.txtENumber.Size = new System.Drawing.Size(122, 20);
             this.txtENumber.TabIndex = 11;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(38, 265);
+            this.label6.Location = new System.Drawing.Point(38, 264);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 13);
             this.label6.TabIndex = 10;
@@ -137,7 +139,7 @@ namespace ESGARD_STORE
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(38, 86);
+            this.label5.Location = new System.Drawing.Point(38, 89);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 13);
             this.label5.TabIndex = 9;
@@ -146,7 +148,7 @@ namespace ESGARD_STORE
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(40, 214);
+            this.label4.Location = new System.Drawing.Point(38, 216);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(97, 13);
             this.label4.TabIndex = 8;
@@ -155,7 +157,7 @@ namespace ESGARD_STORE
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 176);
+            this.label3.Location = new System.Drawing.Point(38, 171);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 7;
@@ -164,7 +166,7 @@ namespace ESGARD_STORE
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 130);
+            this.label2.Location = new System.Drawing.Point(38, 129);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 6;
@@ -173,7 +175,7 @@ namespace ESGARD_STORE
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 48);
+            this.label1.Location = new System.Drawing.Point(38, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 5;
@@ -181,37 +183,37 @@ namespace ESGARD_STORE
             // 
             // txtINumberMe
             // 
-            this.txtINumberMe.Location = new System.Drawing.Point(223, 127);
+            this.txtINumberMe.Location = new System.Drawing.Point(201, 127);
             this.txtINumberMe.Name = "txtINumberMe";
-            this.txtINumberMe.Size = new System.Drawing.Size(100, 20);
+            this.txtINumberMe.Size = new System.Drawing.Size(122, 20);
             this.txtINumberMe.TabIndex = 4;
             // 
             // txtEmailME
             // 
-            this.txtEmailME.Location = new System.Drawing.Point(223, 176);
+            this.txtEmailME.Location = new System.Drawing.Point(201, 168);
             this.txtEmailME.Name = "txtEmailME";
-            this.txtEmailME.Size = new System.Drawing.Size(100, 20);
+            this.txtEmailME.Size = new System.Drawing.Size(122, 20);
             this.txtEmailME.TabIndex = 3;
             // 
             // txtCellphoneME
             // 
-            this.txtCellphoneME.Location = new System.Drawing.Point(223, 214);
+            this.txtCellphoneME.Location = new System.Drawing.Point(201, 214);
             this.txtCellphoneME.Name = "txtCellphoneME";
-            this.txtCellphoneME.Size = new System.Drawing.Size(100, 20);
+            this.txtCellphoneME.Size = new System.Drawing.Size(122, 20);
             this.txtCellphoneME.TabIndex = 2;
             // 
             // txtLNameME
             // 
-            this.txtLNameME.Location = new System.Drawing.Point(223, 86);
+            this.txtLNameME.Location = new System.Drawing.Point(201, 86);
             this.txtLNameME.Name = "txtLNameME";
-            this.txtLNameME.Size = new System.Drawing.Size(100, 20);
+            this.txtLNameME.Size = new System.Drawing.Size(122, 20);
             this.txtLNameME.TabIndex = 1;
             // 
             // txtFNameME
             // 
-            this.txtFNameME.Location = new System.Drawing.Point(223, 42);
+            this.txtFNameME.Location = new System.Drawing.Point(201, 42);
             this.txtFNameME.Name = "txtFNameME";
-            this.txtFNameME.Size = new System.Drawing.Size(100, 20);
+            this.txtFNameME.Size = new System.Drawing.Size(122, 20);
             this.txtFNameME.TabIndex = 0;
             // 
             // label7
@@ -238,6 +240,7 @@ namespace ESGARD_STORE
             this.btnSearchME.TabIndex = 8;
             this.btnSearchME.Text = "Search";
             this.btnSearchME.UseVisualStyleBackColor = true;
+            this.btnSearchME.Click += new System.EventHandler(this.btnSearchME_Click);
             // 
             // btnUpdateME
             // 
@@ -291,21 +294,23 @@ namespace ESGARD_STORE
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // listBox1
+            // dgv_Employee
             // 
-            this.listBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(3, 119);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(396, 316);
-            this.listBox1.TabIndex = 26;
+            this.dgv_Employee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Employee.Location = new System.Drawing.Point(12, 108);
+            this.dgv_Employee.Margin = new System.Windows.Forms.Padding(2);
+            this.dgv_Employee.Name = "dgv_Employee";
+            this.dgv_Employee.RowHeadersWidth = 51;
+            this.dgv_Employee.RowTemplate.Height = 24;
+            this.dgv_Employee.Size = new System.Drawing.Size(380, 331);
+            this.dgv_Employee.TabIndex = 27;
             // 
             // Maintain_Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 540);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.dgv_Employee);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -318,10 +323,13 @@ namespace ESGARD_STORE
             this.Controls.Add(this.btnDeleteME);
             this.Controls.Add(this.btnAddME);
             this.Name = "Maintain_Employees";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maintain_Employees";
+            this.Load += new System.EventHandler(this.Maintain_Employees_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Employee)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -354,6 +362,6 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.DataGridView dgv_Employee;
     }
 }

@@ -129,6 +129,7 @@ namespace ESGARD_STORE
             this.btnAddMI.TabIndex = 16;
             this.btnAddMI.Text = "Add ";
             this.btnAddMI.UseVisualStyleBackColor = true;
+            this.btnAddMI.Click += new System.EventHandler(this.btnAddMI_Click);
             // 
             // txtBarMInventory
             // 
@@ -294,6 +295,7 @@ namespace ESGARD_STORE
             this.Controls.Add(this.btnDeleteMI);
             this.Controls.Add(this.listBox1);
             this.Name = "Maintain_Inventory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maintain_Inventory";
             this.Load += new System.EventHandler(this.Maintain_Inventory_Load);
             this.panel1.ResumeLayout(false);

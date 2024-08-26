@@ -356,6 +356,7 @@ namespace ESGARD_STORE
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "Exchanges";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Exchanges";
             this.Load += new System.EventHandler(this.Exchanges_Load);
             this.panel1.ResumeLayout(false);

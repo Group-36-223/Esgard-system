@@ -31,7 +31,6 @@ namespace ESGARD_STORE
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.BtnDisplay = new System.Windows.Forms.Button();
             this.hScrollBar4 = new System.Windows.Forms.HScrollBar();
             this.label5 = new System.Windows.Forms.Label();
@@ -53,16 +52,17 @@ namespace ESGARD_STORE
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.lblEsgard = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -99,21 +99,6 @@ namespace ESGARD_STORE
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Top Ten Selling Items";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.listBox2);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.button1);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(804, 482);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Client Statements";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // BtnDisplay
             // 
@@ -321,23 +306,28 @@ namespace ESGARD_STORE
             this.lblEsgard.TabIndex = 30;
             this.lblEsgard.Text = "Esgard Apparel";
             // 
-            // label6
+            // tabPage2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(551, 71);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Date";
+            this.tabPage2.Controls.Add(this.listBox2);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.button1);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(804, 468);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Client Statements";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // listBox2
             // 
-            this.button1.Location = new System.Drawing.Point(675, 435);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Generate";
-            this.button1.UseVisualStyleBackColor = true;
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(37, 187);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(713, 212);
+            this.listBox2.TabIndex = 3;
             // 
             // label7
             // 
@@ -348,13 +338,23 @@ namespace ESGARD_STORE
             this.label7.TabIndex = 2;
             this.label7.Text = "client Name:";
             // 
-            // listBox2
+            // button1
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(37, 187);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(713, 212);
-            this.listBox2.TabIndex = 3;
+            this.button1.Location = new System.Drawing.Point(675, 435);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Generate";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(551, 71);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Date";
             // 
             // label15
             // 
@@ -387,14 +387,15 @@ namespace ESGARD_STORE
             this.Controls.Add(this.label14);
             this.Controls.Add(this.tabControl1);
             this.Name = "Reports";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reports";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

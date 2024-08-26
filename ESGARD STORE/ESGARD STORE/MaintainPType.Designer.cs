@@ -169,6 +169,7 @@ namespace ESGARD_STORE
             this.Controls.Add(this.cBSPayType);
             this.Controls.Add(this.lblPayment_Type);
             this.Name = "MaintainPType";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MaintainPType";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

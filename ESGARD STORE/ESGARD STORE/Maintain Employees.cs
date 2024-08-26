@@ -13,7 +13,7 @@ namespace ESGARD_STORE
 {
     public partial class Maintain_Employees : Form
     {
-        String ConnectionString = @"Data Source=LAPTOP-EM1DCRUG;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        String ConnectionString = @"Data Source=KAASKRULLE;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         SqlConnection Conn;
         SqlCommand Cmd;
         SqlDataAdapter Adap;
@@ -49,7 +49,7 @@ namespace ESGARD_STORE
                 db.BringToFront();
             }
         }
-        private Boolean employeeNumberFound(int employeeNumberSearch)
+        private Boolean employeeNumberFound(long employeeNumberSearch)
         {
 
             clearTextBoxes();
@@ -109,8 +109,8 @@ namespace ESGARD_STORE
         private void btnSearchME_Click(object sender, EventArgs e)
         {
 
-            int employeeNumberSearch;
-            if (int.TryParse(txtENumberMe.Text, out employeeNumberSearch))
+            long employeeNumberSearch;
+            if (long.TryParse(txtENumberMe.Text, out employeeNumberSearch))
             {
                 if(employeeNumberFound(employeeNumberSearch))
                 {
@@ -234,6 +234,63 @@ namespace ESGARD_STORE
             }
 
             clearTextBoxes();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearTextBoxes();
+        }
+        private Boolean DeleteEmployee(long Employee_number)
+        {
+            
+            try
+            {
+                //String delete_sql 
+                Conn = new SqlConnection(ConnectionString);
+                Conn.Open();
+
+                Adap = new SqlDataAdapter();
+                String delete_sql = "DELETE Employee WHERE User_ID_No = " + Employee_number;
+                Cmd = new SqlCommand(delete_sql, Conn);
+                Cmd.ExecuteNonQuery();
+                Adap.DeleteCommand = Cmd;
+                Adap.DeleteCommand.ExecuteNonQuery();
+                
+                Cmd.Dispose();
+                Conn.Close();
+
+
+            }
+
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+                return false;
+            }
+
+            return true;
+            
+        }
+        private void btnDeleteME_Click(object sender, EventArgs e)
+        {
+            long employeeNumber;
+            if (long.TryParse(txtENumberMe.Text, out employeeNumber))
+            {
+                if (DeleteEmployee(employeeNumber))
+                {
+                    MessageBox.Show("Employee successfully deleted!");
+                    clearTextBoxes();
+                }
+                else
+                {
+                    MessageBox.Show("Deleting employee unsuccessfull!\n Please try again!");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Invalid input!");
+            }
         }
     }
 }

@@ -157,6 +157,7 @@ namespace ESGARD_STORE
             this.Controls.Add(this.btnReports);
             this.Controls.Add(this.btnMaintainEmployee);
             this.Name = "Manager_Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager_Dashboard";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

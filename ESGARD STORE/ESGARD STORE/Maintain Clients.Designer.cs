@@ -297,6 +297,7 @@ namespace ESGARD_STORE
             this.Controls.Add(this.btnDeleteMC);
             this.Controls.Add(this.btnAddMC);
             this.Name = "Maintain_Clients";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maintain Clients";
             this.Load += new System.EventHandler(this.Maintain_Clients_Load);
             this.groupBox1.ResumeLayout(false);

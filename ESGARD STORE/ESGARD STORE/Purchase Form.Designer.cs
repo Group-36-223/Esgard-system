@@ -36,6 +36,8 @@ namespace ESGARD_STORE
             this.btnClear = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cBSPayType = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtDescrP = new System.Windows.Forms.TextBox();
             this.txtColorP = new System.Windows.Forms.TextBox();
             this.txtSizeP = new System.Windows.Forms.TextBox();
@@ -52,8 +54,6 @@ namespace ESGARD_STORE
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cBSPayType = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -134,6 +134,27 @@ namespace ESGARD_STORE
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(345, 267);
             this.panel1.TabIndex = 20;
+            // 
+            // cBSPayType
+            // 
+            this.cBSPayType.FormattingEnabled = true;
+            this.cBSPayType.Items.AddRange(new object[] {
+            "Cash",
+            "Debit/Credit Card",
+            "Apple Pay"});
+            this.cBSPayType.Location = new System.Drawing.Point(141, 217);
+            this.cBSPayType.Name = "cBSPayType";
+            this.cBSPayType.Size = new System.Drawing.Size(179, 21);
+            this.cBSPayType.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(22, 225);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(111, 13);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Select Payment Type:";
             // 
             // txtDescrP
             // 
@@ -283,27 +304,6 @@ namespace ESGARD_STORE
             this.label10.Text = "label10";
             this.label10.Visible = false;
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(22, 225);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 13);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Select Payment Type:";
-            // 
-            // cBSPayType
-            // 
-            this.cBSPayType.FormattingEnabled = true;
-            this.cBSPayType.Items.AddRange(new object[] {
-            "Cash",
-            "Debit/Credit Card",
-            "Apple Pay"});
-            this.cBSPayType.Location = new System.Drawing.Point(141, 217);
-            this.cBSPayType.Name = "cBSPayType";
-            this.cBSPayType.Size = new System.Drawing.Size(179, 21);
-            this.cBSPayType.TabIndex = 27;
-            // 
             // Purchase_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,6 +322,7 @@ namespace ESGARD_STORE
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.listBox1);
             this.Name = "Purchase_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Purchase_Form";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

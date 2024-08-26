@@ -21,5 +21,33 @@ namespace ESGARD_STORE
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //Dashboard ds = new Dashboard();
+            //ds.ShowDialog();
+
+            Dashboard ds = Application.OpenForms["Dashboard"] as Dashboard;
+
+
+            if (ds == null)
+            {
+                ds = new Dashboard();
+                ds.Show();
+            }
+            else
+            {
+                ds.BringToFront();
+            }
+
+
+            this.Close();
+        }
+
+        private void btnExchange_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("The item has been exchanged successfully");
+            this.Close();
+        }
     }
 }

@@ -29,9 +29,96 @@ namespace ESGARD_STORE
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Dashboard ds = new Dashboard();
-            ds.ShowDialog();
-            this.Hide(); 
+            //Dashboard ds = new Dashboard();
+            //ds.ShowDialog();
+
+
+            Dashboard ds = Application.OpenForms["Dashboard"] as Dashboard;
+
+
+            if (ds == null)
+            {
+                ds = new Dashboard();
+                ds.Show();
+            }
+            else
+            {
+                ds.BringToFront();
+            }
+
+
+            this.Close();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //Dashboard ds = new Dashboard();
+            //ds.ShowDialog();
+
+
+            Dashboard ds = Application.OpenForms["Dashboard"] as Dashboard;
+
+
+            if (ds == null)
+            {
+                ds = new Dashboard();
+                ds.Show();
+            }
+            else
+            {
+                ds.BringToFront();
+            }
+
+
+            this.Close();
+        }
+
+        private void btnAddMI_Click(object sender, EventArgs e)
+        {
+            string description = txtDesrMInventory.Text;
+            string color = txtColorMI.Text;
+            int barcode;
+            int size;
+            decimal price;
+
+            if (int.TryParse(txtBarMInventory.Text, out barcode))
+            {
+                if (!(description == ""))
+                {
+                    if (!(color == ""))
+                    {
+                        if (int.TryParse(txtSizeMI.Text, out size))
+                        {
+                            if (decimal.TryParse(txtPriceMI.Text, out price))
+                            {
+                                //place code here
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please enter valid price!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please enter valid size!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter valid color!");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter valid description!");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please enter valid barcode!");
+            }
+        
+    }
     }
 }

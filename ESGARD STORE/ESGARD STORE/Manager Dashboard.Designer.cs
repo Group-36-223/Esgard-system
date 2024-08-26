@@ -30,15 +30,15 @@ namespace ESGARD_STORE
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnReports = new System.Windows.Forms.Button();
             this.btnMaintainEmployee = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -57,6 +57,26 @@ namespace ESGARD_STORE
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(755, 73);
             this.panel1.TabIndex = 11;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(228, 50);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "lblRoleD";
+            this.label4.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(228, 17);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "lblNameD";
+            this.label3.Visible = false;
             // 
             // btnLogout
             // 
@@ -86,6 +106,17 @@ namespace ESGARD_STORE
             this.label2.TabIndex = 7;
             this.label2.Text = "Role";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ESGARD_STORE.Properties.Resources.ESGARD_LOGO;
+            this.pictureBox1.Location = new System.Drawing.Point(29, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // btnReports
             // 
             this.btnReports.Location = new System.Drawing.Point(23, 242);
@@ -94,6 +125,7 @@ namespace ESGARD_STORE
             this.btnReports.TabIndex = 15;
             this.btnReports.Text = "Reports";
             this.btnReports.UseVisualStyleBackColor = true;
+            this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
             // btnMaintainEmployee
             // 
@@ -105,16 +137,6 @@ namespace ESGARD_STORE
             this.btnMaintainEmployee.UseVisualStyleBackColor = true;
             this.btnMaintainEmployee.Click += new System.EventHandler(this.button4_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ESGARD_STORE.Properties.Resources.ESGARD_LOGO;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ESGARD_STORE.Properties.Resources.this_is_Esgard__1_;
@@ -124,25 +146,6 @@ namespace ESGARD_STORE
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 17;
             this.pictureBox2.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(228, 17);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "lblNameD";
-            this.label3.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(228, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "lblRoleD";
             // 
             // Manager_Dashboard
             // 
@@ -154,6 +157,7 @@ namespace ESGARD_STORE
             this.Controls.Add(this.btnReports);
             this.Controls.Add(this.btnMaintainEmployee);
             this.Name = "Manager_Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manager_Dashboard";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

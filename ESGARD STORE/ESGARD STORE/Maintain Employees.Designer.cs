@@ -32,6 +32,8 @@ namespace ESGARD_STORE
             this.btnAddME = new System.Windows.Forms.Button();
             this.btnDeleteME = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtPasswordME = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtENumber = new System.Windows.Forms.TextBox();
@@ -57,8 +59,6 @@ namespace ESGARD_STORE
             this.dgv_Employee = new System.Windows.Forms.DataGridView();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnDisplayME = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Employee)).BeginInit();
@@ -113,6 +113,28 @@ namespace ESGARD_STORE
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Details";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Silver;
+            this.label12.Location = new System.Drawing.Point(265, 242);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(152, 17);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Must be 10 characters!";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Silver;
+            this.label11.Location = new System.Drawing.Point(265, 135);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(152, 17);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Must be 13 characters!";
             // 
             // txtPasswordME
             // 
@@ -218,6 +240,7 @@ namespace ESGARD_STORE
             this.txtEmailME.Name = "txtEmailME";
             this.txtEmailME.Size = new System.Drawing.Size(161, 22);
             this.txtEmailME.TabIndex = 3;
+            this.txtEmailME.TextChanged += new System.EventHandler(this.txtEmailME_TextChanged);
             // 
             // txtCellphoneME
             // 
@@ -243,7 +266,6 @@ namespace ESGARD_STORE
             this.txtFNameME.Name = "txtFNameME";
             this.txtFNameME.Size = new System.Drawing.Size(161, 22);
             this.txtFNameME.TabIndex = 0;
-            this.txtFNameME.TextChanged += new System.EventHandler(this.txtFNameME_TextChanged);
             // 
             // label7
             // 
@@ -362,28 +384,6 @@ namespace ESGARD_STORE
             this.btnDisplayME.Text = "Display";
             this.btnDisplayME.UseVisualStyleBackColor = true;
             this.btnDisplayME.Click += new System.EventHandler(this.btnDisplayME_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.Silver;
-            this.label11.Location = new System.Drawing.Point(265, 135);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(152, 17);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "Must be 13 characters!";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.Silver;
-            this.label12.Location = new System.Drawing.Point(265, 242);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(152, 17);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Must be 10 characters!";
             // 
             // Maintain_Employees
             // 

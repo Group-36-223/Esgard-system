@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace ESGARD_STORE
 {
@@ -52,7 +53,15 @@ namespace ESGARD_STORE
         private Boolean employeeNumberFound(long employeeNumberSearch)
         {
 
-            clearTextBoxes();
+            //clearTextBoxes();
+            txtFNameME.Text = "";
+            txtLNameME.Text = "";
+            txtCellphoneME.Text = "";
+            txtEmailME.Text = "";
+            txtENumber.Text = "";
+            txtPasswordME.Text = "";
+            txtINumberMe.Text = "";
+            //txtENumberMe.Text = "";
             Boolean didItThrewAnException = false;
 
             try
@@ -62,7 +71,7 @@ namespace ESGARD_STORE
 
                 //Adap = new SqlDataAdapter();
 
-                string sql = @"SELECT F_Name, L_Name, cell_No, Email_Address, ID_Number FROM Employee WHERE User_ID_No = " + employeeNumberSearch;
+                string sql = @"SELECT F_Name, L_Name, cell_No, Email_Address, ID_Number FROM Employee WHERE Employee_Number = " + employeeNumberSearch;
                 Cmd = new SqlCommand(sql, Conn);
 
                 Cmd.Parameters.AddWithValue("User_ID_No", employeeNumberSearch);
@@ -136,7 +145,7 @@ namespace ESGARD_STORE
 
         }
 
-        private Boolean addEmployee(String firstName, string lastName, long idNumber, int cellphoneNumber, string email)
+        private Boolean addEmployee(String firstName, string lastName, int cellphoneNumber, string email, long idNumber , int Password, int Employee_Number)
         {
             try
             {
@@ -145,7 +154,7 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"INSERT INTO Employee (F_Name, L_Name,ID_Number, cell_No, Email_Address) VALUES ('" + firstName + "','" + lastName + "','" + idNumber + "','" + cellphoneNumber + "','" + email + "')";
+                string sql = @"INSERT INTO Employee (F_Name, L_Name, cell_No, Email_Address, ID_Number, Pssword, Employee_Number) VALUES ('" + firstName + "','" + lastName + "','" + cellphoneNumber + "','" + email + "','" + idNumber + "', '"+ Password +"', '"+ Employee_Number +"')";
                 Cmd = new SqlCommand(sql, Conn);
 
 
@@ -188,16 +197,18 @@ namespace ESGARD_STORE
             long idNumber;
             int cellphoneNumber;
             string email = txtEmailME.Text;
+            int Password;
+            int Employee_Number;
 
             Random rnd = new Random();
             int rndPassword = rnd.Next(10000000, 99999999);
-
             txtPasswordME.Text = rndPassword.ToString();
-
+            Password = rndPassword;
+            
             //Random rnd = new Random();
             int rndEmployeeNum = rnd.Next(10000, 99999);
-
             txtENumber.Text = rndEmployeeNum.ToString();
+            Employee_Number = rndEmployeeNum;
 
             if (!(firstName == ""))
             {
@@ -207,9 +218,9 @@ namespace ESGARD_STORE
                     {
                         if (!(email == ""))
                         {
-                            if (int.TryParse(txtCellphoneME.Text, out cellphoneNumber) && txtINumberMe.Text.Length == 10)
+                            if (int.TryParse(txtCellphoneME.Text, out cellphoneNumber) && txtCellphoneME.Text.Length == 10)
                             {
-                                if (addEmployee(firstName, lastName, idNumber, cellphoneNumber, email))
+                                if (addEmployee(firstName, lastName, cellphoneNumber, email , idNumber , Password, Employee_Number))
                                 {
                                     MessageBox.Show("Employee successfully added!");
                                 }
@@ -245,15 +256,16 @@ namespace ESGARD_STORE
             }
 
             loadAll();
-
-            clearTextBoxes();
+            //ValidEmail();
+            bool isValid = ValidEmail(email);
+            //clearTextBoxes();
         }
 
         private void btnClear_Click(object sender, EventArgs e)
         {
             clearTextBoxes();
         }
-        private Boolean DeleteEmployee(long Employee_number)
+        private Boolean DeleteEmployee(int Emp_No)
         {
 
             try
@@ -263,7 +275,7 @@ namespace ESGARD_STORE
                 Conn.Open();
 
                 Adap = new SqlDataAdapter();
-                String delete_sql = "DELETE Employee WHERE User_ID_No = " + Employee_number;
+                String delete_sql = "DELETE Employee WHERE Employee_Number = " + Emp_No;
                 Cmd = new SqlCommand(delete_sql, Conn);
                 Cmd.ExecuteNonQuery();
                 Adap.DeleteCommand = Cmd;
@@ -286,10 +298,10 @@ namespace ESGARD_STORE
         }
         private void btnDeleteME_Click(object sender, EventArgs e)
         {
-            long employeeNumber;
-            if (long.TryParse(txtENumberMe.Text, out employeeNumber))
+            int Empe_No;
+            if (int.TryParse(txtENumberMe.Text, out Empe_No))
             {
-                if (DeleteEmployee(employeeNumber))
+                if (DeleteEmployee(Empe_No))
                 {
                     MessageBox.Show("Employee successfully deleted!");
                     clearTextBoxes();
@@ -306,8 +318,9 @@ namespace ESGARD_STORE
             }
         }
 
-        private Boolean UpdateEmployee(long Employee_Number, String firstName, string lastName, long idNumber, int cellphoneNumber, string email)
+        private Boolean UpdateEmployee(int Employee_No, string firstName, string lastName, long cellphoneNumber, string email, long idNumber, int Password)
         {
+            
             try
             {
                 Conn = new SqlConnection(ConnectionString);
@@ -315,7 +328,7 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"UPDATE Employee SET F_Name= '" + firstName + "',L_Name= '" + lastName + "', ID_Number= '" + idNumber + "', cell_No= '" + cellphoneNumber + "', Email_Address= '" + email + "' WHERE User_ID_No= '" + Employee_Number + "'";
+                string sql = @"UPDATE Employee SET F_Name= '" + firstName + "',L_Name= '" + lastName + "', cell_No= '" + cellphoneNumber + "', Email_Address= '" + email + "', ID_Number= '" + idNumber + "', Pssword= '" + Password +"' WHERE Employee_Number= '" + Employee_No + "'";
                 Cmd = new SqlCommand(sql, Conn);
 
 
@@ -342,8 +355,19 @@ namespace ESGARD_STORE
             string firstName = txtFNameME.Text;
             string lastName = txtLNameME.Text;
             long idNumber;
-            int cellphoneNumber;
+            long cellphoneNumber;
+            int Password;
             string email = txtEmailME.Text;
+
+            Random rnd = new Random();
+            int rndPassword = rnd.Next(10000000, 99999999);
+            txtPasswordME.Text = rndPassword.ToString();
+            Password = rndPassword;
+
+            //Random rnd = new Random();
+            //int rndEmployeeNum = rnd.Next(10000, 99999);
+            //txtENumber.Text = rndEmployeeNum.ToString();
+            //Employee_Number = rndEmployeeNum;
 
             if (!(firstName == ""))
             {
@@ -353,9 +377,9 @@ namespace ESGARD_STORE
                     {
                         if (!(email == ""))
                         {
-                            if (int.TryParse(txtCellphoneME.Text, out cellphoneNumber) && txtINumberMe.Text.Length == 10)
+                            if (long.TryParse(txtCellphoneME.Text, out cellphoneNumber) && txtCellphoneME.Text.Length == 10)
                             {
-                                if (UpdateEmployee(long.Parse(txtENumberMe.Text), firstName, lastName, idNumber, cellphoneNumber, email))
+                                if (UpdateEmployee(int.Parse(txtENumberMe.Text), firstName, lastName, cellphoneNumber, email, idNumber, Password))
                                 {
                                     MessageBox.Show("Employee successfully updated!");
                                 }
@@ -390,7 +414,15 @@ namespace ESGARD_STORE
                 MessageBox.Show("Please enter valid first name!");
             }
 
-            clearTextBoxes();
+            //clearTextBoxes();
+            txtFNameME.Text = "";
+            txtLNameME.Text = "";
+            txtCellphoneME.Text = "";
+            txtEmailME.Text = "";
+            txtENumber.Text = "";
+            txtPasswordME.Text = "";
+            txtINumberMe.Text = "";
+            //txtENumberMe.Text = "";
 
 
         }
@@ -421,11 +453,6 @@ namespace ESGARD_STORE
         private void btnDisplayME_Click(object sender, EventArgs e)
         {
             loadAll();
-        }
-
-        private void txtFNameME_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void txtINumberMe_TextChanged(object sender, EventArgs e)
@@ -462,6 +489,30 @@ namespace ESGARD_STORE
                 btnAddME.Enabled = false;
                 btnUpdateME.Enabled = false;
             }
+        }
+
+        private bool ValidEmail(string email)
+        {
+            bool output = false;
+            //Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-])((\.(\w){2,3})+)$", RegexOptions.IgnoreCase);
+
+            //return emailRegex.IsMatch(email);
+            try
+            {
+                
+                var emailValidator = new System.Net.Mail.MailAddress(email);
+                output = (email.LastIndexOf(".") > email.LastIndexOf("@"));
+            }
+            catch
+            {
+                output = false;
+            }
+            return output;
+            
+        }
+
+        private void txtEmailME_TextChanged(object sender, EventArgs e)
+        {
         }
     }
 }

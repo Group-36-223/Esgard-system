@@ -235,5 +235,10 @@ namespace ESGARD_STORE
 
             clearTextBoxes();
         }
+
+        private void txtENumberMe_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

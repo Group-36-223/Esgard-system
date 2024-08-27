@@ -231,6 +231,7 @@ namespace ESGARD_STORE
             this.txtENumberMe.Name = "txtENumberMe";
             this.txtENumberMe.Size = new System.Drawing.Size(147, 20);
             this.txtENumberMe.TabIndex = 6;
+            this.txtENumberMe.TextChanged += new System.EventHandler(this.txtENumberMe_TextChanged);
             // 
             // btnSearchME
             // 

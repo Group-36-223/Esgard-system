@@ -41,7 +41,7 @@ namespace ESGARD_STORE
             this.label5 = new System.Windows.Forms.Label();
             this.btnUpdateMI = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblPrice = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnProceedMI = new System.Windows.Forms.Button();
             this.btnDeleteMI = new System.Windows.Forms.Button();
@@ -52,6 +52,10 @@ namespace ESGARD_STORE
             this.btnSearchME = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.txtSNumberMe = new System.Windows.Forms.TextBox();
+            this.txtCategory = new System.Windows.Forms.TextBox();
+            this.lblCategory = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtQty = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,6 +72,10 @@ namespace ESGARD_STORE
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtQty);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.lblCategory);
+            this.panel1.Controls.Add(this.txtCategory);
             this.panel1.Controls.Add(this.txtDesrMInventory);
             this.panel1.Controls.Add(this.txtColorMI);
             this.panel1.Controls.Add(this.txtSizeMI);
@@ -78,52 +86,48 @@ namespace ESGARD_STORE
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btnUpdateMI);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.lblPrice);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(12, 134);
+            this.panel1.Location = new System.Drawing.Point(12, 112);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(345, 264);
+            this.panel1.Size = new System.Drawing.Size(345, 303);
             this.panel1.TabIndex = 30;
             // 
             // txtDesrMInventory
             // 
             this.txtDesrMInventory.BackColor = System.Drawing.SystemColors.Window;
-            this.txtDesrMInventory.Location = new System.Drawing.Point(141, 81);
+            this.txtDesrMInventory.Location = new System.Drawing.Point(141, 61);
             this.txtDesrMInventory.Name = "txtDesrMInventory";
-            this.txtDesrMInventory.ReadOnly = true;
             this.txtDesrMInventory.Size = new System.Drawing.Size(179, 20);
             this.txtDesrMInventory.TabIndex = 23;
             // 
             // txtColorMI
             // 
             this.txtColorMI.BackColor = System.Drawing.SystemColors.Window;
-            this.txtColorMI.Location = new System.Drawing.Point(141, 119);
+            this.txtColorMI.Location = new System.Drawing.Point(141, 102);
             this.txtColorMI.Name = "txtColorMI";
-            this.txtColorMI.ReadOnly = true;
             this.txtColorMI.Size = new System.Drawing.Size(179, 20);
             this.txtColorMI.TabIndex = 22;
             // 
             // txtSizeMI
             // 
             this.txtSizeMI.BackColor = System.Drawing.SystemColors.Window;
-            this.txtSizeMI.Location = new System.Drawing.Point(141, 160);
+            this.txtSizeMI.Location = new System.Drawing.Point(141, 135);
             this.txtSizeMI.Name = "txtSizeMI";
-            this.txtSizeMI.ReadOnly = true;
             this.txtSizeMI.Size = new System.Drawing.Size(179, 20);
             this.txtSizeMI.TabIndex = 21;
             // 
             // txtPriceMI
             // 
             this.txtPriceMI.BackColor = System.Drawing.SystemColors.Window;
-            this.txtPriceMI.Location = new System.Drawing.Point(141, 194);
+            this.txtPriceMI.Location = new System.Drawing.Point(141, 177);
             this.txtPriceMI.Name = "txtPriceMI";
-            this.txtPriceMI.ReadOnly = true;
             this.txtPriceMI.Size = new System.Drawing.Size(179, 20);
             this.txtPriceMI.TabIndex = 20;
             // 
             // btnAddMI
             // 
-            this.btnAddMI.Location = new System.Drawing.Point(245, 220);
+            this.btnAddMI.Location = new System.Drawing.Point(245, 280);
             this.btnAddMI.Name = "btnAddMI";
             this.btnAddMI.Size = new System.Drawing.Size(75, 23);
             this.btnAddMI.TabIndex = 16;
@@ -133,7 +137,7 @@ namespace ESGARD_STORE
             // 
             // txtBarMInventory
             // 
-            this.txtBarMInventory.Location = new System.Drawing.Point(141, 38);
+            this.txtBarMInventory.Location = new System.Drawing.Point(141, 21);
             this.txtBarMInventory.Name = "txtBarMInventory";
             this.txtBarMInventory.Size = new System.Drawing.Size(179, 20);
             this.txtBarMInventory.TabIndex = 19;
@@ -141,7 +145,7 @@ namespace ESGARD_STORE
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(22, 88);
+            this.label6.Location = new System.Drawing.Point(22, 61);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 18;
@@ -150,7 +154,7 @@ namespace ESGARD_STORE
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(22, 126);
+            this.label5.Location = new System.Drawing.Point(22, 105);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(31, 13);
             this.label5.TabIndex = 17;
@@ -158,7 +162,7 @@ namespace ESGARD_STORE
             // 
             // btnUpdateMI
             // 
-            this.btnUpdateMI.Location = new System.Drawing.Point(141, 220);
+            this.btnUpdateMI.Location = new System.Drawing.Point(141, 277);
             this.btnUpdateMI.Name = "btnUpdateMI";
             this.btnUpdateMI.Size = new System.Drawing.Size(75, 23);
             this.btnUpdateMI.TabIndex = 28;
@@ -168,25 +172,25 @@ namespace ESGARD_STORE
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 163);
+            this.label4.Location = new System.Drawing.Point(22, 142);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(27, 13);
             this.label4.TabIndex = 16;
             this.label4.Text = "Size";
             // 
-            // label3
+            // lblPrice
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(22, 201);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(31, 13);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Price";
+            this.lblPrice.AutoSize = true;
+            this.lblPrice.Location = new System.Drawing.Point(22, 184);
+            this.lblPrice.Name = "lblPrice";
+            this.lblPrice.Size = new System.Drawing.Size(31, 13);
+            this.lblPrice.TabIndex = 15;
+            this.lblPrice.Text = "Price";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 41);
+            this.label2.Location = new System.Drawing.Point(22, 21);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 13);
             this.label2.TabIndex = 14;
@@ -280,6 +284,38 @@ namespace ESGARD_STORE
             this.txtSNumberMe.TabIndex = 35;
             this.txtSNumberMe.TextChanged += new System.EventHandler(this.txtENumberMe_TextChanged);
             // 
+            // txtCategory
+            // 
+            this.txtCategory.Location = new System.Drawing.Point(141, 212);
+            this.txtCategory.Name = "txtCategory";
+            this.txtCategory.Size = new System.Drawing.Size(179, 20);
+            this.txtCategory.TabIndex = 29;
+            // 
+            // lblCategory
+            // 
+            this.lblCategory.AutoSize = true;
+            this.lblCategory.Location = new System.Drawing.Point(22, 219);
+            this.lblCategory.Name = "lblCategory";
+            this.lblCategory.Size = new System.Drawing.Size(49, 13);
+            this.lblCategory.TabIndex = 30;
+            this.lblCategory.Text = "Category";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 250);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "Quantity on Hand";
+            // 
+            // txtQty
+            // 
+            this.txtQty.Location = new System.Drawing.Point(141, 247);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(179, 20);
+            this.txtQty.TabIndex = 32;
+            // 
             // Maintain_Inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -322,7 +358,7 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnUpdateMI;
         private System.Windows.Forms.Button btnProceedMI;
@@ -333,5 +369,9 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Button btnSearchME;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtSNumberMe;
+        private System.Windows.Forms.Label lblCategory;
+        private System.Windows.Forms.TextBox txtCategory;
+        private System.Windows.Forms.TextBox txtQty;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -85,44 +85,52 @@ namespace ESGARD_STORE
         {
             string description = txtDesrMInventory.Text;
             string color = txtColorMI.Text;
-            int barcode;
+            string category = txtCategory.Text;
+            int SerialNumber;
+            int Quantity_on_Hand;
             int size;
-            decimal price;
+            int price;
 
-            if (int.TryParse(txtBarMInventory.Text, out barcode))
+            if (int.TryParse(txtSNumberMe.Text, out SerialNumber))
             {
+                if(int.TryParse(txtQty.Text, out Quantity_on_Hand))
+                { 
                 if (!(description == ""))
                 {
                     if (!(color == ""))
                     {
-                        if (int.TryParse(txtSizeMI.Text, out size))
+                        if (!(category == ""))
                         {
-                            if (decimal.TryParse(txtPriceMI.Text, out price))
+                            if (int.TryParse(txtSizeMI.Text, out size))
                             {
-                                if (addInventory(Serial_No,Descri,Color, Category, Price, Size)) ;
+                                if (int.TryParse(txtPriceMI.Text, out price))
+                                {
+                                        if (addInventory(description, color, SerialNumber, size, category, Quantity_on_Hand, price)) ;
 
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Please enter valid price!");
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Please enter valid price!");
+                                MessageBox.Show("Please enter valid size!");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Please enter valid size!");
+                            MessageBox.Show("Please enter valid color!");
                         }
+                    }
                     }
                     else
                     {
-                        MessageBox.Show("Please enter valid color!");
+                        MessageBox.Show("Please enter valid description!");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Please enter valid description!");
-                }
 
-            }
+                }
+            } 
             else
             {
                 MessageBox.Show("Please enter valid barcode!");
@@ -186,6 +194,41 @@ namespace ESGARD_STORE
                 return false;
             }
 
+        }
+
+        private Boolean addInventory(string description, string Color, long Serial_No, int Size, string Category, int Quantity_On_Hand, int price)
+        {
+            
+            try
+            {
+                Conn = new SqlConnection(ConnectionString);
+                Conn.Open();
+
+                Adap = new SqlDataAdapter();
+
+                string sql = @"INSERT INTO Inventory (Quantity_On_Hand, description, Size, Color, Category, Serial_Number) VALUES ('" + Serial_No + "','" +  description + "','" + Color + "','" + Size + "','" +price+ "')";
+                Cmd = new SqlCommand(sql, Conn);
+
+
+
+                Adap.InsertCommand = Cmd;
+                Adap.InsertCommand.ExecuteNonQuery();
+
+
+                Cmd.Dispose();
+                Conn.Close();
+
+
+            }
+
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+                return false;
+
+            }
+
+            return true;
         }
 
         private void clearTextBoxes()

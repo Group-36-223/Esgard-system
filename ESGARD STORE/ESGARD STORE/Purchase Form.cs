@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ESGARD_STORE
 {
@@ -16,6 +17,13 @@ namespace ESGARD_STORE
         {
             InitializeComponent();
         }
+
+        string ConnectionString = @"Data Source=HIMALAYANTOP;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        SqlConnection Conn;
+        SqlCommand Cmd;
+        SqlDataAdapter Adap;
+        SqlDataReader reader;
+        DataSet Ds;
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -58,6 +66,26 @@ namespace ESGARD_STORE
 
 
             this.Close();
+        }
+
+        private void Purchase_Form_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cBSPayType_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddToCrt_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

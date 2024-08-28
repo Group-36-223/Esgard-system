@@ -55,6 +55,8 @@ namespace ESGARD_STORE
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgv_Employee = new System.Windows.Forms.DataGridView();
+            this.btnClearME = new System.Windows.Forms.Button();
+            this.btnDisplayME = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Employee)).BeginInit();
@@ -305,11 +307,31 @@ namespace ESGARD_STORE
             this.dgv_Employee.Size = new System.Drawing.Size(380, 331);
             this.dgv_Employee.TabIndex = 27;
             // 
+            // btnClearME
+            // 
+            this.btnClearME.Location = new System.Drawing.Point(425, 456);
+            this.btnClearME.Name = "btnClearME";
+            this.btnClearME.Size = new System.Drawing.Size(75, 23);
+            this.btnClearME.TabIndex = 28;
+            this.btnClearME.Text = "Clear";
+            this.btnClearME.UseVisualStyleBackColor = true;
+            // 
+            // btnDisplayME
+            // 
+            this.btnDisplayME.Location = new System.Drawing.Point(270, 455);
+            this.btnDisplayME.Name = "btnDisplayME";
+            this.btnDisplayME.Size = new System.Drawing.Size(75, 23);
+            this.btnDisplayME.TabIndex = 29;
+            this.btnDisplayME.Text = "Display";
+            this.btnDisplayME.UseVisualStyleBackColor = true;
+            // 
             // Maintain_Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(845, 540);
+            this.Controls.Add(this.btnDisplayME);
+            this.Controls.Add(this.btnClearME);
             this.Controls.Add(this.dgv_Employee);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label10);
@@ -363,5 +385,7 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgv_Employee;
+        private System.Windows.Forms.Button btnClearME;
+        private System.Windows.Forms.Button btnDisplayME;
     }
 }

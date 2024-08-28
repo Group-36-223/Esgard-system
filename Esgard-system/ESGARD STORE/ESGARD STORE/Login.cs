@@ -25,8 +25,8 @@ namespace ESGARD_STORE
               if (Password == "12345" && name == "thato")
               {*/
 
-                  Manager_Dashboard mds = new Manager_Dashboard();
-                  mds.ShowDialog();
+                  Dashboard ds = new Dashboard();
+                  ds.ShowDialog();
              /* }
               else if(Password == "123456" && name == "tshepo") 
               {

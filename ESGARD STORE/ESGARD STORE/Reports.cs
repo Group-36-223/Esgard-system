@@ -21,5 +21,70 @@ namespace ESGARD_STORE
         {
 
         }
+
+        private void Reports_Load(object sender, EventArgs e)
+        {
+            hScrollBar1.Minimum = 28;
+            hScrollBar1.Maximum = 40;
+            hScrollBar1.Value = 28;
+            hScrollBar1.SmallChange = 1;
+            hScrollBar1.LargeChange = 2;
+
+            hScrollBar1.Minimum = 1;
+            hScrollBar1.Maximum = 30;
+            hScrollBar1.Value = 1;
+            hScrollBar1.SmallChange = 1;
+            hScrollBar1.LargeChange = 2;
+
+            hScrollBar1.Scroll += hScrollBar1_Scroll;
+
+            dataGridView1.ColumnCount = 6;
+            dataGridView1.Columns[0].Name = "Inventory item";
+            dataGridView1.Columns[1].Name = "Category";
+            dataGridView1.Columns[2].Name = "Size";
+            dataGridView1.Columns[3].Name = "SOLD Date";
+            dataGridView1.Columns[4].Name = "Units Sold";
+            dataGridView1.Columns[5].Name = "Price";
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedItem = comboBox1.SelectedItem.ToString();
+        }
+
+        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            lblSize.Text = hScrollBar1.Value.ToString();
+        }
+
+        private void hScrollBar3_Scroll(object sender, ScrollEventArgs e)
+        {
+            lblSold.Text = hScrollBar1.Value.ToString();
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            //DateTime startDate = DateTime.Today.AddDays(-29); // 29 days before today
+            //DateTime endDate = DateTime.Today;
+
+            // for (DateTime date = startDate; date <= endDate; date = date.AddDays(1))
+            // {
+            //     comboBox1.Items.Add(date.ToString("yyyy-MM-dd"));  // Add dates in "yyyy-MM-dd" format
+            //}
+
+
+            //comboBox1.SelectedItem = endDate.ToString("yyyy-MM-dd");
+
+
+            //comboBox1.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            // }
+
+            //private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+            //{
+            //    string selectedDate = comboBox1.SelectedItem.ToString();
+            //  MessageBox.Show($"You selected: {selectedDate}");
+            // }
+        }
     }
 }

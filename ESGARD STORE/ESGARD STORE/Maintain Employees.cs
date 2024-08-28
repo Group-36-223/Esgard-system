@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Text.RegularExpressions;
 
 namespace ESGARD_STORE
 {
@@ -494,9 +493,6 @@ namespace ESGARD_STORE
         private bool ValidEmail(string email)
         {
             bool output = false;
-            //Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-])((\.(\w){2,3})+)$", RegexOptions.IgnoreCase);
-
-            //return emailRegex.IsMatch(email);
             try
             {
                 

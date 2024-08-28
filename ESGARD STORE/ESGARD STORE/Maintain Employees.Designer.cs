@@ -309,7 +309,7 @@ namespace ESGARD_STORE
             // 
             // btnSignUpME
             // 
-            this.btnSignUpME.Location = new System.Drawing.Point(16, 553);
+            this.btnSignUpME.Location = new System.Drawing.Point(16, 557);
             this.btnSignUpME.Margin = new System.Windows.Forms.Padding(4);
             this.btnSignUpME.Name = "btnSignUpME";
             this.btnSignUpME.Size = new System.Drawing.Size(148, 37);
@@ -377,7 +377,7 @@ namespace ESGARD_STORE
             // 
             // btnDisplayME
             // 
-            this.btnDisplayME.Location = new System.Drawing.Point(423, 557);
+            this.btnDisplayME.Location = new System.Drawing.Point(423, 561);
             this.btnDisplayME.Name = "btnDisplayME";
             this.btnDisplayME.Size = new System.Drawing.Size(100, 29);
             this.btnDisplayME.TabIndex = 30;

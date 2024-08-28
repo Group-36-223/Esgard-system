@@ -44,5 +44,57 @@ namespace ESGARD_STORE
         {
             this.Close();
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+                if (!string.IsNullOrEmpty(txtANPayType.Text))
+                {
+                    if (!cBSPayType.Items.Contains(txtANPayType.Text)) 
+                    {
+                    cBSPayType.Items.Add(txtANPayType.Text);
+                    txtANPayType.Clear();
+                    }
+                    else
+                    {
+                    MessageBox.Show("Item already in the list");
+                    }
+                }
+                else 
+                {
+                MessageBox.Show("Please insert valve to add");
+                }
+               
+
+
+        }
+
+        private void btnUPDATE_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(cBSPayType.SelectedItem?.ToString())) 
+            {
+                txtANPayType.Text = cBSPayType.SelectedItem.ToString();
+            }
+            else 
+            {
+                MessageBox.Show("Please select a valid value");
+            }
+                
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (cBSPayType.SelectedItem != null) 
+            {
+                cBSPayType.Items.Remove(cBSPayType.SelectedItem);
+                txtANPayType.Clear();
+
+
+            }
+            else 
+            {
+                MessageBox.Show("Please select an item to delete.");
+            }
+        }
     }
 }
+

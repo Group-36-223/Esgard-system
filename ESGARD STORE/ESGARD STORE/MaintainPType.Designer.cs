@@ -74,6 +74,7 @@ namespace ESGARD_STORE
             this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -84,6 +85,7 @@ namespace ESGARD_STORE
             this.btnAdd.TabIndex = 20;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtANPayType
             // 
@@ -140,6 +142,7 @@ namespace ESGARD_STORE
             this.btnUPDATE.TabIndex = 25;
             this.btnUPDATE.Text = "UPDATE";
             this.btnUPDATE.UseVisualStyleBackColor = true;
+            this.btnUPDATE.Click += new System.EventHandler(this.btnUPDATE_Click);
             // 
             // button1
             // 

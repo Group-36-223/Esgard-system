@@ -106,3 +106,23 @@ C:\Users\tkuny\OneDrive\Documents\ES_Not Final\ESGARD STORE\ESGARD STORE\obj\Deb
 C:\Users\tkuny\OneDrive\Documents\ES_Not Final\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.csproj.CoreCompileInputs.cache
 C:\Users\tkuny\OneDrive\Documents\ES_Not Final\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.exe
 C:\Users\tkuny\OneDrive\Documents\ES_Not Final\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.pdb
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\bin\Debug\ESGARD STORE.exe.config
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\bin\Debug\ESGARD STORE.exe
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\bin\Debug\ESGARD STORE.pdb
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.csproj.AssemblyReference.cache
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Dashboard.resources
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Exchanges.resources
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Maintain_Inventory.resources
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.MaintainPType.resources
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Manager_Dashboard.resources
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Login.resources
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Maintain_Clients.resources
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Maintain_Employees.resources
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Properties.Resources.resources
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Purchase_Form.resources
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Reports.resources
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Returns.resources
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.csproj.GenerateResource.cache
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.csproj.CoreCompileInputs.cache
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.exe
+C:\Users\tkuny\OneDrive\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.pdb

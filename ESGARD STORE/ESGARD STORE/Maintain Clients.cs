@@ -129,8 +129,6 @@ namespace ESGARD_STORE
 
                 Cmd.Dispose();
                 Conn.Close();
-
-
             }
 
             catch (Exception Ex)

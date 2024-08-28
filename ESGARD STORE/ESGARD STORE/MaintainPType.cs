@@ -52,9 +52,36 @@ namespace ESGARD_STORE
             this.Close();
         }
 
-        private void MaintainPType_Load(object sender, EventArgs e)
+        private void MaintainPType_Load(object sender, EventArgs e, string PaymentType)
         {
 
+            try
+            {
+                Conn = new SqlConnection(ConnectionString);
+                Conn.Open();
+
+                //Adap = new SqlDataAdapter();
+
+                string sql = @"SELECT Payment_Option FROM Payment_Type";
+                Cmd = new SqlCommand(sql, Conn);
+
+                Cmd.Parameters.AddWithValue("Payment_Option", PaymentType);
+
+                SqlDataReader reader = Cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    cbxSlcPT.Text = reader["Payment_Option"].ToString();
+                }
+                reader.Close();
+
+                Cmd.Dispose();
+                Conn.Close();
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
         }
 
         private Boolean AddPT(string New_Payment)
@@ -63,13 +90,10 @@ namespace ESGARD_STORE
             {
                 Conn = new SqlConnection(ConnectionString);
                 Conn.Open();
-
                 Adap = new SqlDataAdapter();
 
-                string sql = @"INSERT INTO Payment_Type (Payment_Option) VALUES ('" + New_Payment + "')";
+                String sql = $"INSERT INTO Payment_Type (Payment_Option) VALUES ('" + New_Payment + "')";
                 Cmd = new SqlCommand(sql, Conn);
-
-
 
                 Adap.InsertCommand = Cmd;
                 Adap.InsertCommand.ExecuteNonQuery();
@@ -77,6 +101,7 @@ namespace ESGARD_STORE
 
                 Cmd.Dispose();
                 Conn.Close();
+
             }
             catch (Exception ex)
             {
@@ -92,22 +117,22 @@ namespace ESGARD_STORE
             try
             {
                 string payment_type = txtNewPT.Text;
-                string new_item;
 
-                if(!(payment_type == ""))
+                if (!(payment_type == ""))
                 {
-                    if(cbxSlcPT.SelectedValue == null)
+                    if (AddPT(payment_type))
                     {
-                        new_item = txtNewPT.Text;
+                        MessageBox.Show("New Payment Type successfully added");
+                        cbxSlcPT.Items.Add(payment_type);
                     }
                     else
                     {
-                        MessageBox.Show("Payment type already selected");
+                        MessageBox.Show("Error while adding new payment type!\nPlease try again!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Clear current item added");
+                    MessageBox.Show("Please enter valid Payment Method");
                 }
             }
             catch (Exception ex)
@@ -116,75 +141,38 @@ namespace ESGARD_STORE
             }
         }
 
-        private Boolean UpdatePT(string Payment)
-        {
-            try
-            {
-                Conn = new SqlConnection(ConnectionString);
-                Conn.Open();
-
-                Adap = new SqlDataAdapter();
-
-                string sql = @"INSERT INTO Payment_Type (Payment_Option) VALUES ('" + Payment + "')";
-                Cmd = new SqlCommand(sql, Conn);
-
-                Adap.InsertCommand = Cmd;
-                Adap.InsertCommand.ExecuteNonQuery();
-
-
-                Cmd.Dispose();
-                Conn.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-
-            return true;
-        }
+       
 
         private void btnUPDATE_Click(object sender, EventArgs e)
         {
             try
             {
-                string payment_type = txtNewPT.Text;
-                string new_item;
-
-                if (!(payment_type == ""))
-                {
-                    if (cbxSlcPT.SelectedValue == null)
-                    {
-                        new_item = txtNewPT.Text;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Payment type already selected");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Clear current item added");
-                }
+                
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            Conn.Open();
-            string sql = "DELETE FROM Payment_Type WHERE Payment_Option = @opt";
-            Cmd = new SqlCommand(sql, Conn);
-            Cmd.Parameters.AddWithValue("@opt", txtNewPT.Text);
-            Cmd.ExecuteNonQuery();
+            try
+            {
+                Conn.Open();
+                string sql = "DELETE FROM Payment_Type WHERE Payment_Option = @opt";
+                Cmd = new SqlCommand(sql, Conn);
+                Cmd.Parameters.AddWithValue("@opt", txtNewPT.Text);
+                Cmd.ExecuteNonQuery();
 
-            Conn.Close();
+                Conn.Close();
 
-            MessageBox.Show("Deleted Successfully");
-
+                MessageBox.Show("Deleted Successfully");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

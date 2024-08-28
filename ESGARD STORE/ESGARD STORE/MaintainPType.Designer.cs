@@ -71,7 +71,7 @@ namespace ESGARD_STORE
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Location = new System.Drawing.Point(533, 340);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(123, 41);
             this.btnDelete.TabIndex = 21;
@@ -83,7 +83,7 @@ namespace ESGARD_STORE
             // 
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(27, 340);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(131, 41);
             this.btnAdd.TabIndex = 20;
@@ -94,9 +94,9 @@ namespace ESGARD_STORE
             // txtNewPT
             // 
             this.txtNewPT.Location = new System.Drawing.Point(179, 278);
-            this.txtNewPT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNewPT.Margin = new System.Windows.Forms.Padding(4);
             this.txtNewPT.Name = "txtNewPT";
-            this.txtNewPT.Size = new System.Drawing.Size(257, 22);
+            this.txtNewPT.Size = new System.Drawing.Size(302, 22);
             this.txtNewPT.TabIndex = 19;
             // 
             // label1
@@ -113,15 +113,10 @@ namespace ESGARD_STORE
             // cbxSlcPT
             // 
             this.cbxSlcPT.FormattingEnabled = true;
-            this.cbxSlcPT.Items.AddRange(new object[] {
-            "Debit Card",
-            "Credit Card",
-            "Apple Pay",
-            "Cash"});
-            this.cbxSlcPT.Location = new System.Drawing.Point(179, 159);
-            this.cbxSlcPT.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbxSlcPT.Location = new System.Drawing.Point(178, 159);
+            this.cbxSlcPT.Margin = new System.Windows.Forms.Padding(4);
             this.cbxSlcPT.Name = "cbxSlcPT";
-            this.cbxSlcPT.Size = new System.Drawing.Size(257, 24);
+            this.cbxSlcPT.Size = new System.Drawing.Size(303, 24);
             this.cbxSlcPT.TabIndex = 17;
             // 
             // lblPayment_Type
@@ -139,7 +134,7 @@ namespace ESGARD_STORE
             // 
             this.pictureBox1.Image = global::ESGARD_STORE.Properties.Resources.ESGARD_LOGO;
             this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(120, 111);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -151,7 +146,7 @@ namespace ESGARD_STORE
             // 
             this.btnUPDATE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUPDATE.Location = new System.Drawing.Point(271, 340);
-            this.btnUPDATE.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUPDATE.Margin = new System.Windows.Forms.Padding(4);
             this.btnUPDATE.Name = "btnUPDATE";
             this.btnUPDATE.Size = new System.Drawing.Size(123, 41);
             this.btnUPDATE.TabIndex = 25;
@@ -163,7 +158,7 @@ namespace ESGARD_STORE
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(513, 437);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(143, 54);
             this.button1.TabIndex = 26;
@@ -187,7 +182,7 @@ namespace ESGARD_STORE
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxSlcPT);
             this.Controls.Add(this.lblPayment_Type);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MaintainPType";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MaintainPType";

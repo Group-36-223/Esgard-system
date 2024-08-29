@@ -19,10 +19,32 @@ namespace ESGARD_STORE
         SqlDataAdapter Adap;
         SqlDataReader reader;
         DataSet Ds;
-
+        private DateTime startTime;
+        private Timer timer;
         public Purchase_Form()
         {
             InitializeComponent();
+            startTime = DateTime.Now;
+            timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            TimeSpan elapsed = DateTime.Now - startTime;
+            lblDate.Text = DateTime.Now.ToString("MM, dd, yyyy HH:mm:ss");
+            lblDate.Visible = true;
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+            if(timer != null)
+            {
+                timer.Stop();
+                timer.Dispose();
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -60,6 +82,7 @@ namespace ESGARD_STORE
                                 txtDescrP.Text = reader["Category"].ToString();
                                 txtPriceP.Text = reader["Unit_Price"].ToString();
                                 txtSizeP.Text = reader["Inventory_ID"].ToString();
+                                
                             }
                             reader.Close();
                         }
@@ -83,6 +106,7 @@ namespace ESGARD_STORE
             txtPriceP.Text = "";
             txtSizeP.Text = "";
             txtQuantity.Text = "";
+            txtClientN.Text = "";
         }
 
 
@@ -91,7 +115,7 @@ namespace ESGARD_STORE
 
         }
 
-        /*private Boolean addPurchase(String F_Name, string L_Name, int Cell_Number, string Email_Address)
+        private Boolean addPurchase(DateTime Purchase_Date_Time, decimal total_cost, bool Is_paid, char Purchase_number, int Client_ID)
         {
             try
             {
@@ -100,34 +124,56 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"INSERT INTO Purchase (F_Name, L_Name, cell_Number, Email_Address) VALUES ('" + firstName + "','" + lastName + "','" + cellphoneNumber + "','" + email + "','" + idNumber + "', '" + Password + "', '" + Employee_Number + "')";
+                string sql = @"INSERT INTO Purchases (Purchase_Date_Time, total_cost, Is_paid, Purchase_number, Client_ID ) VALUES (@PurchaseDateTime, @TotalCost, @IsPaid, @PurchaseNumber, @ClientID)";
                 Cmd = new SqlCommand(sql, Conn);
-
-
-
+                Cmd.Parameters.AddWithValue("@PurchaseDateTime", Purchase_Date_Time);
+                Cmd.Parameters.AddWithValue("@TotalCost", total_cost);
+                Cmd.Parameters.AddWithValue("@IsPaid", Is_paid);
+                Cmd.Parameters.AddWithValue("@PurchaseNumber", Purchase_number.ToString());
+                Cmd.Parameters.AddWithValue("@ClientID", Client_ID);
                 Adap.InsertCommand = Cmd;
                 Adap.InsertCommand.ExecuteNonQuery();
 
 
                 Cmd.Dispose();
                 Conn.Close();
-
-
             }
 
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
                 return false;
-
             }
 
             return true;
-        }*/
+        }
 
         private void btnProceed_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Payment Recieved!");
+            DateTime Purchase_Date_Time = DateTime.Now;
+            decimal total_cost = totalPrice;
+            bool Is_paid = true;
+            char Purchase_number;
+            
+            Random rnd = new Random();
+            char rndChar = (char)('0' + rnd.Next(0, 10));
+            Purchase_number = rndChar;
+            int Client_ID;
+            if(int.TryParse(txtClientN.Text, out Client_ID))
+            {
+                if (addPurchase(Purchase_Date_Time, total_cost, Is_paid, Purchase_number, Client_ID))
+                {
+                    MessageBox.Show("Payment Recieved and Purchase Recorded!");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot record purchase. Please try again.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid Client ID. Please enter a valid Client ID");
+            }
             this.Close();
         }
 
@@ -181,16 +227,22 @@ namespace ESGARD_STORE
                 string descriptionT = txtDescrP.Text;
                 string priceT = txtPriceP.Text;
                 string quantityT = txtQuantity.Text;
+                char Purchase_Number;
 
                 if(decimal.TryParse(priceT, out decimal price) && int.TryParse(quantityT, out int quantity))
                 {
+                    Random rnd = new Random();
+                    char rndChar = (char)('0' + rnd.Next(0, 10));
+                    Purchase_Number = rndChar;
                     decimal itemTotalPrice = price * quantity;
                     totalPrice += itemTotalPrice;
 
                     string itemDetails = $"{descriptionT,-20} {priceT,10:C} {quantityT,10} {itemTotalPrice,15:C}";
                     listBox1.Items.Add(itemDetails);
                     lblTotalPrice.Text = $"{totalPrice:C}";
+                    lblPurchaseN.Text = $"{rndChar:C}";
                     lblTotalPrice.Visible = true;
+                    lblPurchaseN.Visible = true;
                     clearTextBoxes();
                 }
                 else
@@ -204,10 +256,6 @@ namespace ESGARD_STORE
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void btnClear_Click(object sender, EventArgs e)
         {

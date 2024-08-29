@@ -12,10 +12,10 @@ Create Table Employee
 	Employee_ID INT IDENTITY(1,1) Primary key,
 	F_Name varchar(20),
 	L_Name varchar(20),
-	User_ID_No char(10),
 	cell_No char(10),
 	Email_Address varchar(30),
-	ID_Number char(13)
+	ID_Number char(13),
+	Employee_Number char(5)
 );
 Create Table Inventory 
 (
@@ -25,6 +25,8 @@ Create Table Inventory
 	Category varchar(15),
 	Serial_No char (12),
 	Unit_Price smallmoney
+	Quantity_On_Hand int,
+	Size int
 );
 
 Create Table Client 

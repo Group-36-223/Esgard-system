@@ -73,7 +73,7 @@ namespace ESGARD_STORE
                 string sql = @"SELECT F_Name, L_Name, cell_No, Email_Address, ID_Number FROM Employee WHERE Employee_Number = " + employeeNumberSearch;
                 Cmd = new SqlCommand(sql, Conn);
 
-                Cmd.Parameters.AddWithValue("User_ID_No", employeeNumberSearch);
+                Cmd.Parameters.AddWithValue("Employee_Number", employeeNumberSearch);
 
                 SqlDataReader reader = Cmd.ExecuteReader();
                 if (reader.Read())

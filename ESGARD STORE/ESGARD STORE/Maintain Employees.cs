@@ -315,6 +315,7 @@ namespace ESGARD_STORE
             {
                 MessageBox.Show("Invalid input!");
             }
+            loadAll();
         }
 
         private Boolean UpdateEmployee(int Employee_No, string firstName, string lastName, long cellphoneNumber, string email, long idNumber, int Password)

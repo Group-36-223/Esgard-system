@@ -116,7 +116,7 @@ namespace ESGARD_STORE
 
         }
 
-        private Boolean addPurchase(DateTime Purchase_Date_Time, decimal total_cost, bool Is_paid, char Purchase_number, int Client_ID, int Employee_ID, string Payment_type_ID)
+        private Boolean addPurchase(DateTime Purchase_Date_Time, decimal total_cost, bool Is_paid, char Purchase_number, int Client_ID, int Employee_ID, string Payment_Type_ID)
         {
             try
             {
@@ -125,7 +125,7 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"INSERT INTO Purchases (Purchase_Date_Time, total_cost, Is_paid, Purchase_number, Client_ID, Employee_ID, Payment_Type_ID ) VALUES (@PurchaseDateTime, @TotalCost, @IsPaid, @PurchaseNumber, @ClientID, @EmployeeID, @PaymentType)";
+                string sql = @"INSERT INTO Purchases (Purchase_Date_Time, total_cost, Is_paid, Purchase_number, Client_ID, Employee_ID, Payment_Type_ID ) VALUES (@PurchaseDateTime, @TotalCost, @IsPaid, @PurchaseNumber, @ClientID, @EmployeeID, @Payment_Type_ID)";
                 Cmd = new SqlCommand(sql, Conn);
                 Cmd.Parameters.AddWithValue("@PurchaseDateTime", Purchase_Date_Time);
                 Cmd.Parameters.AddWithValue("@TotalCost", total_cost);
@@ -133,7 +133,7 @@ namespace ESGARD_STORE
                 Cmd.Parameters.AddWithValue("@PurchaseNumber", Purchase_number.ToString());
                 Cmd.Parameters.AddWithValue("@ClientID", Client_ID);
                 Cmd.Parameters.AddWithValue("@EmployeeID", Employee_ID);
-                Cmd.Parameters.AddWithValue("@EmployeeID", Employee_ID);
+                Cmd.Parameters.AddWithValue("@Payment_Type_ID", Payment_Type_ID);
                 Adap.InsertCommand = Cmd;
                 Adap.InsertCommand.ExecuteNonQuery();
 
@@ -151,17 +151,17 @@ namespace ESGARD_STORE
             return true;
         }
 
-        private bool ValidateForeignKeys(int ClientID, int EmployeeID, string Payment_Type_ID)
+        private bool ValidateForeignKeys(int Client_ID, int Employee_ID, string Payment_Type_ID)
         {
             using (SqlConnection Conn = new SqlConnection(ConnectionString))
             {
                 try
                 {
                     Conn.Open();
-                    string checkClientSql = "SELECT Client_ID FROM Client WHERE Client_ID = @ClientID";
+                    string checkClientSql = "SELECT Client_ID FROM Client WHERE Client_ID = @Client_ID";
                     using (SqlCommand clientCmd = new SqlCommand(checkClientSql, Conn))
                     {
-                        clientCmd.Parameters.AddWithValue("@ClientID", ClientID);
+                        clientCmd.Parameters.AddWithValue("@Client_ID", Client_ID);
                         using (SqlDataReader reader = clientCmd.ExecuteReader())
                         {
                             if (!reader.HasRows)
@@ -172,10 +172,10 @@ namespace ESGARD_STORE
                         }
 
                     }
-                    string checkEmployeeSql = "SELECT Employee_ID FROM Employee WHERE Employee_ID = @EmployeeID";
+                    string checkEmployeeSql = "SELECT Employee_ID FROM Employee WHERE Employee_ID = @Employee_ID";
                     using (SqlCommand employeeCmd = new SqlCommand(checkEmployeeSql, Conn))
                     {
-                        employeeCmd.Parameters.AddWithValue("@EmployeeID", EmployeeID);
+                        employeeCmd.Parameters.AddWithValue("@Employee_ID", Employee_ID);
                         using (SqlDataReader reader = employeeCmd.ExecuteReader())
                         {
                             if (!reader.HasRows)
@@ -186,11 +186,11 @@ namespace ESGARD_STORE
                         }
 
                     }
-                    string checkPaymentSql = "SELECT Payment_Type_ID FROM Payment_Type WHERE Payment_Type_ID = @PaymentTypeID";
-                    using (SqlCommand paymentCmd = new SqlCommand(checkPaymentSql, Conn))
+                    string checkPaymentSql = "SELECT Payment_Type_ID FROM Payment_Type WHERE Payment_Type_ID = @Payment_Type_ID";
+                    using (SqlCommand paymentTypeCmd = new SqlCommand(checkPaymentSql, Conn))
                     {
-                        paymentCmd.Parameters.AddWithValue("@PaymentTypeID", Payment_Type_ID);
-                        using (SqlDataReader reader = paymentCmd.ExecuteReader())
+                        paymentTypeCmd.Parameters.AddWithValue("@Payment_Type_ID", Payment_Type_ID);
+                        using (SqlDataReader reader = paymentTypeCmd.ExecuteReader())
                         {
                             if (!reader.HasRows)
                             {

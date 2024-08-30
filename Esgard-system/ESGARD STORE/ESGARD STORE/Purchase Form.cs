@@ -107,6 +107,7 @@ namespace ESGARD_STORE
             txtSizeP.Text = "";
             txtQuantity.Text = "";
             txtClientN.Text = "";
+            txtEmID.Text = "";
         }
 
 
@@ -115,7 +116,7 @@ namespace ESGARD_STORE
 
         }
 
-        private Boolean addPurchase(DateTime Purchase_Date_Time, decimal total_cost, bool Is_paid, char Purchase_number, int Client_ID)
+        private Boolean addPurchase(DateTime Purchase_Date_Time, decimal total_cost, bool Is_paid, char Purchase_number, int Client_ID, int Employee_ID, string Payment_type_ID)
         {
             try
             {
@@ -124,13 +125,15 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"INSERT INTO Purchases (Purchase_Date_Time, total_cost, Is_paid, Purchase_number, Client_ID ) VALUES (@PurchaseDateTime, @TotalCost, @IsPaid, @PurchaseNumber, @ClientID)";
+                string sql = @"INSERT INTO Purchases (Purchase_Date_Time, total_cost, Is_paid, Purchase_number, Client_ID, Employee_ID, Payment_Type_ID ) VALUES (@PurchaseDateTime, @TotalCost, @IsPaid, @PurchaseNumber, @ClientID, @EmployeeID, @PaymentType)";
                 Cmd = new SqlCommand(sql, Conn);
                 Cmd.Parameters.AddWithValue("@PurchaseDateTime", Purchase_Date_Time);
                 Cmd.Parameters.AddWithValue("@TotalCost", total_cost);
                 Cmd.Parameters.AddWithValue("@IsPaid", Is_paid);
                 Cmd.Parameters.AddWithValue("@PurchaseNumber", Purchase_number.ToString());
                 Cmd.Parameters.AddWithValue("@ClientID", Client_ID);
+                Cmd.Parameters.AddWithValue("@EmployeeID", Employee_ID);
+                Cmd.Parameters.AddWithValue("@EmployeeID", Employee_ID);
                 Adap.InsertCommand = Cmd;
                 Adap.InsertCommand.ExecuteNonQuery();
 
@@ -148,6 +151,70 @@ namespace ESGARD_STORE
             return true;
         }
 
+        private bool ValidateForeignKeys(int ClientID, int EmployeeID, string Payment_Type_ID)
+        {
+            using (SqlConnection Conn = new SqlConnection(ConnectionString))
+            {
+                try
+                {
+                    Conn.Open();
+                    string checkClientSql = "SELECT Client_ID FROM Client WHERE Client_ID = @ClientID";
+                    using (SqlCommand clientCmd = new SqlCommand(checkClientSql, Conn))
+                    {
+                        clientCmd.Parameters.AddWithValue("@ClientID", ClientID);
+                        using (SqlDataReader reader = clientCmd.ExecuteReader())
+                        {
+                            if (!reader.HasRows)
+                            {
+                                MessageBox.Show("Client ID does not exist.");
+                                return false;
+                            }
+                        }
+
+                    }
+                    string checkEmployeeSql = "SELECT Employee_ID FROM Employee WHERE Employee_ID = @EmployeeID";
+                    using (SqlCommand employeeCmd = new SqlCommand(checkEmployeeSql, Conn))
+                    {
+                        employeeCmd.Parameters.AddWithValue("@EmployeeID", EmployeeID);
+                        using (SqlDataReader reader = employeeCmd.ExecuteReader())
+                        {
+                            if (!reader.HasRows)
+                            {
+                                MessageBox.Show("Employee ID does not exist.");
+                                return false;
+                            }
+                        }
+
+                    }
+                    string checkPaymentSql = "SELECT Payment_Type_ID FROM Payment_Type WHERE Payment_Type_ID = @PaymentTypeID";
+                    using (SqlCommand paymentCmd = new SqlCommand(checkPaymentSql, Conn))
+                    {
+                        paymentCmd.Parameters.AddWithValue("@PaymentTypeID", Payment_Type_ID);
+                        using (SqlDataReader reader = paymentCmd.ExecuteReader())
+                        {
+                            if (!reader.HasRows)
+                            {
+                                MessageBox.Show("Payment ID does not exist.");
+                                return false;
+                            }
+
+                        }
+                    }
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Error occured: " + ex.Message);
+                    return false;
+                }
+                finally
+                {
+                    Conn.Close();
+                }
+            }
+            return true;
+        }
+
+
         private void btnProceed_Click_1(object sender, EventArgs e)
         {
             DateTime Purchase_Date_Time = DateTime.Now;
@@ -159,16 +226,22 @@ namespace ESGARD_STORE
             char rndChar = (char)('0' + rnd.Next(0, 10));
             Purchase_number = rndChar;
             int Client_ID;
-            if(int.TryParse(txtClientN.Text, out Client_ID))
+            int Employee_ID;
+            string Payment_Type_ID = cbPayType.Text;
+            if(int.TryParse(txtClientN.Text, out Client_ID) && int.TryParse(txtEmID.Text, out Employee_ID))
             {
-                if (addPurchase(Purchase_Date_Time, total_cost, Is_paid, Purchase_number, Client_ID))
+                if(ValidateForeignKeys(Client_ID, Employee_ID, Payment_Type_ID))
                 {
-                    MessageBox.Show("Payment Recieved and Purchase Recorded!");
+                    if (addPurchase(Purchase_Date_Time, total_cost, Is_paid, Purchase_number, Client_ID, Employee_ID, Payment_Type_ID))
+                    {
+                        MessageBox.Show("Payment Recieved and Purchase Recorded!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot record purchase. Please try again.");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Cannot record purchase. Please try again.");
-                }
+
             }
             else
             {
@@ -200,7 +273,7 @@ namespace ESGARD_STORE
             this.Close();
         }
 
-        private void btnATCartP_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
             string serialNumberSearch = txtBarP.Text.Trim();
             if (string.IsNullOrEmpty(serialNumberSearch))

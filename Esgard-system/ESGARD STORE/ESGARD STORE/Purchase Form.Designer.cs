@@ -58,6 +58,10 @@ namespace ESGARD_STORE
             this.lblDate = new System.Windows.Forms.Label();
             this.lblPurchaseN = new System.Windows.Forms.Label();
             this.txtClientN = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtEmID = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cbPayType = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -66,9 +70,9 @@ namespace ESGARD_STORE
             // 
             this.listBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(23, 123);
+            this.listBox1.Location = new System.Drawing.Point(12, 182);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(370, 238);
+            this.listBox1.Size = new System.Drawing.Size(370, 264);
             this.listBox1.TabIndex = 0;
             // 
             // btnSearch
@@ -79,11 +83,11 @@ namespace ESGARD_STORE
             this.btnSearch.TabIndex = 16;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnATCartP_Click);
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // btnProceed
             // 
-            this.btnProceed.Location = new System.Drawing.Point(648, 393);
+            this.btnProceed.Location = new System.Drawing.Point(648, 452);
             this.btnProceed.Name = "btnProceed";
             this.btnProceed.Size = new System.Drawing.Size(103, 38);
             this.btnProceed.TabIndex = 17;
@@ -93,7 +97,7 @@ namespace ESGARD_STORE
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(518, 393);
+            this.btnClear.Location = new System.Drawing.Point(515, 452);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(103, 38);
             this.btnClear.TabIndex = 18;
@@ -105,7 +109,7 @@ namespace ESGARD_STORE
             // 
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(23, 357);
+            this.label7.Location = new System.Drawing.Point(12, 416);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(370, 30);
             this.label7.TabIndex = 19;
@@ -128,7 +132,7 @@ namespace ESGARD_STORE
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(406, 120);
+            this.panel1.Location = new System.Drawing.Point(415, 179);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(345, 267);
             this.panel1.TabIndex = 20;
@@ -242,7 +246,7 @@ namespace ESGARD_STORE
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(438, 88);
+            this.label11.Location = new System.Drawing.Point(438, 61);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(50, 13);
             this.label11.TabIndex = 24;
@@ -250,7 +254,7 @@ namespace ESGARD_STORE
             // 
             // btnBTD
             // 
-            this.btnBTD.Location = new System.Drawing.Point(23, 393);
+            this.btnBTD.Location = new System.Drawing.Point(12, 452);
             this.btnBTD.Name = "btnBTD";
             this.btnBTD.Size = new System.Drawing.Size(136, 38);
             this.btnBTD.TabIndex = 21;
@@ -263,7 +267,7 @@ namespace ESGARD_STORE
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label8.Location = new System.Drawing.Point(387, 447);
+            this.label8.Location = new System.Drawing.Point(387, 493);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(265, 16);
             this.label8.TabIndex = 22;
@@ -274,7 +278,7 @@ namespace ESGARD_STORE
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label9.Location = new System.Drawing.Point(115, 447);
+            this.label9.Location = new System.Drawing.Point(115, 493);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(233, 16);
             this.label9.TabIndex = 23;
@@ -295,17 +299,17 @@ namespace ESGARD_STORE
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(166, 54);
+            this.label1.Location = new System.Drawing.Point(129, 54);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(113, 16);
+            this.label1.Size = new System.Drawing.Size(40, 16);
             this.label1.TabIndex = 25;
-            this.label1.Text = "Date of purchase:";
+            this.label1.Text = "Date:";
             // 
             // lblTotalPrice
             // 
             this.lblTotalPrice.AutoSize = true;
             this.lblTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalPrice.Location = new System.Drawing.Point(154, 365);
+            this.lblTotalPrice.Location = new System.Drawing.Point(142, 424);
             this.lblTotalPrice.Name = "lblTotalPrice";
             this.lblTotalPrice.Size = new System.Drawing.Size(52, 16);
             this.lblTotalPrice.TabIndex = 28;
@@ -316,7 +320,7 @@ namespace ESGARD_STORE
             // 
             this.lblDate.AutoSize = true;
             this.lblDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.Location = new System.Drawing.Point(285, 54);
+            this.lblDate.Location = new System.Drawing.Point(248, 54);
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(52, 16);
             this.lblDate.TabIndex = 26;
@@ -326,7 +330,7 @@ namespace ESGARD_STORE
             // lblPurchaseN
             // 
             this.lblPurchaseN.AutoSize = true;
-            this.lblPurchaseN.Location = new System.Drawing.Point(224, 365);
+            this.lblPurchaseN.Location = new System.Drawing.Point(248, 424);
             this.lblPurchaseN.Name = "lblPurchaseN";
             this.lblPurchaseN.Size = new System.Drawing.Size(41, 13);
             this.lblPurchaseN.TabIndex = 30;
@@ -335,16 +339,53 @@ namespace ESGARD_STORE
             // 
             // txtClientN
             // 
-            this.txtClientN.Location = new System.Drawing.Point(547, 81);
+            this.txtClientN.Location = new System.Drawing.Point(547, 54);
             this.txtClientN.Name = "txtClientN";
             this.txtClientN.Size = new System.Drawing.Size(179, 20);
             this.txtClientN.TabIndex = 31;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(438, 146);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(78, 13);
+            this.label10.TabIndex = 32;
+            this.label10.Text = "Payment Type:";
+            // 
+            // txtEmID
+            // 
+            this.txtEmID.Location = new System.Drawing.Point(547, 97);
+            this.txtEmID.Name = "txtEmID";
+            this.txtEmID.Size = new System.Drawing.Size(179, 20);
+            this.txtEmID.TabIndex = 35;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(436, 104);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(70, 13);
+            this.label13.TabIndex = 34;
+            this.label13.Text = "Employee ID:";
+            // 
+            // cbPayType
+            // 
+            this.cbPayType.FormattingEnabled = true;
+            this.cbPayType.Location = new System.Drawing.Point(547, 146);
+            this.cbPayType.Name = "cbPayType";
+            this.cbPayType.Size = new System.Drawing.Size(179, 21);
+            this.cbPayType.TabIndex = 36;
             // 
             // Purchase_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 485);
+            this.ClientSize = new System.Drawing.Size(800, 518);
+            this.Controls.Add(this.cbPayType);
+            this.Controls.Add(this.txtEmID);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.txtClientN);
             this.Controls.Add(this.lblPurchaseN);
             this.Controls.Add(this.lblTotalPrice);
@@ -402,5 +443,9 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Label lblPurchaseN;
         private System.Windows.Forms.TextBox txtClientN;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtEmID;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbPayType;
     }
 }

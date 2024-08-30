@@ -1,12 +1,86 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\tkuny\\OneDrive\\Documents\\GitHub\\Esgard-system\\ESGARD STORE\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7525F892-C9C1-44E2-809B-2079DF912481}|ESGARD STORE\\ESGARD STORE.csproj|c:\\users\\tkuny\\onedrive\\documents\\github\\esgard-system\\esgard store\\esgard store\\maintainptype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7525F892-C9C1-44E2-809B-2079DF912481}|ESGARD STORE\\ESGARD STORE.csproj|solutionrelative:esgard store\\maintainptype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7525F892-C9C1-44E2-809B-2079DF912481}|ESGARD STORE\\ESGARD STORE.csproj|c:\\users\\tkuny\\onedrive\\documents\\github\\esgard-system\\esgard store\\esgard store\\maintainptype.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7525F892-C9C1-44E2-809B-2079DF912481}|ESGARD STORE\\ESGARD STORE.csproj|solutionrelative:esgard store\\maintainptype.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7525F892-C9C1-44E2-809B-2079DF912481}|ESGARD STORE\\ESGARD STORE.csproj|c:\\users\\tkuny\\onedrive\\documents\\github\\esgard-system\\esgard store\\esgard store\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7525F892-C9C1-44E2-809B-2079DF912481}|ESGARD STORE\\ESGARD STORE.csproj|solutionrelative:esgard store\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7525F892-C9C1-44E2-809B-2079DF912481}|ESGARD STORE\\ESGARD STORE.csproj|c:\\users\\tkuny\\onedrive\\documents\\github\\esgard-system\\esgard store\\esgard store\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{7525F892-C9C1-44E2-809B-2079DF912481}|ESGARD STORE\\ESGARD STORE.csproj|solutionrelative:esgard store\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MaintainPType.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\tkuny\\OneDrive\\Documents\\GitHub\\Esgard-system\\ESGARD STORE\\ESGARD STORE\\MaintainPType.Designer.cs",
+              "RelativeDocumentMoniker": "ESGARD STORE\\MaintainPType.Designer.cs",
+              "ToolTip": "C:\\Users\\tkuny\\OneDrive\\Documents\\GitHub\\Esgard-system\\ESGARD STORE\\ESGARD STORE\\MaintainPType.Designer.cs",
+              "RelativeToolTip": "ESGARD STORE\\MaintainPType.Designer.cs",
+              "ViewState": "AQIAAKMAAAAAAAAAAAAvwLwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T08:57:02.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MaintainPType.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\tkuny\\OneDrive\\Documents\\GitHub\\Esgard-system\\ESGARD STORE\\ESGARD STORE\\MaintainPType.cs",
+              "RelativeDocumentMoniker": "ESGARD STORE\\MaintainPType.cs",
+              "ToolTip": "C:\\Users\\tkuny\\OneDrive\\Documents\\GitHub\\Esgard-system\\ESGARD STORE\\ESGARD STORE\\MaintainPType.cs [Design]",
+              "RelativeToolTip": "ESGARD STORE\\MaintainPType.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T08:56:38.27Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cs",
+              "DocumentMoniker": "C:\\Users\\tkuny\\OneDrive\\Documents\\GitHub\\Esgard-system\\ESGARD STORE\\ESGARD STORE\\Login.cs",
+              "RelativeDocumentMoniker": "ESGARD STORE\\Login.cs",
+              "ToolTip": "C:\\Users\\tkuny\\OneDrive\\Documents\\GitHub\\Esgard-system\\ESGARD STORE\\ESGARD STORE\\Login.cs",
+              "RelativeToolTip": "ESGARD STORE\\Login.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T08:56:21.621Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\tkuny\\OneDrive\\Documents\\GitHub\\Esgard-system\\ESGARD STORE\\ESGARD STORE\\Login.cs",
+              "RelativeDocumentMoniker": "ESGARD STORE\\Login.cs",
+              "ToolTip": "C:\\Users\\tkuny\\OneDrive\\Documents\\GitHub\\Esgard-system\\ESGARD STORE\\ESGARD STORE\\Login.cs [Design]",
+              "RelativeToolTip": "ESGARD STORE\\Login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-29T08:56:15.74Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

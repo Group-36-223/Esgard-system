@@ -133,7 +133,7 @@ namespace ESGARD_STORE
                 reader.Close();
 
                 //check Payment_Type_ID
-                string checkPaymentSql = "SELECT Payment_Type_ID FROM Payment_Type WHERE Payment_Type = " + Payment_Type_ID;
+                string checkPaymentSql = "SELECT Payment_Type_ID FROM Payment_Type WHERE Payment_Type_ID = '" + Payment_Type_ID + "'";
                 paymentTypeCmd = new SqlCommand(checkPaymentSql, Conn);
                 paymentTypeCmd.Parameters.AddWithValue("Payment_Type_ID", Payment_Type_ID);
                 reader = paymentTypeCmd.ExecuteReader();
@@ -257,7 +257,7 @@ namespace ESGARD_STORE
                 Conn = new SqlConnection(ConnectionString);
                 Conn.Open();
 
-                string sql = @"SELECT Inventory_ID, Descri, Color, Category, Serial_No, Unit_Price FROM Inventory WHERE Serial_No = " + serialNumberSearch;
+                string sql = @"SELECT Descri, Color, Category, Serial_No, Unit_Price, Size FROM Inventory WHERE Serial_No = '" + serialNumberSearch + "'";
                 Cmd = new SqlCommand(sql, Conn);
                 Cmd.Parameters.AddWithValue("Serial_No", serialNumberSearch);
                 SqlDataReader reader = Cmd.ExecuteReader();
@@ -266,9 +266,9 @@ namespace ESGARD_STORE
                     {
                         txtBarPF.Text = reader["Serial_No"].ToString();
                         txtColorPF.Text = reader["Color"].ToString();
-                        txtDescrPF.Text = reader["Category"].ToString();
+                        txtDescrPF.Text = reader["Descri"].ToString();
                         txtPricePF.Text = reader["Unit_Price"].ToString();
-                        txtSizePF.Text = reader["Inventory_ID"].ToString();
+                        txtSizePF.Text = reader["Size"].ToString();
 
                     }
                     reader.Close();

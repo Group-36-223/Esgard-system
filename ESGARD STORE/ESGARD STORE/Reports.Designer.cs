@@ -31,57 +31,52 @@ namespace ESGARD_STORE
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BtnDisplay = new System.Windows.Forms.Button();
-            this.lblSold = new System.Windows.Forms.Label();
-            this.hScrollBar3 = new System.Windows.Forms.HScrollBar();
             this.label4 = new System.Windows.Forms.Label();
-            this.hScrollBar1 = new System.Windows.Forms.HScrollBar();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radioButton17 = new System.Windows.Forms.RadioButton();
             this.radioButton16 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.lblEsgard = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.listBox2 = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblSize = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(-5, -1);
+            this.tabControl1.Location = new System.Drawing.Point(-5, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(812, 494);
+            this.tabControl1.Size = new System.Drawing.Size(812, 481);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.lblSize);
+            this.tabPage1.Controls.Add(this.dateTimePicker2);
+            this.tabPage1.Controls.Add(this.dateTimePicker1);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Controls.Add(this.BtnDisplay);
-            this.tabPage1.Controls.Add(this.lblSold);
-            this.tabPage1.Controls.Add(this.hScrollBar3);
             this.tabPage1.Controls.Add(this.label4);
-            this.tabPage1.Controls.Add(this.hScrollBar1);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.label1);
@@ -91,62 +86,45 @@ namespace ESGARD_STORE
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(804, 468);
+            this.tabPage1.Size = new System.Drawing.Size(804, 455);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Top Ten Selling Items";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 202);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(781, 209);
+            this.dataGridView1.TabIndex = 44;
+            // 
             // BtnDisplay
             // 
-            this.BtnDisplay.Location = new System.Drawing.Point(655, 428);
+            this.BtnDisplay.Location = new System.Drawing.Point(693, 415);
             this.BtnDisplay.Name = "BtnDisplay";
             this.BtnDisplay.Size = new System.Drawing.Size(101, 37);
             this.BtnDisplay.TabIndex = 43;
             this.BtnDisplay.Text = "Display";
             this.BtnDisplay.UseVisualStyleBackColor = true;
             // 
-            // lblSold
-            // 
-            this.lblSold.AutoSize = true;
-            this.lblSold.Location = new System.Drawing.Point(482, 143);
-            this.lblSold.Name = "lblSold";
-            this.lblSold.Size = new System.Drawing.Size(32, 13);
-            this.lblSold.TabIndex = 41;
-            this.lblSold.Text = "Sold";
-            // 
-            // hScrollBar3
-            // 
-            this.hScrollBar3.Location = new System.Drawing.Point(485, 116);
-            this.hScrollBar3.Name = "hScrollBar3";
-            this.hScrollBar3.Size = new System.Drawing.Size(220, 27);
-            this.hScrollBar3.TabIndex = 40;
-            this.hScrollBar3.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar3_Scroll);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(388, 126);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 13);
+            this.label4.Size = new System.Drawing.Size(82, 13);
             this.label4.TabIndex = 39;
-            this.label4.Text = "Sold Between";
-            // 
-            // hScrollBar1
-            // 
-            this.hScrollBar1.Location = new System.Drawing.Point(485, 78);
-            this.hScrollBar1.Name = "hScrollBar1";
-            this.hScrollBar1.Size = new System.Drawing.Size(220, 29);
-            this.hScrollBar1.TabIndex = 36;
-            this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
+            this.label4.Text = "End Between";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(388, 90);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 13);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 35;
-            this.label2.Text = "Size Between";
+            this.label2.Text = "Start Date";
             // 
             // comboBox1
             // 
@@ -176,7 +154,6 @@ namespace ESGARD_STORE
             // 
             this.groupBox1.Controls.Add(this.radioButton17);
             this.groupBox1.Controls.Add(this.radioButton16);
-            this.groupBox1.Controls.Add(this.radioButton5);
             this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Location = new System.Drawing.Point(24, 44);
@@ -189,7 +166,7 @@ namespace ESGARD_STORE
             // radioButton17
             // 
             this.radioButton17.AutoSize = true;
-            this.radioButton17.Location = new System.Drawing.Point(6, 116);
+            this.radioButton17.Location = new System.Drawing.Point(6, 105);
             this.radioButton17.Name = "radioButton17";
             this.radioButton17.Size = new System.Drawing.Size(170, 17);
             this.radioButton17.TabIndex = 6;
@@ -200,7 +177,7 @@ namespace ESGARD_STORE
             // radioButton16
             // 
             this.radioButton16.AutoSize = true;
-            this.radioButton16.Location = new System.Drawing.Point(6, 92);
+            this.radioButton16.Location = new System.Drawing.Point(6, 82);
             this.radioButton16.Name = "radioButton16";
             this.radioButton16.Size = new System.Drawing.Size(162, 17);
             this.radioButton16.TabIndex = 5;
@@ -208,37 +185,26 @@ namespace ESGARD_STORE
             this.radioButton16.Text = "Sold By Date Ascending";
             this.radioButton16.UseVisualStyleBackColor = true;
             // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(6, 23);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(75, 17);
-            this.radioButton5.TabIndex = 4;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Category";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 69);
+            this.radioButton3.Location = new System.Drawing.Point(6, 59);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(120, 17);
+            this.radioButton3.Size = new System.Drawing.Size(125, 17);
             this.radioButton3.TabIndex = 2;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Size Descending";
+            this.radioButton3.Text = "Price Descending";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 46);
+            this.radioButton2.Location = new System.Drawing.Point(6, 34);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(112, 17);
+            this.radioButton2.Size = new System.Drawing.Size(117, 17);
             this.radioButton2.TabIndex = 1;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Size Ascending";
+            this.radioButton2.Text = "Price Ascending";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // lblEsgard
@@ -261,11 +227,19 @@ namespace ESGARD_STORE
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(804, 468);
+            this.tabPage2.Size = new System.Drawing.Size(804, 455);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Client Statements";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(601, 68);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 4;
             // 
             // listBox2
             // 
@@ -324,31 +298,19 @@ namespace ESGARD_STORE
             this.label14.TabIndex = 28;
             this.label14.Text = "Tel. 0726168472 email. whatisit@gmail.com";
             // 
-            // dataGridView1
+            // dateTimePicker1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 212);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(743, 209);
-            this.dataGridView1.TabIndex = 44;
+            this.dateTimePicker1.Location = new System.Drawing.Point(511, 90);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 45;
             // 
-            // lblSize
+            // dateTimePicker2
             // 
-            this.lblSize.AutoSize = true;
-            this.lblSize.Location = new System.Drawing.Point(470, 103);
-            this.lblSize.Name = "lblSize";
-            this.lblSize.Size = new System.Drawing.Size(31, 13);
-            this.lblSize.TabIndex = 45;
-            this.lblSize.Text = "Size";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(601, 68);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 4;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.dateTimePicker2.Location = new System.Drawing.Point(511, 118);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 46;
             // 
             // Reports
             // 
@@ -365,11 +327,11 @@ namespace ESGARD_STORE
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -380,17 +342,13 @@ namespace ESGARD_STORE
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button BtnDisplay;
-        private System.Windows.Forms.Label lblSold;
-        private System.Windows.Forms.HScrollBar hScrollBar3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.HScrollBar hScrollBar1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton17;
         private System.Windows.Forms.RadioButton radioButton16;
-        private System.Windows.Forms.RadioButton radioButton5;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label lblEsgard;
@@ -401,8 +359,9 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label lblSize;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

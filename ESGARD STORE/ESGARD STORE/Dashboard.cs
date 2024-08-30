@@ -53,8 +53,8 @@ namespace ESGARD_STORE
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Maintain_Inventory mi = new Maintain_Inventory();
-            mi.ShowDialog();
+           // Maintain_Inventory mi = new Maintain_Inventory();
+            //mi.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)

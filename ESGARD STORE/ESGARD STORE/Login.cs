@@ -23,15 +23,15 @@ namespace ESGARD_STORE
             string Password = txtPass.Text;
 
               if (Password == "12345" && name == "thato")
-              {
+              {*/
 
                   Manager_Dashboard mds = new Manager_Dashboard();
-                  mds.ShowDialog();*/
+                  mds.ShowDialog();
              /* }
               else if(Password == "123456" && name == "tshepo") 
-              {*/
+              {
                    Dashboard ds = new Dashboard();
-                   ds.ShowDialog();    
+                   ds.ShowDialog();   */ 
               /* }
 
               else

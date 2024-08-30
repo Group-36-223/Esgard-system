@@ -1,4 +1,4 @@
-﻿
+﻿/*
 namespace ESGARD_STORE
 {
     partial class Maintain_Inventory
@@ -334,4 +334,4 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtSNumberMe;
     }
-}
+}*/

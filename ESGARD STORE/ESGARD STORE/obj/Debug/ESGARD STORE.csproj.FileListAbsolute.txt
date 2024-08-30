@@ -72,7 +72,6 @@ C:\Users\Sithembiso Masoka\Desktop\Esgard-system\ESGARD STORE\ESGARD STORE\bin\D
 C:\Users\Sithembiso Masoka\Desktop\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.csproj.AssemblyReference.cache
 C:\Users\Sithembiso Masoka\Desktop\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Dashboard.resources
 C:\Users\Sithembiso Masoka\Desktop\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Exchanges.resources
-C:\Users\Sithembiso Masoka\Desktop\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Maintain_Inventory.resources
 C:\Users\Sithembiso Masoka\Desktop\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.MaintainPType.resources
 C:\Users\Sithembiso Masoka\Desktop\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Manager_Dashboard.resources
 C:\Users\Sithembiso Masoka\Desktop\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Login.resources
@@ -103,3 +102,4 @@ C:\Users\cbong\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debu
 C:\Users\cbong\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.csproj.CoreCompileInputs.cache
 C:\Users\cbong\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.exe
 C:\Users\cbong\Documents\GitHub\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD STORE.pdb
+C:\Users\Sithembiso Masoka\Desktop\Esgard-system\ESGARD STORE\ESGARD STORE\obj\Debug\ESGARD_STORE.Maintain Inventory.resources

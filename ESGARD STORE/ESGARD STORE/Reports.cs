@@ -24,19 +24,9 @@ namespace ESGARD_STORE
 
         private void Reports_Load(object sender, EventArgs e)
         {
-            hScrollBar1.Minimum = 28;
-            hScrollBar1.Maximum = 40;
-            hScrollBar1.Value = 28;
-            hScrollBar1.SmallChange = 1;
-            hScrollBar1.LargeChange = 2;
+        
 
-            hScrollBar1.Minimum = 1;
-            hScrollBar1.Maximum = 30;
-            hScrollBar1.Value = 1;
-            hScrollBar1.SmallChange = 1;
-            hScrollBar1.LargeChange = 2;
-
-            hScrollBar1.Scroll += hScrollBar1_Scroll;
+         
 
             dataGridView1.ColumnCount = 6;
             dataGridView1.Columns[0].Name = "Inventory item";
@@ -55,12 +45,12 @@ namespace ESGARD_STORE
 
         private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
-            lblSize.Text = hScrollBar1.Value.ToString();
+          //  lblSize.Text = hScrollBar1.Value.ToString();
         }
 
         private void hScrollBar3_Scroll(object sender, ScrollEventArgs e)
         {
-            lblSold.Text = hScrollBar1.Value.ToString();
+         //   lblSold.Text = hScrollBar1.Value.ToString();
         }
 
         private void tabPage2_Click(object sender, EventArgs e)

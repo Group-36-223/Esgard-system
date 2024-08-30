@@ -92,7 +92,7 @@ namespace ESGARD_STORE
                 string sql = @"SELECT Descri, Color, Category, Serial_No, Unit_Price, Quantity_On_Hand, Size FROM Inventory WHERE Serial_No = " + SerialNumberSearch;
                 Cmd = new SqlCommand(sql, Conn);
 
-                Cmd.Parameters.AddWithValue("User_ID_No", SerialNumberSearch);
+                Cmd.Parameters.AddWithValue("Serial_No", SerialNumberSearch);
 
                 SqlDataReader reader = Cmd.ExecuteReader();
                 if (reader.Read())
@@ -138,7 +138,7 @@ namespace ESGARD_STORE
 
         }
 
-        private Boolean addInventory(string description, string Color, long Serial_No, int Size, string Category, int Quantity_On_Hand, decimal price)
+        private Boolean addInventory(string description, string Color, long Serial_No, string Size, string Category, int Quantity_On_Hand, decimal price)
         {
             try
             {
@@ -192,7 +192,7 @@ namespace ESGARD_STORE
             string category = txtCategory.Text;
             long SerialNumber;
             int Quantity_on_Hand;
-            int size;
+            string size;
             decimal price;
 
             if (long.TryParse(txtBarMInventory.Text, out SerialNumber))
@@ -205,7 +205,8 @@ namespace ESGARD_STORE
                         {
                             if (!(category == ""))
                             {
-                                if (int.TryParse(txtSizeMI.Text, out size))
+                                size = txtSizeMI.Text;
+                                if (!string.IsNullOrEmpty(size))
                                 {
                                     if (decimal.TryParse(txtPriceMI.Text, out price))
                                     {
@@ -273,7 +274,7 @@ namespace ESGARD_STORE
 
         }
 
-        private Boolean UpdateInventory(string Description, string color, string category, long newSerialNumber, double price, int Qty, int size, long oldSerialNumber)
+        private Boolean UpdateInventory(string Description, string color, string category, long newSerialNumber, double price, int Qty, string size, long oldSerialNumber)
         {
 
             try
@@ -314,7 +315,7 @@ namespace ESGARD_STORE
             long oldSerialNumber;
             long newSerialNumber;
             int Quantity_on_Hand;
-            int size;
+            string size;
             double price;
 
             if (long.TryParse(txtBarMInventory.Text, out newSerialNumber))
@@ -324,61 +325,63 @@ namespace ESGARD_STORE
                 {
                     if (!(color == ""))
                     {
-                        if (int.TryParse(txtSizeMI.Text, out size))
+                        size = txtSizeMI.Text;
+                        if (!string.IsNullOrEmpty(size))
                         {
                             if (double.TryParse(txtPriceMI.Text, out price))
                             {
                                 if (!(category == ""))
                                  {
+
                                     if (int.TryParse(txtQty.Text, out Quantity_on_Hand))
                                     {
 
                                         if (UpdateInventory(description, color, category, newSerialNumber, price, Quantity_on_Hand, size, oldSerialNumber))
                                         {
-                                            MessageBox.Show("Employee successfully updated!");
+                                            MessageBox.Show("Inventory successfully updated!");
                                         }
                                         else
                                         {
-                                            MessageBox.Show("Error while updating new employee details!\nPlease try again!");
+                                            MessageBox.Show("Error while updating new inventory details!\nPlease try again!");
                                         }
 
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Please enter valid cellphone number!");
+                                        MessageBox.Show("Please enter valid Quantity!");
                                     }
 
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Please enter valid cellphone number!");
+                                    MessageBox.Show("Please enter valid category!");
                                 }
 
                             }
                             else
                             {
-                                MessageBox.Show("Please enter valid cellphone number!");
+                                MessageBox.Show("Please enter a valid price!");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Please enter valid email!");
+                            MessageBox.Show("Please enter a valid size!");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Please enter valid ID number with 13 digits!");
+                        MessageBox.Show("Please enter a valid colour!");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please enter valid last name!");
+                    MessageBox.Show("Please enter a valid description of the product!");
                 }
 
             }
             else
             {
-                MessageBox.Show("Please enter valid first name!");
+                MessageBox.Show("Please enter a valid serial number!");
             }
 
             //clearTextBoxes();

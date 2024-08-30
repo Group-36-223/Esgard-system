@@ -60,7 +60,7 @@ namespace ESGARD_STORE
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtClientID_PF = new System.Windows.Forms.TextBox();
-            this.EmpID_PF = new System.Windows.Forms.TextBox();
+            this.txtEmpID_PF = new System.Windows.Forms.TextBox();
             this.cboPayType_PF = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -392,12 +392,12 @@ namespace ESGARD_STORE
             this.txtClientID_PF.Size = new System.Drawing.Size(237, 22);
             this.txtClientID_PF.TabIndex = 32;
             // 
-            // EmpID_PF
+            // txtEmpID_PF
             // 
-            this.EmpID_PF.Location = new System.Drawing.Point(760, 107);
-            this.EmpID_PF.Name = "EmpID_PF";
-            this.EmpID_PF.Size = new System.Drawing.Size(237, 22);
-            this.EmpID_PF.TabIndex = 33;
+            this.txtEmpID_PF.Location = new System.Drawing.Point(760, 107);
+            this.txtEmpID_PF.Name = "txtEmpID_PF";
+            this.txtEmpID_PF.Size = new System.Drawing.Size(237, 22);
+            this.txtEmpID_PF.TabIndex = 33;
             // 
             // cboPayType_PF
             // 
@@ -413,7 +413,7 @@ namespace ESGARD_STORE
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 655);
             this.Controls.Add(this.cboPayType_PF);
-            this.Controls.Add(this.EmpID_PF);
+            this.Controls.Add(this.txtEmpID_PF);
             this.Controls.Add(this.txtClientID_PF);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
@@ -476,7 +476,7 @@ namespace ESGARD_STORE
         private System.Windows.Forms.TextBox txtQtyPF;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtClientID_PF;
-        private System.Windows.Forms.TextBox EmpID_PF;
+        private System.Windows.Forms.TextBox txtEmpID_PF;
         private System.Windows.Forms.ComboBox cboPayType_PF;
     }
 }

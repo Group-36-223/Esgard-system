@@ -394,7 +394,7 @@ namespace ESGARD_STORE
                 Conn.Open();
 
                 Adap = new SqlDataAdapter();
-                String delete_sql = "DELETE Inventory WHERE Serial_No = " + serialNumber;
+                String delete_sql = "DELETE FROM Inventory WHERE Serial_No = '" +serialNumber+ "'";
                 Cmd = new SqlCommand(delete_sql, Conn);
                 Cmd.ExecuteNonQuery();
                 Adap.DeleteCommand = Cmd;

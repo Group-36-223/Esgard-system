@@ -274,7 +274,7 @@ namespace ESGARD_STORE
                 Conn.Open();
 
                 Adap = new SqlDataAdapter();
-                String delete_sql = "DELETE Employee WHERE Employee_Number = " + Emp_No;
+                String delete_sql = "DELETE FROM Employee WHERE Employee_Number = " + Emp_No;
                 Cmd = new SqlCommand(delete_sql, Conn);
                 Cmd.ExecuteNonQuery();
                 Adap.DeleteCommand = Cmd;
@@ -294,7 +294,7 @@ namespace ESGARD_STORE
 
             return true;
 
-        }
+        } 
         private void btnDeleteME_Click(object sender, EventArgs e)
         {
             int Empe_No;

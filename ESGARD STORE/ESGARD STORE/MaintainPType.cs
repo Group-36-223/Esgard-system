@@ -145,25 +145,55 @@ namespace ESGARD_STORE
             }
         }
 
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        private Boolean DeletePaymentType(string p_type)
         {
             try
             {
                 Conn = new SqlConnection(ConnectionString);
                 Conn.Open();
-                string sql = "DELETE FROM Payment_Type WHERE Payment_Option = @opt";
-                Cmd = new SqlCommand(sql, Conn);
-                Cmd.Parameters.AddWithValue("@opt", txtANPayType.Text);
+
+                Adap = new SqlDataAdapter();
+                String delete_sql = "DELETE FROM Payment_Type WHERE Payment_Option = '" + p_type + "'";
+                Cmd = new SqlCommand(delete_sql, Conn);
                 Cmd.ExecuteNonQuery();
+                Adap.DeleteCommand = Cmd;
+                Adap.DeleteCommand.ExecuteNonQuery();
 
+                Cmd.Dispose();
                 Conn.Close();
-
-                MessageBox.Show("Deleted Successfully");
             }
-            catch (Exception ex)
+            catch(Exception Ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(Ex.Message);
+                return false;
             }
+
+            return true;
+        }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            string p_type;
+            if (!(cBSPayType.SelectedIndex == -1))
+            {
+                p_type = cBSPayType.SelectedItem.ToString();
+               
+                if (DeletePaymentType(p_type))
+                {
+                    MessageBox.Show("Payment Option successfully deleted!");
+                    //cBSPayType.Text = string.Empty;
+                }
+                else
+                {
+                    MessageBox.Show("Deleting Payment Option unsuccessfull!\n Please try again!");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please select payment type!");
+            }
+            loadAll();
         }
 
         private void btnUPDATE_Click_1(object sender, EventArgs e)
@@ -196,8 +226,8 @@ namespace ESGARD_STORE
                 else
                 {
                     MessageBox.Show("Please select a valid Payment Method");
-
                 }
+                cBSPayType.Text = string.Empty;
             }
             catch (Exception ex)
             {

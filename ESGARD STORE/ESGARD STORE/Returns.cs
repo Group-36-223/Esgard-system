@@ -10,8 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace ESGARD_STORE
-{
-    public partial class Returns : Form
+{public partial class Returns : Form
     {
         String ConnectionString = @"Data Source=KAASKRULLE;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         SqlConnection Conn;
@@ -58,7 +57,7 @@ namespace ESGARD_STORE
             this.Close();
         }
 
-        private Boolean clientNumberFound(int clientNumberSearch)
+        /*private Boolean clientNumberFound(int clientNumberSearch)
         {
 
             //clearTextBoxes();
@@ -107,10 +106,10 @@ namespace ESGARD_STORE
             {
                 return false;
             }
-        }
+        }*/
         private void btnSearch_Click(object sender, EventArgs e)
         {
-                int clientNumberSearch;
+                /*int clientNumberSearch;
                 if (int.TryParse(txtClientMC.Text, out clientNumberSearch))
                 {
                     if (clientNumberFound(clientNumberSearch))
@@ -127,9 +126,9 @@ namespace ESGARD_STORE
                 else
                 {
                     MessageBox.Show("Invalid input!");
-                }
+                }*/
 
-                loadAll();
+              
         }
     }
 }

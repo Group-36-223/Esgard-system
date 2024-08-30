@@ -472,5 +472,21 @@ namespace ESGARD_STORE
         {
             loadAll();
         }
+
+        private void btnBTDMI_Click_1(object sender, EventArgs e)
+        {
+            Dashboard db = Application.OpenForms["Dashboard"] as Dashboard;
+
+
+            if (db == null)
+            {
+                db = new Dashboard();
+                db.Show();
+            }
+            else
+            {
+                db.BringToFront();
+            }
+        }
     }
 }

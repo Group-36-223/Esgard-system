@@ -39,14 +39,14 @@ namespace ESGARD_STORE
             this.txtColorMI = new System.Windows.Forms.TextBox();
             this.txtSizeMI = new System.Windows.Forms.TextBox();
             this.txtPriceMI = new System.Windows.Forms.TextBox();
-            this.btnAddMI = new System.Windows.Forms.Button();
             this.txtBarMInventory = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnUpdateMI = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnAddMI = new System.Windows.Forms.Button();
+            this.btnUpdateMI = new System.Windows.Forms.Button();
             this.btnClearMI = new System.Windows.Forms.Button();
             this.btnDeleteMI = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
@@ -71,6 +71,7 @@ namespace ESGARD_STORE
             this.btnBTDMI.TabIndex = 31;
             this.btnBTDMI.Text = "Back To Dashboard";
             this.btnBTDMI.UseVisualStyleBackColor = true;
+            this.btnBTDMI.Click += new System.EventHandler(this.btnBTDMI_Click_1);
             // 
             // panel1
             // 
@@ -165,17 +166,6 @@ namespace ESGARD_STORE
             this.txtPriceMI.Size = new System.Drawing.Size(237, 22);
             this.txtPriceMI.TabIndex = 20;
             // 
-            // btnAddMI
-            // 
-            this.btnAddMI.Location = new System.Drawing.Point(376, 553);
-            this.btnAddMI.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAddMI.Name = "btnAddMI";
-            this.btnAddMI.Size = new System.Drawing.Size(100, 28);
-            this.btnAddMI.TabIndex = 16;
-            this.btnAddMI.Text = "Add ";
-            this.btnAddMI.UseVisualStyleBackColor = true;
-            this.btnAddMI.Click += new System.EventHandler(this.btnAddMI_Click);
-            // 
             // txtBarMInventory
             // 
             this.txtBarMInventory.Location = new System.Drawing.Point(188, 47);
@@ -203,17 +193,6 @@ namespace ESGARD_STORE
             this.label5.Size = new System.Drawing.Size(41, 17);
             this.label5.TabIndex = 17;
             this.label5.Text = "Color";
-            // 
-            // btnUpdateMI
-            // 
-            this.btnUpdateMI.Location = new System.Drawing.Point(255, 553);
-            this.btnUpdateMI.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUpdateMI.Name = "btnUpdateMI";
-            this.btnUpdateMI.Size = new System.Drawing.Size(100, 28);
-            this.btnUpdateMI.TabIndex = 28;
-            this.btnUpdateMI.Text = "Update";
-            this.btnUpdateMI.UseVisualStyleBackColor = true;
-            this.btnUpdateMI.Click += new System.EventHandler(this.btnUpdateMI_Click);
             // 
             // label4
             // 
@@ -244,6 +223,28 @@ namespace ESGARD_STORE
             this.label2.Size = new System.Drawing.Size(98, 17);
             this.label2.TabIndex = 14;
             this.label2.Text = "Serial Number";
+            // 
+            // btnAddMI
+            // 
+            this.btnAddMI.Location = new System.Drawing.Point(376, 553);
+            this.btnAddMI.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddMI.Name = "btnAddMI";
+            this.btnAddMI.Size = new System.Drawing.Size(100, 28);
+            this.btnAddMI.TabIndex = 16;
+            this.btnAddMI.Text = "Add ";
+            this.btnAddMI.UseVisualStyleBackColor = true;
+            this.btnAddMI.Click += new System.EventHandler(this.btnAddMI_Click);
+            // 
+            // btnUpdateMI
+            // 
+            this.btnUpdateMI.Location = new System.Drawing.Point(255, 553);
+            this.btnUpdateMI.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdateMI.Name = "btnUpdateMI";
+            this.btnUpdateMI.Size = new System.Drawing.Size(100, 28);
+            this.btnUpdateMI.TabIndex = 28;
+            this.btnUpdateMI.Text = "Update";
+            this.btnUpdateMI.UseVisualStyleBackColor = true;
+            this.btnUpdateMI.Click += new System.EventHandler(this.btnUpdateMI_Click);
             // 
             // btnClearMI
             // 

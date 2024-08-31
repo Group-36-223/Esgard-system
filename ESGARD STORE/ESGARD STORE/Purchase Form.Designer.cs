@@ -348,6 +348,7 @@ namespace ESGARD_STORE
             this.lblTotalAmount.Size = new System.Drawing.Size(54, 17);
             this.lblTotalAmount.TabIndex = 27;
             this.lblTotalAmount.Text = "label12";
+            this.lblTotalAmount.Visible = false;
             // 
             // lblPurchaseN
             // 
@@ -357,6 +358,7 @@ namespace ESGARD_STORE
             this.lblPurchaseN.Size = new System.Drawing.Size(54, 17);
             this.lblPurchaseN.TabIndex = 28;
             this.lblPurchaseN.Text = "label13";
+            this.lblPurchaseN.Visible = false;
             // 
             // label12
             // 
@@ -435,6 +437,7 @@ namespace ESGARD_STORE
             this.Name = "Purchase_Form";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "l";
+            this.Load += new System.EventHandler(this.Purchase_Form_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

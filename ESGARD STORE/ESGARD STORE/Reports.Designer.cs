@@ -46,6 +46,7 @@ namespace ESGARD_STORE
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.lblEsgard = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.comboBoxDate = new System.Windows.Forms.ComboBox();
             this.comboBoxClient = new System.Windows.Forms.ComboBox();
             this.lstClient = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@ namespace ESGARD_STORE
             this.label6 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.comboBoxDate = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -66,7 +66,7 @@ namespace ESGARD_STORE
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Location = new System.Drawing.Point(-7, 15);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1083, 592);
@@ -86,9 +86,9 @@ namespace ESGARD_STORE
             this.tabPage1.Controls.Add(this.lblEsgard);
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1075, 563);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Top Ten Selling Items";
@@ -98,7 +98,7 @@ namespace ESGARD_STORE
             // dateTimePicker2
             // 
             this.dateTimePicker2.Location = new System.Drawing.Point(681, 145);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(265, 23);
             this.dateTimePicker2.TabIndex = 46;
@@ -106,7 +106,7 @@ namespace ESGARD_STORE
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(681, 111);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(265, 23);
             this.dateTimePicker1.TabIndex = 45;
@@ -115,7 +115,7 @@ namespace ESGARD_STORE
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(17, 249);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1041, 257);
@@ -124,12 +124,13 @@ namespace ESGARD_STORE
             // BtnDisplay
             // 
             this.BtnDisplay.Location = new System.Drawing.Point(924, 511);
-            this.BtnDisplay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.BtnDisplay.Margin = new System.Windows.Forms.Padding(4);
             this.BtnDisplay.Name = "BtnDisplay";
             this.BtnDisplay.Size = new System.Drawing.Size(135, 46);
             this.BtnDisplay.TabIndex = 43;
             this.BtnDisplay.Text = "Display";
             this.BtnDisplay.UseVisualStyleBackColor = true;
+            this.BtnDisplay.Click += new System.EventHandler(this.BtnDisplay_Click);
             // 
             // label4
             // 
@@ -161,7 +162,7 @@ namespace ESGARD_STORE
             "Shoes",
             "New Arrivals"});
             this.comboBox1.Location = new System.Drawing.Point(647, 54);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 25);
             this.comboBox1.TabIndex = 34;
@@ -184,9 +185,9 @@ namespace ESGARD_STORE
             this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Location = new System.Drawing.Point(32, 54);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(329, 187);
             this.groupBox1.TabIndex = 31;
             this.groupBox1.TabStop = false;
@@ -196,7 +197,7 @@ namespace ESGARD_STORE
             // 
             this.radioButton17.AutoSize = true;
             this.radioButton17.Location = new System.Drawing.Point(8, 129);
-            this.radioButton17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton17.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton17.Name = "radioButton17";
             this.radioButton17.Size = new System.Drawing.Size(213, 21);
             this.radioButton17.TabIndex = 6;
@@ -208,7 +209,7 @@ namespace ESGARD_STORE
             // 
             this.radioButton16.AutoSize = true;
             this.radioButton16.Location = new System.Drawing.Point(8, 101);
-            this.radioButton16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton16.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton16.Name = "radioButton16";
             this.radioButton16.Size = new System.Drawing.Size(203, 21);
             this.radioButton16.TabIndex = 5;
@@ -220,7 +221,7 @@ namespace ESGARD_STORE
             // 
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(8, 73);
-            this.radioButton3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton3.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(156, 21);
             this.radioButton3.TabIndex = 2;
@@ -232,7 +233,7 @@ namespace ESGARD_STORE
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(8, 42);
-            this.radioButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radioButton2.Margin = new System.Windows.Forms.Padding(4);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(146, 21);
             this.radioButton2.TabIndex = 1;
@@ -260,20 +261,30 @@ namespace ESGARD_STORE
             this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1075, 563);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Client Statements";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // comboBoxDate
+            // 
+            this.comboBoxDate.FormattingEnabled = true;
+            this.comboBoxDate.Location = new System.Drawing.Point(840, 79);
+            this.comboBoxDate.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxDate.Name = "comboBoxDate";
+            this.comboBoxDate.Size = new System.Drawing.Size(160, 25);
+            this.comboBoxDate.TabIndex = 5;
+            this.comboBoxDate.SelectedIndexChanged += new System.EventHandler(this.comboBoxDate_SelectedIndexChanged);
+            // 
             // comboBoxClient
             // 
             this.comboBoxClient.FormattingEnabled = true;
             this.comboBoxClient.Location = new System.Drawing.Point(840, 158);
-            this.comboBoxClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBoxClient.Margin = new System.Windows.Forms.Padding(4);
             this.comboBoxClient.Name = "comboBoxClient";
             this.comboBoxClient.Size = new System.Drawing.Size(160, 25);
             this.comboBoxClient.TabIndex = 4;
@@ -284,7 +295,7 @@ namespace ESGARD_STORE
             this.lstClient.FormattingEnabled = true;
             this.lstClient.ItemHeight = 17;
             this.lstClient.Location = new System.Drawing.Point(49, 230);
-            this.lstClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lstClient.Margin = new System.Windows.Forms.Padding(4);
             this.lstClient.Name = "lstClient";
             this.lstClient.Size = new System.Drawing.Size(949, 259);
             this.lstClient.TabIndex = 3;
@@ -302,7 +313,7 @@ namespace ESGARD_STORE
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(900, 535);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 28);
             this.button1.TabIndex = 1;
@@ -344,16 +355,6 @@ namespace ESGARD_STORE
             this.label14.TabIndex = 28;
             this.label14.Text = "Tel. 0726168472 email. whatisit@gmail.com";
             // 
-            // comboBoxDate
-            // 
-            this.comboBoxDate.FormattingEnabled = true;
-            this.comboBoxDate.Location = new System.Drawing.Point(840, 79);
-            this.comboBoxDate.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxDate.Name = "comboBoxDate";
-            this.comboBoxDate.Size = new System.Drawing.Size(160, 25);
-            this.comboBoxDate.TabIndex = 5;
-            this.comboBoxDate.SelectedIndexChanged += new System.EventHandler(this.comboBoxDate_SelectedIndexChanged);
-            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -362,7 +363,7 @@ namespace ESGARD_STORE
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Reports";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reports";

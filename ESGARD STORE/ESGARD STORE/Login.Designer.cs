@@ -52,6 +52,7 @@ namespace ESGARD_STORE
             this.label2.Size = new System.Drawing.Size(73, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Password:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -62,11 +63,12 @@ namespace ESGARD_STORE
             this.label3.Size = new System.Drawing.Size(77, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Username:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtUser
             // 
             this.txtUser.Location = new System.Drawing.Point(413, 283);
-            this.txtUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUser.Margin = new System.Windows.Forms.Padding(4);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(319, 22);
             this.txtUser.TabIndex = 4;
@@ -75,16 +77,17 @@ namespace ESGARD_STORE
             // txtPass
             // 
             this.txtPass.Location = new System.Drawing.Point(413, 368);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(319, 22);
             this.txtPass.TabIndex = 5;
             this.txtPass.UseSystemPasswordChar = true;
+            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
             // 
             // btnLogin
             // 
             this.btnLogin.Location = new System.Drawing.Point(413, 425);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(320, 28);
             this.btnLogin.TabIndex = 7;
@@ -127,6 +130,7 @@ namespace ESGARD_STORE
             this.lblName.TabIndex = 14;
             this.lblName.Text = "Enter name";
             this.lblName.Visible = false;
+            this.lblName.Click += new System.EventHandler(this.lblName_Click);
             // 
             // lblPassword
             // 
@@ -144,12 +148,13 @@ namespace ESGARD_STORE
             // 
             this.pictureBox1.Image = global::ESGARD_STORE.Properties.Resources.ESGARD_LOGO;
             this.pictureBox1.Location = new System.Drawing.Point(457, 34);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(220, 154);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // cbxPass
             // 
@@ -179,7 +184,7 @@ namespace ESGARD_STORE
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

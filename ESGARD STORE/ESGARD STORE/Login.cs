@@ -43,7 +43,9 @@ namespace ESGARD_STORE
                 if (result == 1)
                 {
                     MessageBox.Show("Login Successful");
+                    //string data = "";
                     Dashboard ds = new Dashboard();
+                    //ds.SetLabelText(data);
                     ds.ShowDialog();
                 }
                 else if (txtPass.Text == "123456" && txtUser.Text == "Thato")
@@ -61,6 +63,8 @@ namespace ESGARD_STORE
             {
                 MessageBox.Show(ex.Message);
             }
+
+            Conn.Close();
 
         }
 
@@ -85,6 +89,33 @@ namespace ESGARD_STORE
                 txtPass.UseSystemPasswordChar = true;
             }
         }
+
+        private void lblName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
     
 }

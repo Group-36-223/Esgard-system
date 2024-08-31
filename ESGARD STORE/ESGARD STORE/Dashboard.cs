@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ESGARD_STORE
 {
@@ -16,6 +17,13 @@ namespace ESGARD_STORE
         {
             InitializeComponent();
         }
+
+        string ConnectionString = @"Data Source=HIMALAYANTOP;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        SqlConnection Conn;
+        SqlCommand Cmd;
+        SqlDataAdapter Adap;
+        SqlDataReader reader;
+        DataSet Ds;
         private void button1_Click(object sender, EventArgs e)
         {
             Maintain_Clients mc = new Maintain_Clients();
@@ -61,6 +69,32 @@ namespace ESGARD_STORE
         {
             Returns r = new Returns();
             r.ShowDialog();
+        }
+
+        private void lblNTPC_Click(object sender, EventArgs e)
+        {
+           // lblNTPC.Text = "@username";
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            Conn = new SqlConnection(ConnectionString);
+            Conn.Open();
+
+            string sql = @"SELECT COUNT(1) FROM Employee WHERE F_Name= @username AND Password= @password";
+            Cmd = new SqlCommand(sql, Conn);
+
+            Conn.Close();
+        }
+
+        public void SetLabelText(string text)
+        {
+            lblName.Text = text;
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

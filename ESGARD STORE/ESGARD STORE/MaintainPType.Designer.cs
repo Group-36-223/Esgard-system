@@ -33,9 +33,9 @@ namespace ESGARD_STORE
             this.label4 = new System.Windows.Forms.Label();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.txtNewPT = new System.Windows.Forms.TextBox();
+            this.txtANPayType = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbxSlcPT = new System.Windows.Forms.ComboBox();
+            this.cBSPayType = new System.Windows.Forms.ComboBox();
             this.lblPayment_Type = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnUPDATE = new System.Windows.Forms.Button();
@@ -77,7 +77,7 @@ namespace ESGARD_STORE
             this.btnDelete.TabIndex = 21;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
             // 
             // btnAdd
             // 
@@ -89,15 +89,15 @@ namespace ESGARD_STORE
             this.btnAdd.TabIndex = 20;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
-            // txtNewPT
+            // txtANPayType
             // 
-            this.txtNewPT.Location = new System.Drawing.Point(179, 278);
-            this.txtNewPT.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNewPT.Name = "txtNewPT";
-            this.txtNewPT.Size = new System.Drawing.Size(302, 22);
-            this.txtNewPT.TabIndex = 19;
+            this.txtANPayType.Location = new System.Drawing.Point(179, 278);
+            this.txtANPayType.Margin = new System.Windows.Forms.Padding(4);
+            this.txtANPayType.Name = "txtANPayType";
+            this.txtANPayType.Size = new System.Drawing.Size(257, 22);
+            this.txtANPayType.TabIndex = 19;
             // 
             // label1
             // 
@@ -110,14 +110,14 @@ namespace ESGARD_STORE
             this.label1.TabIndex = 18;
             this.label1.Text = "NEW PAYMENT TYPE";
             // 
-            // cbxSlcPT
+            // cBSPayType
             // 
-            this.cbxSlcPT.FormattingEnabled = true;
-            this.cbxSlcPT.Location = new System.Drawing.Point(178, 159);
-            this.cbxSlcPT.Margin = new System.Windows.Forms.Padding(4);
-            this.cbxSlcPT.Name = "cbxSlcPT";
-            this.cbxSlcPT.Size = new System.Drawing.Size(303, 24);
-            this.cbxSlcPT.TabIndex = 17;
+            this.cBSPayType.FormattingEnabled = true;
+            this.cBSPayType.Location = new System.Drawing.Point(179, 159);
+            this.cBSPayType.Margin = new System.Windows.Forms.Padding(4);
+            this.cBSPayType.Name = "cBSPayType";
+            this.cBSPayType.Size = new System.Drawing.Size(257, 24);
+            this.cBSPayType.TabIndex = 17;
             // 
             // lblPayment_Type
             // 
@@ -145,14 +145,14 @@ namespace ESGARD_STORE
             // btnUPDATE
             // 
             this.btnUPDATE.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUPDATE.Location = new System.Drawing.Point(271, 340);
+            this.btnUPDATE.Location = new System.Drawing.Point(315, 340);
             this.btnUPDATE.Margin = new System.Windows.Forms.Padding(4);
             this.btnUPDATE.Name = "btnUPDATE";
             this.btnUPDATE.Size = new System.Drawing.Size(123, 41);
             this.btnUPDATE.TabIndex = 25;
             this.btnUPDATE.Text = "UPDATE";
             this.btnUPDATE.UseVisualStyleBackColor = true;
-            this.btnUPDATE.Click += new System.EventHandler(this.btnUPDATE_Click);
+            this.btnUPDATE.Click += new System.EventHandler(this.btnUPDATE_Click_1);
             // 
             // button1
             // 
@@ -178,9 +178,9 @@ namespace ESGARD_STORE
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtNewPT);
+            this.Controls.Add(this.txtANPayType);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbxSlcPT);
+            this.Controls.Add(this.cBSPayType);
             this.Controls.Add(this.lblPayment_Type);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MaintainPType";
@@ -200,9 +200,9 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.TextBox txtNewPT;
+        private System.Windows.Forms.TextBox txtANPayType;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox cbxSlcPT;
+        private System.Windows.Forms.ComboBox cBSPayType;
         private System.Windows.Forms.Label lblPayment_Type;
         private System.Windows.Forms.Button btnUPDATE;
         private System.Windows.Forms.Button button1;

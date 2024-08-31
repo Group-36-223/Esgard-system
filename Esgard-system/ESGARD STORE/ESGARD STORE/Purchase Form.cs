@@ -13,7 +13,7 @@ namespace ESGARD_STORE
 {
     public partial class Purchase_Form : Form
     {
-        String ConnectionString = @"Data Source=LAPTOP-2IBBG9V4;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        String ConnectionString = @"Data Source=KAASKRULLE;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         SqlConnection Conn;
         SqlCommand Cmd;
         SqlDataAdapter Adap;
@@ -33,14 +33,14 @@ namespace ESGARD_STORE
         private void Timer_Tick(object sender, EventArgs e)
         {
             TimeSpan elapsed = DateTime.Now - startTime;
-            lblDate.Text = DateTime.Now.ToString("MM, dd, yyyy HH:mm:ss");
-            lblDate.Visible = true;
+            lblCurrentDate.Text = DateTime.Now.ToString("MM, dd, yyyy HH:mm:ss");
+            lblCurrentDate.Visible = true;
         }
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);
-            if(timer != null)
+            if (timer != null)
             {
                 timer.Stop();
                 timer.Dispose();
@@ -50,205 +50,24 @@ namespace ESGARD_STORE
         private void button5_Click(object sender, EventArgs e)
         {
             //Dashboard ds = new Dashboard();
-           //ds.ShowDialog();
+            //ds.ShowDialog();
             this.Close();
         }
-        private Boolean SerialNumberFound(string serialNumberSearch)
-        {
-
-            clearTextBoxes();
-            Boolean didItThrewAnException = false;
-
-            try
-            {
-                using (Conn = new SqlConnection(ConnectionString))
-                {
-                    Conn.Open();
-                    string sql = @"SELECT Inventory_ID, Descri, Color, Category, Serial_No, Unit_Price FROM Inventory WHERE Serial_No = @Serial_No";
-
-                    using (Cmd = new SqlCommand(sql, Conn))
-                    {
-                        Cmd.Parameters.Add(new SqlParameter("@Serial_No", SqlDbType.Char)
-                        {
-                            Value = serialNumberSearch
-                        });
-
-                        using (reader = Cmd.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                txtBarP.Text = reader["Serial_No"].ToString();
-                                txtColorP.Text = reader["Color"].ToString();
-                                txtDescrP.Text = reader["Category"].ToString();
-                                txtPriceP.Text = reader["Unit_Price"].ToString();
-                                txtSizeP.Text = reader["Inventory_ID"].ToString();
-                                
-                            }
-                            reader.Close();
-                        }
-                    }
-
-                }
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message);
-                didItThrewAnException = true;
-            }
-            return !didItThrewAnException && !string.IsNullOrEmpty(txtBarP.Text);
-        }
+        
 
         private void clearTextBoxes()
         {
-            txtBarP.Text = "";
-            txtColorP.Text = "";
-            txtDescrP.Text = "";
-            txtPriceP.Text = "";
-            txtSizeP.Text = "";
-            txtQuantity.Text = "";
-            txtClientN.Text = "";
-            txtEmID.Text = "";
+            txtBarPF.Text = "";
+            txtColorPF.Text = "";
+            txtDescrPF.Text = "";
+            txtPricePF.Text = "";
+            txtSizePF.Text = "";
+            txtQtyPF.Text = "";
+            txtClientID_PF.Text = "";
+            txtEmpID_PF.Text = "";
         }
 
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private Boolean addPurchase(DateTime Purchase_Date_Time, decimal total_cost, bool Is_paid, char Purchase_number, int Client_ID, int Employee_ID, string Payment_Type_ID)
-        {
-            try
-            {
-                Conn = new SqlConnection(ConnectionString);
-                Conn.Open();
-
-                Adap = new SqlDataAdapter();
-
-                string sql = @"INSERT INTO Purchases (Purchase_Date_Time, total_cost, Is_paid, Purchase_number, Client_ID, Employee_ID, Payment_Type_ID ) VALUES (@PurchaseDateTime, @TotalCost, @IsPaid, @PurchaseNumber, @ClientID, @EmployeeID, @Payment_Type_ID)";
-                Cmd = new SqlCommand(sql, Conn);
-                Cmd.Parameters.AddWithValue("@PurchaseDateTime", Purchase_Date_Time);
-                Cmd.Parameters.AddWithValue("@TotalCost", total_cost);
-                Cmd.Parameters.AddWithValue("@IsPaid", Is_paid);
-                Cmd.Parameters.AddWithValue("@PurchaseNumber", Purchase_number.ToString());
-                Cmd.Parameters.AddWithValue("@ClientID", Client_ID);
-                Cmd.Parameters.AddWithValue("@EmployeeID", Employee_ID);
-                Cmd.Parameters.AddWithValue("@Payment_Type_ID", Payment_Type_ID);
-                Adap.InsertCommand = Cmd;
-                Adap.InsertCommand.ExecuteNonQuery();
-
-
-                Cmd.Dispose();
-                Conn.Close();
-            }
-
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message);
-                return false;
-            }
-
-            return true;
-        }
-
-        private bool ValidateForeignKeys(int Client_ID, int Employee_ID, string Payment_Type_ID)
-        {
-            using (SqlConnection Conn = new SqlConnection(ConnectionString))
-            {
-                try
-                {
-                    Conn.Open();
-                    string checkClientSql = "SELECT Client_ID FROM Client WHERE Client_ID = @Client_ID";
-                    using (SqlCommand clientCmd = new SqlCommand(checkClientSql, Conn))
-                    {
-                        clientCmd.Parameters.AddWithValue("@Client_ID", Client_ID);
-                        using (SqlDataReader reader = clientCmd.ExecuteReader())
-                        {
-                            if (!reader.HasRows)
-                            {
-                                MessageBox.Show("Client ID does not exist.");
-                                return false;
-                            }
-                        }
-
-                    }
-                    string checkEmployeeSql = "SELECT Employee_ID FROM Employee WHERE Employee_ID = @Employee_ID";
-                    using (SqlCommand employeeCmd = new SqlCommand(checkEmployeeSql, Conn))
-                    {
-                        employeeCmd.Parameters.AddWithValue("@Employee_ID", Employee_ID);
-                        using (SqlDataReader reader = employeeCmd.ExecuteReader())
-                        {
-                            if (!reader.HasRows)
-                            {
-                                MessageBox.Show("Employee ID does not exist.");
-                                return false;
-                            }
-                        }
-
-                    }
-                    string checkPaymentSql = "SELECT Payment_Type_ID FROM Payment_Type WHERE Payment_Type_ID = @Payment_Type_ID";
-                    using (SqlCommand paymentTypeCmd = new SqlCommand(checkPaymentSql, Conn))
-                    {
-                        paymentTypeCmd.Parameters.AddWithValue("@Payment_Type_ID", Payment_Type_ID);
-                        using (SqlDataReader reader = paymentTypeCmd.ExecuteReader())
-                        {
-                            if (!reader.HasRows)
-                            {
-                                MessageBox.Show("Payment ID does not exist.");
-                                return false;
-                            }
-
-                        }
-                    }
-                }
-                catch(Exception ex)
-                {
-                    MessageBox.Show("Error occured: " + ex.Message);
-                    return false;
-                }
-                finally
-                {
-                    Conn.Close();
-                }
-            }
-            return true;
-        }
-
-
-        private void btnProceed_Click_1(object sender, EventArgs e)
-        {
-            DateTime Purchase_Date_Time = DateTime.Now;
-            decimal total_cost = totalPrice;
-            bool Is_paid = true;
-            char Purchase_number;
-            
-            Random rnd = new Random();
-            char rndChar = (char)('0' + rnd.Next(0, 10));
-            Purchase_number = rndChar;
-            int Client_ID;
-            int Employee_ID;
-            string Payment_Type_ID = cbPayType.Text;
-            if(int.TryParse(txtClientN.Text, out Client_ID) && int.TryParse(txtEmID.Text, out Employee_ID))
-            {
-                if(ValidateForeignKeys(Client_ID, Employee_ID, Payment_Type_ID))
-                {
-                    if (addPurchase(Purchase_Date_Time, total_cost, Is_paid, Purchase_number, Client_ID, Employee_ID, Payment_Type_ID))
-                    {
-                        MessageBox.Show("Payment Recieved and Purchase Recorded!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cannot record purchase. Please try again.");
-                    }
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Invalid Client ID. Please enter a valid Client ID");
-            }
-            this.Close();
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -273,36 +92,134 @@ namespace ESGARD_STORE
             this.Close();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        
+
+        private bool ValidateForeignKeys(int Client_ID, int Employee_ID, string Payment_Type_ID)
         {
-            string serialNumberSearch = txtBarP.Text.Trim();
-            if (string.IsNullOrEmpty(serialNumberSearch))
+            SqlConnection Conn = null;
+            SqlCommand clientCmd = null;
+            SqlCommand employeeCmd = null;
+            SqlCommand paymentTypeCmd = null;
+            SqlDataReader reader = null;
+
+            try
             {
-                MessageBox.Show("Please enter a number.");
-                return;
+                Conn = new SqlConnection(ConnectionString);
+                Conn.Open();
+                //check Client_ID
+                string checkClientSql = "SELECT Client_ID FROM Client WHERE Client_ID = " + Client_ID;
+                clientCmd = new SqlCommand(checkClientSql, Conn);
+                clientCmd.Parameters.AddWithValue("Client_ID", Client_ID);
+                reader = clientCmd.ExecuteReader();
+                
+                if(!reader.HasRows)
+                {
+                    MessageBox.Show("Client ID does not exist.");
+                    return false;
+                }
+                reader.Close();
+
+                //check Employee_ID
+                string checkEmployeeSql = "SELECT Employee_ID FROM Employee WHERE Employee_ID = " + Employee_ID;
+                employeeCmd = new SqlCommand(checkEmployeeSql, Conn);
+                employeeCmd.Parameters.AddWithValue("Employee_ID", Employee_ID);
+                reader = employeeCmd.ExecuteReader();
+
+                if (!reader.HasRows)
+                {
+                    MessageBox.Show("Employee ID does not exist");
+                    return false;
+                }
+                reader.Close();
+
+                //check Payment_Type_ID
+                string checkPaymentSql = "SELECT Payment_Type_ID FROM Payment_Type WHERE Payment_Type_ID = '" + Payment_Type_ID + "'";
+                paymentTypeCmd = new SqlCommand(checkPaymentSql, Conn);
+                paymentTypeCmd.Parameters.AddWithValue("Payment_Type_ID", Payment_Type_ID);
+                reader = paymentTypeCmd.ExecuteReader();
+
+                if (!reader.HasRows)
+                {
+                    MessageBox.Show("Payment ID does not exist");
+                    return false;
+                }
             }
-            if (SerialNumberFound(serialNumberSearch))
+            catch (Exception ex)
             {
-                MessageBox.Show("Item successfully found!");
-            }
-            else
-            {
-                MessageBox.Show("Item does not exist!");
+                MessageBox.Show("Error occured: " + ex.Message);
+                return false;
             }
 
+            finally
+            {
+                if(reader != null)
+                {
+                    reader.Close();
+                    reader.Dispose();
+                }
+
+                if(clientCmd != null)
+                {
+                    clientCmd.Dispose();
+                }
+                if(employeeCmd != null)
+                {
+                    employeeCmd.Dispose();
+                }
+                if(paymentTypeCmd != null)
+                {
+                    paymentTypeCmd.Dispose();
+                }
+
+                if(Conn != null)
+                {
+                    Conn.Close();
+                    Conn.Dispose();
+                }
+            }
+            
+            return true;
+        }
+
+        private Boolean addPurchase(DateTime Purchase_Date_Time, decimal total_cost, bool Is_paid, char Purchase_number, int Client_ID, int Employee_ID, string Payment_Type_ID)
+        {
+            try
+            {
+                Conn = new SqlConnection(ConnectionString);
+                Conn.Open();
+
+                Adap = new SqlDataAdapter();
+
+                string sql = @"INSERT INTO Purchases (Purchase_Date_Time, total_cost, Is_paid, Purchase_number, Client_ID, Employee_ID, Payment_Type_ID ) VALUES ('" +Purchase_Date_Time+ "', '" +total_cost+ "', '" +Is_paid+ "', '"+Purchase_number+ "', '" +Client_ID+ "', '" +Employee_ID+ "', '" +Payment_Type_ID+ "')";
+                Cmd = new SqlCommand(sql, Conn);
+                Adap.InsertCommand = Cmd;
+                Adap.InsertCommand.ExecuteNonQuery();
+
+
+                Cmd.Dispose();
+                Conn.Close();
+            }
+
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+                return false;
+            }
+
+            return true;
         }
 
         private decimal totalPrice = 0;
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAddCart_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(txtBarP.Text) && !string.IsNullOrEmpty(txtDescrP.Text) && !String.IsNullOrEmpty(txtQuantity.Text) && !string.IsNullOrEmpty(txtPriceP.Text))
+            if (!string.IsNullOrEmpty(txtBarPF.Text) && !string.IsNullOrEmpty(txtDescrPF.Text) && !String.IsNullOrEmpty(txtQtyPF.Text) && !string.IsNullOrEmpty(txtPricePF.Text))
             {
-                string descriptionT = txtDescrP.Text;
-                string priceT = txtPriceP.Text;
-                string quantityT = txtQuantity.Text;
+                string descriptionT = txtDescrPF.Text;
+                string priceT = txtPricePF.Text;
+                string quantityT = txtQtyPF.Text;
                 char Purchase_Number;
 
-                if(decimal.TryParse(priceT, out decimal price) && int.TryParse(quantityT, out int quantity))
+                if (decimal.TryParse(priceT, out decimal price) && int.TryParse(quantityT, out int quantity))
                 {
                     Random rnd = new Random();
                     char rndChar = (char)('0' + rnd.Next(0, 10));
@@ -312,9 +229,9 @@ namespace ESGARD_STORE
 
                     string itemDetails = $"{descriptionT,-20} {priceT,10:C} {quantityT,10} {itemTotalPrice,15:C}";
                     listBox1.Items.Add(itemDetails);
-                    lblTotalPrice.Text = $"{totalPrice:C}";
+                    lblTotalAmount.Text = $"{totalPrice:C}";
                     lblPurchaseN.Text = $"{rndChar:C}";
-                    lblTotalPrice.Visible = true;
+                    lblTotalAmount.Visible = true;
                     lblPurchaseN.Visible = true;
                     clearTextBoxes();
                 }
@@ -329,12 +246,101 @@ namespace ESGARD_STORE
             }
         }
 
+        private Boolean SerialNumberFound(string serialNumberSearch)
+        {
 
-        private void btnClear_Click(object sender, EventArgs e)
+            clearTextBoxes();
+            Boolean didItThrewAnException = false;
+
+            try
+            {
+                Conn = new SqlConnection(ConnectionString);
+                Conn.Open();
+
+                string sql = @"SELECT Descri, Color, Category, Serial_No, Unit_Price, Size FROM Inventory WHERE Serial_No = '" + serialNumberSearch + "'";
+                Cmd = new SqlCommand(sql, Conn);
+                Cmd.Parameters.AddWithValue("Serial_No", serialNumberSearch);
+                SqlDataReader reader = Cmd.ExecuteReader();
+                        
+                    if (reader.Read())
+                    {
+                        txtBarPF.Text = reader["Serial_No"].ToString();
+                        txtColorPF.Text = reader["Color"].ToString();
+                        txtDescrPF.Text = reader["Descri"].ToString();
+                        txtPricePF.Text = reader["Unit_Price"].ToString();
+                        txtSizePF.Text = reader["Size"].ToString();
+
+                    }
+                    reader.Close();
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+                didItThrewAnException = true;
+            }
+
+            return !didItThrewAnException && !string.IsNullOrEmpty(txtBarPF.Text);
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            string serialNumberSearch = txtBarPF.Text.Trim();
+
+            if (string.IsNullOrEmpty(serialNumberSearch))
+            {
+                MessageBox.Show("Please enter a number.");
+                return;
+            }
+            if (SerialNumberFound(serialNumberSearch))
+            {
+                MessageBox.Show("Item successfully found!");
+            }
+            else
+            {
+                MessageBox.Show("Item does not exist!");
+            }
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
         {
             clearTextBoxes();
             listBox1.Items.Clear();
-            lblTotalPrice.Text = "";
+            lblTotalAmount.Text = "";
+        }
+        
+        private void btnProceed_Click(object sender, EventArgs e)
+        {
+            DateTime Purchase_Date_Time = DateTime.Now;
+            decimal total_cost = totalPrice;
+            bool Is_paid = true;
+            char Purchase_number;
+
+            Random rnd = new Random();
+            char rndChar = (char)('0' + rnd.Next(0, 10));
+            Purchase_number = rndChar;
+            int Client_ID;
+            int Employee_ID;
+            string Payment_Type_ID = cboPayType_PF.Text;
+
+            if (int.TryParse(txtClientID_PF.Text, out Client_ID) && int.TryParse(txtEmpID_PF.Text, out Employee_ID))
+            {
+                if (ValidateForeignKeys(Client_ID, Employee_ID, Payment_Type_ID))
+                {
+                    if (addPurchase(Purchase_Date_Time, total_cost, Is_paid, Purchase_number, Client_ID, Employee_ID, Payment_Type_ID))
+                    {
+                        MessageBox.Show("Payment Recieved and Purchase Recorded!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cannot record purchase. Please try again.");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid. Please enter a valid Client ID");
+            }
+            this.Close();
         }
     }
-}
+ }

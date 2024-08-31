@@ -13,7 +13,7 @@ namespace ESGARD_STORE
 {
     public partial class Reports : Form
     {
-        String ConnectionString = @"Data Source=KAASKRULLE;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        String ConnectionString = @"Data Source=LAPTOP-2IBBG9V4;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         SqlConnection Conn;
         SqlCommand Cmd;
         SqlDataAdapter Adap;
@@ -25,95 +25,19 @@ namespace ESGARD_STORE
             InitializeComponent();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Reports_Load(object sender, EventArgs e)
-        {
-
-            GenerateTopSellingItemsReport();
-
-        }
-
-        private void GenerateTopSellingItemsReport()
-        {
-            try
-            {
-                // Initialize the connection
-                using (SqlConnection Conn = new SqlConnection(ConnectionString))
-                {
-                    // Open the connection
-                    Conn.Open();
-
-                    // SQL query to get the top 10 selling items
-                    string sqlQuery = @"SELECT TOP 10 
-                                            i.Descri AS Item_Description,
-                                            SUM(pd.Qty_Sold) AS Total_Quantity_Sold,
-	                                        MAX(p.Purchase_Date_Time) AS Most_Recent_Purchase_Date 
-                                        FROM 
-                                            Purchase_Details pd
-                                        JOIN 
-                                            Inventory i ON pd.Inventory_ID = i.Inventory_ID
-                                        JOIN 
-                                            Purchases p ON pd.Purchases_ID = p.Purchases_ID
-                                        WHERE 
-                                            p.Is_paid = 1 -- Only consider purchases that are paid
-                                        GROUP BY 
-                                            i.Descri
-                                        ORDER BY 
-                                            Total_Quantity_Sold DESC;";
-
-                    // Create the data adapter to execute the query
-                    SqlDataAdapter da = new SqlDataAdapter(sqlQuery, Conn);
-
-                    // Create a DataTable to hold the query results
-                    DataTable dt = new DataTable();
-
-                    // Fill the DataTable with the results of the SQL query
-                    da.Fill(dt);
-
-                    // Bind the DataTable to the DataGridView
-                    dataGridView1.DataSource = dt;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error occurred: " + ex.Message);
-            }
-        }
-
-
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedItem = comboBox1.SelectedItem.ToString();
-        }
-
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-          //  lblSize.Text = hScrollBar1.Value.ToString();
-        }
-
-        private void hScrollBar3_Scroll(object sender, ScrollEventArgs e)
-        {
-         //   lblSold.Text = hScrollBar1.Value.ToString();
-        }
-
         private void tabPage2_Click(object sender, EventArgs e)
         {
-            GenerateTopSellingItemsReportForTab2();
+            /*GenerateTopSellingItemsReportForTab2();
             PopulateDateComboBox();
             PopulateClientComboBox();
-            FilterReport();
+            FilterReport();*/
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }
-        private void GenerateTopSellingItemsReportForTab2()
+       /* private void GenerateTopSellingItemsReportForTab2()
         {
             try
             {
@@ -181,9 +105,9 @@ namespace ESGARD_STORE
             {
                 MessageBox.Show("Error occurred: " + ex.Message);
             }
-        }
+        }*/
 
-        private void PopulateDateComboBox()
+        /*private void PopulateDateComboBox()
         {
             try
             {
@@ -210,9 +134,9 @@ namespace ESGARD_STORE
             {
                 MessageBox.Show("Error occurred: " + ex.Message);
             }
-        }
+        }*/
 
-        private void PopulateClientComboBox()
+        /*private void PopulateClientComboBox()
         {
             try
             {
@@ -242,33 +166,62 @@ namespace ESGARD_STORE
             {
                 MessageBox.Show("Error occurred: " + ex.Message);
             }
-        }
+        }*/
 
-        private void FilterReport()
+        /*private void FilterReport()
         {
             try
             {
-                GenerateTopSellingItemsReportForTab2();
+                //GenerateTopSellingItemsReportForTab2();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error occurred: " + ex.Message);
             }
-        }
+        }*/
 
-        private void comboBoxDate_SelectedIndexChanged(object sender, EventArgs e)
+        /*private void comboBoxDate_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FilterReport();
-        }
+            //FilterReport();
+        }*/
 
-        private void comboBoxClient_SelectedIndexChanged(object sender, EventArgs e)
+        /*private void comboBoxClient_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FilterReport();
-        }
+            //FilterReport();
+        }*/
 
-        private void button1_Click(object sender, EventArgs e)
+        /*private void button1_Click(object sender, EventArgs e)
         {
-            GenerateTopSellingItemsReportForTab2();
+            //GenerateTopSellingItemsReportForTab2();
+        }*/
+
+        private void BtnGenerate_Click(object sender, EventArgs e)
+        {
+            string connectionString = @"Data Source=LAPTOP-2IBBG9V4;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; // Update with your actual connection string
+            string query = @"
+            SELECT TOP 10 
+                pd.ItemID, 
+                i.ItemName, 
+                SUM(pd.Quantity) AS TotalQuantitySold, 
+                p.Price
+            FROM 
+                PurchaseDetail pd
+            INNER JOIN 
+                Purchase p ON pd.PurchaseID = p.PurchaseID
+            INNER JOIN 
+                Item i ON pd.ItemID = i.ItemID
+            GROUP BY 
+                pd.ItemID, i.ItemName, p.Price
+            ORDER BY 
+                TotalQuantitySold DESC";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dataGridView1.DataSource = dataTable;
+            }
         }
     }
 }

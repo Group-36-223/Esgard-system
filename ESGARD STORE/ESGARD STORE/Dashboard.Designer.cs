@@ -29,6 +29,7 @@ namespace ESGARD_STORE
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnMClient = new System.Windows.Forms.Button();
             this.btnInventory = new System.Windows.Forms.Button();
             this.btnPurchaseD = new System.Windows.Forms.Button();
@@ -44,6 +45,8 @@ namespace ESGARD_STORE
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -56,6 +59,8 @@ namespace ESGARD_STORE
             this.btnMClient.Size = new System.Drawing.Size(292, 43);
             this.btnMClient.TabIndex = 5;
             this.btnMClient.Text = "Maintain Clients Details";
+            this.toolTip1.SetToolTip(this.btnMClient, "Button to take you to your client details form to either add, delete or update cl" +
+        "ient details");
             this.btnMClient.UseVisualStyleBackColor = true;
             this.btnMClient.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -66,6 +71,8 @@ namespace ESGARD_STORE
             this.btnInventory.Size = new System.Drawing.Size(292, 46);
             this.btnInventory.TabIndex = 1;
             this.btnInventory.Text = "Maintain Inventory";
+            this.toolTip1.SetToolTip(this.btnInventory, "Button to take you to the maintain inventory form, to add delete or update invent" +
+        "ory items");
             this.btnInventory.UseVisualStyleBackColor = true;
             this.btnInventory.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -76,6 +83,7 @@ namespace ESGARD_STORE
             this.btnPurchaseD.Size = new System.Drawing.Size(292, 43);
             this.btnPurchaseD.TabIndex = 2;
             this.btnPurchaseD.Text = "Purchase";
+            this.toolTip1.SetToolTip(this.btnPurchaseD, "Button to take you to your purchase form to make purchases");
             this.btnPurchaseD.UseVisualStyleBackColor = true;
             this.btnPurchaseD.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -86,6 +94,7 @@ namespace ESGARD_STORE
             this.btnMReturns.Size = new System.Drawing.Size(292, 44);
             this.btnMReturns.TabIndex = 3;
             this.btnMReturns.Text = "Make Returns";
+            this.toolTip1.SetToolTip(this.btnMReturns, "Button for making a returnof inventory items");
             this.btnMReturns.UseVisualStyleBackColor = true;
             this.btnMReturns.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -114,6 +123,7 @@ namespace ESGARD_STORE
             this.btnLogout.Size = new System.Drawing.Size(52, 24);
             this.btnLogout.TabIndex = 8;
             this.btnLogout.Text = "Logout";
+            this.toolTip1.SetToolTip(this.btnLogout, "Button that logs you out of the system");
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -124,6 +134,8 @@ namespace ESGARD_STORE
             this.button7.Size = new System.Drawing.Size(292, 43);
             this.button7.TabIndex = 10;
             this.button7.Text = "Maintain Payment Type";
+            this.toolTip1.SetToolTip(this.button7, "Button to take you to your payment type form to add delete and update payment typ" +
+        "es");
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -176,7 +188,7 @@ namespace ESGARD_STORE
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label3.Location = new System.Drawing.Point(113, 488);
+            this.label3.Location = new System.Drawing.Point(93, 431);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(233, 16);
             this.label3.TabIndex = 11;
@@ -187,7 +199,7 @@ namespace ESGARD_STORE
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label4.Location = new System.Drawing.Point(367, 488);
+            this.label4.Location = new System.Drawing.Point(405, 431);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(265, 16);
             this.label4.TabIndex = 12;
@@ -203,11 +215,29 @@ namespace ESGARD_STORE
             this.pictureBox2.TabIndex = 9;
             this.pictureBox2.TabStop = false;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Red;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.DimGray;
+            this.linkLabel1.Location = new System.Drawing.Point(347, 459);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(37, 16);
+            this.linkLabel1.TabIndex = 13;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Help";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // toolTip1
+            // 
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(779, 526);
+            this.ClientSize = new System.Drawing.Size(779, 495);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
@@ -246,5 +276,7 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblRole;
         private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

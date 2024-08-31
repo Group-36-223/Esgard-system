@@ -29,6 +29,7 @@ namespace ESGARD_STORE
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@ namespace ESGARD_STORE
             this.btnReports = new System.Windows.Forms.Button();
             this.btnMaintainEmployee = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -85,6 +87,7 @@ namespace ESGARD_STORE
             this.btnLogout.Size = new System.Drawing.Size(52, 24);
             this.btnLogout.TabIndex = 8;
             this.btnLogout.Text = "Logout";
+            this.toolTip1.SetToolTip(this.btnLogout, "Button for logging out of the system");
             this.btnLogout.UseVisualStyleBackColor = true;
             this.btnLogout.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -124,6 +127,7 @@ namespace ESGARD_STORE
             this.btnReports.Size = new System.Drawing.Size(292, 43);
             this.btnReports.TabIndex = 15;
             this.btnReports.Text = "Reports";
+            this.toolTip1.SetToolTip(this.btnReports, "Button for Reports, where user will generate reports from the system");
             this.btnReports.UseVisualStyleBackColor = true;
             this.btnReports.Click += new System.EventHandler(this.btnReports_Click);
             // 
@@ -134,6 +138,7 @@ namespace ESGARD_STORE
             this.btnMaintainEmployee.Size = new System.Drawing.Size(292, 44);
             this.btnMaintainEmployee.TabIndex = 14;
             this.btnMaintainEmployee.Text = "Maintain Employees";
+            this.toolTip1.SetToolTip(this.btnMaintainEmployee, "Button for adding, updating and deleting users records");
             this.btnMaintainEmployee.UseVisualStyleBackColor = true;
             this.btnMaintainEmployee.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -179,5 +184,6 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Button btnMaintainEmployee;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

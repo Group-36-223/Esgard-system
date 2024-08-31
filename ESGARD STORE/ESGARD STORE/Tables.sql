@@ -1,39 +1,40 @@
-USE Esgard;
-GO
-
 Create Table Payment_Type
 (
 	Payment_Type_ID int IDENTITY(1,1) Primary key,
-	Payment_Option varchar(20)
+	Payment_Option varchar(30)
 );
 
 Create Table Employee
 (
 	Employee_ID INT IDENTITY(1,1) Primary key,
-	F_Name varchar(20),
-	L_Name varchar(20),
-	User_ID_No char(10),
-	cell_No char(10),
+	First_Name varchar(50),
+	Last_Name varchar(50),
+	Employee_No char(10),
+	Cell_No char(10),
 	Email_Address varchar(30),
-	ID_Number char(13)
+	ID_Number char(13),
+	Pssword char(8)
 );
 Create Table Inventory 
 (
 	Inventory_ID INT IDENTITY(1,1) Primary key,
-	Descri varchar(30),
+	Descr varchar(50),
+	Quantity_On_Hand int,
+	Unit_Price smallmoney,
 	Color varchar(15),
+	Size varchar(2),
 	Category varchar(15),
-	Serial_No char (12),
-	Unit_Price smallmoney
+	Serial_No char (12)
 );
 
 Create Table Client 
 (
 	Client_ID INT IDENTITY(1,1) Primary key,
-	F_Name varchar(20),
-	L_Name varchar(20),
+	First_Name varchar(50),
+	Last_Name varchar(50),
 	Cell_No Char (10),
-	Email_Address varchar(30)
+	Email_Address varchar(30),
+	Client_Number char(5)
 );
 
 Create Table Purchases

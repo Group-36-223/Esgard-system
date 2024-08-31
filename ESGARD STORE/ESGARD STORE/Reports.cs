@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ESGARD_STORE
 {
@@ -17,10 +18,7 @@ namespace ESGARD_STORE
             InitializeComponent();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Reports_Load(object sender, EventArgs e)
         {
@@ -40,41 +38,16 @@ namespace ESGARD_STORE
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string selectedItem = comboBox1.SelectedItem.ToString();
+            //if(comboBox1.Selecteditem != null) 
+            {
+                string selectedItem = comboBox1.SelectedItem.ToString();
+            }
+            
         }
 
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        private void BtnDisplay_Click(object sender, EventArgs e)
         {
-          //  lblSize.Text = hScrollBar1.Value.ToString();
-        }
 
-        private void hScrollBar3_Scroll(object sender, ScrollEventArgs e)
-        {
-         //   lblSold.Text = hScrollBar1.Value.ToString();
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-            //DateTime startDate = DateTime.Today.AddDays(-29); // 29 days before today
-            //DateTime endDate = DateTime.Today;
-
-            // for (DateTime date = startDate; date <= endDate; date = date.AddDays(1))
-            // {
-            //     comboBox1.Items.Add(date.ToString("yyyy-MM-dd"));  // Add dates in "yyyy-MM-dd" format
-            //}
-
-
-            //comboBox1.SelectedItem = endDate.ToString("yyyy-MM-dd");
-
-
-            //comboBox1.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
-            // }
-
-            //private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-            //{
-            //    string selectedDate = comboBox1.SelectedItem.ToString();
-            //  MessageBox.Show($"You selected: {selectedDate}");
-            // }
         }
     }
 }

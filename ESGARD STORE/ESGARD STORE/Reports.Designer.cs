@@ -31,6 +31,8 @@ namespace ESGARD_STORE
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.BtnDisplay = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,8 +53,6 @@ namespace ESGARD_STORE
             this.label6 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -91,6 +91,20 @@ namespace ESGARD_STORE
             this.tabPage1.Text = "Top Ten Selling Items";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Location = new System.Drawing.Point(511, 118);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker2.TabIndex = 46;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(511, 90);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 45;
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -107,6 +121,7 @@ namespace ESGARD_STORE
             this.BtnDisplay.TabIndex = 43;
             this.BtnDisplay.Text = "Display";
             this.BtnDisplay.UseVisualStyleBackColor = true;
+            this.BtnDisplay.Click += new System.EventHandler(this.BtnDisplay_Click);
             // 
             // label4
             // 
@@ -231,7 +246,6 @@ namespace ESGARD_STORE
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Client Statements";
             this.tabPage2.UseVisualStyleBackColor = true;
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // comboBox2
             // 
@@ -297,20 +311,6 @@ namespace ESGARD_STORE
             this.label14.Size = new System.Drawing.Size(265, 16);
             this.label14.TabIndex = 28;
             this.label14.Text = "Tel. 0726168472 email. whatisit@gmail.com";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(511, 90);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 45;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(511, 118);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 46;
             // 
             // Reports
             // 

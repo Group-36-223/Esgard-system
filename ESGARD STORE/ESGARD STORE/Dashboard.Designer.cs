@@ -218,6 +218,7 @@ namespace ESGARD_STORE
             this.Controls.Add(this.btnInventory);
             this.Controls.Add(this.btnMClient);
             this.Name = "Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

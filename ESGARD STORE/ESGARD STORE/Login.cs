@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ESGARD_STORE
 {
@@ -17,51 +18,72 @@ namespace ESGARD_STORE
             InitializeComponent();
         }
 
+        string ConnectionString = @"Data Source=KAASKRULLE;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        SqlConnection Conn;
+        SqlCommand Cmd;
+        SqlDataAdapter Adap;
+        SqlDataReader reader;
+        DataSet Ds;
+
         private void button1_Click(object sender, EventArgs e)
         {
-            string name = txtUser.Text;
-            string Password = txtPass.Text;
+            try
+            {
+                Conn = new SqlConnection(ConnectionString);
+                Conn.Open();
 
-              if (Password == "12345" && name == "thato")
-              {
+                string sql = @"SELECT COUNT(1) FROM Employee WHERE Employee_Number = @username AND Pssword= @password";
+                Cmd = new SqlCommand(sql, Conn);
 
-                  Manager_Dashboard mds = new Manager_Dashboard();
-                  mds.ShowDialog();
-              }
-              else if(Password == "123456" && name == "tshepo") 
-              {
-                   Dashboard ds = new Dashboard();
-                   ds.ShowDialog();    
-               }
+                Cmd.Parameters.AddWithValue("@username", txtUser.Text);
+                Cmd.Parameters.AddWithValue("@password", txtPass.Text);
 
-              else
-              {
-                lblName.Text = "Does not exist!!!!!";
-                lblPassword.Text = "does not exist";
-              }
+                int result = (int)Cmd.ExecuteScalar();
 
-              if (string.IsNullOrWhiteSpace(name))
-              {
-                   lblName.Text = "Please fill in a name!!";
-                   lblName.Show();
-              }               
-
-              if (string.IsNullOrWhiteSpace(Password))
-              {
-                  lblPassword.Text = "Invalid password!!";
-                  lblPassword.Show();
-              }
+                if (result == 1)
+                {
+                    MessageBox.Show("Login Successful");
+                    Dashboard ds = new Dashboard();
+                    ds.ShowDialog();
+                }
+                else if (txtPass.Text == "123456" && txtUser.Text == "Thato")
+                {
+                    MessageBox.Show("Login Successful");
+                    Manager_Dashboard mds = new Manager_Dashboard();
+                    mds.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username or password.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
 
         private void Login_Load(object sender, EventArgs e)
         {
-
         }
 
         private void txtUser_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbxPass.Checked == true)
+            {
+                txtPass.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                txtPass.UseSystemPasswordChar = true;
+            }
+        }
     }
+    
 }

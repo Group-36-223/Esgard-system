@@ -21,7 +21,6 @@ namespace ESGARD_STORE
         SqlConnection Conn;
         SqlCommand Cmd;
         SqlDataAdapter Adap;
-        SqlDataReader reader;
         DataSet Ds;
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -114,32 +113,65 @@ namespace ESGARD_STORE
             return true;
         }
 
+        private void LoadAll()
+        {
+            try
+            {
+                Conn = new SqlConnection(ConnectionString);
+                Conn.Open();
+                string sql = "SELECT Payment_Option FROM Payment_Type";
+                Cmd = new SqlCommand(sql, Conn);
+                Adap = new SqlDataAdapter();
+                Ds = new DataSet();
+
+                Adap.SelectCommand = Cmd;
+                Adap.Fill(Ds, "Payment_Type");
+
+                dgvMPT.DataSource = Ds;
+                dgvMPT.DataMember = "Payment_Type";
+
+                Conn.Close();
+            }
+            catch (SqlException error)
+            {
+                MessageBox.Show(error.Message);
+            }
+
+        }
+
+        
 
 
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
             try
             {
-                string payment_type = txtANPayType.Text;
+                string paymentType = txtANPayType.Text;
 
-                if (!(payment_type == ""))
+                if (!string.IsNullOrEmpty(paymentType))
                 {
-                    if (AddPT(payment_type))
+                    DialogResult result = MessageBox.Show("Are you sure you want to add this payment type", "Confirm Add", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (result == DialogResult.Yes)
                     {
-                        MessageBox.Show("New Payment Type successfully added");
-                        cBSPayType.Items.Add(payment_type);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error while adding new payment type!\nPlease try again!");
+                        if (AddPT(paymentType))
+                        {
+                            MessageBox.Show("New payment type successfully added");
+                            txtANPayType.Text = string.Empty;
+                            LoadAll();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error while adding new payment type!\n Please try again!");
+                        }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please enter valid Payment Method");
+                    MessageBox.Show("Please enter a valid payment method");
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -173,158 +205,104 @@ namespace ESGARD_STORE
 
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
-            string p_type;
-            if (!(cBSPayType.SelectedIndex == -1))
+            try
             {
-                p_type = cBSPayType.SelectedItem.ToString();
-               
-                if (DeletePaymentType(p_type))
+                if (dgvMPT.SelectedRows.Count > 0)
                 {
-                    MessageBox.Show("Payment Option successfully deleted!");
-                    //cBSPayType.Text = string.Empty;
+                    string payment_Type = dgvMPT.SelectedRows[0].Cells[0].Value.ToString();
+
+                    DialogResult result = MessageBox.Show("Are you sure you want to delete this payment type?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                    if (result == DialogResult.Yes)
+                    {
+                        if (DeletePaymentType(payment_Type))
+                        {
+                            MessageBox.Show("Payment option successfully deleted");
+                            txtANPayType.Text = string.Empty;
+                            LoadAll();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Deleting Payment Option was unsuccessful!\nPlease try again!");
+                        }
+                    }
+
                 }
                 else
                 {
-                    MessageBox.Show("Deleting Payment Option unsuccessfull!\n Please try again!");
+                    MessageBox.Show("Please select a Payment Type");
                 }
-
             }
-            else
+            catch(Exception ex)
             {
-                MessageBox.Show("Please select payment type!");
+                MessageBox.Show(ex.Message);
             }
-            loadAll();
         }
 
         private void btnUPDATE_Click_1(object sender, EventArgs e)
         {
             try
             {
-                string oldPayment_type;
-                string newPayment_type = txtANPayType.Text;
-
-                if (!(cBSPayType.SelectedIndex == -1))
+                if (dgvMPT.SelectedRows.Count > 0)
                 {
-                    if (!(newPayment_type == ""))
+                    string oldPaymentType = dgvMPT.SelectedRows[0].Cells[0].Value.ToString();
+                    string newPaymentType = txtANPayType.Text;
+
+                    if (!string.IsNullOrEmpty(newPaymentType))
                     {
-                        oldPayment_type = cBSPayType.SelectedItem.ToString();
-                        if (updatePT(newPayment_type, oldPayment_type))
+                        DialogResult result = MessageBox.Show("Are you sure you want to update this payment type", "Confirm Update", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
                         {
-                            MessageBox.Show("Payment Type updated successfully");
-                            //cBSPayType.Items.Add(newPayment_type);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Error while updating payment type!\nPlease try again!");
+                            if (updatePT(newPaymentType, oldPaymentType))
+                            {
+                                MessageBox.Show("Payment Type updated successfully");
+                                txtANPayType.Text = string.Empty;
+                                LoadAll();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error while updating payment type!\n Please try again!");
+                            }
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Please enter valid Payment Method");
+                        MessageBox.Show("Please enter a valid payment method");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please select a valid Payment Method");
+                    MessageBox.Show("Please select a payment type to update");
                 }
-                cBSPayType.Text = string.Empty;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            loadAll();
+
+            LoadAll();
         }
 
         private void MaintainPType_Load(object sender, EventArgs e)
         {
-            {
-                cBSPayType.Items.Clear();
-
-                try
-                {
-                    Conn = new SqlConnection(ConnectionString);
-                    Conn.Open();
-
-                    //Adap = new SqlDataAdapter();
-
-                    string sql = @"SELECT Payment_Option FROM Payment_Type";
-                    Cmd = new SqlCommand(sql, Conn);
-
-                    SqlDataReader reader = Cmd.ExecuteReader();
-
-                   // SqlDataReader reader = Cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        cBSPayType.Items.Add(reader["Payment_Option"].ToString());
-                    }
-                    reader.Close();
-
-                    Cmd.Dispose();
-                    Conn.Close();
-
-                }
-                catch (Exception Ex)
-                {
-                    MessageBox.Show(Ex.Message);
-                }
-            }
+            LoadAll();
         }
 
-        private void loadAll()
+        private void dgvMPT_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*  try
-              {
-                  Conn = new SqlConnection(ConnectionString);
-                  Conn.Open();
-                  string sql = "SELECT * FROM Payment_Type";
-                  Cmd = new SqlCommand(sql, Conn);
-                  Adap = new SqlDataAdapter();
-                  Ds = new DataSet();
-
-                  Adap.SelectCommand = Cmd;
-                  Adap.Fill(Ds, "Payment_Type");
-
-                  cBSPayType.DataSource = Ds;
-                  cBSPayType.DataMember = "Payment_Type";
-
-                  Conn.Close();
-              }
-              catch (Exception Ex)
-              {
-                  MessageBox.Show(Ex.Message);
-              }*/
+           /* if (dgvMPT.SelectedRows.Count > 0)
             {
-                cBSPayType.Items.Clear();
-                
+                txtANPayType.Text = dgvMPT.SelectedRows[0].Cells[0].Value.ToString();
+            }*/
+        }
 
-                try
-                {
-                    Conn = new SqlConnection(ConnectionString);
-                    Conn.Open();
-
-                    //Adap = new SqlDataAdapter();
-
-                    string sql = @"SELECT Payment_Option FROM Payment_Type";
-                    Cmd = new SqlCommand(sql, Conn);
-
-                    SqlDataReader reader = Cmd.ExecuteReader();
-
-                    // SqlDataReader reader = Cmd.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        cBSPayType.Items.Add(reader["Payment_Option"].ToString());
-                    }
-                    reader.Close();
-
-                    Cmd.Dispose();
-                    Conn.Close();
-
-                }
-                catch (Exception Ex)
-                {
-                    MessageBox.Show(Ex.Message);
-                }
+        //private void dgvMPT_SelectionChanged()
+private void dgvMPT_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvMPT.SelectedRows.Count > 0)
+            {
+                txtANPayType.Text = dgvMPT.SelectedRows[0].Cells[0].Value.ToString();
             }
         }
     }

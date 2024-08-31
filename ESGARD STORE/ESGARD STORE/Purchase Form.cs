@@ -17,8 +17,6 @@ namespace ESGARD_STORE
         SqlConnection Conn;
         SqlCommand Cmd;
         SqlDataAdapter Adap;
-        SqlDataReader reader;
-        DataSet Ds;
         private DateTime startTime;
         private Timer timer;
         public Purchase_Form()
@@ -94,7 +92,7 @@ namespace ESGARD_STORE
 
         
 
-        private bool ValidateForeignKeys(int Client_Name, int Employee_Name, string Payment_Type_ID)
+        private bool ValidateForeignKeys(int Client_ID, int Employee_ID, string Payment_Type_ID)
         {
             SqlConnection Conn = null;
             SqlCommand clientCmd = null;
@@ -107,9 +105,9 @@ namespace ESGARD_STORE
                 Conn = new SqlConnection(ConnectionString);
                 Conn.Open();
                 //check Client_ID
-                string checkClientSql = "SELECT F_Name FROM Client WHERE F_Name = " + Client_Name;
+                string checkClientSql = "SELECT Client_ID FROM Client WHERE Client_ID = " + Client_ID;
                 clientCmd = new SqlCommand(checkClientSql, Conn);
-                clientCmd.Parameters.AddWithValue("Client_ID", Client_Name);
+                clientCmd.Parameters.AddWithValue("Client_ID", Client_ID);
                 reader = clientCmd.ExecuteReader();
                 
                 if(!reader.HasRows)
@@ -120,9 +118,9 @@ namespace ESGARD_STORE
                 reader.Close();
 
                 //check Employee_ID
-                string checkEmployeeSql = "SELECT F_Name FROM Employee WHERE F_Name = " + Employee_Name;
+                string checkEmployeeSql = "SELECT Employee_ID FROM Employee WHERE Employee_ID = " + Employee_ID;
                 employeeCmd = new SqlCommand(checkEmployeeSql, Conn);
-                employeeCmd.Parameters.AddWithValue("Employee_ID", Employee_Name);
+                employeeCmd.Parameters.AddWithValue("Employee_ID", Employee_ID);
                 reader = employeeCmd.ExecuteReader();
 
                 if (!reader.HasRows)
@@ -133,7 +131,7 @@ namespace ESGARD_STORE
                 reader.Close();
 
                 //check Payment_Type_ID
-                string checkPaymentSql = "SELECT Payment_Type_ID FROM Payment_Type WHERE Payment_Type = " + Payment_Type_ID;
+                string checkPaymentSql = "SELECT Payment_Type_ID FROM Payment_Type WHERE Payment_Type_ID = '" + Payment_Type_ID + "'";
                 paymentTypeCmd = new SqlCommand(checkPaymentSql, Conn);
                 paymentTypeCmd.Parameters.AddWithValue("Payment_Type_ID", Payment_Type_ID);
                 reader = paymentTypeCmd.ExecuteReader();
@@ -181,7 +179,7 @@ namespace ESGARD_STORE
             return true;
         }
 
-        private Boolean addPurchase(DateTime Purchase_Date_Time, decimal total_cost, bool Is_paid, char Purchase_number, string Client_Name, string Employee_Name, string Payment_Type_ID)
+        private Boolean addPurchase(DateTime Purchase_Date_Time, decimal total_cost, bool Is_paid, char Purchase_number, int Client_ID, int Employee_ID, string Payment_Type_ID)
         {
             try
             {
@@ -190,7 +188,7 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"INSERT INTO Purchases (Purchase_Date_Time, total_cost, Is_paid, Purchase_number, Client_ID, Employee_ID, Payment_Type_ID ) VALUES ('" +Purchase_Date_Time+ "', '" +total_cost+ "', '" +Is_paid+ "', '"+Purchase_number+ "', '" +Client_Name + "', '" +Employee_Name+ "', '" +Payment_Type_ID+ "')";
+                string sql = @"INSERT INTO Purchases (Purchase_Date_Time, total_cost, Is_paid, Purchase_number, Client_ID, Employee_ID, Payment_Type_ID ) VALUES ('" +Purchase_Date_Time+ "', '" +total_cost+ "', '" +Is_paid+ "', '"+Purchase_number+ "', '" +Client_ID+ "', '" +Employee_ID+ "', '" +Payment_Type_ID+ "')";
                 Cmd = new SqlCommand(sql, Conn);
                 Adap.InsertCommand = Cmd;
                 Adap.InsertCommand.ExecuteNonQuery();
@@ -257,7 +255,7 @@ namespace ESGARD_STORE
                 Conn = new SqlConnection(ConnectionString);
                 Conn.Open();
 
-                string sql = @"SELECT Inventory_ID, Descri, Color, Category, Serial_No, Unit_Price FROM Inventory WHERE Serial_No = " + serialNumberSearch;
+                string sql = @"SELECT Descri, Color, Category, Serial_No, Unit_Price, Size FROM Inventory WHERE Serial_No = '" + serialNumberSearch + "'";
                 Cmd = new SqlCommand(sql, Conn);
                 Cmd.Parameters.AddWithValue("Serial_No", serialNumberSearch);
                 SqlDataReader reader = Cmd.ExecuteReader();
@@ -266,9 +264,9 @@ namespace ESGARD_STORE
                     {
                         txtBarPF.Text = reader["Serial_No"].ToString();
                         txtColorPF.Text = reader["Color"].ToString();
-                        txtDescrPF.Text = reader["Category"].ToString();
+                        txtDescrPF.Text = reader["Descri"].ToString();
                         txtPricePF.Text = reader["Unit_Price"].ToString();
-                        txtSizePF.Text = reader["Inventory_ID"].ToString();
+                        txtSizePF.Text = reader["Size"].ToString();
 
                     }
                     reader.Close();

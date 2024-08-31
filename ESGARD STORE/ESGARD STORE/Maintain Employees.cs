@@ -17,7 +17,6 @@ namespace ESGARD_STORE
         SqlConnection Conn;
         SqlCommand Cmd;
         SqlDataAdapter Adap;
-        SqlDataReader reader;
         DataSet Ds;
 
         public Maintain_Employees()

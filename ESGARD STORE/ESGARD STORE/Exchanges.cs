@@ -29,7 +29,6 @@ namespace ESGARD_STORE
 
             Dashboard ds = Application.OpenForms["Dashboard"] as Dashboard;
 
-
             if (ds == null)
             {
                 ds = new Dashboard();

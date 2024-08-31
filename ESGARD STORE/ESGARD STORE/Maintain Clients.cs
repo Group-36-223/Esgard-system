@@ -22,12 +22,11 @@ namespace ESGARD_STORE
         SqlConnection Conn;
         SqlCommand Cmd;
         SqlDataAdapter Adap;
-        SqlDataReader reader;
         DataSet Ds;
 
         private void Maintain_Clients_Load(object sender, EventArgs e)
         {
-
+            loadAll();
         }
 
 
@@ -60,7 +59,7 @@ namespace ESGARD_STORE
             this.Close();
         }
 
-        private Boolean clientNumberFound(int clientNumberSearch)
+        private Boolean clientNameFound(string clientNameSearch)
         {
 
             clearTextBoxes();
@@ -73,10 +72,10 @@ namespace ESGARD_STORE
 
                 //Adap = new SqlDataAdapter();
 
-                string sql = @"SELECT F_Name, L_Name, Cell_No, Email_Address, ID_Number, Client_Number FROM Client WHERE Client_Number = " + clientNumberSearch;
+                string sql = @"SELECT F_Name, L_Name, Cell_No, Email_Address, ID_Number, Client_Number FROM Client WHERE F_Name LIKE @clientName";
                 Cmd = new SqlCommand(sql, Conn);
 
-                Cmd.Parameters.AddWithValue("Client_Number", clientNumberSearch);
+                Cmd.Parameters.AddWithValue("@clientName","%" + clientNameSearch + "%");
 
                 SqlDataReader reader = Cmd.ExecuteReader();
                 if (reader.Read())
@@ -195,10 +194,12 @@ namespace ESGARD_STORE
                 {
                     MessageBox.Show("Please enter valid last name!");
                 }
+
+                clearTextBoxes();
             }
         }
 
-         private Boolean updateClient(long clientNumber, String firstname, string lastname, int cellphoneNumber, string email, long idNumber)
+         private Boolean updateClient(String firstname, string lastname, int cellphoneNumber, string email, long idNumber)
         {
             try
             {
@@ -207,7 +208,7 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"UPDATE Client SET F_Name= '" + firstname + "', L_Name = '" + lastname + "', Cell_No= '" + cellphoneNumber + "', Email_Address= '" + email + "', ID_Number= '" + idNumber + "' WHERE Client_Number= '" + clientNumber + "'";
+                string sql = @"UPDATE Client SET F_Name= '" + firstname + "', L_Name = '" + lastname + "', Cell_No= '" + cellphoneNumber + "', Email_Address= '" + email + "', ID_Number= '" + idNumber + "' WHERE F_Name= '" + firstname + "'";
                 Cmd = new SqlCommand(sql, Conn);
 
                 Adap.UpdateCommand = Cmd;
@@ -229,7 +230,7 @@ namespace ESGARD_STORE
         {
             try
             {
-                 string firstName = txtFNameMC.Text;
+            string firstName = txtFNameMC.Text;
             string lastName = txtLNameMC.Text;
             long idNumber;
             int cellphoneNumber;
@@ -243,10 +244,10 @@ namespace ESGARD_STORE
                     if (long.TryParse(txtINumberMC.Text, out idNumber) && txtINumberMC.Text.Length == 13)
                     {
                         if (!(email == ""))
-                        {
+                        {                        
                             if (int.TryParse(txtCellphoneMC.Text, out cellphoneNumber))
                             {
-                                if (updateClient(long.Parse(txtClientMC.Text), firstName, lastName, cellphoneNumber, email, idNumber))
+                                if (updateClient(firstName, lastName, cellphoneNumber, email, idNumber))
                                 {
                                     MessageBox.Show("Employee successfully updated!");
                                 }
@@ -257,8 +258,10 @@ namespace ESGARD_STORE
                             }
                             else
                             {
-                                MessageBox.Show("Please enter valid cellphone number!");
+                                    MessageBox.Show("Please enter a valid cellphone number");
                             }
+                           
+                            
                         }
                         else
                         {
@@ -313,6 +316,7 @@ namespace ESGARD_STORE
         {
             try
             {
+                Conn = new SqlConnection(ConnectionString);
                 Conn.Open();
                 string sql = "SELECT * FROM Client";
                 Cmd = new SqlCommand(sql, Conn);
@@ -355,9 +359,9 @@ namespace ESGARD_STORE
         private void btnDeleteMC_Click(object sender, EventArgs e)
         {
             Conn.Open();
-            string sql = "DELETE FROM Client WHERE Client_Number = @num";
+            string sql = "DELETE FROM Client WHERE F_Name = @name";
             Cmd = new SqlCommand(sql, Conn);
-            Cmd.Parameters.AddWithValue("@num", txtClientNumber.Text);
+            Cmd.Parameters.AddWithValue("@name", txtFNameMC.Text);
             Cmd.ExecuteNonQuery();
 
             Conn.Close();
@@ -365,14 +369,15 @@ namespace ESGARD_STORE
             MessageBox.Show("Deleted Successfully");
 
             loadAll();
+            clearTextBoxes();
         }
 
         private void btnSearchMC_Click(object sender, EventArgs e)
         {
-            int clientNumberSearch;
-            if (int.TryParse(txtClientMC.Text, out clientNumberSearch))
+            string clientNameSearch = txtClientMC.Text;
+            if (!(clientNameSearch == "" ))
             {
-                if (clientNumberFound(clientNumberSearch))
+                if (clientNameFound(clientNameSearch))
                 {
                     MessageBox.Show("Client successfully found!");
                 }

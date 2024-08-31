@@ -31,7 +31,6 @@ namespace ESGARD_STORE
         {
             this.btnSearch = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtSClientN = new System.Windows.Forms.TextBox();
             this.btnMReturn = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -45,6 +44,7 @@ namespace ESGARD_STORE
             this.label2 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtSClientN = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -69,14 +69,6 @@ namespace ESGARD_STORE
             this.label7.Size = new System.Drawing.Size(101, 17);
             this.label7.TabIndex = 10;
             this.label7.Text = "Client Number:";
-            // 
-            // txtSClientN
-            // 
-            this.txtSClientN.Location = new System.Drawing.Point(681, 75);
-            this.txtSClientN.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSClientN.Name = "txtSClientN";
-            this.txtSClientN.Size = new System.Drawing.Size(195, 22);
-            this.txtSClientN.TabIndex = 9;
             // 
             // btnMReturn
             // 
@@ -147,6 +139,7 @@ namespace ESGARD_STORE
             this.groupBox1.Size = new System.Drawing.Size(976, 75);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // lblTAmount
             // 
@@ -220,6 +213,14 @@ namespace ESGARD_STORE
             this.label3.TabIndex = 34;
             this.label3.Text = "Client Firstname:";
             // 
+            // txtSClientN
+            // 
+            this.txtSClientN.Location = new System.Drawing.Point(681, 75);
+            this.txtSClientN.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSClientN.Name = "txtSClientN";
+            this.txtSClientN.Size = new System.Drawing.Size(195, 22);
+            this.txtSClientN.TabIndex = 9;
+            // 
             // Returns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -243,7 +244,7 @@ namespace ESGARD_STORE
             this.Name = "Returns";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Returns";
-           
+            this.Load += new System.EventHandler(this.Returns_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -256,7 +257,6 @@ namespace ESGARD_STORE
 
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtSClientN;
         private System.Windows.Forms.Button btnMReturn;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label14;
@@ -270,5 +270,6 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtSClientN;
     }
 }

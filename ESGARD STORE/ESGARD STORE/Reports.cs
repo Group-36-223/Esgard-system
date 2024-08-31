@@ -14,11 +14,7 @@ namespace ESGARD_STORE
     public partial class Reports : Form
     {
         String ConnectionString = @"Data Source=HIMALAYANTOP;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-        SqlConnection Conn;
-        SqlCommand Cmd;
-        SqlDataAdapter Adap;
-        SqlDataReader reader;
-        DataSet Ds;
+    
 
         public Reports()
         {

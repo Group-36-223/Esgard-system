@@ -22,7 +22,6 @@ namespace ESGARD_STORE
         SqlConnection Conn;
         SqlCommand Cmd;
         SqlDataAdapter Adap;
-        SqlDataReader reader;
         DataSet Ds;
 
         private void Maintain_Inventory_Load(object sender, EventArgs e)
@@ -255,7 +254,7 @@ namespace ESGARD_STORE
 
         private void Maintain_Inventory_Load_1(object sender, EventArgs e)
         {
-
+            loadAll();
         }
 
         private void btnSearchME_Click(object sender, EventArgs e)

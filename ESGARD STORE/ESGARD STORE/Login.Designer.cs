@@ -46,7 +46,7 @@ namespace ESGARD_STORE
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(409, 327);
+            this.label2.Location = new System.Drawing.Point(410, 332);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(73, 17);
@@ -57,7 +57,7 @@ namespace ESGARD_STORE
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(409, 231);
+            this.label3.Location = new System.Drawing.Point(410, 262);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 17);
@@ -76,7 +76,7 @@ namespace ESGARD_STORE
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(413, 368);
+            this.txtPass.Location = new System.Drawing.Point(413, 353);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(319, 22);
@@ -86,7 +86,7 @@ namespace ESGARD_STORE
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(413, 425);
+            this.btnLogin.Location = new System.Drawing.Point(413, 410);
             this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(320, 28);
@@ -123,7 +123,7 @@ namespace ESGARD_STORE
             // 
             this.lblName.AutoSize = true;
             this.lblName.ForeColor = System.Drawing.Color.Red;
-            this.lblName.Location = new System.Drawing.Point(797, 283);
+            this.lblName.Location = new System.Drawing.Point(765, 288);
             this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(81, 17);
@@ -136,7 +136,7 @@ namespace ESGARD_STORE
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.ForeColor = System.Drawing.Color.Red;
-            this.lblPassword.Location = new System.Drawing.Point(797, 377);
+            this.lblPassword.Location = new System.Drawing.Point(765, 358);
             this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(106, 17);
@@ -159,7 +159,7 @@ namespace ESGARD_STORE
             // cbxPass
             // 
             this.cbxPass.AutoSize = true;
-            this.cbxPass.Location = new System.Drawing.Point(604, 397);
+            this.cbxPass.Location = new System.Drawing.Point(604, 382);
             this.cbxPass.Name = "cbxPass";
             this.cbxPass.Size = new System.Drawing.Size(129, 21);
             this.cbxPass.TabIndex = 16;

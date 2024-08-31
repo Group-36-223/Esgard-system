@@ -57,5 +57,10 @@ namespace ESGARD_STORE
         {
 
         }
+
+        private void Manager_Dashboard_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

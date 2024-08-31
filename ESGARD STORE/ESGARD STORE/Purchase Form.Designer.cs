@@ -56,7 +56,7 @@ namespace ESGARD_STORE
             this.lblCurrentDate = new System.Windows.Forms.Label();
             this.lblTotalAmount = new System.Windows.Forms.Label();
             this.lblPurchaseN = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.clblClient = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.txtClientID_PF = new System.Windows.Forms.TextBox();
@@ -174,7 +174,7 @@ namespace ESGARD_STORE
             // 
             // txtDescrPF
             // 
-            this.txtDescrPF.BackColor = System.Drawing.SystemColors.Window;
+            this.txtDescrPF.BackColor = System.Drawing.SystemColors.Control;
             this.txtDescrPF.Location = new System.Drawing.Point(188, 60);
             this.txtDescrPF.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescrPF.Name = "txtDescrPF";
@@ -184,7 +184,7 @@ namespace ESGARD_STORE
             // 
             // txtColorPF
             // 
-            this.txtColorPF.BackColor = System.Drawing.SystemColors.Window;
+            this.txtColorPF.BackColor = System.Drawing.SystemColors.Control;
             this.txtColorPF.Location = new System.Drawing.Point(188, 106);
             this.txtColorPF.Margin = new System.Windows.Forms.Padding(4);
             this.txtColorPF.Name = "txtColorPF";
@@ -194,7 +194,7 @@ namespace ESGARD_STORE
             // 
             // txtSizePF
             // 
-            this.txtSizePF.BackColor = System.Drawing.SystemColors.Window;
+            this.txtSizePF.BackColor = System.Drawing.SystemColors.Control;
             this.txtSizePF.Location = new System.Drawing.Point(188, 156);
             this.txtSizePF.Margin = new System.Windows.Forms.Padding(4);
             this.txtSizePF.Name = "txtSizePF";
@@ -204,7 +204,7 @@ namespace ESGARD_STORE
             // 
             // txtPricePF
             // 
-            this.txtPricePF.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPricePF.BackColor = System.Drawing.SystemColors.Control;
             this.txtPricePF.Location = new System.Drawing.Point(188, 198);
             this.txtPricePF.Margin = new System.Windows.Forms.Padding(4);
             this.txtPricePF.Name = "txtPricePF";
@@ -360,23 +360,23 @@ namespace ESGARD_STORE
             this.lblPurchaseN.Text = "label13";
             this.lblPurchaseN.Visible = false;
             // 
-            // label12
+            // clblClient
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(601, 53);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(68, 17);
-            this.label12.TabIndex = 29;
-            this.label12.Text = "Client ID: ";
+            this.clblClient.AutoSize = true;
+            this.clblClient.Location = new System.Drawing.Point(601, 53);
+            this.clblClient.Name = "clblClient";
+            this.clblClient.Size = new System.Drawing.Size(92, 17);
+            this.clblClient.TabIndex = 29;
+            this.clblClient.Text = "Client Name: ";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(601, 110);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(91, 17);
+            this.label13.Size = new System.Drawing.Size(115, 17);
             this.label13.TabIndex = 30;
-            this.label13.Text = "Employee ID:";
+            this.label13.Text = "Employee Name:";
             // 
             // label14
             // 
@@ -419,7 +419,7 @@ namespace ESGARD_STORE
             this.Controls.Add(this.txtClientID_PF);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.clblClient);
             this.Controls.Add(this.lblPurchaseN);
             this.Controls.Add(this.lblTotalAmount);
             this.Controls.Add(this.lblCurrentDate);
@@ -472,7 +472,7 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label lblCurrentDate;
         private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.Label lblPurchaseN;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label clblClient;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btnAddCart;

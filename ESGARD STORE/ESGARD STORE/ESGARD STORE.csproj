@@ -183,7 +183,6 @@
     <Content Include="Create_Esgard.sql" />
     <Content Include="InsertFile_Employee.sql" />
     <Content Include="Insert_Employee.sql" />
-    <Content Include="Tables.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

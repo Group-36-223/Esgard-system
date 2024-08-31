@@ -78,8 +78,8 @@ namespace ESGARD_STORE
                 SqlDataReader reader = Cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    txtFNameME.Text = reader["F_Name"].ToString();
-                    txtLNameME.Text = reader["L_Name"].ToString();
+                    txtFNameME.Text = reader["First_Name"].ToString();
+                    txtLNameME.Text = reader["Last_Name"].ToString();
                     txtINumberMe.Text = reader["ID_Number"].ToString();
                     txtEmailME.Text = reader["Email_Address"].ToString();
                     txtCellphoneME.Text = reader["cell_No"].ToString();

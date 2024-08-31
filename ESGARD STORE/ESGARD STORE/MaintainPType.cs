@@ -128,6 +128,7 @@ namespace ESGARD_STORE
                     {
                         MessageBox.Show("New Payment Type successfully added");
                         cBSPayType.Items.Add(payment_type);
+                        txtANPayType.Text = "";
                     }
                     else
                     {
@@ -182,6 +183,7 @@ namespace ESGARD_STORE
                 {
                     MessageBox.Show("Payment Option successfully deleted!");
                     //cBSPayType.Text = string.Empty;
+                    txtANPayType.Text = "";
                 }
                 else
                 {
@@ -193,6 +195,8 @@ namespace ESGARD_STORE
             {
                 MessageBox.Show("Please select payment type!");
             }
+            cBSPayType.Text = string.Empty;
+
             loadAll();
         }
 
@@ -212,6 +216,7 @@ namespace ESGARD_STORE
                         {
                             MessageBox.Show("Payment Type updated successfully");
                             //cBSPayType.Items.Add(newPayment_type);
+                            txtANPayType.Text = "";
                         }
                         else
                         {

@@ -331,7 +331,7 @@ namespace ESGARD_STORE
                             if (double.TryParse(txtPriceMI.Text, out price))
                             {
                                 if (!(category == ""))
-                                 {
+                                {
 
                                     if (int.TryParse(txtQty.Text, out Quantity_on_Hand))
                                     {
@@ -397,7 +397,7 @@ namespace ESGARD_STORE
                 Conn.Open();
 
                 Adap = new SqlDataAdapter();
-                String delete_sql = "DELETE FROM Inventory WHERE Serial_No = '" +serialNumber+ "'";
+                String delete_sql = "DELETE FROM Inventory WHERE Serial_No = '" + serialNumber + "'";
                 Cmd = new SqlCommand(delete_sql, Conn);
                 Cmd.ExecuteNonQuery();
                 Adap.DeleteCommand = Cmd;
@@ -475,18 +475,7 @@ namespace ESGARD_STORE
 
         private void btnBTDMI_Click_1(object sender, EventArgs e)
         {
-            Dashboard db = Application.OpenForms["Dashboard"] as Dashboard;
-
-
-            if (db == null)
-            {
-                db = new Dashboard();
-                db.Show();
-            }
-            else
-            {
-                db.BringToFront();
-            }
+            this.Close();
         }
     }
 }

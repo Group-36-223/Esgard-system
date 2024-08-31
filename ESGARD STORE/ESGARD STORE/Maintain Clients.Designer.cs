@@ -37,11 +37,9 @@ namespace ESGARD_STORE
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCellphoneMC = new System.Windows.Forms.TextBox();
             this.txtEmailMC = new System.Windows.Forms.TextBox();
-            this.txtINumberMC = new System.Windows.Forms.TextBox();
             this.txtLNameMC = new System.Windows.Forms.TextBox();
             this.txtFNameMC = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -64,7 +62,7 @@ namespace ESGARD_STORE
             // btnAddMC
             // 
             this.btnAddMC.Location = new System.Drawing.Point(16, 489);
-            this.btnAddMC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAddMC.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddMC.Name = "btnAddMC";
             this.btnAddMC.Size = new System.Drawing.Size(97, 28);
             this.btnAddMC.TabIndex = 0;
@@ -75,7 +73,7 @@ namespace ESGARD_STORE
             // btnDeleteMC
             // 
             this.btnDeleteMC.Location = new System.Drawing.Point(162, 489);
-            this.btnDeleteMC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDeleteMC.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteMC.Name = "btnDeleteMC";
             this.btnDeleteMC.Size = new System.Drawing.Size(94, 28);
             this.btnDeleteMC.TabIndex = 1;
@@ -90,17 +88,15 @@ namespace ESGARD_STORE
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.txtCellphoneMC);
             this.groupBox1.Controls.Add(this.txtEmailMC);
-            this.groupBox1.Controls.Add(this.txtINumberMC);
             this.groupBox1.Controls.Add(this.txtLNameMC);
             this.groupBox1.Controls.Add(this.txtFNameMC);
             this.groupBox1.Location = new System.Drawing.Point(16, 108);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(504, 373);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
@@ -109,7 +105,7 @@ namespace ESGARD_STORE
             // txtClientNumber
             // 
             this.txtClientNumber.Location = new System.Drawing.Point(297, 322);
-            this.txtClientNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtClientNumber.Margin = new System.Windows.Forms.Padding(4);
             this.txtClientNumber.Name = "txtClientNumber";
             this.txtClientNumber.ReadOnly = true;
             this.txtClientNumber.Size = new System.Drawing.Size(132, 22);
@@ -128,7 +124,7 @@ namespace ESGARD_STORE
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(51, 106);
+            this.label5.Location = new System.Drawing.Point(51, 124);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 17);
@@ -138,7 +134,7 @@ namespace ESGARD_STORE
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 159);
+            this.label4.Location = new System.Drawing.Point(51, 190);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(129, 17);
@@ -148,22 +144,12 @@ namespace ESGARD_STORE
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 220);
+            this.label3.Location = new System.Drawing.Point(51, 259);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 17);
             this.label3.TabIndex = 7;
             this.label3.Text = "Email Address";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 266);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "ID Number:";
             // 
             // label1
             // 
@@ -177,32 +163,25 @@ namespace ESGARD_STORE
             // 
             // txtCellphoneMC
             // 
-            this.txtCellphoneMC.Location = new System.Drawing.Point(297, 156);
-            this.txtCellphoneMC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCellphoneMC.Location = new System.Drawing.Point(297, 187);
+            this.txtCellphoneMC.Margin = new System.Windows.Forms.Padding(4);
             this.txtCellphoneMC.Name = "txtCellphoneMC";
             this.txtCellphoneMC.Size = new System.Drawing.Size(132, 22);
             this.txtCellphoneMC.TabIndex = 4;
             // 
             // txtEmailMC
             // 
-            this.txtEmailMC.Location = new System.Drawing.Point(297, 217);
-            this.txtEmailMC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmailMC.Location = new System.Drawing.Point(297, 256);
+            this.txtEmailMC.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmailMC.Name = "txtEmailMC";
             this.txtEmailMC.Size = new System.Drawing.Size(132, 22);
             this.txtEmailMC.TabIndex = 3;
-            // 
-            // txtINumberMC
-            // 
-            this.txtINumberMC.Location = new System.Drawing.Point(297, 263);
-            this.txtINumberMC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtINumberMC.Name = "txtINumberMC";
-            this.txtINumberMC.Size = new System.Drawing.Size(132, 22);
-            this.txtINumberMC.TabIndex = 2;
+            this.txtEmailMC.TextChanged += new System.EventHandler(this.txtEmailMC_TextChanged);
             // 
             // txtLNameMC
             // 
-            this.txtLNameMC.Location = new System.Drawing.Point(297, 106);
-            this.txtLNameMC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLNameMC.Location = new System.Drawing.Point(297, 121);
+            this.txtLNameMC.Margin = new System.Windows.Forms.Padding(4);
             this.txtLNameMC.Name = "txtLNameMC";
             this.txtLNameMC.Size = new System.Drawing.Size(132, 22);
             this.txtLNameMC.TabIndex = 1;
@@ -210,7 +189,7 @@ namespace ESGARD_STORE
             // txtFNameMC
             // 
             this.txtFNameMC.Location = new System.Drawing.Point(297, 52);
-            this.txtFNameMC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFNameMC.Margin = new System.Windows.Forms.Padding(4);
             this.txtFNameMC.Name = "txtFNameMC";
             this.txtFNameMC.Size = new System.Drawing.Size(132, 22);
             this.txtFNameMC.TabIndex = 0;
@@ -228,7 +207,7 @@ namespace ESGARD_STORE
             // txtClientMC
             // 
             this.txtClientMC.Location = new System.Drawing.Point(749, 106);
-            this.txtClientMC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtClientMC.Margin = new System.Windows.Forms.Padding(4);
             this.txtClientMC.Name = "txtClientMC";
             this.txtClientMC.Size = new System.Drawing.Size(195, 22);
             this.txtClientMC.TabIndex = 6;
@@ -236,7 +215,7 @@ namespace ESGARD_STORE
             // btnSearchMC
             // 
             this.btnSearchMC.Location = new System.Drawing.Point(997, 102);
-            this.btnSearchMC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearchMC.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearchMC.Name = "btnSearchMC";
             this.btnSearchMC.Size = new System.Drawing.Size(100, 28);
             this.btnSearchMC.TabIndex = 8;
@@ -247,7 +226,7 @@ namespace ESGARD_STORE
             // btnUpdateMC
             // 
             this.btnUpdateMC.Location = new System.Drawing.Point(296, 489);
-            this.btnUpdateMC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdateMC.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateMC.Name = "btnUpdateMC";
             this.btnUpdateMC.Size = new System.Drawing.Size(96, 28);
             this.btnUpdateMC.TabIndex = 9;
@@ -258,7 +237,7 @@ namespace ESGARD_STORE
             // btnBTDMC
             // 
             this.btnBTDMC.Location = new System.Drawing.Point(568, 489);
-            this.btnBTDMC.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBTDMC.Margin = new System.Windows.Forms.Padding(4);
             this.btnBTDMC.Name = "btnBTDMC";
             this.btnBTDMC.Size = new System.Drawing.Size(148, 28);
             this.btnBTDMC.TabIndex = 22;
@@ -294,7 +273,7 @@ namespace ESGARD_STORE
             // 
             this.pictureBox1.Image = global::ESGARD_STORE.Properties.Resources.ESGARD_LOGO;
             this.pictureBox1.Location = new System.Drawing.Point(37, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(111, 84);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -362,7 +341,7 @@ namespace ESGARD_STORE
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDeleteMC);
             this.Controls.Add(this.btnAddMC);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Maintain_Clients";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Maintain Clients";
@@ -385,11 +364,9 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCellphoneMC;
         private System.Windows.Forms.TextBox txtEmailMC;
-        private System.Windows.Forms.TextBox txtINumberMC;
         private System.Windows.Forms.TextBox txtLNameMC;
         private System.Windows.Forms.TextBox txtFNameMC;
         private System.Windows.Forms.TextBox txtClientNumber;

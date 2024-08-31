@@ -70,7 +70,7 @@ namespace ESGARD_STORE
 
                 //Adap = new SqlDataAdapter();
 
-                string sql = @"SELECT F_Name, L_Name, cell_No, Email_Address, ID_Number FROM Employee WHERE Employee_Number = " + employeeNumberSearch;
+                string sql = @"SELECT First_Name, Last_Name, cell_No, Email_Address, ID_Number FROM Employee WHERE Employee_Number = " + employeeNumberSearch;
                 Cmd = new SqlCommand(sql, Conn);
 
                 Cmd.Parameters.AddWithValue("Employee_Number", employeeNumberSearch);
@@ -153,7 +153,7 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"INSERT INTO Employee (F_Name, L_Name, cell_No, Email_Address, ID_Number, Pssword, Employee_Number) VALUES ('" + firstName + "','" + lastName + "','" + cellphoneNumber + "','" + email + "','" + idNumber + "', '"+ Password +"', '"+ Employee_Number +"')";
+                string sql = @"INSERT INTO Employee (First_Name, Last_Name, cell_No, Email_Address, ID_Number, Pssword, Employee_Number) VALUES ('" + firstName + "','" + lastName + "','" + cellphoneNumber + "','" + email + "','" + idNumber + "', '"+ Password +"', '"+ Employee_Number +"')";
                 Cmd = new SqlCommand(sql, Conn);
 
 
@@ -328,7 +328,7 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"UPDATE Employee SET F_Name= '" + firstName + "',L_Name= '" + lastName + "', cell_No= '" + cellphoneNumber + "', Email_Address= '" + email + "', ID_Number= '" + idNumber + "', Pssword= '" + Password +"' WHERE Employee_Number= '" + Employee_No + "'";
+                string sql = @"UPDATE Employee SET First_Name= '" + firstName + "',Last_Name= '" + lastName + "', cell_No= '" + cellphoneNumber + "', Email_Address= '" + email + "', ID_Number= '" + idNumber + "', Pssword= '" + Password +"' WHERE Employee_Number= '" + Employee_No + "'";
                 Cmd = new SqlCommand(sql, Conn);
 
 

@@ -41,6 +41,10 @@ namespace ESGARD_STORE
             this.lblTAmount = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtPurchaseID = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -48,7 +52,7 @@ namespace ESGARD_STORE
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(929, 71);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 28);
             this.btnSearch.TabIndex = 11;
@@ -59,7 +63,7 @@ namespace ESGARD_STORE
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(497, 82);
+            this.label7.Location = new System.Drawing.Point(547, 80);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(101, 17);
@@ -69,7 +73,7 @@ namespace ESGARD_STORE
             // txtSClientN
             // 
             this.txtSClientN.Location = new System.Drawing.Point(681, 75);
-            this.txtSClientN.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSClientN.Margin = new System.Windows.Forms.Padding(4);
             this.txtSClientN.Name = "txtSClientN";
             this.txtSClientN.Size = new System.Drawing.Size(195, 22);
             this.txtSClientN.TabIndex = 9;
@@ -78,7 +82,7 @@ namespace ESGARD_STORE
             // 
             this.btnMReturn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMReturn.Location = new System.Drawing.Point(877, 518);
-            this.btnMReturn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMReturn.Margin = new System.Windows.Forms.Padding(4);
             this.btnMReturn.Name = "btnMReturn";
             this.btnMReturn.Size = new System.Drawing.Size(152, 28);
             this.btnMReturn.TabIndex = 24;
@@ -114,7 +118,7 @@ namespace ESGARD_STORE
             // 
             this.pictureBox1.Image = global::ESGARD_STORE.Properties.Resources.ESGARD_LOGO;
             this.pictureBox1.Location = new System.Drawing.Point(36, 10);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(123, 89);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -127,7 +131,7 @@ namespace ESGARD_STORE
             this.lbInfo.FormattingEnabled = true;
             this.lbInfo.ItemHeight = 16;
             this.lbInfo.Location = new System.Drawing.Point(53, 166);
-            this.lbInfo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lbInfo.Margin = new System.Windows.Forms.Padding(4);
             this.lbInfo.Name = "lbInfo";
             this.lbInfo.Size = new System.Drawing.Size(975, 228);
             this.lbInfo.TabIndex = 28;
@@ -137,9 +141,9 @@ namespace ESGARD_STORE
             this.groupBox1.Controls.Add(this.lblTAmount);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(53, 414);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(976, 75);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
@@ -172,7 +176,7 @@ namespace ESGARD_STORE
             this.button1.BackColor = System.Drawing.SystemColors.Info;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(53, 517);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(205, 28);
             this.button1.TabIndex = 30;
@@ -180,11 +184,51 @@ namespace ESGARD_STORE
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // txtPurchaseID
+            // 
+            this.txtPurchaseID.Location = new System.Drawing.Point(637, 522);
+            this.txtPurchaseID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPurchaseID.Name = "txtPurchaseID";
+            this.txtPurchaseID.Size = new System.Drawing.Size(195, 22);
+            this.txtPurchaseID.TabIndex = 31;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(498, 529);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(87, 17);
+            this.label2.TabIndex = 32;
+            this.label2.Text = "Purchase Id:";
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(681, 116);
+            this.txtFirstName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(195, 22);
+            this.txtFirstName.TabIndex = 33;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(547, 121);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(113, 17);
+            this.label3.TabIndex = 34;
+            this.label3.Text = "Client Firstname:";
+            // 
             // Returns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 609);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtFirstName);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txtPurchaseID);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbInfo);
@@ -195,7 +239,7 @@ namespace ESGARD_STORE
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtSClientN);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Returns";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Returns";
@@ -221,5 +265,9 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label lblTAmount;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtPurchaseID;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.Label label3;
     }
 }

@@ -10,7 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 namespace ESGARD_STORE
-{public partial class Returns : Form
+{
+    public partial class Returns : Form
     {
         String ConnectionString = @"Data Source=KAASKRULLE;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         SqlConnection Conn;
@@ -18,6 +19,7 @@ namespace ESGARD_STORE
         SqlDataAdapter Adap;
         SqlDataReader reader;
         DataSet Ds;
+
         public Returns()
         {
             InitializeComponent();
@@ -25,18 +27,111 @@ namespace ESGARD_STORE
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Exchanges ex = new Exchanges();
-            ex.ShowDialog();
-            this.Close();
+            DialogResult result = MessageBox.Show("Are you sure you want to process this return?", "Confirm Return", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                int purchaseID;
+                if (int.TryParse(txtPurchaseID.Text, out purchaseID))
+                {
+                    if (ProcessReturn(purchaseID))
+                    {
+                        MessageBox.Show("Return processed successfully!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to process return. Please try again.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid Purchase ID.");
+                }
+            }
+        }
+
+        private bool ProcessReturn(int purchaseID)
+        {
+            try
+            {
+                Conn = new SqlConnection(ConnectionString);
+                Conn.Open();
+
+                // 1. Retrieve Inventory_ID and Quantity from Purchase_Detail table
+                string queryDetail = "SELECT Inventory_ID, Qty_Sold FROM Purchase_Details WHERE Purchases_ID = @PurchaseID";
+                Cmd = new SqlCommand(queryDetail, Conn);
+                Cmd.Parameters.AddWithValue("@PurchaseID", purchaseID);
+
+                // Start reading the data
+                SqlDataReader readerProcess = Cmd.ExecuteReader();
+
+                if (!readerProcess.HasRows)
+                {
+                    MessageBox.Show("No purchase details found for this Purchase ID.");
+                    readerProcess.Close(); // Ensure reader is closed
+                    return false;
+                }
+
+                List<int> inventoryIDs = new List<int>();
+                List<int> quantities = new List<int>();
+
+                while (readerProcess.Read())
+                {
+                    int inventoryID = (int)readerProcess["Inventory_ID"];
+                    int quantityBought = (int)readerProcess["Qty_Sold"];
+
+                    inventoryIDs.Add(inventoryID);
+                    quantities.Add(quantityBought);
+                }
+
+                readerProcess.Close(); // Close the reader before executing further commands
+
+                // 2. Update the Quantity_on_Hand in the Inventory table
+                for (int i = 0; i < inventoryIDs.Count; i++)
+                {
+                    UpdateInventoryQuantity(inventoryIDs[i], quantities[i]);
+                }
+
+                // 3. Update the Is_Paid status in the Purchases table
+                UpdatePurchaseStatus(purchaseID);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occurred: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                if (Conn != null)
+                {
+                    Conn.Close();
+                }
+            }
+        }
+
+
+        private void UpdateInventoryQuantity(int inventoryID, int quantityBought)
+        {
+            string updateInventory = "UPDATE Inventory SET Quantity_On_Hand = Quantity_On_Hand + @QuantityBought WHERE Inventory_ID = @InventoryID";
+            SqlCommand cmdUpdate = new SqlCommand(updateInventory, Conn);
+            cmdUpdate.Parameters.AddWithValue("@QuantityBought", quantityBought);
+            cmdUpdate.Parameters.AddWithValue("@InventoryID", inventoryID);
+            cmdUpdate.ExecuteNonQuery();
+        }
+
+        private void UpdatePurchaseStatus(int purchaseID)
+        {
+            string updatePurchase = "UPDATE Purchases SET Is_paid = 0 WHERE Purchases_ID = @PurchaseID";
+            SqlCommand cmdUpdate = new SqlCommand(updatePurchase, Conn);
+            cmdUpdate.Parameters.AddWithValue("@PurchaseID", purchaseID);
+            cmdUpdate.ExecuteNonQuery();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            //Dashboard ds = new Dashboard();
-            //ds.ShowDialog();
-
             Dashboard ds = Application.OpenForms["Dashboard"] as Dashboard;
-
 
             if (ds == null)
             {
@@ -48,7 +143,6 @@ namespace ESGARD_STORE
                 ds.BringToFront();
             }
 
-
             this.Close();
         }
 
@@ -57,78 +151,99 @@ namespace ESGARD_STORE
             this.Close();
         }
 
-        /*private Boolean clientNumberFound(int clientNumberSearch)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
+            string clientID = txtSClientN.Text.Trim();
+            string firstName = txtFirstName.Text.Trim();
 
-            //clearTextBoxes();
-            Boolean didItThrewAnException = false;
+            if (string.IsNullOrEmpty(clientID) && string.IsNullOrEmpty(firstName))
+            {
+                MessageBox.Show("Please enter a Client ID or First Name to search.");
+                return;
+            }
 
             try
             {
                 Conn = new SqlConnection(ConnectionString);
                 Conn.Open();
 
-                //Adap = new SqlDataAdapter();
+                // Create SQL query
+                string sqlQuery = @"SELECT 
+                                Purchases.Purchases_ID,
+                                Purchases.Client_ID,
+                                Purchases.Employee_ID,
+                                Purchases.Payment_Type_ID,
+                                Purchases.Purchase_Date_Time,
+                                Purchases.total_cost,
+                                Purchases.Is_paid,
+                                Purchases.Purchase_number
+                            FROM 
+                                Purchases 
+                            JOIN 
+                                Client ON Purchases.Client_ID = Client.Client_ID
+                            WHERE 
+                                Purchases.Is_paid = 1 AND
+                                ((@ClientID IS NULL OR Client.Client_ID = @ClientID) 
+                                OR (@FirstName IS NULL OR Client.First_Name = @FirstName));";
 
-                string sql = @"SELECT F_Name, L_Name, Cell_No, Email_Address, ID_Number, Client_Number FROM Client WHERE Client_Number = " + clientNumberSearch;
-                Cmd = new SqlCommand(sql, Conn);
+                Cmd = new SqlCommand(sqlQuery, Conn);
 
-                Cmd.Parameters.AddWithValue("Client_Number", clientNumberSearch);
-
-                SqlDataReader reader = Cmd.ExecuteReader();
-                if (reader.Read())
+                if (!string.IsNullOrEmpty(clientID))
                 {
-                    txtFNameMC.Text = reader["F_Name"].ToString();
-                    txtLNameMC.Text = reader["L_Name"].ToString();
-                    txtCellphoneMC.Text = reader["Cell_No"].ToString();
-                    txtEmailMC.Text = reader["Email_Address"].ToString();
-                    txtINumberMC.Text = reader["ID_Number"].ToString();
-                    txtClientNumber.Text = reader["Client_Number"].ToString();
-                }
-                reader.Close();
-
-                Cmd.Dispose();
-                Conn.Close();
-
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message);
-                didItThrewAnException = true;
-
-            }
-
-            if (!didItThrewAnException && !(txtFNameMC.Text == ""))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }*/
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-                /*int clientNumberSearch;
-                if (int.TryParse(txtClientMC.Text, out clientNumberSearch))
-                {
-                    if (clientNumberFound(clientNumberSearch))
-                    {
-                        MessageBox.Show("Client successfully found!");
-                        lbInfo.Items.Add("FName".PadRight(20)+ "LName".PadRight(20)+ "Purchases".PadRight(20)+ "Date");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Client does not exist!");
-                    }
-
+                    Cmd.Parameters.AddWithValue("@ClientID", clientID);
                 }
                 else
                 {
-                    MessageBox.Show("Invalid input!");
-                }*/
+                    Cmd.Parameters.AddWithValue("@ClientID", DBNull.Value);
+                }
 
-              
+                if (!string.IsNullOrEmpty(firstName))
+                {
+                    Cmd.Parameters.AddWithValue("@FirstName", firstName);
+                }
+                else
+                {
+                    Cmd.Parameters.AddWithValue("@FirstName", DBNull.Value);
+                }
+
+                reader = Cmd.ExecuteReader();
+
+                lbInfo.Items.Clear(); // Clear previous search results
+
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        string purchaseInfo = $"Purchase ID: {reader["Purchases_ID"]}, " +
+                                              $"Client ID: {reader["Client_ID"]}, " +
+                                              $"Employee ID: {reader["Employee_ID"]}, " +
+                                              $"Payment Type ID: {reader["Payment_Type_ID"]}, " +
+                                              $"Date/Time: {reader["Purchase_Date_Time"]}, " +
+                                              $"Total Cost: {reader["total_cost"]}, " +
+                                              $"Is Paid: {reader["Is_paid"]}, " +
+                                              $"Purchase Number: {reader["Purchase_number"]}";
+
+                        lbInfo.Items.Add(purchaseInfo);
+                    }
+                }
+                else
+                {
+                    lbInfo.Items.Add("No purchases found for the given client.");
+                }
+
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error occurred: " + ex.Message);
+            }
+            finally
+            {
+                if (Conn != null)
+                {
+                    Conn.Close();
+                }
+            }
         }
     }
 }

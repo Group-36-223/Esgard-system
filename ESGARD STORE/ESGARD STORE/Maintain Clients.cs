@@ -22,13 +22,14 @@ namespace ESGARD_STORE
         SqlConnection Conn;
         SqlCommand Cmd;
         SqlDataAdapter Adap;
-        SqlDataReader reader;
         DataSet Ds;
 
         private void Maintain_Clients_Load(object sender, EventArgs e)
         {
-
+            loadAll();
         }
+
+
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -58,7 +59,7 @@ namespace ESGARD_STORE
             this.Close();
         }
 
-        private Boolean clientNumberFound(int clientNumberSearch)
+        private Boolean clientNameFound(string clientNameSearch)
         {
 
             clearTextBoxes();
@@ -71,18 +72,19 @@ namespace ESGARD_STORE
 
                 //Adap = new SqlDataAdapter();
 
-                string sql = @"SELECT First_Name, Last_Name, Cell_No, Email_Address, Client_Number FROM Client WHERE Client_Number = " + clientNumberSearch;
+                string sql = @"SELECT F_Name, L_Name, Cell_No, Email_Address, ID_Number, Client_Number FROM Client WHERE F_Name LIKE @clientName";
                 Cmd = new SqlCommand(sql, Conn);
 
-                Cmd.Parameters.AddWithValue("Client_Number", clientNumberSearch);
+                Cmd.Parameters.AddWithValue("@clientName","%" + clientNameSearch + "%");
 
                 SqlDataReader reader = Cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    txtFNameMC.Text = reader["First_Name"].ToString();
-                    txtLNameMC.Text = reader["Last_Name"].ToString();
+                    txtFNameMC.Text = reader["F_Name"].ToString();
+                    txtLNameMC.Text = reader["L_Name"].ToString();
                     txtCellphoneMC.Text = reader["Cell_No"].ToString();
                     txtEmailMC.Text = reader["Email_Address"].ToString();
+                    txtINumberMC.Text = reader["ID_Number"].ToString();
                     txtClientNumber.Text = reader["Client_Number"].ToString();
                 }
                 reader.Close();            
@@ -108,7 +110,7 @@ namespace ESGARD_STORE
             }
         }
 
-            private Boolean addClient(String firstName, string lastName, int cellphoneNumber , string Email , int clientNumber)
+            private Boolean addEmployee(String firstName, string lastName, int cellphoneNumber , string Email , long idNumber, int clientNumber)
         {
             try
             {
@@ -117,7 +119,7 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"INSERT INTO Client (First_Name, Last_Name, Cell_No, Email_Address, Client_Number) VALUES ('" + firstName + "','" + lastName + "','" + cellphoneNumber + "','" + Email + "', '" + clientNumber + "')";
+                string sql = @"INSERT INTO Client (F_Name, L_Name, Cell_No, Email_Address, ID_Number, Client_Number) VALUES ('" + firstName + "','" + lastName + "','" + cellphoneNumber + "','" + Email + "','" + idNumber + "', '" + clientNumber + "')";
                 Cmd = new SqlCommand(sql, Conn);
 
 
@@ -146,6 +148,7 @@ namespace ESGARD_STORE
         {
             string firstName = txtFNameMC.Text;
             string lastName = txtLNameMC.Text;
+            long idNumber;
             int cellphoneNumber;
             string Email = txtEmailMC.Text;
 
@@ -157,42 +160,46 @@ namespace ESGARD_STORE
             {
                 if (!(lastName == ""))
                 {
-                    if (!(Email == ""))
+                    if (long.TryParse(txtINumberMC.Text, out idNumber) && txtINumberMC.Text.Length == 13)
                     {
-                        if (int.TryParse(txtCellphoneMC.Text, out cellphoneNumber))
+                        if (!(Email == ""))
                         {
-                            if (addClient(firstName, lastName, cellphoneNumber, Email, randClientNumber))
+                            if (int.TryParse(txtCellphoneMC.Text, out cellphoneNumber))
                             {
-                                MessageBox.Show("Client successfully added!");
+                                if (addEmployee(firstName, lastName, cellphoneNumber, Email, idNumber, randClientNumber))
+                                {
+                                    MessageBox.Show("Employee successfully added!");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error while adding new employee details!\nPlease try again!");
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Error while adding new client details!\nPlease try again!");
+                                MessageBox.Show("Please enter valid cellphone number!");
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Please enter valid cellphone number!");
+                            MessageBox.Show("Please enter valid email!");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Please enter a valid Email!");
+                        MessageBox.Show("Please enter valid ID number!");
                     }
                 }
                 else
                 {
                     MessageBox.Show("Please enter valid last name!");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Please enter valid first name!");
+
+                clearTextBoxes();
             }
         }
-       
 
-         private Boolean updateClient(int clientNumber, String firstname, string lastname, long cellphoneNumber, string email)
+         private Boolean updateClient(String firstname, string lastname, int cellphoneNumber, string email, long idNumber)
         {
             try
             {
@@ -201,7 +208,7 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"UPDATE Client SET First_Name= '" + firstname + "', Last_Name = '" + lastname + "', Cell_No= '" + cellphoneNumber + "', Email_Address= '" + email + "' WHERE Client_Number= '" + clientNumber + "'";
+                string sql = @"UPDATE Client SET F_Name= '" + firstname + "', L_Name = '" + lastname + "', Cell_No= '" + cellphoneNumber + "', Email_Address= '" + email + "', ID_Number= '" + idNumber + "' WHERE F_Name= '" + firstname + "'";
                 Cmd = new SqlCommand(sql, Conn);
 
                 Adap.UpdateCommand = Cmd;
@@ -221,59 +228,65 @@ namespace ESGARD_STORE
 
         private void btnUpdateMC_Click(object sender, EventArgs e)
         {
+            try
+            {
+            string firstName = txtFNameMC.Text;
+            string lastName = txtLNameMC.Text;
+            long idNumber;
+            int cellphoneNumber;
+            string email = txtEmailMC.Text;
             
-                string firstName = txtFNameMC.Text;
-                string lastName = txtLNameMC.Text;
-                long cellphoneNumber;
-                string email = txtEmailMC.Text;
-                int clientNumber;
 
-                if (!(firstName == ""))
+            if (!(firstName == ""))
+            {
+                if (!(lastName == ""))
                 {
-                    if (!(lastName == ""))
+                    if (long.TryParse(txtINumberMC.Text, out idNumber) && txtINumberMC.Text.Length == 13)
                     {
                         if (!(email == ""))
-                        {
-                            if (long.TryParse(txtCellphoneMC.Text, out cellphoneNumber))
+                        {                        
+                            if (int.TryParse(txtCellphoneMC.Text, out cellphoneNumber))
                             {
-                            if (int.TryParse(txtClientNumber.Text, out clientNumber))
-                             {
-                                        if (updateClient(clientNumber, firstName, lastName, cellphoneNumber, email))
-                                        {
-                                            MessageBox.Show("Employee successfully updated!");
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("Error while updating Client details!\nPlease try again!");
-                                        }
-                             }
-                            else
-                            {
-                                MessageBox.Show("Please enter a valid client number!");
-                            }
+                                if (updateClient(firstName, lastName, cellphoneNumber, email, idNumber))
+                                {
+                                    MessageBox.Show("Employee successfully updated!");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("Error while updating employee details!\nPlease try again!");
+                                }
                             }
                             else
                             {
-                                MessageBox.Show("Please enter a valid cellphone number!");
+                                    MessageBox.Show("Please enter a valid cellphone number");
                             }
+                           
+                            
                         }
                         else
                         {
-                            MessageBox.Show("Please enter a valid email!");
+                            MessageBox.Show("Please enter valid email!");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Please enter a valid last name!");
+                        MessageBox.Show("Please enter valid ID number!");
                     }
                 }
                 else
                 {
-                     MessageBox.Show("Please enter a valid first name!");
+                    MessageBox.Show("Please enter valid last name!");
                 }
 
                 loadAll();
                 clearTextBoxes();
+               
+            }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
            
         }
 
@@ -303,6 +316,7 @@ namespace ESGARD_STORE
         {
             try
             {
+                Conn = new SqlConnection(ConnectionString);
                 Conn.Open();
                 string sql = "SELECT * FROM Client";
                 Cmd = new SqlCommand(sql, Conn);
@@ -326,6 +340,7 @@ namespace ESGARD_STORE
 
         private void clearTextBoxes()
         {
+            txtINumberMC.Text = "";
             txtClientMC.Text = "";
             txtClientNumber.Text = "";
             txtEmailMC.Text = "";
@@ -344,9 +359,9 @@ namespace ESGARD_STORE
         private void btnDeleteMC_Click(object sender, EventArgs e)
         {
             Conn.Open();
-            string sql = "DELETE FROM Client WHERE Client_Number = @num";
+            string sql = "DELETE FROM Client WHERE F_Name = @name";
             Cmd = new SqlCommand(sql, Conn);
-            Cmd.Parameters.AddWithValue("@num", txtClientNumber.Text);
+            Cmd.Parameters.AddWithValue("@name", txtFNameMC.Text);
             Cmd.ExecuteNonQuery();
 
             Conn.Close();
@@ -354,14 +369,15 @@ namespace ESGARD_STORE
             MessageBox.Show("Deleted Successfully");
 
             loadAll();
+            clearTextBoxes();
         }
 
         private void btnSearchMC_Click(object sender, EventArgs e)
         {
-            int clientNumberSearch;
-            if (int.TryParse(txtClientMC.Text, out clientNumberSearch))
+            string clientNameSearch = txtClientMC.Text;
+            if (!(clientNameSearch == "" ))
             {
-                if (clientNumberFound(clientNumberSearch))
+                if (clientNameFound(clientNameSearch))
                 {
                     MessageBox.Show("Client successfully found!");
                 }
@@ -377,11 +393,6 @@ namespace ESGARD_STORE
             }
 
             loadAll();
-        }
-
-        private void txtEmailMC_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

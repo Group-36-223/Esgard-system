@@ -43,23 +43,21 @@ namespace ESGARD_STORE
             this.rdoAsc = new System.Windows.Forms.RadioButton();
             this.lblEsgard = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.comboBoxDate = new System.Windows.Forms.ComboBox();
-            this.comboBoxClient = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnGenerateCS = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTotalAmount = new System.Windows.Forms.Label();
+            this.btnDashboard = new System.Windows.Forms.Button();
+            this.txtClientName = new System.Windows.Forms.TextBox();
+            this.lstClient = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,7 +68,7 @@ namespace ESGARD_STORE
             this.tabControl1.Location = new System.Drawing.Point(-5, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(812, 481);
+            this.tabControl1.Size = new System.Drawing.Size(812, 451);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -88,7 +86,7 @@ namespace ESGARD_STORE
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(804, 455);
+            this.tabPage1.Size = new System.Drawing.Size(804, 425);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Top Ten Selling Items";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -96,7 +94,7 @@ namespace ESGARD_STORE
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(586, 415);
+            this.btnClear.Location = new System.Drawing.Point(586, 375);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(101, 37);
             this.btnClear.TabIndex = 47;
@@ -121,7 +119,7 @@ namespace ESGARD_STORE
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 202);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 160);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(781, 209);
@@ -129,7 +127,7 @@ namespace ESGARD_STORE
             // 
             // BtnGenerate
             // 
-            this.BtnGenerate.Location = new System.Drawing.Point(693, 415);
+            this.BtnGenerate.Location = new System.Drawing.Point(693, 375);
             this.BtnGenerate.Name = "BtnGenerate";
             this.BtnGenerate.Size = new System.Drawing.Size(101, 37);
             this.BtnGenerate.TabIndex = 43;
@@ -201,52 +199,25 @@ namespace ESGARD_STORE
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.lstClient);
+            this.tabPage2.Controls.Add(this.txtClientName);
             this.tabPage2.Controls.Add(this.panel1);
-            this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Controls.Add(this.comboBoxDate);
-            this.tabPage2.Controls.Add(this.comboBoxClient);
             this.tabPage2.Controls.Add(this.label7);
             this.tabPage2.Controls.Add(this.btnGenerateCS);
-            this.tabPage2.Controls.Add(this.label6);
             this.tabPage2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(804, 455);
+            this.tabPage2.Size = new System.Drawing.Size(804, 425);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Client Statements";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(24, 177);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(748, 183);
-            this.dataGridView2.TabIndex = 6;
-            // 
-            // comboBoxDate
-            // 
-            this.comboBoxDate.FormattingEnabled = true;
-            this.comboBoxDate.Location = new System.Drawing.Point(630, 64);
-            this.comboBoxDate.Name = "comboBoxDate";
-            this.comboBoxDate.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxDate.TabIndex = 5;
-            // 
-            // comboBoxClient
-            // 
-            this.comboBoxClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxClient.FormattingEnabled = true;
-            this.comboBoxClient.Location = new System.Drawing.Point(630, 128);
-            this.comboBoxClient.Name = "comboBoxClient";
-            this.comboBoxClient.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxClient.TabIndex = 4;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(554, 135);
+            this.label7.Location = new System.Drawing.Point(560, 73);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 13);
             this.label7.TabIndex = 2;
@@ -254,22 +225,13 @@ namespace ESGARD_STORE
             // 
             // btnGenerateCS
             // 
-            this.btnGenerateCS.Location = new System.Drawing.Point(663, 405);
+            this.btnGenerateCS.Location = new System.Drawing.Point(669, 343);
             this.btnGenerateCS.Name = "btnGenerateCS";
             this.btnGenerateCS.Size = new System.Drawing.Size(87, 29);
             this.btnGenerateCS.TabIndex = 1;
             this.btnGenerateCS.Text = "Generate";
             this.btnGenerateCS.UseVisualStyleBackColor = true;
             this.btnGenerateCS.Click += new System.EventHandler(this.btnGenerateCS_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(551, 71);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Date";
             // 
             // label15
             // 
@@ -297,7 +259,7 @@ namespace ESGARD_STORE
             // 
             this.panel1.Controls.Add(this.lblTotalAmount);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(24, 357);
+            this.panel1.Location = new System.Drawing.Point(30, 295);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(748, 42);
             this.panel1.TabIndex = 7;
@@ -323,11 +285,37 @@ namespace ESGARD_STORE
             this.lblTotalAmount.Text = "label3";
             this.lblTotalAmount.Visible = false;
             // 
+            // btnDashboard
+            // 
+            this.btnDashboard.Location = new System.Drawing.Point(12, 465);
+            this.btnDashboard.Name = "btnDashboard";
+            this.btnDashboard.Size = new System.Drawing.Size(101, 37);
+            this.btnDashboard.TabIndex = 30;
+            this.btnDashboard.Text = "Back to dashboard";
+            this.btnDashboard.UseVisualStyleBackColor = true;
+            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            // 
+            // txtClientName
+            // 
+            this.txtClientName.Location = new System.Drawing.Point(644, 66);
+            this.txtClientName.Name = "txtClientName";
+            this.txtClientName.Size = new System.Drawing.Size(134, 20);
+            this.txtClientName.TabIndex = 8;
+            // 
+            // lstClient
+            // 
+            this.lstClient.FormattingEnabled = true;
+            this.lstClient.Location = new System.Drawing.Point(30, 119);
+            this.lstClient.Name = "lstClient";
+            this.lstClient.Size = new System.Drawing.Size(748, 186);
+            this.lstClient.TabIndex = 9;
+            // 
             // Reports
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(805, 541);
+            this.Controls.Add(this.btnDashboard);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.tabControl1);
@@ -342,7 +330,6 @@ namespace ESGARD_STORE
             this.groupBox1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -364,18 +351,17 @@ namespace ESGARD_STORE
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnGenerateCS;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.ComboBox comboBoxClient;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.ComboBox comboBoxDate;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblTotalAmount;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnDashboard;
+        private System.Windows.Forms.TextBox txtClientName;
+        private System.Windows.Forms.ListBox lstClient;
     }
 }

@@ -275,20 +275,37 @@ namespace ESGARD_STORE
 
             string query = "SELECT F_Name FROM Client";
 
-            using (SqlConnection connection = new SqlConnection(connectionString))
+            try
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                connection.Open();
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    comboBoxClient.Items.Add(reader["F_Name"].ToString());
-                }
-            }
+                    SqlCommand command = new SqlCommand(query, connection);
+                    connection.Open();
+                    SqlDataReader reader = command.ExecuteReader();
 
-            comboBoxClient.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            comboBoxClient.AutoCompleteSource = AutoCompleteSource.ListItems;
+                    if (!reader.HasRows)
+                    {
+                        MessageBox.Show("No clients found in the database.");
+                        return;
+                    }
+
+                    while (reader.Read())
+                    {
+                        string clientName = reader["F_Name"].ToString();
+                        if (!comboBoxClient.Items.Contains(clientName))
+                        {
+                            comboBoxClient.Items.Add(clientName);
+                        }
+                    }
+                }
+
+                comboBoxClient.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                comboBoxClient.AutoCompleteSource = AutoCompleteSource.ListItems;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
         }
 
 

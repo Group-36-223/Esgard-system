@@ -236,6 +236,7 @@ namespace ESGARD_STORE
             // 
             // comboBoxClient
             // 
+            this.comboBoxClient.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxClient.FormattingEnabled = true;
             this.comboBoxClient.Location = new System.Drawing.Point(630, 128);
             this.comboBoxClient.Name = "comboBoxClient";

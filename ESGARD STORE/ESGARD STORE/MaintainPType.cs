@@ -243,7 +243,6 @@ namespace ESGARD_STORE
 
         private void MaintainPType_Load(object sender, EventArgs e)
         {
-            {
                 cBSPayType.Items.Clear();
 
                 try
@@ -258,7 +257,7 @@ namespace ESGARD_STORE
 
                     SqlDataReader reader = Cmd.ExecuteReader();
 
-                   // SqlDataReader reader = Cmd.ExecuteReader();
+                    // SqlDataReader reader = Cmd.ExecuteReader();
                     while (reader.Read())
                     {
                         cBSPayType.Items.Add(reader["Payment_Option"].ToString());
@@ -273,7 +272,6 @@ namespace ESGARD_STORE
                 {
                     MessageBox.Show(Ex.Message);
                 }
-            }
         }
 
         private void loadAll()

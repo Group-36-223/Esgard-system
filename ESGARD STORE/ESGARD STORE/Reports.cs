@@ -25,250 +25,211 @@ namespace ESGARD_STORE
             InitializeComponent();
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Reports_Load(object sender, EventArgs e)
-        {
-
-            GenerateTopSellingItemsReport();
-
-        }
-
-        private void GenerateTopSellingItemsReport()
-        {
-            try
-            {
-                // Initialize the connection
-                using (SqlConnection Conn = new SqlConnection(ConnectionString))
-                {
-                    // Open the connection
-                    Conn.Open();
-
-                    // SQL query to get the top 10 selling items
-                    string sqlQuery = @"SELECT TOP 10 
-                                            i.Descri AS Item_Description,
-                                            SUM(pd.Qty_Sold) AS Total_Quantity_Sold,
-	                                        MAX(p.Purchase_Date_Time) AS Most_Recent_Purchase_Date 
-                                        FROM 
-                                            Purchase_Details pd
-                                        JOIN 
-                                            Inventory i ON pd.Inventory_ID = i.Inventory_ID
-                                        JOIN 
-                                            Purchases p ON pd.Purchases_ID = p.Purchases_ID
-                                        WHERE 
-                                            p.Is_paid = 1 -- Only consider purchases that are paid
-                                        GROUP BY 
-                                            i.Descri
-                                        ORDER BY 
-                                            Total_Quantity_Sold DESC;";
-
-                    // Create the data adapter to execute the query
-                    SqlDataAdapter da = new SqlDataAdapter(sqlQuery, Conn);
-
-                    // Create a DataTable to hold the query results
-                    DataTable dt = new DataTable();
-
-                    // Fill the DataTable with the results of the SQL query
-                    da.Fill(dt);
-
-                    // Bind the DataTable to the DataGridView
-                    dataGridView1.DataSource = dt;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error occurred: " + ex.Message);
-            }
-        }
-
-
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedItem = comboBox1.SelectedItem.ToString();
-        }
-
-        private void hScrollBar1_Scroll(object sender, ScrollEventArgs e)
-        {
-          //  lblSize.Text = hScrollBar1.Value.ToString();
-        }
-
-        private void hScrollBar3_Scroll(object sender, ScrollEventArgs e)
-        {
-         //   lblSold.Text = hScrollBar1.Value.ToString();
-        }
-
         private void tabPage2_Click(object sender, EventArgs e)
         {
-            GenerateTopSellingItemsReportForTab2();
-            PopulateDateComboBox();
-            PopulateClientComboBox();
-            FilterReport();
+            //GenerateTopSellingItemsReportForTab2();
+            //PopulateDateComboBox();
+            //PopulateClientComboBox();
+            //FilterReport();
         }
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }
-        private void GenerateTopSellingItemsReportForTab2()
+
+
+        private void BtnGenerate_Click(object sender, EventArgs e)
         {
+            string connectionString = @"Data Source=KAASKRULLE;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; 
+            DateTime startDate = dateTimePicker1.Value.Date;
+            DateTime endDate = dateTimePicker2.Value.Date.AddDays(1).AddSeconds(-1); // Include the entire end date
+
+            // Determine the order by clause based on the selected radio button
+            string orderByClause = rdoAsc.Checked ? "ORDER BY TotalQuantitySold ASC" : "ORDER BY TotalQuantitySold DESC";
+
+            string query = $@"
+            SELECT TOP 10 
+                pd.Inventory_ID, 
+                i.Unit_Price, 
+                SUM(pd.Qty_Sold) AS TotalQuantitySold, 
+                SUM(p.total_cost) AS TotalCost
+            FROM 
+                Purchase_Details pd
+            INNER JOIN 
+                Purchases p ON pd.Purchases_ID = p.Purchases_ID
+            INNER JOIN 
+                Inventory i ON pd.Inventory_ID = i.Inventory_ID
+            WHERE 
+                p.Purchase_Date_Time BETWEEN @StartDate AND @EndDate
+            GROUP BY 
+                pd.Inventory_ID, i.Serial_No, i.Unit_Price
+            {orderByClause}";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                adapter.SelectCommand.Parameters.AddWithValue("@StartDate", startDate);
+                adapter.SelectCommand.Parameters.AddWithValue("@EndDate", endDate);
+
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dataGridView1.DataSource = dataTable;
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            // Clear all TextBox controls
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    ((TextBox)ctrl).Clear();
+                }
+                // Reset ComboBox selections
+                else if (ctrl is ComboBox)
+                {
+                    ((ComboBox)ctrl).SelectedIndex = -1;
+                }
+                // Reset CheckBox selections
+                else if (ctrl is CheckBox)
+                {
+                    ((CheckBox)ctrl).Checked = false;
+                }
+                // Reset RadioButton selections
+                else if (ctrl is RadioButton)
+                {
+                    ((RadioButton)ctrl).Checked = false;
+                }
+                // Reset DateTimePickers to current date
+                else if (ctrl is DateTimePicker)
+                {
+                    ((DateTimePicker)ctrl).Value = DateTime.Now;
+                }
+            }
+
+            // Clear the DataGridView
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear(); 
+        }
+        private void ReportsForm_Load(object sender, EventArgs e)
+        {
+            string connectionString = @"Data Source=KAASKRULLE;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string query = "SELECT First_Name FROM Client";
+
             try
             {
-                using (SqlConnection Conn = new SqlConnection(ConnectionString))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    Conn.Open();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
 
-                    // Build the client filter condition
-                    string clientFilter = comboBoxClient.SelectedValue != null ? $"p.Client_ID = {comboBoxClient.SelectedValue}" : "1 = 1";
+                    // Populate ListBox with client names
+                    lstClient.DataSource = dataTable;
+                    lstClient.DisplayMember = "First_Name"; // Display the First_Name column
+                    lstClient.ValueMember = "First_Name"; // Use First_Name as the value
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
+        }
+        private void lstClient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Update TextBox with the selected client's name
+            if (lstClient.SelectedItem != null)
+            {
+                DataRowView selectedRow = lstClient.SelectedItem as DataRowView;
+                txtClientName.Text = selectedRow["First_Name"].ToString();
+                lstClient.Visible = false; // Hide the ListBox after selection if desired
+            }
+        }
 
-                    // Build the date filter condition
-                    string dateFilter = comboBoxDate.SelectedValue != null ? $"p.Purchase_Date_Time = '{comboBoxDate.SelectedValue}'" : "1 = 1";
+        private void btnGenerateCS_Click(object sender, EventArgs e)
+        {
+            string selectedClient = txtClientName.Text;
 
-                    // SQL query with dynamic filters, removed Is_paid check
-                    string sqlQuery = $@"
-                    SELECT TOP 10 
-                        i.Descri AS Item_Description,
-                        SUM(pd.Qty_Sold) AS Total_Quantity_Sold,
-                        MAX(p.Purchase_Date_Time) AS Most_Recent_Purchase_Date
-                    FROM 
-                        Purchase_Details pd
-                    JOIN 
-                        Inventory i ON pd.Inventory_ID = i.Inventory_ID
-                    JOIN 
-                        Purchases p ON pd.Purchases_ID = p.Purchases_ID
-                    JOIN 
-                        Client c ON p.Client_ID = c.Client_ID
-                    WHERE 
-                        {clientFilter} AND {dateFilter}
-                    GROUP BY 
-                        i.Descri
-                    ORDER BY 
-                        Total_Quantity_Sold DESC;";
+            if (string.IsNullOrEmpty(selectedClient))
+            {
+                MessageBox.Show("Please enter or select a client.");
+                return;
+            }
 
-                    SqlDataAdapter da = new SqlDataAdapter(sqlQuery, Conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
+            string connectionString = @"Data Source=KAASKRULLE;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
-                    lstClient.Items.Clear();
+            string query = @"
+            SELECT 
+                p.Purchases_ID, 
+                p.Purchase_Date_Time, 
+                p.total_cost
+            FROM 
+                Purchases p
+            INNER JOIN 
+                Client c ON p.Client_ID = c.Client_ID
+            WHERE 
+                c.First_Name = @ClientName";
 
-                    // Add headings
-                    lstClient.Items.Add("============================================");
-                    lstClient.Items.Add("Item Description\t\tQuantity Sold\tMost Recent Purchase Date");
-                    lstClient.Items.Add("============================================");
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                    adapter.SelectCommand.Parameters.AddWithValue("@ClientName", selectedClient);
 
-                    // Populate the ListBox with the results
-                    foreach (DataRow row in dt.Rows)
+                    DataTable dataTable = new DataTable();
+                    adapter.Fill(dataTable);
+
+                    // Create a new DataTable to hold formatted display data
+                    DataTable displayTable = new DataTable();
+                    displayTable.Columns.Add("DisplayInfo", typeof(string));
+                    displayTable.Columns.Add("Purchases_ID", typeof(int)); // Optional: for ValueMember
+
+                    // Populate the display table with formatted strings
+                    foreach (DataRow row in dataTable.Rows)
                     {
-                        string itemDescription = row["Item_Description"].ToString();
-                        string totalQuantitySold = row["Total_Quantity_Sold"].ToString();
-                        string mostRecentPurchaseDate = row["Most_Recent_Purchase_Date"].ToString();
-
-                        // Format the display string with tab spacing for alignment
-                        string displayText = $"{itemDescription,-30}\t{totalQuantitySold,5}\t{mostRecentPurchaseDate}";
-
-                        // Add item to ListBox
-                        lstClient.Items.Add(displayText);
+                        string displayText = $"{Convert.ToDateTime(row["Purchase_Date_Time"]).ToString("g")} - Total: {Convert.ToDecimal(row["total_cost"]):C}";
+                        displayTable.Rows.Add(displayText, row["Purchases_ID"]);
                     }
 
-                    // Add a footer line
-                    lstClient.Items.Add("============================================");
+                    // Bind the display table to the ListBox
+                    lstClient.DataSource = displayTable;
+                    lstClient.DisplayMember = "DisplayInfo"; // Set the DisplayMember to the new column
+                    lstClient.ValueMember = "Purchases_ID";  // Optional: set ValueMember if needed
+
+                    // Calculate and display the total amount of all purchases
+                    decimal totalAmount = 0;
+                    foreach (DataRow row in dataTable.Rows)
+                    {
+                        totalAmount += Convert.ToDecimal(row["total_cost"]);
+                    }
+                    lblTotalAmount.Text = $"Total Amount: {totalAmount:C}";
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error occurred: " + ex.Message);
+                MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
 
-        private void PopulateDateComboBox()
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
-            try
+            Dashboard ds = Application.OpenForms["Dashboard"] as Dashboard;
+
+            if (ds == null)
             {
-                using (SqlConnection Conn = new SqlConnection(ConnectionString))
-                {
-                    Conn.Open();
-
-                    string sqlQuery = @"
-                    SELECT DISTINCT 
-                        p.Purchase_Date_Time
-                    FROM 
-                        Purchases p";
-
-                    SqlDataAdapter da = new SqlDataAdapter(sqlQuery, Conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    comboBoxDate.DisplayMember = "Purchase_Date_Time";
-                    comboBoxDate.ValueMember = "Purchase_Date_Time";
-                    comboBoxDate.DataSource = dt;
-                }
+                ds = new Dashboard();
+                ds.Show();
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error occurred: " + ex.Message);
+                ds.BringToFront();
             }
-        }
 
-        private void PopulateClientComboBox()
-        {
-            try
-            {
-                using (SqlConnection Conn = new SqlConnection(ConnectionString))
-                {
-                    Conn.Open();
-
-                    string sqlQuery = @"
-                    SELECT DISTINCT 
-                        c.Client_ID,
-                        CONCAT(c.First_Name, ' ', c.Last_Name) AS FullName
-                    FROM 
-                        Purchases p
-                    JOIN 
-                        Client c ON p.Client_ID = c.Client_ID";
-
-                    SqlDataAdapter da = new SqlDataAdapter(sqlQuery, Conn);
-                    DataTable dt = new DataTable();
-                    da.Fill(dt);
-
-                    comboBoxClient.DisplayMember = "FullName";
-                    comboBoxClient.ValueMember = "Client_ID";
-                    comboBoxClient.DataSource = dt;
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error occurred: " + ex.Message);
-            }
-        }
-
-        private void FilterReport()
-        {
-            try
-            {
-                GenerateTopSellingItemsReportForTab2();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error occurred: " + ex.Message);
-            }
-        }
-
-        private void comboBoxDate_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FilterReport();
-        }
-
-        private void comboBoxClient_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            FilterReport();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            GenerateTopSellingItemsReportForTab2();
+            this.Close();
         }
     }
 }

@@ -45,13 +45,14 @@ namespace ESGARD_STORE
             this.label2 = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.ClearButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(929, 71);
+            this.btnSearch.Location = new System.Drawing.Point(928, 110);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(100, 28);
@@ -63,12 +64,13 @@ namespace ESGARD_STORE
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(547, 80);
+            this.label7.Location = new System.Drawing.Point(547, 71);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(101, 17);
             this.label7.TabIndex = 10;
             this.label7.Text = "Client Number:";
+            this.label7.Visible = false;
             // 
             // txtSClientN
             // 
@@ -77,6 +79,7 @@ namespace ESGARD_STORE
             this.txtSClientN.Name = "txtSClientN";
             this.txtSClientN.Size = new System.Drawing.Size(195, 22);
             this.txtSClientN.TabIndex = 9;
+            this.txtSClientN.Visible = false;
             // 
             // btnMReturn
             // 
@@ -220,11 +223,22 @@ namespace ESGARD_STORE
             this.label3.TabIndex = 34;
             this.label3.Text = "Client Firstname:";
             // 
+            // ClearButton
+            // 
+            this.ClearButton.Location = new System.Drawing.Point(347, 518);
+            this.ClearButton.Name = "ClearButton";
+            this.ClearButton.Size = new System.Drawing.Size(105, 28);
+            this.ClearButton.TabIndex = 35;
+            this.ClearButton.Text = "Clear";
+            this.ClearButton.UseVisualStyleBackColor = true;
+            this.ClearButton.Click += new System.EventHandler(this.ClearButton_Click);
+            // 
             // Returns
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 609);
+            this.ClientSize = new System.Drawing.Size(1074, 625);
+            this.Controls.Add(this.ClearButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtFirstName);
             this.Controls.Add(this.label2);
@@ -269,5 +283,6 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button ClearButton;
     }
 }

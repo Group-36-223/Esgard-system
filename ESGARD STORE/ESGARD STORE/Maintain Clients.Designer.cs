@@ -51,9 +51,7 @@ namespace ESGARD_STORE
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgvClients = new System.Windows.Forms.DataGridView();
-            this.btnConnect = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnDisplay = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).BeginInit();
@@ -61,7 +59,7 @@ namespace ESGARD_STORE
             // 
             // btnAddMC
             // 
-            this.btnAddMC.Location = new System.Drawing.Point(16, 489);
+            this.btnAddMC.Location = new System.Drawing.Point(13, 489);
             this.btnAddMC.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddMC.Name = "btnAddMC";
             this.btnAddMC.Size = new System.Drawing.Size(97, 28);
@@ -72,7 +70,7 @@ namespace ESGARD_STORE
             // 
             // btnDeleteMC
             // 
-            this.btnDeleteMC.Location = new System.Drawing.Point(162, 489);
+            this.btnDeleteMC.Location = new System.Drawing.Point(149, 489);
             this.btnDeleteMC.Margin = new System.Windows.Forms.Padding(4);
             this.btnDeleteMC.Name = "btnDeleteMC";
             this.btnDeleteMC.Size = new System.Drawing.Size(94, 28);
@@ -124,7 +122,7 @@ namespace ESGARD_STORE
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(51, 124);
+            this.label5.Location = new System.Drawing.Point(54, 115);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 17);
@@ -134,7 +132,7 @@ namespace ESGARD_STORE
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 190);
+            this.label4.Location = new System.Drawing.Point(54, 198);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(129, 17);
@@ -144,7 +142,7 @@ namespace ESGARD_STORE
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 259);
+            this.label3.Location = new System.Drawing.Point(54, 269);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 17);
@@ -163,24 +161,24 @@ namespace ESGARD_STORE
             // 
             // txtCellphoneMC
             // 
-            this.txtCellphoneMC.Location = new System.Drawing.Point(297, 187);
+            this.txtCellphoneMC.Location = new System.Drawing.Point(297, 193);
             this.txtCellphoneMC.Margin = new System.Windows.Forms.Padding(4);
             this.txtCellphoneMC.Name = "txtCellphoneMC";
             this.txtCellphoneMC.Size = new System.Drawing.Size(132, 22);
             this.txtCellphoneMC.TabIndex = 4;
+            this.txtCellphoneMC.TextChanged += new System.EventHandler(this.txtCellphoneMC_TextChanged);
             // 
             // txtEmailMC
             // 
-            this.txtEmailMC.Location = new System.Drawing.Point(297, 256);
+            this.txtEmailMC.Location = new System.Drawing.Point(297, 269);
             this.txtEmailMC.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmailMC.Name = "txtEmailMC";
             this.txtEmailMC.Size = new System.Drawing.Size(132, 22);
             this.txtEmailMC.TabIndex = 3;
-            this.txtEmailMC.TextChanged += new System.EventHandler(this.txtEmailMC_TextChanged);
             // 
             // txtLNameMC
             // 
-            this.txtLNameMC.Location = new System.Drawing.Point(297, 121);
+            this.txtLNameMC.Location = new System.Drawing.Point(297, 115);
             this.txtLNameMC.Margin = new System.Windows.Forms.Padding(4);
             this.txtLNameMC.Name = "txtLNameMC";
             this.txtLNameMC.Size = new System.Drawing.Size(132, 22);
@@ -200,9 +198,9 @@ namespace ESGARD_STORE
             this.label7.Location = new System.Drawing.Point(565, 113);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(101, 17);
+            this.label7.Size = new System.Drawing.Size(88, 17);
             this.label7.TabIndex = 7;
-            this.label7.Text = "Client Number:";
+            this.label7.Text = "Client Name:";
             // 
             // txtClientMC
             // 
@@ -225,7 +223,7 @@ namespace ESGARD_STORE
             // 
             // btnUpdateMC
             // 
-            this.btnUpdateMC.Location = new System.Drawing.Point(296, 489);
+            this.btnUpdateMC.Location = new System.Drawing.Point(286, 489);
             this.btnUpdateMC.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdateMC.Name = "btnUpdateMC";
             this.btnUpdateMC.Size = new System.Drawing.Size(96, 28);
@@ -236,7 +234,7 @@ namespace ESGARD_STORE
             // 
             // btnBTDMC
             // 
-            this.btnBTDMC.Location = new System.Drawing.Point(568, 489);
+            this.btnBTDMC.Location = new System.Drawing.Point(13, 544);
             this.btnBTDMC.Margin = new System.Windows.Forms.Padding(4);
             this.btnBTDMC.Name = "btnBTDMC";
             this.btnBTDMC.Size = new System.Drawing.Size(148, 28);
@@ -291,16 +289,6 @@ namespace ESGARD_STORE
             this.dgvClients.Size = new System.Drawing.Size(529, 332);
             this.dgvClients.TabIndex = 26;
             // 
-            // btnConnect
-            // 
-            this.btnConnect.Location = new System.Drawing.Point(761, 489);
-            this.btnConnect.Name = "btnConnect";
-            this.btnConnect.Size = new System.Drawing.Size(148, 28);
-            this.btnConnect.TabIndex = 27;
-            this.btnConnect.Text = "Connect";
-            this.btnConnect.UseVisualStyleBackColor = true;
-            this.btnConnect.Click += new System.EventHandler(this.btnConnect_Click);
-            // 
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(424, 489);
@@ -311,24 +299,12 @@ namespace ESGARD_STORE
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // btnDisplay
-            // 
-            this.btnDisplay.Location = new System.Drawing.Point(949, 489);
-            this.btnDisplay.Name = "btnDisplay";
-            this.btnDisplay.Size = new System.Drawing.Size(148, 28);
-            this.btnDisplay.TabIndex = 29;
-            this.btnDisplay.Text = "Display";
-            this.btnDisplay.UseVisualStyleBackColor = true;
-            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
-            // 
             // Maintain_Clients
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 657);
-            this.Controls.Add(this.btnDisplay);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnConnect);
             this.Controls.Add(this.dgvClients);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label9);
@@ -379,8 +355,6 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgvClients;
-        private System.Windows.Forms.Button btnConnect;
         private System.Windows.Forms.Button btnClear;
-        private System.Windows.Forms.Button btnDisplay;
     }
 }

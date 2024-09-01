@@ -326,7 +326,7 @@ namespace ESGARD_STORE
                 if (decimal.TryParse(priceT, out decimal price) && int.TryParse(quantityT, out int quantity))
                 {
                     Random rnd = new Random();
-                    char rndChar = (char)('0' + rnd.Next(0, 10));
+                    char rndChar = (char)('0' + rnd.Next(0, 9999));
                     Purchase_Number = rndChar;
                     decimal itemTotalPrice = price * quantity;
                     totalPrice += itemTotalPrice;
@@ -414,40 +414,57 @@ namespace ESGARD_STORE
 
         private void btnProceed_Click(object sender, EventArgs e)
         {
-            DateTime Purchase_Date_Time = DateTime.Now;
-            decimal total_cost = totalPrice;
-            bool Is_paid = true;
-            char Purchase_number;
-
-            Random rnd = new Random();
-            char rndChar = (char)('0' + rnd.Next(0, 10));
-            Purchase_number = rndChar;
-            string ClientName = txtClientID_PF.Text;
-            string EmployeeName = txtEmpID_PF.Text;
-            string Payment_Type = cboPayType_PF.SelectedItem.ToString();
-
-            if (!(ClientName == "") && !(EmployeeName == ""))
+            try
             {
-                if (ValidateForeignKeys(ClientName, EmployeeName))
+                DateTime Purchase_Date_Time = DateTime.Now;
+                decimal total_cost = totalPrice;
+                bool Is_paid = true;
+                char Purchase_number;
+
+                Random rnd = new Random();
+                char rndChar = (char)('0' + rnd.Next(0, 10));
+                Purchase_number = rndChar;
+                string ClientName = txtClientID_PF.Text;
+                string EmployeeName = txtEmpID_PF.Text;
+                string Payment_Type;
+
+                if (!(ClientName == "") && !(EmployeeName == ""))
                 {
-                    if (addPurchase(Purchase_Date_Time, total_cost, Is_paid, Purchase_number, GetClientIdByName(ClientName), GetEmployeeIdByName(EmployeeName), GetPaymentTypeByName(Payment_Type)))
+                    if (ValidateForeignKeys(ClientName, EmployeeName))
                     {
-                        MessageBox.Show("Payment Recieved and Purchase Recorded!");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cannot record purchase. Please try again.");
+                        if (!(cboPayType_PF.SelectedIndex == -1))
+                        {
+                            Payment_Type = cboPayType_PF.SelectedItem.ToString();
+                            if (addPurchase(Purchase_Date_Time, total_cost, Is_paid, Purchase_number, GetClientIdByName(ClientName), GetEmployeeIdByName(EmployeeName), GetPaymentTypeByName(Payment_Type)))
+                            {
+                                MessageBox.Show("Payment Recieved and Purchase Recorded!");
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Cannot record purchase. Please try again.");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please select payment type!");
+                        }
                     }
                 }
+                else
+                {
+                    MessageBox.Show("Invalid. Please enter a valid Client Name");
+                }
+               
             }
-            else
+            catch (Exception Ex)
             {
-                MessageBox.Show("Invalid. Please enter a valid Client ID");
+                MessageBox.Show(Ex.Message);
+
             }
-            this.Close();
         }
 
-        private void Purchase_Form_Load(object sender, EventArgs e)
+            private void Purchase_Form_Load(object sender, EventArgs e)
         {
 
 

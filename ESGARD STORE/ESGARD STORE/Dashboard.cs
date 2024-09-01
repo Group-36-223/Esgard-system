@@ -7,15 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ESGARD_STORE
 {
     public partial class Dashboard : Form
     {
+       
+
         public Dashboard()
         {
             InitializeComponent();
+           
         }
+
+     
         private void button1_Click(object sender, EventArgs e)
         {
             Maintain_Clients mc = new Maintain_Clients();
@@ -62,5 +68,38 @@ namespace ESGARD_STORE
             Returns r = new Returns();
             r.ShowDialog();
         }
+
+        private void lblNTPC_Click(object sender, EventArgs e)
+        {
+           // lblNTPC.Text = "@username";
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+           
+        }
+
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Help hp = new Help();
+            hp.ShowDialog();  // This will open the Help form as a modal dialog, halting execution until it's closed
+
+            // Close the current form after the Help form is shown
+            this.Close();
+        }
+        Dictionary<string, string> helpContent = new Dictionary<string, string>
+        {
+            { "purchase", "To record a purchase, fill out the necessary fields and click 'Submit'." },
+            { "payment types", "Select the payment method from the list and ensure the details are correct." },
+            { "Clients", "Add, update and delete client records." },
+            { "inventory", "Add, update and delete inventory records." },
+            { "Returns", "Function for returning inventory purchased by clients." },
+        };
     }
 }

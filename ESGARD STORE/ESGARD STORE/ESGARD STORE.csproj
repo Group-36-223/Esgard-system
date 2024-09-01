@@ -58,6 +58,18 @@
     <Compile Include="Exchanges.Designer.cs">
       <DependentUpon>Exchanges.cs</DependentUpon>
     </Compile>
+    <Compile Include="Help.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Help.designer.cs">
+      <DependentUpon>Help.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="Maintain Inventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,12 +87,6 @@
     </Compile>
     <Compile Include="Manager Dashboard.Designer.cs">
       <DependentUpon>Manager Dashboard.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Maintain Clients.cs">
       <SubType>Form</SubType>
@@ -128,9 +134,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Manager Dashboard.resx">
       <DependentUpon>Manager Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Maintain Clients.resx">
       <DependentUpon>Maintain Clients.cs</DependentUpon>

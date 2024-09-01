@@ -34,7 +34,7 @@ namespace ESGARD_STORE
                 int purchaseID;
                 if (int.TryParse(txtPurchaseID.Text, out purchaseID))
                 {
-                    if (ProcessReturn(purchaseID))
+                    if (makeReturning(purchaseID))
                     {
                         MessageBox.Show("Return processed successfully!");
                     }
@@ -49,6 +49,22 @@ namespace ESGARD_STORE
                 }
             }
         }
+
+        private Boolean makeReturning(int purchaseID)
+        {
+            Conn = new SqlConnection(ConnectionString);
+            Conn.Open();
+
+            string updatePurchase = "UPDATE Purchases SET Is_paid = 0 WHERE Purchases_ID = @PurchaseID";
+            SqlCommand cmdUpdate = new SqlCommand(updatePurchase, Conn);
+            cmdUpdate.Parameters.AddWithValue("@PurchaseID", purchaseID);
+            cmdUpdate.ExecuteNonQuery();
+
+            Conn.Close();
+            return true;
+
+        }
+
 
         private bool ProcessReturn(int purchaseID)
         {
@@ -244,6 +260,14 @@ namespace ESGARD_STORE
                     Conn.Close();
                 }
             }
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            lbInfo.Items.Clear();
+            txtFirstName.Text = "";
+            txtPurchaseID.Text = "";
+            txtSClientN.Text = "";
         }
     }
 }

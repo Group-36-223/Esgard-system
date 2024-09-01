@@ -181,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Create_Esgard.sql" />
+    <Content Include="Create_Tables.sql" />
     <Content Include="InsertFile_Employee.sql" />
     <Content Include="Insert_Employee.sql" />
   </ItemGroup>

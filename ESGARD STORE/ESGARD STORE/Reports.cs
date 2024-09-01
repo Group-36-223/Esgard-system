@@ -198,30 +198,78 @@ namespace ESGARD_STORE
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
             string connectionString = @"Data Source=LAPTOP-2IBBG9V4;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; // Update with your actual connection string
-            string query = @"
+                                                                                                                                                                                                                                          // Determine the order by clause based on the selected radio button
+                                                                                                                                                                                                                                          // Get the start and end dates from the date pickers
+            DateTime startDate = dateTimePicker1.Value.Date;
+            DateTime endDate = dateTimePicker2.Value.Date.AddDays(1).AddSeconds(-1); // Include the entire end date
+
+            // Determine the order by clause based on the selected radio button
+            string orderByClause = rdoAsc.Checked ? "ORDER BY TotalQuantitySold ASC" : "ORDER BY TotalQuantitySold DESC";
+
+            string query = $@"
             SELECT TOP 10 
-                pd.ItemID, 
-                i.ItemName, 
-                SUM(pd.Quantity) AS TotalQuantitySold, 
-                p.Price
+                pd.Inventory_ID, 
+                i.Unit_Price, 
+                SUM(pd.Qty_Sold) AS TotalQuantitySold, 
+                SUM(p.total_cost) AS TotalCost
             FROM 
-                PurchaseDetail pd
+                Purchase_Details pd
             INNER JOIN 
-                Purchase p ON pd.PurchaseID = p.PurchaseID
+                Purchases p ON pd.Purchases_ID = p.Purchases_ID
             INNER JOIN 
-                Item i ON pd.ItemID = i.ItemID
+                Inventory i ON pd.Inventory_ID = i.Inventory_ID
+            WHERE 
+                p.Purchase_Date_Time BETWEEN @StartDate AND @EndDate
             GROUP BY 
-                pd.ItemID, i.ItemName, p.Price
-            ORDER BY 
-                TotalQuantitySold DESC";
+                pd.Inventory_ID, i.Serial_No, i.Unit_Price
+            {orderByClause}";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                adapter.SelectCommand.Parameters.AddWithValue("@StartDate", startDate);
+                adapter.SelectCommand.Parameters.AddWithValue("@EndDate", endDate);
+
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
                 dataGridView1.DataSource = dataTable;
             }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            // Clear all TextBox controls
+            foreach (Control ctrl in this.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    ((TextBox)ctrl).Clear();
+                }
+                // Reset ComboBox selections
+                else if (ctrl is ComboBox)
+                {
+                    ((ComboBox)ctrl).SelectedIndex = -1;
+                }
+                // Reset CheckBox selections
+                else if (ctrl is CheckBox)
+                {
+                    ((CheckBox)ctrl).Checked = false;
+                }
+                // Reset RadioButton selections
+                else if (ctrl is RadioButton)
+                {
+                    ((RadioButton)ctrl).Checked = false;
+                }
+                // Reset DateTimePickers to current date
+                else if (ctrl is DateTimePicker)
+                {
+                    ((DateTimePicker)ctrl).Value = DateTime.Now;
+                }
+            }
+
+            // Clear the DataGridView
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Clear();
         }
     }
 }

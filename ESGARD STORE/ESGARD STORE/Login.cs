@@ -67,8 +67,8 @@ namespace ESGARD_STORE
         private void Login_Load(object sender, EventArgs e)
         {
             MessageBox.Show("Login Successful");
-            Manager_Dashboard mds = new Manager_Dashboard();
-            mds.ShowDialog();
+            Dashboard ds = new Dashboard();
+            ds.ShowDialog();
         }
 
         private void txtUser_TextChanged(object sender, EventArgs e)

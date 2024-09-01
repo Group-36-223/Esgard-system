@@ -270,5 +270,10 @@ namespace ESGARD_STORE
         {
             GenerateTopSellingItemsReportForTab2();
         }
+
+        private void BtnDisplay_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

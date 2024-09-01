@@ -10,12 +10,14 @@ Create Table Payment_Type
 Create Table Employee
 (
 	Employee_ID INT IDENTITY(1,1) Primary key,
-	F_Name varchar(20),
-	L_Name varchar(20),
+	First_Name varchar(20),
+	Last_Name varchar(20),
 	cell_No char(10),
 	Email_Address varchar(30),
 	ID_Number char(13),
-	Employee_Number char(5)
+	Pssword char(8),
+	Employee_Number char(5),
+	Is_Admin bit
 );
 Create Table Inventory 
 (
@@ -24,16 +26,16 @@ Create Table Inventory
 	Color varchar(15),
 	Category varchar(15),
 	Serial_No char (12),
-	Unit_Price smallmoney
+	Unit_Price smallmoney,
 	Quantity_On_Hand int,
-	Size int
+	Size varchar(2)
 );
 
 Create Table Client 
 (
 	Client_ID INT IDENTITY(1,1) Primary key,
-	F_Name varchar(20),
-	L_Name varchar(20),
+	First_Name varchar(20),
+	Last_Name varchar(20),
 	Cell_No Char (10),
 	Email_Address varchar(30)
 );

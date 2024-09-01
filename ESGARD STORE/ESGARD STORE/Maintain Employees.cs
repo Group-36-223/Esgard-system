@@ -13,7 +13,7 @@ namespace ESGARD_STORE
 {
     public partial class Maintain_Employees : Form
     {
-        String ConnectionString = @"Data Source=KAASKRULLE;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        String ConnectionString = @"Data Source=LAPTOP-EM1DCRUG;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         SqlConnection Conn;
         SqlCommand Cmd;
         SqlDataAdapter Adap;
@@ -70,10 +70,10 @@ namespace ESGARD_STORE
 
                 //Adap = new SqlDataAdapter();
 
-                string sql = @"SELECT First_Name, Last_Name, cell_No, Email_Address, ID_Number FROM Employee WHERE Employee_Number = " + employeeNumberSearch;
+                string sql = @"SELECT First_Name, Last_Name, Cell_No, Email_Address, ID_Number FROM Employee WHERE Employee_No = " + employeeNumberSearch;
                 Cmd = new SqlCommand(sql, Conn);
 
-                Cmd.Parameters.AddWithValue("Employee_Number", employeeNumberSearch);
+                Cmd.Parameters.AddWithValue("Employee_No", employeeNumberSearch);
 
                 SqlDataReader reader = Cmd.ExecuteReader();
                 if (reader.Read())
@@ -82,7 +82,7 @@ namespace ESGARD_STORE
                     txtLNameME.Text = reader["Last_Name"].ToString();
                     txtINumberMe.Text = reader["ID_Number"].ToString();
                     txtEmailME.Text = reader["Email_Address"].ToString();
-                    txtCellphoneME.Text = reader["cell_No"].ToString();
+                    txtCellphoneME.Text = reader["Cell_No"].ToString();
                 }
                 reader.Close();
                 /* Ds = new DataSet();
@@ -153,7 +153,7 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"INSERT INTO Employee (First_Name, Last_Name, cell_No, Email_Address, ID_Number, Pssword, Employee_Number) VALUES ('" + firstName + "','" + lastName + "','" + cellphoneNumber + "','" + email + "','" + idNumber + "', '"+ Password +"', '"+ Employee_Number +"')";
+                string sql = @"INSERT INTO Employee (First_Name, Last_Name, Cell_No, Email_Address, ID_Number, Pssword, Employee_No) VALUES ('" + firstName + "','" + lastName + "','" + cellphoneNumber + "','" + email + "','" + idNumber + "', '"+ Password +"', '"+ Employee_Number +"')";
                 Cmd = new SqlCommand(sql, Conn);
 
 
@@ -274,7 +274,7 @@ namespace ESGARD_STORE
                 Conn.Open();
 
                 Adap = new SqlDataAdapter();
-                String delete_sql = "DELETE FROM Employee WHERE Employee_Number = " + Emp_No;
+                String delete_sql = "DELETE FROM Employee WHERE Employee_No = " + Emp_No;
                 Cmd = new SqlCommand(delete_sql, Conn);
                 Cmd.ExecuteNonQuery();
                 Adap.DeleteCommand = Cmd;
@@ -328,7 +328,7 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"UPDATE Employee SET First_Name= '" + firstName + "',Last_Name= '" + lastName + "', cell_No= '" + cellphoneNumber + "', Email_Address= '" + email + "', ID_Number= '" + idNumber + "', Pssword= '" + Password +"' WHERE Employee_Number= '" + Employee_No + "'";
+                string sql = @"UPDATE Employee SET First_Name= '" + firstName + "',Last_Name= '" + lastName + "', Cell_No= '" + cellphoneNumber + "', Email_Address= '" + email + "', ID_Number= '" + idNumber + "', Pssword= '" + Password +"' WHERE Employee_No= '" + Employee_No + "'";
                 Cmd = new SqlCommand(sql, Conn);
 
 

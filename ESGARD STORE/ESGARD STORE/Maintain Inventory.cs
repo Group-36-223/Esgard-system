@@ -14,7 +14,7 @@ namespace ESGARD_STORE
     public partial class Maintain_Inventory : Form
     {
 
-        String ConnectionString = @"Data Source=KAASKRULLE;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        String ConnectionString = @"Data Source=LAPTOP-EM1DCRUG;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         SqlConnection Conn;
         SqlCommand Cmd;
         SqlDataAdapter Adap;
@@ -89,7 +89,7 @@ namespace ESGARD_STORE
 
                 //Adap = new SqlDataAdapter();
 
-                string sql = @"SELECT Descri, Color, Category, Serial_No, Unit_Price, Quantity_On_Hand, Size FROM Inventory WHERE Serial_No = " + SerialNumberSearch;
+                string sql = @"SELECT Descr, Color, Category, Serial_No, Unit_Price, Quantity_On_Hand, Size FROM Inventory WHERE Serial_No = " + SerialNumberSearch;
                 Cmd = new SqlCommand(sql, Conn);
 
                 Cmd.Parameters.AddWithValue("Serial_No", SerialNumberSearch);
@@ -147,7 +147,7 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"INSERT INTO Inventory (Descri, Color, Category, Serial_No, Unit_Price, Quantity_On_Hand, Size) VALUES ('" + description + "','" + Color + "','" + Category + "','" + Serial_No + "','" + price + "','" + Quantity_On_Hand + "','" + Size + "')";
+                string sql = @"INSERT INTO Inventory (Descr, Color, Category, Serial_No, Unit_Price, Quantity_On_Hand, Size) VALUES ('" + description + "','" + Color + "','" + Category + "','" + Serial_No + "','" + price + "','" + Quantity_On_Hand + "','" + Size + "')";
                 Cmd = new SqlCommand(sql, Conn);
 
 
@@ -284,7 +284,7 @@ namespace ESGARD_STORE
 
                 Adap = new SqlDataAdapter();
 
-                string sql = @"UPDATE Inventory SET Descri= '" + Description + "',Color= '" + color + "', Category= '" + category + "', Serial_No= '" + newSerialNumber + "', Unit_Price= '" + price + "', Quantity_On_Hand= '" + Qty + "', Size= '" + size + "' WHERE Serial_No= '" + oldSerialNumber + "'";
+                string sql = @"UPDATE Inventory SET Descr= '" + Description + "',Color= '" + color + "', Category= '" + category + "', Serial_No= '" + newSerialNumber + "', Unit_Price= '" + price + "', Quantity_On_Hand= '" + Qty + "', Size= '" + size + "' WHERE Serial_No= '" + oldSerialNumber + "'";
                 Cmd = new SqlCommand(sql, Conn);
 
 

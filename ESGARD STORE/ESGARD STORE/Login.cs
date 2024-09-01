@@ -18,12 +18,32 @@ namespace ESGARD_STORE
             InitializeComponent();
         }
 
-        string ConnectionString = @"Data Source=KAASKRULLE;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+        string ConnectionString = @"Data Source=LAPTOP-EM1DCRUG;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         SqlConnection Conn;
         SqlCommand Cmd;
         SqlDataAdapter Adap;
         SqlDataReader reader;
         DataSet Ds;
+
+      /*  private string currentUserName, currentUserRole;
+
+        public string getCurrentUserName()
+        {
+            return Name;
+        }
+        public string getCurrentUserRole()
+        {
+            return role;
+        }
+        public void setCurrentUserName(string name)
+        {
+            
+        }
+        public void setCurrentUserRole(string role)
+        {
+
+        }*/
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -32,11 +52,12 @@ namespace ESGARD_STORE
                 Conn = new SqlConnection(ConnectionString);
                 Conn.Open();
 
-                string sql = @"SELECT COUNT(1) FROM Employee WHERE Employee_Number = @username AND Pssword= @password";
+                string sql = @"SELECT COUNT(1) FROM Employee WHERE Employee_No = @username AND Pssword= @password";
                 Cmd = new SqlCommand(sql, Conn);
 
                 Cmd.Parameters.AddWithValue("@username", txtUser.Text);
                 Cmd.Parameters.AddWithValue("@password", txtPass.Text);
+                
 
                 int result = (int)Cmd.ExecuteScalar();
 

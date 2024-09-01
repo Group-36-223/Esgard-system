@@ -180,6 +180,7 @@
     <None Include="Resources\this is Esgard %281%29.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AddClientNumber.sql" />
     <Content Include="Create_Esgard.sql" />
     <Content Include="Create_Tables.sql" />
     <Content Include="InsertFile_Employee.sql" />

@@ -11,7 +11,7 @@ Create Table Employee
 	Employee_ID INT IDENTITY(1,1) Primary key,
 	First_Name varchar(50),
 	Last_Name varchar(50),
-	Employee_No char(10),
+	Employee_Number char(10),
 	Cell_No char(10),
 	Email_Address varchar(30),
 	ID_Number char(13),
@@ -36,7 +36,8 @@ Create Table Client
 	First_Name varchar(50),
 	Last_Name varchar(50),
 	Cell_No Char (10),
-	Email_Address varchar(30)
+	Email_Address varchar(30),
+	Client_Number char(5)
 );
 
 Create Table Purchases

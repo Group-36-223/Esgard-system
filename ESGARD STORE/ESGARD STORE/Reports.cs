@@ -197,9 +197,7 @@ namespace ESGARD_STORE
 
         private void BtnGenerate_Click(object sender, EventArgs e)
         {
-            string connectionString = @"Data Source=LAPTOP-2IBBG9V4;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; // Update with your actual connection string
-                                                                                                                                                                                                                                          // Determine the order by clause based on the selected radio button
-                                                                                                                                                                                                                                          // Get the start and end dates from the date pickers
+            string connectionString = @"Data Source=LAPTOP-2IBBG9V4;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; 
             DateTime startDate = dateTimePicker1.Value.Date;
             DateTime endDate = dateTimePicker2.Value.Date.AddDays(1).AddSeconds(-1); // Include the entire end date
 
@@ -270,6 +268,71 @@ namespace ESGARD_STORE
             // Clear the DataGridView
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Clear();
+        }
+        private void ReportsForm_Load(object sender, EventArgs e)
+        {
+            string connectionString = @"Data Source=LAPTOP-2IBBG9V4;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; // Update with your actual connection string
+
+            string query = "SELECT F_Name FROM Client";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                connection.Open();
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    comboBoxClient.Items.Add(reader["F_Name"].ToString());
+                }
+            }
+
+            comboBoxClient.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            comboBoxClient.AutoCompleteSource = AutoCompleteSource.ListItems;
+        }
+
+
+        private void btnGenerateCS_Click(object sender, EventArgs e)
+        {
+            string connectionString = @"Data Source=LAPTOP-2IBBG9V4;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"; // Update with your actual connection string
+
+            string selectedClient = comboBoxClient.SelectedItem?.ToString();
+
+            if (string.IsNullOrEmpty(selectedClient))
+            {
+                MessageBox.Show("Please select a client.");
+                return;
+            }
+
+            string query = @"
+            SELECT 
+                p.Purchases_ID, 
+                p.Purchase_Date_Time, 
+                p.total_cost
+            FROM 
+                Purchases p
+            INNER JOIN 
+                Clients c ON p.Client_ID = c.Client_ID
+            WHERE 
+                c.F_Name = @ClientName";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+                adapter.SelectCommand.Parameters.AddWithValue("@ClientName", selectedClient);
+
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dataGridView2.DataSource = dataTable;
+
+                // Optionally, calculate and display the total amount of all purchases
+                decimal totalAmount = 0;
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    totalAmount += Convert.ToDecimal(row["total_cost"]);
+                }
+                lblTotalAmount.Text = $"Total Amount: {totalAmount:C}";
+            }
         }
     }
 }

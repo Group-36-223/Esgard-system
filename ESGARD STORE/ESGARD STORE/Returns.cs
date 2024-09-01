@@ -16,9 +16,7 @@ namespace ESGARD_STORE
         String ConnectionString = @"Data Source=LAPTOP-2IBBG9V4;Initial Catalog=Esgard;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         SqlConnection Conn;
         SqlCommand Cmd;
-        SqlDataAdapter Adap;
         SqlDataReader reader;
-        DataSet Ds;
 
         public Returns()
         {
@@ -244,6 +242,16 @@ namespace ESGARD_STORE
                     Conn.Close();
                 }
             }
+        }
+
+        private void Returns_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

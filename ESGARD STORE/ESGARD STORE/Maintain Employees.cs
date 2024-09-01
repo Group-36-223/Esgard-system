@@ -50,7 +50,7 @@ namespace ESGARD_STORE
 
             loadAll();
         }
-        private Boolean employeeNumberFound(int employeeNumberSearch)
+        private Boolean employeeNameFound(string employeeNameSearch)
         {
 
             clearTextBoxes();
@@ -63,10 +63,11 @@ namespace ESGARD_STORE
 
                 //Adap = new SqlDataAdapter();
 
-                string sql = @"SELECT F_Name, L_Name, User_ID_No, cell_No, Email_Address, Employee_Number, Password FROM Employee WHERE Employee_Number= " + employeeNumberSearch;
+                string sql = @"SELECT F_Name, L_Name, User_ID_No, cell_No, Email_Address, Employee_Number, Password FROM Employee WHERE F_Name LIKE @employeeName";
+               
                 Cmd = new SqlCommand(sql, Conn);
 
-                Cmd.Parameters.AddWithValue("Employee_Number", employeeNumberSearch);
+                Cmd.Parameters.AddWithValue("@employeeName","%"+ employeeNameSearch + "%");
 
                 SqlDataReader reader = Cmd.ExecuteReader();
                 if (reader.Read())
@@ -112,10 +113,10 @@ namespace ESGARD_STORE
         private void btnSearchME_Click(object sender, EventArgs e)
         {
 
-            int employeeNumberSearch;
-            if (int.TryParse(txtENumberMe.Text, out employeeNumberSearch))
+            string employeeNameSearch = txtENumberMe.Text;
+            if (!(employeeNameSearch == ""))
             {
-                if (employeeNumberFound(employeeNumberSearch))
+                if (employeeNameFound(employeeNameSearch))
                 {
                     MessageBox.Show("Employee successfully found!");
                 }
@@ -136,7 +137,7 @@ namespace ESGARD_STORE
 
         private void Maintain_Employees_Load(object sender, EventArgs e)
         {
-
+            loadAll();
         }
 
 
@@ -296,6 +297,7 @@ namespace ESGARD_STORE
         {
             try
             {
+                Conn = new SqlConnection(ConnectionString);
                 Conn.Open();
                 string sql = "SELECT * FROM Employee";
                 Cmd = new SqlCommand(sql, Conn);

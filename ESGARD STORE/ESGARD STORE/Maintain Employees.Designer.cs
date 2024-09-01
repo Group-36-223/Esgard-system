@@ -32,6 +32,8 @@ namespace ESGARD_STORE
             this.btnAddME = new System.Windows.Forms.Button();
             this.btnDeleteME = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.txtPasswordME = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtENumber = new System.Windows.Forms.TextBox();
@@ -55,10 +57,6 @@ namespace ESGARD_STORE
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dgv_Employee = new System.Windows.Forms.DataGridView();
-            this.btnCon = new System.Windows.Forms.Button();
-            this.btnDisplay = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -114,6 +112,28 @@ namespace ESGARD_STORE
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Employee Details";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter_1);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label12.Location = new System.Drawing.Point(265, 244);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(133, 15);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Must be 10 Characters!";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(265, 139);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(133, 15);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Must be 13 Characters!";
             // 
             // txtPasswordME
             // 
@@ -250,9 +270,9 @@ namespace ESGARD_STORE
             this.label7.Location = new System.Drawing.Point(563, 86);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(128, 17);
+            this.label7.Size = new System.Drawing.Size(115, 17);
             this.label7.TabIndex = 7;
-            this.label7.Text = "Employee Number:";
+            this.label7.Text = "Employee Name:";
             // 
             // txtENumberMe
             // 
@@ -342,48 +362,6 @@ namespace ESGARD_STORE
             this.dgv_Employee.Size = new System.Drawing.Size(507, 407);
             this.dgv_Employee.TabIndex = 27;
             // 
-            // btnCon
-            // 
-            this.btnCon.Location = new System.Drawing.Point(193, 556);
-            this.btnCon.Name = "btnCon";
-            this.btnCon.Size = new System.Drawing.Size(151, 39);
-            this.btnCon.TabIndex = 28;
-            this.btnCon.Text = "Connect";
-            this.btnCon.UseVisualStyleBackColor = true;
-            this.btnCon.Click += new System.EventHandler(this.btnCon_Click);
-            // 
-            // btnDisplay
-            // 
-            this.btnDisplay.Location = new System.Drawing.Point(375, 556);
-            this.btnDisplay.Name = "btnDisplay";
-            this.btnDisplay.Size = new System.Drawing.Size(148, 39);
-            this.btnDisplay.TabIndex = 29;
-            this.btnDisplay.Text = "Display";
-            this.btnDisplay.UseVisualStyleBackColor = true;
-            this.btnDisplay.Click += new System.EventHandler(this.btnDisplay_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(265, 139);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(133, 15);
-            this.label11.TabIndex = 14;
-            this.label11.Text = "Must be 13 Characters!";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(265, 244);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(133, 15);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "Must be 10 Characters!";
-            // 
             // btnClear
             // 
             this.btnClear.Location = new System.Drawing.Point(935, 569);
@@ -400,8 +378,6 @@ namespace ESGARD_STORE
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1127, 665);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.btnDisplay);
-            this.Controls.Add(this.btnCon);
             this.Controls.Add(this.dgv_Employee);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label10);
@@ -456,8 +432,6 @@ namespace ESGARD_STORE
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataGridView dgv_Employee;
-        private System.Windows.Forms.Button btnCon;
-        private System.Windows.Forms.Button btnDisplay;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button btnClear;

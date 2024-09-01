@@ -79,19 +79,27 @@ namespace ESGARD_STORE
            
         }
 
-        public void SetLabelText(string text)
-        {
-        
-        }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        public void lblName_Click(object sender, EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            Help hp = new Help();
+            hp.ShowDialog();  // This will open the Help form as a modal dialog, halting execution until it's closed
 
+            // Close the current form after the Help form is shown
+            this.Close();
         }
+        Dictionary<string, string> helpContent = new Dictionary<string, string>
+        {
+            { "purchase", "To record a purchase, fill out the necessary fields and click 'Submit'." },
+            { "payment types", "Select the payment method from the list and ensure the details are correct." },
+            { "Clients", "Add, update and delete client records." },
+            { "inventory", "Add, update and delete inventory records." },
+            { "Returns", "Function for returning inventory purchased by clients." },
+        };
     }
 }

@@ -276,7 +276,7 @@ namespace ESGARD_STORE
             loadAll();
             clearTextBoxes();
             */
-            int Empe_No;
+            /*int Empe_No;
             if (int.TryParse(txtENumber.Text, out Empe_No))
             {
                 if (DeleteEmployee(Empe_No))
@@ -294,12 +294,27 @@ namespace ESGARD_STORE
             {
                 MessageBox.Show("Invalid input!");
             }
+            loadAll();*/
+            int Empe_No;
+
+            if (!int.TryParse(txtENumber.Text, out Empe_No))
+            {
+                MessageBox.Show("Invalid employee number!");
+                return;
+            }
+
+            if (DeleteEmployee(Empe_No))
+            {
+                MessageBox.Show("Employee successfully deleted!");
+                clearTextBoxes();
+            }
+
             loadAll();
         }
         private Boolean DeleteEmployee(int Emp_No)
         {
 
-            try
+            /*try
             {
                 //String delete_sql 
                 Conn = new SqlConnection(ConnectionString);
@@ -322,7 +337,46 @@ namespace ESGARD_STORE
                 return false;
             }
 
-            return true;
+            return true;*/
+            try
+            {
+                Conn = new SqlConnection(ConnectionString);
+                Conn.Open();
+
+                string delete_sql = "DELETE FROM Employee WHERE Employee_Number = @EmployeeNumber";
+
+                Cmd = new SqlCommand(delete_sql, Conn);
+                Cmd.Parameters.AddWithValue("@EmployeeNumber", Emp_No);
+
+                Cmd.ExecuteNonQuery();
+
+                Cmd.Dispose();
+                Conn.Close();
+
+                return true;
+            }
+            catch (SqlException Ex)
+            {
+                // SQL Server error 547 = foreign key constraint violation
+                if (Ex.Number == 547)
+                {
+                    MessageBox.Show(
+                        "This employee cannot be deleted because they have existing purchase records.\n\n" +
+                        "The employee's purchase history must be kept."
+                    );
+                }
+                else
+                {
+                    MessageBox.Show("Error deleting employee:\n" + Ex.Message);
+                }
+
+                if (Conn != null && Conn.State == ConnectionState.Open)
+                {
+                    Conn.Close();
+                }
+
+                return false;
+            }
         }
 
         private void btnCon_Click(object sender, EventArgs e)
@@ -513,9 +567,9 @@ namespace ESGARD_STORE
 
         private void groupBox1_Enter_1(object sender, EventArgs e)
         {
-            txtINumberMe.TextChanged += txtINumberMe_TextChanged;
+            /*txtINumberMe.TextChanged += txtINumberMe_TextChanged;
             btnAddME.Enabled = false;
-            btnUpdateME.Enabled = false;
+            btnUpdateME.Enabled = false;*/
         }
 
         private void btnClear_Click(object sender, EventArgs e)

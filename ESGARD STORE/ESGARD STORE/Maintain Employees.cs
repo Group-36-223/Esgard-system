@@ -263,20 +263,8 @@ namespace ESGARD_STORE
 
         private void btnDeleteME_Click(object sender, EventArgs e)
         {
-            /*Conn.Open();
-            string sql = "DELETE FROM Employee WHERE First_Name = @name";
-            Cmd = new SqlCommand(sql, Conn);
-            Cmd.Parameters.AddWithValue("@name", txtENumberMe.Text);
-            Cmd.ExecuteNonQuery();
-
-            Conn.Close();
-
-            MessageBox.Show("Deleted Successfully");
-
-            loadAll();
-            clearTextBoxes();
-            */
             int Empe_No;
+
             if (int.TryParse(txtENumber.Text, out Empe_No))
             {
                 if (DeleteEmployee(Empe_No))
@@ -284,16 +272,12 @@ namespace ESGARD_STORE
                     MessageBox.Show("Employee successfully deleted!");
                     clearTextBoxes();
                 }
-                else
-                {
-                    MessageBox.Show("Deleting employee unsuccessfull!\n Please try again!");
-                }
-
             }
             else
             {
-                MessageBox.Show("Invalid input!");
+                MessageBox.Show("Invalid employee number!");
             }
+
             loadAll();
         }
         private Boolean DeleteEmployee(int Emp_No)
@@ -301,28 +285,42 @@ namespace ESGARD_STORE
 
             try
             {
-                //String delete_sql 
                 Conn = new SqlConnection(ConnectionString);
                 Conn.Open();
 
-                Adap = new SqlDataAdapter();
-                String delete_sql = "DELETE FROM Employee WHERE Employee_Number = " + Emp_No;
+                string delete_sql = "DELETE FROM Employee WHERE Employee_Number = @EmployeeNumber";
+
                 Cmd = new SqlCommand(delete_sql, Conn);
+                Cmd.Parameters.AddWithValue("@EmployeeNumber", Emp_No);
+
                 Cmd.ExecuteNonQuery();
-                Adap.DeleteCommand = Cmd;
-                Adap.DeleteCommand.ExecuteNonQuery();
 
                 Cmd.Dispose();
                 Conn.Close();
-            }
 
-            catch (Exception Ex)
+                return true;
+            }
+            catch (SqlException Ex)
             {
-                MessageBox.Show(Ex.Message);
+                if (Ex.Number == 547)
+                {
+                    MessageBox.Show(
+                        "This employee cannot be deleted because they have existing purchase records.\n\n" +
+                        "The employee's purchase history must be kept."
+                    );
+                }
+                else
+                {
+                    MessageBox.Show("Error deleting employee:\n" + Ex.Message);
+                }
+
+                if (Conn != null && Conn.State == ConnectionState.Open)
+                {
+                    Conn.Close();
+                }
+
                 return false;
             }
-
-            return true;
         }
 
         private void btnCon_Click(object sender, EventArgs e)
@@ -513,9 +511,7 @@ namespace ESGARD_STORE
 
         private void groupBox1_Enter_1(object sender, EventArgs e)
         {
-            txtINumberMe.TextChanged += txtINumberMe_TextChanged;
-            btnAddME.Enabled = false;
-            btnUpdateME.Enabled = false;
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)

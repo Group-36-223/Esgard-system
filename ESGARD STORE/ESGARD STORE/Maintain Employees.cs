@@ -513,9 +513,7 @@ namespace ESGARD_STORE
 
         private void groupBox1_Enter_1(object sender, EventArgs e)
         {
-            txtINumberMe.TextChanged += txtINumberMe_TextChanged;
-            btnAddME.Enabled = false;
-            btnUpdateME.Enabled = false;
+
         }
 
         private void btnClear_Click(object sender, EventArgs e)
